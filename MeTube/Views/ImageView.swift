@@ -1,0 +1,47 @@
+//
+//  ImageView.swift
+//  MeTube
+//
+//  Created by Alexander Astrachanzev on 25.04.23.
+//
+
+import SwiftUI
+
+
+struct ImageView: View {
+    
+//    let video : GTLRYouTube_SearchResult
+
+    var body: some View {
+        
+        ZStack {
+            Rectangle()
+                .fill(LinearGradient(colors: [.gray,.white], startPoint: .topLeading, endPoint: .bottomTrailing))
+                .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
+                .frame(width: .infinity, height: 300)
+                .shadow(radius: 5, x: 2,y: 5)
+            
+            HStack {
+                // AsyncImage wird benutzt um aus dem Internet von der URL das Bild zu ziehen.
+                AsyncImage(
+                    //                url: URL(string: video.snippet!.thumbnails!.high!.url!),
+                    url: URL(string: "https://i.ytimg.com/vi/dMoFcvfd5t4/hqdefault.jpg"),
+                    content: { image in
+                        image.image?
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(Color.white)
+                            .frame(width: .infinity, height: 300)
+                            .padding()
+                    })
+            }
+        }
+        
+    }
+}
+
+//struct ImageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ImageView(video: GTLRYouTube_SearchResult())
+//    }
+//}
