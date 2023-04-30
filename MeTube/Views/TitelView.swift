@@ -16,7 +16,7 @@ struct TitelView: View {
         
         ZStack{
             Rectangle()
-                .fill(LinearGradient(colors: [.gray,.white], startPoint: .topLeading, endPoint: .bottomTrailing))
+                .fill(LinearGradient(colors: [.yellow,.purple], startPoint: .topLeading, endPoint: .bottomTrailing))
                 .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
                 .frame(width: 400, height: 120)
                 .shadow(radius: 5, x: 2,y: 5)

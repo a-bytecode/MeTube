@@ -21,6 +21,7 @@ struct SettingsView: View {
             if let image = viewModel.animatedImage {
                             FLAnimatedImageViewWrapper(image: image)
                                 .frame(width: 100.0, height: 100.0)
+                
                         } else {
                             Text("Loading...")
                         }
