@@ -20,43 +20,46 @@ struct MeTubeView: View {
         NavigationStack {
             
             VStack {
+
+//                Spacer()
+//                    .toolbar() {
+//                        ToolbarItemGroup(placement: .navigationBarTrailing) {
+//                            Button(action: {
+//                              //TODO: Search
+//                                isSheetOpen.toggle()
+//                            }) {
+//                                Text("Search")
+//                                Image(systemName: "magnifyingglass")
+//                            }
+//                    }
+//                }
+
                 
-//                let gif = UIImage
-                Spacer()
-                    .toolbar() {
-                        ToolbarItemGroup(placement: .navigationBarTrailing) {
-                            Button(action: {
-                              //TODO: Search
-                                isSheetOpen.toggle()
-                            }) {
-                                Text("Search")
-                                Image(systemName: "magnifyingglass")
-                            }
-                    }
-                }
-                
-                TabView {
-                    ListView(viewModel: viewModel, inputText: $searchTerm)
-                        .tabItem {
-                            Text("Categorys")
-                            Image(systemName: "book")
-                        }
-                    FavoritenView()
-                        .tabItem {
-                            Text("Favoriten")
-                            Image(systemName: "star")
-                        }
-                    SettingsView()
-                        .tabItem{
-                            Text("Settings")
-                            Image(systemName: "gearshape.2")
-                        }
-                }
+//                TabView {
+//                    ListView(viewModel: viewModel, inputText: $searchTerm)
+//                        .tabItem {
+//                            Text("Categorys")
+//                            Image(systemName: "book")
+//                        }
+//                    FavoritenView()
+//                        .tabItem {
+//                            Text("Favoriten")
+//                            Image(systemName: "star")
+//                        }
+//                    SettingsView()
+//                        .tabItem{
+//                            Text("Settings")
+//                            Image(systemName: "gearshape.2")
+//
+//                        }
+//                }
+
             }
-        }.navigationTitle("Search")
-            .sheet(isPresented: $isSheetOpen, content: {
-                SearchView(viewModel: viewModel, isSheetOpen: $isSheetOpen, searchTerm: $searchTerm)
-            })
+        }
+//        .navigationTitle("Search")
+//            .sheet(isPresented: $isSheetOpen, content: {
+//                SearchView(viewModel: viewModel, isSheetOpen: $isSheetOpen, searchTerm: $searchTerm)
+//            })
     }
 }
 

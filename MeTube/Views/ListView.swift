@@ -13,7 +13,7 @@ struct ListView: View {
     
     @ObservedObject var viewModel : MeTubeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
-    let url = URL(string: "https://media.giphy.com/media/g04lCCTUHSw03W7pqD/giphy.gif")!    
+    let url = URL(string: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdkMGZkMGYwMWMyOWUyMjUzYjJiODViZjYxZjgyODE5ZjcyNjI1MSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/fx1XmI9CAxwQ8XWSuB/giphy.gif")!
     
 
     @Binding var inputText : String
