@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7A49FB029FEE30800114B70 /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = B7A49FAF29FEE30800114B70 /* FLAnimatedImage */; };
 		B7B13EF429FBFDE000F79204 /* MeTubeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EF029FBFDE000F79204 /* MeTubeViewModel.swift */; };
 		B7B13EF529FBFDE000F79204 /* MeTubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EF129FBFDE000F79204 /* MeTubeModel.swift */; };
 		B7B13EF629FBFDE000F79204 /* Favoriten.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EF229FBFDE000F79204 /* Favoriten.xcdatamodeld */; };
@@ -62,6 +63,7 @@
 				B7D5BBC629FBFA4A001BB3D6 /* GoogleAPIClientForRESTCore in Frameworks */,
 				B7D5BBC329FBFA1F001BB3D6 /* YouTubePlayerKit in Frameworks */,
 				B7D5BBCA29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeAnalytics in Frameworks */,
+				B7A49FB029FEE30800114B70 /* FLAnimatedImage in Frameworks */,
 				B7D5BBC829FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTube in Frameworks */,
 				B7D5BBCC29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeReporting in Frameworks */,
 			);
@@ -93,12 +95,12 @@
 			children = (
 				B7B13EFB29FBFE3400F79204 /* ItemView.swift */,
 				B7B13EFC29FBFE3400F79204 /* SettingsView.swift */,
+				B7B13F0229FBFE3400F79204 /* ImageView.swift */,
 				B7B13EFD29FBFE3400F79204 /* TitelView.swift */,
-				B7B13EFE29FBFE3400F79204 /* SearchView.swift */,
 				B7B13EFF29FBFE3400F79204 /* CardView.swift */,
+				B7B13EFE29FBFE3400F79204 /* SearchView.swift */,
 				B7B13F0029FBFE3400F79204 /* ListView.swift */,
 				B7B13F0129FBFE3400F79204 /* PlayerView.swift */,
-				B7B13F0229FBFE3400F79204 /* ImageView.swift */,
 				B7B13F0329FBFE3400F79204 /* FavoritenView.swift */,
 			);
 			path = Views;
@@ -173,6 +175,7 @@
 				B7D5BBC729FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTube */,
 				B7D5BBC929FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeAnalytics */,
 				B7D5BBCB29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeReporting */,
+				B7A49FAF29FEE30800114B70 /* FLAnimatedImage */,
 			);
 			productName = MeTube;
 			productReference = B7D5BBAE29FBF978001BB3D6 /* MeTube.app */;
@@ -205,6 +208,7 @@
 			packageReferences = (
 				B7D5BBC129FBFA1F001BB3D6 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 				B7D5BBC429FBFA4A001BB3D6 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */,
+				B7A49FAE29FEE30800114B70 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */,
 			);
 			productRefGroup = B7D5BBAF29FBF978001BB3D6 /* Products */;
 			projectDirPath = "";
@@ -450,6 +454,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B7A49FAE29FEE30800114B70 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flipboard/FLAnimatedImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		B7D5BBC129FBFA1F001BB3D6 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit";
@@ -469,6 +481,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B7A49FAF29FEE30800114B70 /* FLAnimatedImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7A49FAE29FEE30800114B70 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */;
+			productName = FLAnimatedImage;
+		};
 		B7D5BBC229FBFA1F001BB3D6 /* YouTubePlayerKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B7D5BBC129FBFA1F001BB3D6 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;

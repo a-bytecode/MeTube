@@ -24,6 +24,9 @@ struct ListView: View {
                         
 //                        CardView(video: video)
                         CardView()
+                            .onTapGesture {
+                                
+                            }
                     }
                 }
                 .onAppear {

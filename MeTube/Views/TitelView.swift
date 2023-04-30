@@ -10,7 +10,7 @@ import GoogleAPIClientForREST_YouTube
 
 struct TitelView: View {
     
-    let video : GTLRYouTube_SearchResult
+//    let video : GTLRYouTube_SearchResult
 
     var body: some View {
         
@@ -31,7 +31,7 @@ struct TitelView: View {
                         image.image?
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width:150, height: 115)
+                            .frame(width:150, height: 118)
                             .clipShape(Rectangle())
                             .offset(x: -20)
                             
@@ -51,8 +51,8 @@ struct TitelView: View {
     }
 }
 
-struct TitelView_Previews: PreviewProvider {
-    static var previews: some View {
-        TitelView(video: GTLRYouTube_SearchResult())
-    }
-}
+//struct TitelView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TitelView(video: GTLRYouTube_SearchResult())
+//    }
+//}

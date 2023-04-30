@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ImageView: View {
     
 //    let video : GTLRYouTube_SearchResult

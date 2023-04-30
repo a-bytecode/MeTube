@@ -16,7 +16,7 @@ struct CardView: View {
         
         VStack(alignment: .leading) {
             ImageView()
-//            TitelView()
+            TitelView()
 
         }
         
