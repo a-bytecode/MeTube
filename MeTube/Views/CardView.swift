@@ -15,8 +15,8 @@ struct CardView: View {
     var body: some View {
         
         VStack(alignment: .leading) {
-            ImageView(video: video)
-            TitelView(video: video)
+            ImageView()
+            TitelView()
 
         }
         

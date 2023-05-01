@@ -20,40 +20,46 @@ struct MeTubeView: View {
         NavigationStack {
             
             VStack {
-                        
-
-                Spacer()
-                    .toolbar() {
-                        ToolbarItemGroup(placement: .navigationBarTrailing) {
-                            Button(action: {
-                              //TODO: Search
-                                isSheetOpen.toggle()
-                            }) {
-                                Text("Search")
-                                Image(systemName: "magnifyingglass")
-                            }
-                    }
-                }
-
-                
-                TabView {
-                    ListView(viewModel: viewModel, inputText: $searchTerm)
-                        .tabItem {
-                            Text("Categorys")
-                            Image(systemName: "book")
-                        }
-                    FavoritenView()
-                        .tabItem {
-                            Text("Favoriten")
-                            Image(systemName: "star")
-                        }
-                    SettingsView()
-                        .tabItem{
-                            Text("Settings")
-                            Image(systemName: "gearshape.2")
-
-                        }
-                }
+                ZStack {
+                    Spacer()
+            ListView(viewModel: viewModel, inputText: $searchTerm)
+                    Spacer()
+            ParticleEffectView(navigate: $isSheetOpen)
+                        .offset(x: 0,y: 370)
+                    
+        }
+//                Spacer()
+//                    .toolbar() {
+//                        ToolbarItemGroup(placement: .navigationBarTrailing) {
+//                            Button(action: {
+//                              //TODO: Search
+//                                isSheetOpen.toggle()
+//                            }) {
+//                                Text("Search")
+//                                Image(systemName: "magnifyingglass")
+//                            }
+//                    }
+//                }
+//
+//
+//                TabView {
+//                    ListView(viewModel: viewModel, inputText: $searchTerm)
+//                        .tabItem {
+//                            Text("Categorys")
+//                            Image(systemName: "book")
+//                        }
+//                    FavoritenView()
+//                        .tabItem {
+//                            Text("Favoriten")
+//                            Image(systemName: "star")
+//                        }
+//                    SettingsView()
+//                        .tabItem{
+//                            Text("Settings")
+//                            Image(systemName: "gearshape.2")
+//
+//                        }
+//                }
 
             }
         }

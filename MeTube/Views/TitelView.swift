@@ -10,7 +10,7 @@ import GoogleAPIClientForREST_YouTube
 
 struct TitelView: View {
     
-    let video : GTLRYouTube_SearchResult
+//    let video : GTLRYouTube_SearchResult
 
     var body: some View {
         
@@ -25,8 +25,8 @@ struct TitelView: View {
                 
                 
                 AsyncImage(
-                    url: URL(string: video.snippet!.thumbnails!.defaultProperty!.url!),
-//                    url: URL(string: "https://i.ytimg.com/vi/dMoFcvfd5t4/hqdefault.jpg"),
+//                    url: URL(string: video.snippet!.thumbnails!.defaultProperty!.url!),
+                    url: URL(string: "https://i.ytimg.com/vi/dMoFcvfd5t4/hqdefault.jpg"),
                     content: { image in
                         image.image?
                             .resizable()
@@ -38,8 +38,8 @@ struct TitelView: View {
                         //                            .overlay(RoundedRectangle(cornerRadius: 60).stroke(Color.black, lineWidth: 5))
                     })
                 
-                Text(video.snippet!.title ?? "Error")
-//                Text("Peanut Butter Cookie Fudge Bars - Dished #Shorts")
+//                Text(video.snippet!.title ?? "Error")
+                Text("Peanut Butter Cookie Fudge Bars - Dished #Shorts")
                     .font(.system(size: 20))
                     .bold()
                     .offset(x: -20)

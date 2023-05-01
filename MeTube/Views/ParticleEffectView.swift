@@ -17,20 +17,23 @@ struct ParticleEffectView: View {
             
             HStack(spacing: 20) {
                 NavigationLink(destination: SettingsView(), isActive: $navigate){
-                    CustomButton(systemImage: "book.fill", status: isLiked[0], activeTint: .green, inActiveTint: .gray) {
+                    CustomButton(systemImage: "book.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
                         navigate = true 
                         isLiked[0].toggle()
                     }
                     
+                    
                 }
                 
-                CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .gray) {  isLiked[1].toggle()
+                CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {  isLiked[1].toggle()
                 }
                 
-                CustomButton(systemImage: "gearshape.2.fill", status: isLiked[2], activeTint: .blue, inActiveTint: .gray) {  isLiked[2].toggle()
+                CustomButton(systemImage: "gearshape.2.fill", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {  isLiked[2].toggle()
                 }
                 
             }
+            .background(Rectangle().fill(Color.black).padding(-10))
+            .overlay(Rectangle().stroke(Color.white, lineWidth: 2).padding(-10))
         }
     }
     
@@ -42,7 +45,9 @@ struct ParticleEffectView: View {
                 navigate.toggle()
             }}) {
             Image(systemName: systemImage)
+                .resizable()
                 .font(.title2)
+                .frame(width: 50,height: 40)
                 .particleEffect(
                     systemImage: systemImage,
                     font: .title2,
