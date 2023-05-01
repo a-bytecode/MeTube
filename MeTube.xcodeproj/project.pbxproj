@@ -36,6 +36,7 @@
 		B7D5BBC829FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTube in Frameworks */ = {isa = PBXBuildFile; productRef = B7D5BBC729FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTube */; };
 		B7D5BBCA29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B7D5BBC929FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeAnalytics */; };
 		B7D5BBCC29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeReporting in Frameworks */ = {isa = PBXBuildFile; productRef = B7D5BBCB29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeReporting */; };
+		B7FC94032A00459100C34973 /* SearchTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FC94022A00459100C34973 /* SearchTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		B7D5BBB529FBF979001BB3D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7D5BBB829FBF979001BB3D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B7D5BBBF29FBF9B9001BB3D6 /* MeTubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTubeView.swift; sourceTree = "<group>"; };
+		B7FC94022A00459100C34973 /* SearchTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				B7A49FB729FEF9CC00114B70 /* ParticleView.swift */,
 				B7A49FB929FEFAB000114B70 /* Particle.swift */,
 				B7A49FBB29FF0CE200114B70 /* AllInOneView.swift */,
+				B7FC94022A00459100C34973 /* SearchTextFieldView.swift */,
 				B7D5BBBF29FBF9B9001BB3D6 /* MeTubeView.swift */,
 			);
 			path = Views;
@@ -255,6 +258,7 @@
 				B7D5BBC029FBF9B9001BB3D6 /* MeTubeView.swift in Sources */,
 				B7B13F0529FBFE3400F79204 /* SettingsView.swift in Sources */,
 				B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */,
+				B7FC94032A00459100C34973 /* SearchTextFieldView.swift in Sources */,
 				B7B13F0629FBFE3400F79204 /* TitelView.swift in Sources */,
 				B7B13EF629FBFDE000F79204 /* Favoriten.xcdatamodeld in Sources */,
 				B7B13EF429FBFDE000F79204 /* MeTubeViewModel.swift in Sources */,

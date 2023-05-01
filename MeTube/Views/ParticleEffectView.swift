@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ParticleEffectView: View {
     
-    @State private var isLiked: [Bool] = [false, false, false]
+    @State private var isLiked: [Bool] = [false, false, false, false]
     @Binding var navigate: Bool
 
     var body: some View {
@@ -18,11 +18,9 @@ struct ParticleEffectView: View {
             HStack(spacing: 20) {
                 NavigationLink(destination: SettingsView(), isActive: $navigate){
                     CustomButton(systemImage: "book.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
-                        navigate = true 
+                        navigate.toggle()
                         isLiked[0].toggle()
                     }
-                    
-                    
                 }
                 
                 CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {  isLiked[1].toggle()
