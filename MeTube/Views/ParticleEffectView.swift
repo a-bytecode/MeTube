@@ -10,13 +10,18 @@ import SwiftUI
 struct ParticleEffectView: View {
     
     @State private var isLiked: [Bool] = [false, false, false]
+    @Binding var navigate: Bool
 
     var body: some View {
         VStack {
             
             HStack(spacing: 20) {
-                CustomButton(systemImage: "book.fill", status: isLiked[0], activeTint: .green, inActiveTint: .gray) {
-                    isLiked[0].toggle()
+                NavigationLink(destination: SettingsView(), isActive: $navigate){
+                    CustomButton(systemImage: "book.fill", status: isLiked[0], activeTint: .green, inActiveTint: .gray) {
+                        navigate = true 
+                        isLiked[0].toggle()
+                    }
+                    
                 }
                 
                 CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .gray) {  isLiked[1].toggle()
@@ -31,9 +36,19 @@ struct ParticleEffectView: View {
     
     @ViewBuilder
     func CustomButton(systemImage: String, status: Bool, activeTint: Color, inActiveTint: Color, onTap: @escaping () -> ()) -> some View {
-        Button(action: onTap) {
+        Button(action: {
+            onTap()
+            if systemImage == "geatshape.2.fill" {
+                navigate.toggle()
+            }}) {
             Image(systemName: systemImage)
                 .font(.title2)
+                .particleEffect(
+                    systemImage: systemImage,
+                    font: .title2,
+                    status: status,
+                    activeTint: activeTint,
+                    inActiveTint: inActiveTint)
                 .foregroundColor(status ? activeTint : inActiveTint)
                 .padding(.horizontal, 18)
                 .padding(.vertical, 8)
@@ -49,6 +64,6 @@ struct ParticleEffectView: View {
 
 struct ParticleEffectView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticleEffectView()
+        ParticleEffectView(navigate: .constant(false))
     }
 }

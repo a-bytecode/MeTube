@@ -36,11 +36,9 @@ struct ListView: View {
                 ScrollView {
                     ForEach(viewModel.videos, id: \.self) { video in
                         
-                        //                        CardView(video: video)
-                        CardView()
-                            .onTapGesture {
-                                
-                            }
+                            CardView(video: video)
+//                        CardView()
+                        
                     }
                 }
                 .onAppear {

@@ -10,23 +10,23 @@ import GoogleAPIClientForREST_YouTube
 
 struct CardView: View {
     
-//    let video : GTLRYouTube_SearchResult
+    let video : GTLRYouTube_SearchResult
     
     var body: some View {
         
         VStack(alignment: .leading) {
-            ImageView()
-            TitelView()
+            ImageView(video: video)
+            TitelView(video: video)
 
         }
         
     }
 }
 
-struct CardView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        CardView()
-    }
-}
+//struct CardView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        CardView()
+//    }
+//}
 
