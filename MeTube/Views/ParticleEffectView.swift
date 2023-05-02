@@ -53,7 +53,8 @@ struct ParticleEffectView: View {
             onTap()
             if systemImage == "sparkle.magnifyingglass" {
                 isSheetOpen.toggle()
-            }}) {
+            }
+        }) {
             Image(systemName: systemImage)
                 .resizable()
                 .font(.title2)

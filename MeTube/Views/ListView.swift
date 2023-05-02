@@ -34,12 +34,16 @@ struct ListView: View {
                 }
                 
                 ScrollView {
-                    ForEach(viewModel.videos, id: \.self) { video in
-                        
-                            CardView(video: video)
+//                    ForEach(viewModel.videos, id: \.self) { video in
+//
+////                            CardView(video: video)
 //                        CardView()
-                        
-                    }
+//
+//                    }
+                    CardView()
+                    CardView()
+                    CardView()
+                    CardView()
                 }
                 .onAppear {
                     viewModel.fetchVideos(term: inputText)

@@ -51,8 +51,8 @@ struct TitelView: View {
     }
 }
 
-//struct TitelView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TitelView(video: GTLRYouTube_SearchResult())
-//    }
-//}
+struct TitelView_Previews: PreviewProvider {
+    static var previews: some View {
+        TitelView()
+    }
+}

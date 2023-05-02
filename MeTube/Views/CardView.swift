@@ -10,7 +10,7 @@ import GoogleAPIClientForREST_YouTube
 
 struct CardView: View {
     
-    let video : GTLRYouTube_SearchResult
+//    let video : GTLRYouTube_SearchResult
     
     var body: some View {
         

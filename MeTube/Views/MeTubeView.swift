@@ -26,7 +26,7 @@ struct MeTubeView: View {
             ListView(viewModel: viewModel, inputText: $searchTerm)
                     ParticleEffectView(navigate: $isSheetOpen)
                         .offset(x: 0,y: 360)
-        }
+                }
             }
         }
 
