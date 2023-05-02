@@ -13,6 +13,7 @@ struct SearchView: View {
     
     @ObservedObject var viewModel : MeTubeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
+    
     @State var input : String = ""
     @Binding var isSheetOpen : Bool
     @Binding var searchTerm : String
@@ -54,7 +55,7 @@ struct SearchView: View {
                         .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-5))
                     }).offset(x: 0,y: -180)
             
-                ParticleEffectView(navigate: $isSheetOpen)
+                ParticleEffectView(isEnabled: [true, true, false], navigate: $isSheetOpen)
                             .offset(x: 0,y: 360)
                             .onAppear {
                                 settingsViewModel.loadAnimatedImage(from: url)

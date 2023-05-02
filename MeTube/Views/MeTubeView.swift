@@ -23,7 +23,7 @@ struct MeTubeView: View {
 
                 ZStack {
 
-            ListView(viewModel: viewModel, inputText: $searchTerm)
+                    ListView(viewModel: viewModel, inputText: $searchTerm)
                     ParticleEffectView(navigate: $isSheetOpen)
                         .offset(x: 0,y: 360)
                 }

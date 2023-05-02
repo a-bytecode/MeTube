@@ -75,22 +75,19 @@ fileprivate struct ParticleModifier: ViewModifier {
                                                  let extraRandomX: CGFloat = (progress < 0.5 ? .random(in: 0...10) : .random(in: -10...0))
                                                  particles[index].randomX = randomX
                                                  particles[index].randomY = randomY
-                                                 
-                                                 // Scaling With Ease animation
-                                                 withAnimation(.easeInOut(duration: 0.3)) {
-                                                     particles[index].scale = randomScale
-                                                 }
-                                                 // Removing Particles Based on Index
-                                                 withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7) .delay(0.25 + (Double(index) * 0.0005))) {
-                                                     particles[index].scale = 0.001
-                                                 }
-                                                 
+                                             }
+                                             // Scaling With Ease animation
+                                             withAnimation(.easeInOut(duration: 0.3)) {
+                                                 particles[index].scale = randomScale
+                                             }
+                                             // Removing Particles Based on Index
+                                             withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7) .delay(0.25 + (Double(index) * 0.0005))) {
+                                                 particles[index].scale = 0.001
                                              }
                                              
                                          }
                                      }
                                  }
-                             
                              }
                      }
                  }

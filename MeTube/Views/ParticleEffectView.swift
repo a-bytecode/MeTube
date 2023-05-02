@@ -10,7 +10,8 @@ import SwiftUI
 struct ParticleEffectView: View {
     
     @ObservedObject private var viewModel = MeTubeViewModel()
-    @State private var isLiked: [Bool] = [false, false, false, false]
+    @State private var isLiked: [Bool] = [false, false, false]
+    var isEnabled: [Bool] = [true, true, true]
     @Binding var navigate: Bool
     @State private var isSheetOpen = false
     @State private var shouldNavigate = false
@@ -21,21 +22,47 @@ struct ParticleEffectView: View {
             
             HStack(spacing: 20) {
                 NavigationLink(destination: SettingsView(), isActive: $navigate){
-                    CustomButton(systemImage: "book.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
-                        navigate.toggle()
-                        isLiked[0].toggle()
+                    if isEnabled[0] {
+                        CustomButton(systemImage: "book.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
+                            navigate.toggle()
+                            isLiked[0].toggle()
+                        }
+                    } else {
+                        CustomButton(systemImage: "book.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
+                            
+                        }
                     }
+                    
                 }
                 
-                CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {  isLiked[1].toggle()
-                }
-                 
-                NavigationLink(destination: SearchView(viewModel: viewModel,input: input, isSheetOpen: $isSheetOpen, searchTerm: $input), isActive: $shouldNavigate){
-                    CustomButton(systemImage: "sparkle.magnifyingglass", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
-                        // Action ->
-                        shouldNavigate.toggle()
-                        isLiked[2].toggle()
+                if isEnabled[1] {
+                    CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {
+                        isLiked[1].toggle()
                     }
+                } else {
+                    CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {
+                        // Empty
+                    }
+                    
+                }
+                NavigationLink(destination: SearchView(viewModel: viewModel,input: input, isSheetOpen: $isSheetOpen, searchTerm: $input), isActive: $shouldNavigate){
+                    if isEnabled[2] {
+                        CustomButton(systemImage: "sparkle.magnifyingglass", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
+                            // Action ->
+                            shouldNavigate.toggle()
+                            isLiked[2].toggle()
+                        }
+                    } else {
+                        CustomButton(systemImage: "sparkle.magnifyingglass", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
+                            // Action ->
+                            // Empty
+                        }
+                    }
+                    
+                
+                
+            
+
                 }
                 
             }
@@ -54,6 +81,7 @@ struct ParticleEffectView: View {
             if systemImage == "sparkle.magnifyingglass" {
                 isSheetOpen.toggle()
             }
+
         }) {
             Image(systemName: systemImage)
                 .resizable()
@@ -77,9 +105,8 @@ struct ParticleEffectView: View {
     }
     
 }
-
 struct ParticleEffectView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticleEffectView(navigate: .constant(false))
+        ParticleEffectView(isEnabled: [true,true,true], navigate: .constant(false))
     }
 }
