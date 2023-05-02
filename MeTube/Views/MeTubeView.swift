@@ -24,15 +24,12 @@ struct MeTubeView: View {
                 ZStack {
 
             ListView(viewModel: viewModel, inputText: $searchTerm)
-            ParticleEffectView(navigate: $isSheetOpen)
-                        .offset(x: 0,y: 370)
+                    ParticleEffectView(navigate: $isSheetOpen)
+                        .offset(x: 0,y: 360)
         }
             }
         }
-        .navigationTitle("Search")
-            .sheet(isPresented: $isSheetOpen, content: {
-                SearchView(viewModel: viewModel, isSheetOpen: $isSheetOpen, searchTerm: $searchTerm)
-            })
+
     }
 }
                    

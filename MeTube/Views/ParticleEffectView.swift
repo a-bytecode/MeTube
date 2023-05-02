@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ParticleEffectView: View {
     
+    @ObservedObject private var viewModel = MeTubeViewModel()
     @State private var isLiked: [Bool] = [false, false, false, false]
     @Binding var navigate: Bool
+    @State private var isSheetOpen = false
+    @State private var shouldNavigate = false
+    @State var input = ""
 
     var body: some View {
         VStack {
@@ -25,13 +29,21 @@ struct ParticleEffectView: View {
                 
                 CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {  isLiked[1].toggle()
                 }
-                
-                CustomButton(systemImage: "gearshape.2.fill", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {  isLiked[2].toggle()
+                 
+                NavigationLink(destination: SearchView(viewModel: viewModel,input: input, isSheetOpen: $isSheetOpen, searchTerm: $input), isActive: $shouldNavigate){
+                    CustomButton(systemImage: "sparkle.magnifyingglass", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
+                        // Action ->
+                        shouldNavigate.toggle()
+                        isLiked[2].toggle()
+                    }
                 }
                 
             }
             .background(Rectangle().fill(Color.black).padding(-10))
             .overlay(Rectangle().stroke(Color.white, lineWidth: 2).padding(-10))
+//                .sheet(isPresented: $isSheetOpen, content: {
+//                    SearchView(viewModel: viewModel, isSheetOpen: $isSheetOpen, searchTerm: $input)
+//                })
         }
     }
     
@@ -39,8 +51,8 @@ struct ParticleEffectView: View {
     func CustomButton(systemImage: String, status: Bool, activeTint: Color, inActiveTint: Color, onTap: @escaping () -> ()) -> some View {
         Button(action: {
             onTap()
-            if systemImage == "geatshape.2.fill" {
-                navigate.toggle()
+            if systemImage == "sparkle.magnifyingglass" {
+                isSheetOpen.toggle()
             }}) {
             Image(systemName: systemImage)
                 .resizable()
