@@ -18,7 +18,7 @@ struct SearchView: View {
     @Binding var isSheetOpen : Bool
     @Binding var searchTerm : String
     
-    let url = URL(string: "https://media.giphy.com/media/g04lCCTUHSw03W7pqD/giphy.gif")!
+    let url = URL(string: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdkMGZkMGYwMWMyOWUyMjUzYjJiODViZjYxZjgyODE5ZjcyNjI1MSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/fx1XmI9CAxwQ8XWSuB/giphy.gif")!
     
 
     var body: some View {
@@ -39,22 +39,27 @@ struct SearchView: View {
                     .padding()
                 
                     Button(action: {
-                        //                    viewModel.fetchVideos(term: input)
-//                        isSheetOpen.toggle()
+                        //viewModel.fetchVideos(term: input)
+                        //isSheetOpen.toggle()
                     }, label: {
                         ZStack {
                             Text("Search...")
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
-                                .padding(50)
+                                .padding(20)
                             .cornerRadius(20)}
-                        .frame(height: 40)
+                        .frame(width: 325,height: 20)
                         .padding()
-                        .background(Capsule().fill(Color.black).padding(-5))
-                        .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-5))
-                    }).offset(x: 0,y: -180)
-            
+                        .background(Capsule().fill(Color.black).padding(-1))
+                        .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
+                    }).offset(x: 0,y: -220)
+                
+                // Listenansicht
+                ListView(viewModel: viewModel, inputText: $input)
+                    .offset(x: 0 , y: 238)
+                
+                // Custom TabView
                 ParticleEffectView(isEnabled: [true, true, false], navigate: $isSheetOpen)
                             .offset(x: 0,y: 360)
                             .onAppear {

@@ -13,9 +13,8 @@ struct ListView: View {
     
     @ObservedObject var viewModel : MeTubeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
-    let url = URL(string: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdkMGZkMGYwMWMyOWUyMjUzYjJiODViZjYxZjgyODE5ZjcyNjI1MSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/fx1XmI9CAxwQ8XWSuB/giphy.gif")!
-    
 
+    
     @Binding var inputText : String
     
     var body: some View {
@@ -25,13 +24,6 @@ struct ListView: View {
         VStack {
             
             ZStack {
-                if let image = settingsViewModel.animatedImage {
-                    FLAnimatedImageViewWrapper(image: image)
-                        .frame(width: 100.0, height: .infinity)
-                    
-                } else {
-                    Text("Loading...")
-                }
                 
                 ScrollView {
 //                    ForEach(viewModel.videos, id: \.self) { video in
@@ -44,10 +36,6 @@ struct ListView: View {
                     CardView()
                     CardView()
                     CardView()
-                }
-                .onAppear {
-                    viewModel.fetchVideos(term: inputText)
-                    settingsViewModel.loadAnimatedImage(from: url)
                 }
             }
             .edgesIgnoringSafeArea(.all)

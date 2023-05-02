@@ -15,12 +15,16 @@ struct ParticleEffectView: View {
     @Binding var navigate: Bool
     @State private var isSheetOpen = false
     @State private var shouldNavigate = false
+    @State private var navigateFav = false
     @State var input = ""
 
     var body: some View {
+        
         VStack {
             
             HStack(spacing: 20) {
+                
+                // Navigation Book
                 NavigationLink(destination: SettingsView(), isActive: $navigate){
                     if isEnabled[0] {
                         CustomButton(systemImage: "book.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
@@ -35,16 +39,21 @@ struct ParticleEffectView: View {
                     
                 }
                 
-                if isEnabled[1] {
-                    CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {
-                        isLiked[1].toggle()
+                // Navigation Favoriten
+                NavigationLink(destination: FavoritenView(), isActive: $navigateFav){
+                    if isEnabled[1] {
+                        CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {
+                            isLiked[1].toggle()
+                        }
+                    } else {
+                        CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {
+                            // Empty
+                        }
+                        
                     }
-                } else {
-                    CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {
-                        // Empty
-                    }
-                    
                 }
+                
+                // Navigation Search
                 NavigationLink(destination: SearchView(viewModel: viewModel,input: input, isSheetOpen: $isSheetOpen, searchTerm: $input), isActive: $shouldNavigate){
                     if isEnabled[2] {
                         CustomButton(systemImage: "sparkle.magnifyingglass", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
@@ -58,11 +67,6 @@ struct ParticleEffectView: View {
                             // Empty
                         }
                     }
-                    
-                
-                
-            
-
                 }
                 
             }
@@ -80,6 +84,9 @@ struct ParticleEffectView: View {
             onTap()
             if systemImage == "sparkle.magnifyingglass" {
                 isSheetOpen.toggle()
+            }
+            if systemImage == "suit.heart.fill" {
+                navigateFav.toggle()
             }
 
         }) {

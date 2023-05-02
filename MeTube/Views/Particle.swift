@@ -11,8 +11,8 @@ import SwiftUI
 
 struct Particle: Identifiable {
     var id: UUID = .init()
-    var randomX: CGFloat = 0
-    var randomY: CGFloat = 0
+    var randomX: CGFloat = CGFloat.random(in: 0...10)
+    var randomY: CGFloat = CGFloat.random(in: 0.35...1)
     var scale: CGFloat = 1
     // Optional
     var opacity: CGFloat = 1

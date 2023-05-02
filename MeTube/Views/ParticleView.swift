@@ -48,6 +48,7 @@ fileprivate struct ParticleModifier: ViewModifier {
                 if particles.isEmpty {
                     for _ in 0...15 {
                         let particle = Particle()
+//                        particles.append(particle)
                         }
                     }
                 }
@@ -85,14 +86,12 @@ fileprivate struct ParticleModifier: ViewModifier {
                                                  particles[index].scale = 0.001
                                              }
                                              
-                                         }
+                                        }
                                      }
                                  }
-                             }
-                     }
-                 }
-                            
-    
+                            }
+                        }
+                    }
 
 struct ParticleView_Previews: PreviewProvider {
     static var previews: some View {

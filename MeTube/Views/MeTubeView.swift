@@ -7,13 +7,17 @@
 
 import SwiftUI
 import Combine
+import FLAnimatedImage
+
 
 struct MeTubeView: View {
     
     @StateObject var viewModel = MeTubeViewModel()
+    @StateObject var settingsViewModel = SettingsViewModel()
     @State private var isEditing = false
     @State private var isSheetOpen = false
     @State private var searchTerm = ""
+    let url = URL(string: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdkMGZkMGYwMWMyOWUyMjUzYjJiODViZjYxZjgyODE5ZjcyNjI1MSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/fx1XmI9CAxwQ8XWSuB/giphy.gif")!
     
     var body: some View {
         
@@ -22,11 +26,26 @@ struct MeTubeView: View {
             VStack {
 
                 ZStack {
+                    
+                    if let image = settingsViewModel.animatedImage {
+                        FLAnimatedImageViewWrapper(image: image)
+                            .frame(width: 100.0, height: .infinity)
+                        
+                    } else {
+                        Text("Loading...")
+                            .font(.title3)
+                    }
 
                     ListView(viewModel: viewModel, inputText: $searchTerm)
                     ParticleEffectView(navigate: $isSheetOpen)
                         .offset(x: 0,y: 360)
                 }
+                .onAppear {
+                    viewModel.fetchVideos(term: searchTerm)
+                    settingsViewModel.loadAnimatedImage(from: url)
+                }
+                
+                .edgesIgnoringSafeArea(.all)
             }
         }
 

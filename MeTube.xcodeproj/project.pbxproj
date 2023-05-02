@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7259D912A01411C005539A9 /* HeadlineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7259D902A01411C005539A9 /* HeadlineTextView.swift */; };
+		B7259D932A0144C9005539A9 /* LastSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7259D922A0144C9005539A9 /* LastSearchView.swift */; };
 		B7A49FB029FEE30800114B70 /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = B7A49FAF29FEE30800114B70 /* FLAnimatedImage */; };
 		B7A49FB429FEE92700114B70 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */; };
 		B7A49FB629FEF5A800114B70 /* ParticleEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB529FEF5A800114B70 /* ParticleEffectView.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B7259D902A01411C005539A9 /* HeadlineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineTextView.swift; sourceTree = "<group>"; };
+		B7259D922A0144C9005539A9 /* LastSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSearchView.swift; sourceTree = "<group>"; };
 		B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		B7A49FB529FEF5A800114B70 /* ParticleEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleEffectView.swift; sourceTree = "<group>"; };
 		B7A49FB729FEF9CC00114B70 /* ParticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleView.swift; sourceTree = "<group>"; };
@@ -84,6 +88,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7259D962A015150005539A9 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				B7B13F0229FBFE3400F79204 /* ImageView.swift */,
+				B7B13EFD29FBFE3400F79204 /* TitelView.swift */,
+				B7B13F0029FBFE3400F79204 /* ListView.swift */,
+			);
+			path = ListView;
+			sourceTree = "<group>";
+		};
 		B7B13EEF29FBFDE000F79204 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,13 +120,11 @@
 		B7B13EFA29FBFE3400F79204 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B7259D962A015150005539A9 /* ListView */,
 				B7B13EFB29FBFE3400F79204 /* ItemView.swift */,
 				B7B13EFC29FBFE3400F79204 /* SettingsView.swift */,
-				B7B13F0229FBFE3400F79204 /* ImageView.swift */,
-				B7B13EFD29FBFE3400F79204 /* TitelView.swift */,
 				B7B13EFF29FBFE3400F79204 /* CardView.swift */,
 				B7B13EFE29FBFE3400F79204 /* SearchView.swift */,
-				B7B13F0029FBFE3400F79204 /* ListView.swift */,
 				B7B13F0129FBFE3400F79204 /* PlayerView.swift */,
 				B7B13F0329FBFE3400F79204 /* FavoritenView.swift */,
 				B7A49FB529FEF5A800114B70 /* ParticleEffectView.swift */,
@@ -121,6 +133,8 @@
 				B7A49FBB29FF0CE200114B70 /* AllInOneView.swift */,
 				B7FC94022A00459100C34973 /* SearchTextFieldView.swift */,
 				B7D5BBBF29FBF9B9001BB3D6 /* MeTubeView.swift */,
+				B7259D902A01411C005539A9 /* HeadlineTextView.swift */,
+				B7259D922A0144C9005539A9 /* LastSearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +272,7 @@
 				B7D5BBC029FBF9B9001BB3D6 /* MeTubeView.swift in Sources */,
 				B7B13F0529FBFE3400F79204 /* SettingsView.swift in Sources */,
 				B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */,
+				B7259D932A0144C9005539A9 /* LastSearchView.swift in Sources */,
 				B7FC94032A00459100C34973 /* SearchTextFieldView.swift in Sources */,
 				B7B13F0629FBFE3400F79204 /* TitelView.swift in Sources */,
 				B7B13EF629FBFDE000F79204 /* Favoriten.xcdatamodeld in Sources */,
@@ -270,6 +285,7 @@
 				B7B13F0929FBFE3400F79204 /* ListView.swift in Sources */,
 				B7B13F0F29FBFEFC00F79204 /* API_KEY.swift in Sources */,
 				B7A49FBC29FF0CE200114B70 /* AllInOneView.swift in Sources */,
+				B7259D912A01411C005539A9 /* HeadlineTextView.swift in Sources */,
 				B7B13F0C29FBFE3400F79204 /* FavoritenView.swift in Sources */,
 				B7B13EF529FBFDE000F79204 /* MeTubeModel.swift in Sources */,
 				B7B13F0829FBFE3400F79204 /* CardView.swift in Sources */,
