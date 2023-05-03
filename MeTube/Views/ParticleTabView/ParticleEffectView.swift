@@ -32,11 +32,9 @@ struct ParticleEffectView: View {
                             isLiked[0].toggle()
                         }
                     } else {
-                        CustomButton(systemImage: "book.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
-                            
+                        CustomButton(systemImage: "book.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {                            
                         }
                     }
-                    
                 }
                 
                 // Navigation Favoriten
@@ -49,7 +47,6 @@ struct ParticleEffectView: View {
                         CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {
                             // Empty
                         }
-                        
                     }
                 }
                 
@@ -57,7 +54,6 @@ struct ParticleEffectView: View {
                 NavigationLink(destination: SearchView(viewModel: viewModel, input: $input, isSheetOpen: $isSheetOpen, searchTerm: $input), isActive: $shouldNavigate){
                     if isEnabled[2] {
                         CustomButton(systemImage: "sparkle.magnifyingglass", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
-                            // Action ->
                             shouldNavigate.toggle()
                             isLiked[2].toggle()
                         }

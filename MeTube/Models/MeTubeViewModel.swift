@@ -45,13 +45,19 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                 autoPlay: true
             )
         )
-        youTubePlayer.play()
+//        youTubePlayer.play()
     }
     
     func playVideoByURL(videoURL: String) {
         
-        let youTubePlayer = videoURL
-        
+        let youTubePlayer = YouTubePlayer(
+            source: .url(videoURL),
+            configuration: .init(
+                autoPlay: true
+            )
+        )
+//        youTubePlayer.play()
+            
     }
 }
 

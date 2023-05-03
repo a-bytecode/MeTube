@@ -11,7 +11,7 @@ import YouTubePlayerKit
 
 struct PlayerView: View {
 
-    var youTubePlayer: YouTubePlayer
+    @State var youTubePlayer: YouTubePlayer = YouTubePlayer()
     
     var body: some View {
         YouTubePlayerView(self.youTubePlayer) { state in
@@ -29,10 +29,16 @@ struct PlayerView: View {
     }
 }
 
-
-//struct PlayerView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PlayerView(youTubePlayer: )
-//    }
-//}
+struct PlayerView_Previews: PreviewProvider {
+    static var youTubePlayer = YouTubePlayer(
+        source: .url("https://youtube.com/watch?v=psL_5RIBqnY"),
+        configuration: .init(
+            autoPlay: true
+        )
+    )
+//    youTubePlayer.play()
+    static var previews: some View {
+        PlayerView(youTubePlayer: youTubePlayer)
+    }
+}
 
