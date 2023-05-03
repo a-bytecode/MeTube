@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B7259D912A01411C005539A9 /* HeadlineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7259D902A01411C005539A9 /* HeadlineTextView.swift */; };
-		B7259D932A0144C9005539A9 /* LastSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7259D922A0144C9005539A9 /* LastSearchView.swift */; };
 		B7A49FB029FEE30800114B70 /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = B7A49FAF29FEE30800114B70 /* FLAnimatedImage */; };
 		B7A49FB429FEE92700114B70 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */; };
 		B7A49FB629FEF5A800114B70 /* ParticleEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB529FEF5A800114B70 /* ParticleEffectView.swift */; };
 		B7A49FB829FEF9CC00114B70 /* ParticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB729FEF9CC00114B70 /* ParticleView.swift */; };
 		B7A49FBA29FEFAB000114B70 /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB929FEFAB000114B70 /* Particle.swift */; };
-		B7A49FBC29FF0CE200114B70 /* AllInOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FBB29FF0CE200114B70 /* AllInOneView.swift */; };
 		B7B13EF429FBFDE000F79204 /* MeTubeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EF029FBFDE000F79204 /* MeTubeViewModel.swift */; };
 		B7B13EF529FBFDE000F79204 /* MeTubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EF129FBFDE000F79204 /* MeTubeModel.swift */; };
 		B7B13EF629FBFDE000F79204 /* Favoriten.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EF229FBFDE000F79204 /* Favoriten.xcdatamodeld */; };
@@ -43,12 +41,10 @@
 
 /* Begin PBXFileReference section */
 		B7259D902A01411C005539A9 /* HeadlineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineTextView.swift; sourceTree = "<group>"; };
-		B7259D922A0144C9005539A9 /* LastSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSearchView.swift; sourceTree = "<group>"; };
 		B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		B7A49FB529FEF5A800114B70 /* ParticleEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleEffectView.swift; sourceTree = "<group>"; };
 		B7A49FB729FEF9CC00114B70 /* ParticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleView.swift; sourceTree = "<group>"; };
 		B7A49FB929FEFAB000114B70 /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
-		B7A49FBB29FF0CE200114B70 /* AllInOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInOneView.swift; sourceTree = "<group>"; };
 		B7B13EF029FBFDE000F79204 /* MeTubeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTubeViewModel.swift; sourceTree = "<group>"; };
 		B7B13EF129FBFDE000F79204 /* MeTubeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTubeModel.swift; sourceTree = "<group>"; };
 		B7B13EF329FBFDE000F79204 /* Favoriten.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favoriten.xcdatamodel; sourceTree = "<group>"; };
@@ -93,6 +89,7 @@
 			children = (
 				B7B13F0229FBFE3400F79204 /* ImageView.swift */,
 				B7B13EFD29FBFE3400F79204 /* TitelView.swift */,
+				B7B13EFF29FBFE3400F79204 /* CardView.swift */,
 				B7B13F0029FBFE3400F79204 /* ListView.swift */,
 			);
 			path = ListView;
@@ -118,9 +115,28 @@
 		B7980A242A02550900D37AD5 /* SearchView */ = {
 			isa = PBXGroup;
 			children = (
+				B7FC94022A00459100C34973 /* SearchTextFieldView.swift */,
 				B7B13EFE29FBFE3400F79204 /* SearchView.swift */,
 			);
 			path = SearchView;
+			sourceTree = "<group>";
+		};
+		B7980A252A027E8D00D37AD5 /* ParticleTabView */ = {
+			isa = PBXGroup;
+			children = (
+				B7A49FB529FEF5A800114B70 /* ParticleEffectView.swift */,
+				B7A49FB729FEF9CC00114B70 /* ParticleView.swift */,
+				B7A49FB929FEFAB000114B70 /* Particle.swift */,
+			);
+			path = ParticleTabView;
+			sourceTree = "<group>";
+		};
+		B7980A262A027EF200D37AD5 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				B7B13EFC29FBFE3400F79204 /* SettingsView.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 		B7B13EEF29FBFDE000F79204 /* Models */ = {
@@ -145,21 +161,15 @@
 		B7B13EFA29FBFE3400F79204 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B7980A262A027EF200D37AD5 /* SettingsView */,
+				B7980A252A027E8D00D37AD5 /* ParticleTabView */,
 				B7259D962A015150005539A9 /* ListView */,
 				B7980A242A02550900D37AD5 /* SearchView */,
 				B7980A222A02504900D37AD5 /* PlayerView */,
 				B7980A232A02505A00D37AD5 /* MainView */,
 				B7B13EFB29FBFE3400F79204 /* ItemView.swift */,
-				B7B13EFC29FBFE3400F79204 /* SettingsView.swift */,
-				B7B13EFF29FBFE3400F79204 /* CardView.swift */,
 				B7B13F0329FBFE3400F79204 /* FavoritenView.swift */,
-				B7A49FB529FEF5A800114B70 /* ParticleEffectView.swift */,
-				B7A49FB729FEF9CC00114B70 /* ParticleView.swift */,
-				B7A49FB929FEFAB000114B70 /* Particle.swift */,
-				B7A49FBB29FF0CE200114B70 /* AllInOneView.swift */,
-				B7FC94022A00459100C34973 /* SearchTextFieldView.swift */,
 				B7259D902A01411C005539A9 /* HeadlineTextView.swift */,
-				B7259D922A0144C9005539A9 /* LastSearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,7 +306,6 @@
 				B7D5BBC029FBF9B9001BB3D6 /* MeTubeView.swift in Sources */,
 				B7B13F0529FBFE3400F79204 /* SettingsView.swift in Sources */,
 				B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */,
-				B7259D932A0144C9005539A9 /* LastSearchView.swift in Sources */,
 				B7FC94032A00459100C34973 /* SearchTextFieldView.swift in Sources */,
 				B7B13F0629FBFE3400F79204 /* TitelView.swift in Sources */,
 				B7B13EF629FBFDE000F79204 /* Favoriten.xcdatamodeld in Sources */,
@@ -308,7 +317,6 @@
 				B7A49FB629FEF5A800114B70 /* ParticleEffectView.swift in Sources */,
 				B7B13F0929FBFE3400F79204 /* ListView.swift in Sources */,
 				B7B13F0F29FBFEFC00F79204 /* API_KEY.swift in Sources */,
-				B7A49FBC29FF0CE200114B70 /* AllInOneView.swift in Sources */,
 				B7259D912A01411C005539A9 /* HeadlineTextView.swift in Sources */,
 				B7B13F0C29FBFE3400F79204 /* FavoritenView.swift in Sources */,
 				B7B13EF529FBFDE000F79204 /* MeTubeModel.swift in Sources */,
