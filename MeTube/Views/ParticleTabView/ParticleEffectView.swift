@@ -54,7 +54,7 @@ struct ParticleEffectView: View {
                 }
                 
                 // Navigation Search
-                NavigationLink(destination: SearchView(viewModel: viewModel,input: $input, isSheetOpen: $isSheetOpen, searchTerm: $input), isActive: $shouldNavigate){
+                NavigationLink(destination: SearchView(viewModel: viewModel, input: $input, isSheetOpen: $isSheetOpen, searchTerm: $input), isActive: $shouldNavigate){
                     if isEnabled[2] {
                         CustomButton(systemImage: "sparkle.magnifyingglass", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
                             // Action ->

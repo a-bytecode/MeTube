@@ -25,8 +25,7 @@ struct SearchTextFieldView: View {
                 TextField("Search", text: $input)
                     .frame(width: .infinity, height: 40)
                     .foregroundColor(Color.white)
-                    .padding(20)
-               
+                    .padding(20)               
             }            
         }
     }

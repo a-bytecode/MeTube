@@ -7,14 +7,17 @@
 
 import SwiftUI
 import GoogleAPIClientForREST_YouTube
+import YouTubePlayerKit
 
 struct ImageView: View {
     
     let video : GTLRYouTube_SearchResult
     @ObservedObject var viewModel : MeTubeViewModel
+    @State private var player: YouTubePlayer = YouTubePlayer()
+//    let urlSource: YouTubePlayer.Source? = .url("https://youtube.com/watch?v=psL_5RIBqnY")
 
     var body: some View {
-        
+        NavigationLink(destination: PlayerView(youTubePlayer: viewModel.youTubePlayer,videoURL:video.identifier!.videoId!)) {
         ZStack {
             Rectangle()
                 .fill(LinearGradient(colors: [.yellow,.purple], startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -24,7 +27,6 @@ struct ImageView: View {
             
             HStack {
                 // AsyncImage wird benutzt um aus dem Internet von der URL das Bild zu ziehen.
-                NavigationLink(destination: PlayerView(youTubePlayer: viewModel.youTubePlayer)) {
                     AsyncImage(
                         url: URL(string: video.snippet!.thumbnails!.high!.url!),
                         // url: URL(string: "https://i.ytimg.com/vi/dMoFcvfd5t4/hqdefault.jpg"),
@@ -37,11 +39,12 @@ struct ImageView: View {
                                 .padding()
                         }).onTapGesture {
                             viewModel.playVideo(videoID: video.identifier!.videoId!)
+//                            viewModel.playVideoByURL(videoURL: urlSource)
+                            self.player = viewModel.youTubePlayer
                         }
                 }
             }
-        }
-        
+        }        
     }
 }
 
