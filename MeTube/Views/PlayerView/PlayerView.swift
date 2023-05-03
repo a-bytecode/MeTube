@@ -11,12 +11,7 @@ import YouTubePlayerKit
 
 struct PlayerView: View {
 
-    var youTubePlayer: YouTubePlayer // Binding nur bei Veränderungen verwenden der View verwenden.
-    var videoURL: String
-    
-    let youTubePlayerViewController = YouTubePlayerViewController(
-        player: "https://youtube.com/watch?v=psL_5RIBqnY"
-    )
+    var youTubePlayer: YouTubePlayer
     
     var body: some View {
         YouTubePlayerView(self.youTubePlayer) { state in
@@ -34,10 +29,10 @@ struct PlayerView: View {
     }
 }
 
-//
+
 //struct PlayerView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        PlayerView(youTubePlayer: YouTubePlayer(), videoURL: "https://youtube.com/watch?v=psL_5RIBqnY")
+//        PlayerView(youTubePlayer: )
 //    }
 //}
 

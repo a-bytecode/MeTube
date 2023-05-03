@@ -17,7 +17,7 @@ struct ImageView: View {
 //    let urlSource: YouTubePlayer.Source? = .url("https://youtube.com/watch?v=psL_5RIBqnY")
 
     var body: some View {
-        NavigationLink(destination: PlayerView(youTubePlayer: viewModel.youTubePlayer,videoURL:video.identifier!.videoId!)) {
+        NavigationLink(destination: PlayerView(youTubePlayer: viewModel.youTubePlayer)) {
         ZStack {
             Rectangle()
                 .fill(LinearGradient(colors: [.yellow,.purple], startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -38,8 +38,8 @@ struct ImageView: View {
                                 .frame(width: 350, height: 300)
                                 .padding()
                         }).onTapGesture {
-                            viewModel.playVideo(videoID: video.identifier!.videoId!)
-//                            viewModel.playVideoByURL(videoURL: urlSource)
+//                            viewModel.playVideo(videoID: video.identifier!.videoId!)
+                            viewModel.playVideoByURL(videoURL: "https://youtube.com/watch?v=psL_5RIBqnY")
                             self.player = viewModel.youTubePlayer
                         }
                 }
