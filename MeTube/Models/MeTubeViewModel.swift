@@ -7,12 +7,16 @@
 
 import Foundation
 import GoogleAPIClientForREST_YouTube // Import durch Cocoapods
+import YouTubePlayerKit
 
 class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycodesofficial.medium.com/creating-a-youtube-interface-with-swiftui-using-youtube-api-df616e099726
 //
     let secretKey: String = apiKey
 
     @Published var videos: [GTLRYouTube_SearchResult] = []
+    
+    @Published var youTubePlayer: YouTubePlayer = YouTubePlayer()
+
 
     func fetchVideos(term: String) {
 
@@ -31,6 +35,17 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
             self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
             print(self.videos[0])
         }
+    }
+    
+    func playVideo(videoID: String) {
+        
+        let youTubePlayer = YouTubePlayer(
+            source: .video(id: videoID),
+            configuration: .init(
+                autoPlay: true
+            )
+        )
+        youTubePlayer.play()
     }
 }
 

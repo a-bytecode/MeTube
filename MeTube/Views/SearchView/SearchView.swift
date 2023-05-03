@@ -60,7 +60,7 @@ struct SearchView: View {
                 
                 // Listenansicht
                 ListView(viewModel: viewModel, inputText: $searchTerm)
-                    .offset(x: 0 , y: 238)
+                    .offset(x: 0 , y: 235)
                 
                 // Custom TabView
                 ParticleEffectView(isEnabled: [true, true, false], navigate: $isSheetOpen)

@@ -13,8 +13,6 @@ struct ListView: View {
     
     @ObservedObject var viewModel : MeTubeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
-
-    
     @Binding var inputText : String
     
     var body: some View {
@@ -28,9 +26,8 @@ struct ListView: View {
                 ScrollView {
                     ForEach(viewModel.videos, id: \.self) { video in
 
-                            CardView(video: video)
-//                        CardView()
-
+                        CardView(video: video, viewModel: viewModel)
+            
                     }
 //                    CardView()
 //                    CardView()
