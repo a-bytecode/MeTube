@@ -26,16 +26,16 @@ struct ListView: View {
             ZStack {
                 
                 ScrollView {
-//                    ForEach(viewModel.videos, id: \.self) { video in
-//
-////                            CardView(video: video)
+                    ForEach(viewModel.videos, id: \.self) { video in
+
+                            CardView(video: video)
 //                        CardView()
-//
-//                    }
-                    CardView()
-                    CardView()
-                    CardView()
-                    CardView()
+
+                    }
+//                    CardView()
+//                    CardView()
+//                    CardView()
+//                    CardView()
                 }
             }
             .edgesIgnoringSafeArea(.all)

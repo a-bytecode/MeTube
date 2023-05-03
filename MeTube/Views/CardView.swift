@@ -10,13 +10,13 @@ import GoogleAPIClientForREST_YouTube
 
 struct CardView: View {
     
-//    let video : GTLRYouTube_SearchResult
+    let video : GTLRYouTube_SearchResult
     
     var body: some View {
         
         VStack(alignment: .leading) {
-            ImageView()
-            TitelView()
+            ImageView(video: video)
+            TitelView(video: video)
 
         }
         

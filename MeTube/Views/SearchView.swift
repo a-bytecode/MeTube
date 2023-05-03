@@ -14,7 +14,7 @@ struct SearchView: View {
     @ObservedObject var viewModel : MeTubeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
     
-    @State var input : String = ""
+    @Binding var input : String
     @Binding var isSheetOpen : Bool
     @Binding var searchTerm : String
     
@@ -38,13 +38,12 @@ struct SearchView: View {
                         Text("Loading...")
                     }
                 
-                SearchTextFieldView()
+                SearchTextFieldView(input: $input)
                     .offset(x: 0,y: -300)
                     .padding()
                 
                     Button(action: {
-                        //viewModel.fetchVideos(term: input)
-                        //isSheetOpen.toggle()
+                        viewModel.fetchVideos(term: input)
                     }, label: {
                         ZStack {
                             Text("Search...")
@@ -60,7 +59,7 @@ struct SearchView: View {
                     }).offset(x: 0,y: -220)
                 
                 // Listenansicht
-                ListView(viewModel: viewModel, inputText: $input)
+                ListView(viewModel: viewModel, inputText: $searchTerm)
                     .offset(x: 0 , y: 238)
                 
                 // Custom TabView
@@ -82,6 +81,6 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(viewModel: MeTubeViewModel(), input: "Search", isSheetOpen: .constant(false), searchTerm: .constant("search"))
+        SearchView(viewModel: MeTubeViewModel(), input: .constant(""),isSheetOpen: .constant(false), searchTerm: .constant(""))
     }
 }

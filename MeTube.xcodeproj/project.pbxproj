@@ -135,6 +135,7 @@
 				B7D5BBBF29FBF9B9001BB3D6 /* MeTubeView.swift */,
 				B7259D902A01411C005539A9 /* HeadlineTextView.swift */,
 				B7259D922A0144C9005539A9 /* LastSearchView.swift */,
+				B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,11 +167,10 @@
 		B7D5BBB029FBF978001BB3D6 /* MeTube */ = {
 			isa = PBXGroup;
 			children = (
-				B7B13F0D29FBFEFC00F79204 /* Secret */,
-				B7B13EFA29FBFE3400F79204 /* Views */,
 				B7B13EF729FBFDF200F79204 /* SplashScreen */,
+				B7B13F0D29FBFEFC00F79204 /* Secret */,
 				B7B13EEF29FBFDE000F79204 /* Models */,
-				B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */,
+				B7B13EFA29FBFE3400F79204 /* Views */,
 				B7D5BBB529FBF979001BB3D6 /* Assets.xcassets */,
 				B7D5BBB729FBF979001BB3D6 /* Preview Content */,
 			);

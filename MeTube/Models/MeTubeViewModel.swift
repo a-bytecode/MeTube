@@ -29,7 +29,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
         service.executeQuery(query) { (ticket, response, error) in
         if let error = error { print("Connection Error") } else {
             self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
-//            print(self.videos[0])
+            print(self.videos[0])
         }
     }
 }

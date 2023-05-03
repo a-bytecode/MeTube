@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SearchTextFieldView: View {
     
-    @State var input : String = ""
+
+    @Binding var input : String
     
     var body: some View {
         VStack(alignment: .trailing) {
@@ -33,6 +34,6 @@ struct SearchTextFieldView: View {
 
 struct SearchTextFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchTextFieldView()
+        SearchTextFieldView(input: .constant(""))
     }
 }

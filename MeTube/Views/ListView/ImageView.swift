@@ -10,7 +10,7 @@ import GoogleAPIClientForREST_YouTube
 
 struct ImageView: View {
     
-//    let video : GTLRYouTube_SearchResult
+    let video : GTLRYouTube_SearchResult
 
     var body: some View {
         
@@ -24,8 +24,8 @@ struct ImageView: View {
             HStack {
                 // AsyncImage wird benutzt um aus dem Internet von der URL das Bild zu ziehen.
                 AsyncImage(
-//                      url: URL(string: video.snippet!.thumbnails!.high!.url!),
-                    url: URL(string: "https://i.ytimg.com/vi/dMoFcvfd5t4/hqdefault.jpg"),
+                      url: URL(string: video.snippet!.thumbnails!.high!.url!),
+//                    url: URL(string: "https://i.ytimg.com/vi/dMoFcvfd5t4/hqdefault.jpg"),
                     content: { image in
                         image.image?
                             .resizable()
@@ -40,8 +40,8 @@ struct ImageView: View {
     }
 }
 
-struct ImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageView()
-    }
-}
+//struct ImageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ImageView()
+//    }
+//}
