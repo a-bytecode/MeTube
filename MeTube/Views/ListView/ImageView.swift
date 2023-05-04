@@ -14,23 +14,21 @@ struct ImageView: View {
     let video : GTLRYouTube_SearchResult
     @ObservedObject var viewModel : MeTubeViewModel
     @State private var player: YouTubePlayer = YouTubePlayer()
+    
 //    let urlSource: YouTubePlayer.Source? = .url("https://youtube.com/watch?v=psL_5RIBqnY")
 //
-    func getPlayerViewByURL(URL: String) -> PlayerView {
+    func getPlayerViewByURL(videoID: String) -> PlayerView {
         
-//        viewModel.playVideoByURL(videoURL: URL)
-//        return PlayerView(youTubePlayer: viewModel.youTubePlayer)
         return PlayerView(youTubePlayer: YouTubePlayer(
-            source: .url(URL),
+            source: .url("https://youtube.com/watch?v=\(videoID)"),
             configuration: .init(
                 autoPlay: true
             )
         ))
-        
     }
 
     var body: some View {
-        NavigationLink(destination: getPlayerViewByURL(URL: "https://youtube.com/watch?v=psL_5RIBqnY")) {
+        NavigationLink(destination: getPlayerViewByURL(videoID: video.identifier?.videoId ?? "Error")) {
         ZStack {
             Rectangle()
                 .fill(LinearGradient(colors: [.yellow,.purple], startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -51,10 +49,8 @@ struct ImageView: View {
                                 .frame(width: 350, height: 300)
                                 .padding()
                         })
-//                            viewModel.playVideo(videoID: video.identifier!.videoId!)
 //                            viewModel.playVideoByURL(videoURL: "https://youtube.com/watch?\(video.identifier!.videoId!)")
 //                            self.player = viewModel.youTubePlayer
-                        
                 }
             }
         }        
