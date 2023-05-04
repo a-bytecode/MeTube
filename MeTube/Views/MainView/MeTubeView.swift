@@ -25,30 +25,34 @@ struct MeTubeView: View {
         
         NavigationStack {
             
+            ZStack {
+                
+                if let image = settingsViewModel.animatedImage {
+                FLAnimatedImageViewWrapper(image: image)
+                    .frame(width: 100.0, height: .infinity)
+                
+            } else {
+                Text("Loading...")
+                    .font(.title3)
+            }
+                
             VStack {
-
-                ZStack {
-                    
-                    if let image = settingsViewModel.animatedImage {
-                        FLAnimatedImageViewWrapper(image: image)
-                            .frame(width: 100.0, height: .infinity)
-                        
-                    } else {
-                        Text("Loading...")
-                            .font(.title3)
-                    }
-
+                Spacer()
+                    .frame(height: 80)
                     ListView(viewModel: viewModel, inputText: $searchTerm)
                         .frame(width: .infinity, height: 600)
+                Spacer()
+                    .frame(height: 20)
                     ParticleEffectView(navigate: $isSheetOpen)
-                        .offset(x: 0,y: 360)
-                }
+               
+
+            }
                 .onAppear {
                     viewModel.fetchVideos(term: searchTerm)
                     settingsViewModel.loadAnimatedImage(from: url)
                 }
-                .edgesIgnoringSafeArea(.all)
             }
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }

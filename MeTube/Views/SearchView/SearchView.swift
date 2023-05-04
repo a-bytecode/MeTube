@@ -39,7 +39,9 @@ struct SearchView: View {
                 }
                 
                 VStack {
-//                    Spacer()
+                        Spacer()
+                        .frame(height: 90)
+
                 SearchTextFieldView(input: $input)
                         .padding([.leading,.trailing])
                 
@@ -60,17 +62,18 @@ struct SearchView: View {
                         .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
                     })
                     Spacer()
-                        .frame(height: 20)
+                        .frame(height: 12)
 
                 // Listenansicht
                 ListView(viewModel: viewModel, inputText: $searchTerm)
-                    .frame(width: .infinity, height: 500)
-//                    Spacer()
-//                        .frame(height: 30)
+//                    .frame(width: .infinity, height: 300)
+                    Spacer()
+                        .frame(height: 20)
                 
                 // Custom TabView
                 ParticleEffectView(isEnabled: [true, true, false], navigate: $isSheetOpen)
-                    
+                    Spacer()
+                        .frame(height: 30)
                             .onAppear {
                                 settingsViewModel.loadAnimatedImage(from: url)
                             }
