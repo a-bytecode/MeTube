@@ -17,7 +17,9 @@ struct MeTubeView: View {
     @State private var isEditing = false
     @State private var isSheetOpen = false
     @State private var searchTerm = ""
-    let url = URL(string: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdkMGZkMGYwMWMyOWUyMjUzYjJiODViZjYxZjgyODE5ZjcyNjI1MSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/fx1XmI9CAxwQ8XWSuB/giphy.gif")!
+    let url = URL(string: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTA5Mjg3ZDRjYWQyMTIyZDYzMjFlM2IxNGI2ZTc5NWZiOGVlZjQyYyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/loFCCDeZR3S8qov02A/giphy.gif")!
+    
+    //"https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdkMGZkMGYwMWMyOWUyMjUzYjJiODViZjYxZjgyODE5ZjcyNjI1MSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/fx1XmI9CAxwQ8XWSuB/giphy.gif"
    
     var body: some View {
         
@@ -37,6 +39,7 @@ struct MeTubeView: View {
                     }
 
                     ListView(viewModel: viewModel, inputText: $searchTerm)
+                        .frame(width: .infinity, height: 600)
                     ParticleEffectView(navigate: $isSheetOpen)
                         .offset(x: 0,y: 360)
                 }
@@ -44,7 +47,6 @@ struct MeTubeView: View {
                     viewModel.fetchVideos(term: searchTerm)
                     settingsViewModel.loadAnimatedImage(from: url)
                 }
-                
                 .edgesIgnoringSafeArea(.all)
             }
         }

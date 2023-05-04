@@ -11,9 +11,9 @@ import YouTubePlayerKit
 
 struct ImageView: View {
     
-    let video : GTLRYouTube_SearchResult
-    @ObservedObject var viewModel : MeTubeViewModel
-    @State private var player: YouTubePlayer = YouTubePlayer()
+//    let video : GTLRYouTube_SearchResult
+//    @ObservedObject var viewModel : MeTubeViewModel
+//    @State private var player: YouTubePlayer = YouTubePlayer()
     
 //    let urlSource: YouTubePlayer.Source? = .url("https://youtube.com/watch?v=psL_5RIBqnY")
 //
@@ -28,7 +28,7 @@ struct ImageView: View {
     }
 
     var body: some View {
-        NavigationLink(destination: getPlayerViewByURL(videoID: video.identifier?.videoId ?? "Error")) {
+//        NavigationLink(destination: getPlayerViewByURL(videoID: video.identifier?.videoId ?? "Error")) {
         ZStack {
             Rectangle()
                 .fill(LinearGradient(colors: [.yellow,.purple], startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -39,8 +39,8 @@ struct ImageView: View {
             HStack {
                 // AsyncImage wird benutzt um aus dem Internet von der URL das Bild zu ziehen.
                     AsyncImage(
-                        url: URL(string: video.snippet!.thumbnails!.high!.url!),
-                        // url: URL(string: "https://i.ytimg.com/vi/dMoFcvfd5t4/hqdefault.jpg"),
+//                        url: URL(string: video.snippet!.thumbnails!.high!.url!),
+                         url: URL(string: "https://i.ytimg.com/vi/dMoFcvfd5t4/hqdefault.jpg"),
                         content: { image in
                             image.image?
                                 .resizable()
@@ -53,7 +53,7 @@ struct ImageView: View {
 //                            self.player = viewModel.youTubePlayer
                 }
             }
-        }        
+//        }
     }
 }
 

@@ -27,20 +27,22 @@ struct SearchView: View {
 
     var body: some View {
         
-        VStack {
+       
             ZStack {
-                    
-                    if let image = settingsViewModel.animatedImage {
-                        FLAnimatedImageViewWrapper(image: image)
-                            .frame(width: 100.0, height: .infinity)
-                        
-                    } else {
-                        Text("Loading...")
-                    }
                 
+                if let image = settingsViewModel.animatedImage {
+                    FLAnimatedImageViewWrapper(image: image)
+                        .frame(width: 100.0, height: .infinity)
+                    
+                } else {
+                    Text("Loading...")
+                }
+                
+                VStack {
+//                    Spacer()
                 SearchTextFieldView(input: $input)
-                    .offset(x: 0,y: -300)
-                    .padding()
+                        .padding([.leading,.trailing])
+                
                 
                     Button(action: {
                         viewModel.fetchVideos(term: input)
@@ -50,32 +52,32 @@ struct SearchView: View {
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
-                                .padding(20)
+                                .padding([.leading,.trailing],20)
                             .cornerRadius(20)}
                         .frame(width: 325,height: 20)
-                        .padding()
+                        .padding([.top,.bottom])
                         .background(Capsule().fill(Color.black).padding(-1))
                         .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
-                    }).offset(x: 0,y: -220)
-                
+                    })
+                    Spacer()
+                        .frame(height: 20)
+
                 // Listenansicht
                 ListView(viewModel: viewModel, inputText: $searchTerm)
-                    .offset(x: 0 , y: 235)
+                    .frame(width: .infinity, height: 500)
+//                    Spacer()
+//                        .frame(height: 30)
                 
                 // Custom TabView
                 ParticleEffectView(isEnabled: [true, true, false], navigate: $isSheetOpen)
-                            .offset(x: 0,y: 360)
+                    
                             .onAppear {
                                 settingsViewModel.loadAnimatedImage(from: url)
                             }
             }
-            .edgesIgnoringSafeArea(.all)
-
-               
-                           
 
         }
-        
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
