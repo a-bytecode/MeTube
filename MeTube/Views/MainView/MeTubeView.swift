@@ -37,15 +37,17 @@ struct MeTubeView: View {
             }
                 
             VStack {
+                
                 Spacer()
                     .frame(height: 80)
                     ListView(viewModel: viewModel, inputText: $searchTerm)
                         .frame(width: .infinity, height: 600)
+                
                 Spacer()
                     .frame(height: 20)
                     ParticleEffectView(navigate: $isSheetOpen)
-               
-
+                
+                    
             }
                 .onAppear {
                     viewModel.fetchVideos(term: searchTerm)
