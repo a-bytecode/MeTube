@@ -29,13 +29,13 @@ struct PlayerView: View {
                 Text("Loading...")
             }
             Rectangle()
-                .fill(LinearGradient(colors: [.black,.black], startPoint: .topLeading, endPoint: .bottomTrailing))
-                .frame(width: 400, height: 390)
-                .overlay(Rectangle().stroke(gradientFill, lineWidth: 5))
+                .fill(LinearGradient(colors: [.black,.black], startPoint: .bottomLeading, endPoint: .topTrailing))
+                .frame(width: 400, height: 340)
+                .overlay(Rectangle().stroke(gradientFill, lineWidth: 6))
                 .shadow(radius: 5, x: 2,y: 5)
             VStack {
-         
-                
+                Spacer()
+                    .frame(height: 100)
                 YouTubePlayerView(self.youTubePlayer) { state in
                     // Overlay ViewBuilder closure to place an overlay View
                     // for the current `YouTubePlayer.State`
@@ -48,8 +48,10 @@ struct PlayerView: View {
                         Text(verbatim: "YouTube player couldn't be loaded")
                     }
                 }
-                
-            }.frame(height: 300)
+                Spacer()
+                    .frame(height: 100)
+            }.frame(height: 500)
+           
                 .onAppear {
                settingsViewModel.loadAnimatedImage(from: url)
                }
@@ -65,7 +67,7 @@ struct PlayerView_Previews: PreviewProvider {
             autoPlay: true
         )
     )
-//    youTubePlayer.play()
+
     static var previews: some View {
         PlayerView(youTubePlayer: youTubePlayer)
     }
