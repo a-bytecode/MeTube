@@ -33,7 +33,7 @@ struct ImageView: View {
             Rectangle()
                 .fill(LinearGradient(colors: [.yellow,.green], startPoint: .topLeading, endPoint: .bottomTrailing))
                 .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
-                .frame(width: 400, height: 340)
+                .frame(width: 400, height: 310)
                 .shadow(radius: 5, x: 2,y: 5)
             
             HStack {

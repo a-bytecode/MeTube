@@ -24,7 +24,7 @@ struct CardView: View {
                 TitelView()
                     .offset(y: -29)
                 FavoriteButton()
-                    .offset(x:160,y: -83.1)
+                    .offset(x:160,y: -83)
                 
             }
         }

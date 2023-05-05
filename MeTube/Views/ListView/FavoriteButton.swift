@@ -34,6 +34,7 @@ struct FavoriteButton: View {
                     .scaleEffect(pulseAmount)
                     .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: pulseAmount)
                     .offset(y:-1)
+                    .shadow(radius: 4,x: 3,y: 3)
 
                     .onAppear {
                         pulseAmount = 1.5
@@ -41,10 +42,11 @@ struct FavoriteButton: View {
 
             } else {
                 Rectangle()
-                    .fill(Color.indigo)
+                    .fill(Color.blue)
                     .frame(width: 40,height: 40)
                     .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
                     .offset(y:-1)
+                    .shadow(radius: 4,x: 3,y: 3)
             }
             Button(action: {
                 // Action für das Favorisieren
@@ -67,6 +69,7 @@ struct FavoriteButton: View {
                 
             }
         }
+        
 //            .onAppear {
 //                settingsViewModel.loadAnimatedImage(from: url!)
 //            }
