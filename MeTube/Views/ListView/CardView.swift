@@ -15,21 +15,23 @@ struct CardView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+        VStack() {
 //            ImageView(video: video, viewModel: viewModel)
-            ImageView()
+           
 //            TitelView(video: video)
+            ImageView()
             TitelView()
+                
 
         }
         
     }
 }
 
-//struct CardView_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        CardView()
-//    }
-//}
+struct CardView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        CardView()
+    }
+}
 
