@@ -69,11 +69,6 @@ struct FavoriteButton: View {
                 
             }
         }
-        
-//            .onAppear {
-//                settingsViewModel.loadAnimatedImage(from: url!)
-//            }
-        
     }
 }
 

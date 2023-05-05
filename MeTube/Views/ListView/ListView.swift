@@ -24,22 +24,20 @@ struct ListView: View {
             ZStack {
                 
                 ScrollView {
-//                    ForEach(viewModel.videos, id: \.self) { video in
-//
-//                        CardView(video: video, viewModel: viewModel)
-//
-//                    }
-                    CardView()
-                    CardView()
-                    CardView()
-                    CardView()
+                    ForEach(viewModel.videos, id: \.self) { video in
+
+                        CardView(video: video, viewModel: viewModel)
+
+                    }
+                    // -> Placeolder****
+//                    CardView()
+//                    CardView()
+//                    CardView()
+//                    CardView()
+                    // -> Placeolder****
                 }
             }
-            .onAppear {
-                viewModel.fetchVideos(term: "Eminem")
-    //            settingsViewModel.loadAnimatedImage(from: url)
-            }
-//            .edgesIgnoringSafeArea(.all)
+            .edgesIgnoringSafeArea(.all)
         }
         
         

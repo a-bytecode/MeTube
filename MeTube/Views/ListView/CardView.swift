@@ -10,18 +10,21 @@ import GoogleAPIClientForREST_YouTube
 
 struct CardView: View {
     
-//    let video : GTLRYouTube_SearchResult
-//    @ObservedObject var viewModel : MeTubeViewModel
+    let video : GTLRYouTube_SearchResult
+    @ObservedObject var viewModel : MeTubeViewModel
     
     var body: some View {
         
         ZStack {
             VStack() {
-                //            ImageView(video: video, viewModel: viewModel)
                 
-                //            TitelView(video: video)
-                ImageView()
-                TitelView()
+                // -> Placeholder ****
+//                ImageView()
+//                TitelView()
+//                    .offset(y: -29)
+                // -> Placeholder ****
+                ImageView(video: video, viewModel: viewModel)
+                TitelView(video: video)
                     .offset(y: -29)
                 FavoriteButton()
                     .offset(x:160,y: -83)
@@ -31,10 +34,10 @@ struct CardView: View {
     }
 }
 
-struct CardView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        CardView()
-    }
-}
+//struct CardView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        CardView()
+//    }
+//}
 

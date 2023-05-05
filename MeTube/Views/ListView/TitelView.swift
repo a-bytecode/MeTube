@@ -10,7 +10,7 @@ import GoogleAPIClientForREST_YouTube
 
 struct TitelView: View {
     
-//    let video : GTLRYouTube_SearchResult
+    let video : GTLRYouTube_SearchResult
     
     var body: some View {
         
@@ -23,7 +23,11 @@ struct TitelView: View {
             
             HStack() {
                 
-                Text("Peanut Butter Cookie Fudge Bars - Dished #Shorts")
+                // -> Placeholder***
+//                Text("Peanut Butter Cookie Fudge Bars - Dished #Shorts")
+                //-> Placeholder***
+                
+                Text(video.snippet!.title ?? "Error")
                     .font(.system(size: 22))
                     .bold()
                     .lineLimit(4)
@@ -34,8 +38,8 @@ struct TitelView: View {
     }
 }
 
-struct TitelView_Previews: PreviewProvider {
-    static var previews: some View {
-        TitelView()
-    }
-}
+//struct TitelView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TitelView()
+//    }
+//}

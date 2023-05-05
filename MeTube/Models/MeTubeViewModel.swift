@@ -35,6 +35,30 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
             self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
 //            print(self.videos[0])
         }
+
+    }
+    
+    func playVideo(videoID: String) {
+        
+        let youTubePlayer = YouTubePlayer(
+            source: .video(id: videoID),
+            configuration: .init(
+                autoPlay: true
+            )
+        )
+//        youTubePlayer.play()
+    }
+    
+    func playVideoByURL(videoURL: String) {
+        
+        let youTubePlayer = YouTubePlayer(
+            source: .url(videoURL),
+            configuration: .init(
+                autoPlay: true
+            )
+        )
+//        youTubePlayer.play()
+            
     }
     
 }
