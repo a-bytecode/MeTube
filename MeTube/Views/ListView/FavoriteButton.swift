@@ -12,51 +12,53 @@ struct FavoriteButton: View {
     
     @StateObject var settingsViewModel = SettingsViewModel()
     @State var isFav = false
-    @State var gradient = LinearGradient(colors: [.red,.black], startPoint: .topLeading, endPoint: .bottomTrailing)
+    @State var gradient = LinearGradient(colors: [.blue,.blue,.black], startPoint: .topLeading, endPoint: .bottomTrailing)
+    @State private var animationAmount = 1.0
+    @State private var isRotating = 0.0
+    @State var duration: Double = 3.0
+    @State private var pulseAmount = 1.0
+    @State var autoreverses = false
+
+    
     @State var url = URL(string: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTA5Mjg3ZDRjYWQyMTIyZDYzMjFlM2IxNGI2ZTc5NWZiOGVlZjQyYyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/loFCCDeZR3S8qov02A/giphy.gif")
   
     var body: some View {
         
         ZStack {
             
-            if let image = settingsViewModel.animatedImage {
-                FLAnimatedImageViewWrapper(image: image)
-                    
-                
+            if isFav == true {
                 Rectangle()
-                    .fill()
                     .frame(width: 40,height: 40)
                     .foregroundColor(Color.blue)
                     .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
+                    .scaleEffect(pulseAmount)
+                    .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: pulseAmount)
                     .offset(y:-1)
-                
+
+                    .onAppear {
+                        pulseAmount = 1.5
+                    }
+
             } else {
                 Rectangle()
-                    .fill(gradient)
+                    .fill(Color.indigo)
                     .frame(width: 40,height: 40)
-                    .foregroundColor(Color.blue)
                     .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
                     .offset(y:-1)
-                Text("Aaaaaaaaaaaaaaaa")
             }
-            
-            
-            
-            
-            
-            
             Button(action: {
                 // Action für das Favorisieren
                 isFav.toggle()
             }) {
                 if isFav == true {
+                    
                     Image(systemName: "heart.fill")
                         .resizable()
                         .frame(width: 25, height: 20)
                         .foregroundColor(Color.yellow)
                     
                 } else {
-                    Image(systemName: "heart.slash.fill")
+                    Image(systemName: "heart.fill")
                         .resizable()
                         .frame(width: 25, height: 20)
                         .foregroundColor(Color.yellow)
@@ -65,9 +67,9 @@ struct FavoriteButton: View {
                 
             }
         }
-            .onAppear {
-                settingsViewModel.loadAnimatedImage(from: url!)
-            }
+//            .onAppear {
+//                settingsViewModel.loadAnimatedImage(from: url!)
+//            }
         
     }
 }
