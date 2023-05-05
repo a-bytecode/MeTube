@@ -19,50 +19,53 @@ struct PlayerView: View {
     
     var body: some View {
         
-        ZStack {
-            
-            if let image = settingsViewModel.animatedImage {
-                FLAnimatedImageViewWrapper(image: image)
-                    .frame(width: 100.0, height: .infinity)
+            ZStack(alignment: .top){
                 
-            } else {
-                Text("Loading...")
-            }
-            Rectangle()
-                .fill(LinearGradient(colors: [.black,.black], startPoint: .bottomLeading, endPoint: .topTrailing))
-                .frame(width: 400, height: 340)
-                .overlay(Rectangle().stroke(gradientFill, lineWidth: 6))
-                .shadow(radius: 5, x: 2,y: 5)
-            VStack {
-                Spacer()
-                    .frame(height: 100)
-                YouTubePlayerView(self.youTubePlayer) { state in
-                    // Overlay ViewBuilder closure to place an overlay View
-                    // for the current `YouTubePlayer.State`
-                    switch state {
-                    case .idle:
-                        ProgressView()
-                    case .ready:
-                        EmptyView()
-                    case .error(let error):
-                        Text(verbatim: "YouTube player couldn't be loaded")
-                    }
+                if let image = settingsViewModel.animatedImage {
+                    FLAnimatedImageViewWrapper(image: image)
+                        .frame(width: 100.0, height: .infinity)
+                    
+                } else {
+                    Text("Loading...")
                 }
-                Spacer()
-                    .frame(height: 100)
-            }.frame(height: 500)
-           
+                Rectangle()
+                    .fill(LinearGradient(colors: [.black,.black], startPoint: .bottomLeading, endPoint: .topTrailing))
+                    .frame(width: 400, height: 340)
+                    .overlay(Rectangle().stroke(gradientFill, lineWidth: 6))
+                    .shadow(radius: 5, x: 2,y: 5)
+                VStack(alignment: .trailing){
+                    //                Spacer()
+                    //                    .frame(height: 100)
+                    YouTubePlayerView(self.youTubePlayer) { state in
+                        // Overlay ViewBuilder closure to place an overlay View
+                        // for the current `YouTubePlayer.State`
+                        switch state {
+                        case .idle:
+                            ProgressView()
+                        case .ready:
+                            EmptyView()
+                        case .error(let error):
+                            Text(verbatim: "YouTube player couldn't be loaded")
+                        }
+                    }.frame(width: 500,height: 400)
+                        .padding()
+                }
+                
                 .onAppear {
-               settingsViewModel.loadAnimatedImage(from: url)
-               }
+                    settingsViewModel.loadAnimatedImage(from: url)
+                }
+                
+            }
+            .edgesIgnoringSafeArea(.all)
+            
         }
-        .edgesIgnoringSafeArea(.all)
+        
     }
-}
+
 
 struct PlayerView_Previews: PreviewProvider {
     static var youTubePlayer = YouTubePlayer(
-        source: .url("https://www.youtube.com/watch?v=ynxVs2aB80M"),
+        source: .url(""),
         configuration: .init(
             autoPlay: true
         )

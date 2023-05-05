@@ -19,7 +19,7 @@ struct SearchTextFieldView: View {
                     .fill(Color.black)
                     .frame(height: 50)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.white, lineWidth: 2)
                     )
                 TextField("Search", text: $input)

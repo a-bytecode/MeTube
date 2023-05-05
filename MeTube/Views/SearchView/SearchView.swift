@@ -17,6 +17,14 @@ struct SearchView: View {
     @Binding var input : String
     @Binding var isSheetOpen : Bool
     @Binding var searchTerm : String
+    @State private var animationAmount = 1.0
+    @State private var isRotating = 0.0
+    @State var duration: Double = 3.0
+    @State private var pulseAmount = 1.0
+    @State var autoreverses = false
+    @State var isClicked = false
+    @State var repeatCount = 1
+    @State var scale = 1.0
     
     let url = URL(string: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTA5Mjg3ZDRjYWQyMTIyZDYzMjFlM2IxNGI2ZTc5NWZiOGVlZjQyYyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/loFCCDeZR3S8qov02A/giphy.gif")!
     
@@ -45,22 +53,59 @@ struct SearchView: View {
                 SearchTextFieldView(input: $input)
                         .padding([.leading,.trailing])
                 
-                
-                    Button(action: {
-                        viewModel.fetchVideos(term: input)
-                    }, label: {
-                        ZStack {
-                            Text("Search...")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .padding([.leading,.trailing],20)
-                            .cornerRadius(20)}
-                        .frame(width: 325,height: 20)
-                        .padding([.top,.bottom])
-                        .background(Capsule().fill(Color.black).padding(-1))
-                        .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
-                    })
+                    if isClicked {
+                        Button(action: {
+                            viewModel.fetchVideos(term: input)
+                            
+                        }, label: {
+                            
+                            ZStack {
+                                Text("Search...")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .padding([.leading,.trailing],20)
+                                    .cornerRadius(20)
+                            }
+                            .frame(width: 325,height: 20)
+                            .padding([.top,.bottom])
+                            .background(Capsule().fill(Color.black).padding(-1))
+                            .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
+                            .scaleEffect(scale)
+                            .animation(.spring(), value: isClicked)
+                            .onAppear{
+                                isClicked = false
+                                withAnimation {
+                                    scale = 1.0
+                                }
+                            }
+                        })
+                    } else {
+                        Button(action: {
+                            viewModel.fetchVideos(term: input)
+                            isClicked = true
+                            withAnimation {
+                                scale = 0.5
+                            }
+                        }, label: {
+                            
+                            ZStack {
+                                Text("Search...")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .padding([.leading,.trailing],20)
+                                    .cornerRadius(20)
+                            }
+                            .frame(width: 325,height: 20)
+                            .padding([.top,.bottom])
+                            .background(Capsule().fill(Color.black).padding(-1))
+                            .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
+                            .scaleEffect(scale)
+                            .animation(.spring(), value: isClicked)
+                        })
+                    }
+                    
                     Spacer()
                         .frame(height: 12)
 
