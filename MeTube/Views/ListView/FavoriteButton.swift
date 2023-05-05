@@ -12,7 +12,7 @@ struct FavoriteButton: View {
     
     @StateObject var settingsViewModel = SettingsViewModel()
     @State var isFav = false
-    @State var gradient = LinearGradient(colors: [.blue,.blue,.black], startPoint: .topLeading, endPoint: .bottomTrailing)
+    @State var gradient = LinearGradient(colors: [.white,.black,.black], startPoint: .topLeading, endPoint: .bottomTrailing)
     @State private var animationAmount = 1.0
     @State private var isRotating = 0.0
     @State var duration: Double = 3.0
@@ -28,21 +28,21 @@ struct FavoriteButton: View {
             
             if isFav == true {
                 Rectangle()
+                    .fill(gradient)
                     .frame(width: 40,height: 40)
-                    .foregroundColor(Color.blue)
+//                    .foregroundColor(Color.blue)
                     .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
                     .scaleEffect(pulseAmount)
                     .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: pulseAmount)
                     .offset(y:-1)
                     .shadow(radius: 4,x: 3,y: 3)
-
                     .onAppear {
                         pulseAmount = 1.5
                     }
 
             } else {
                 Rectangle()
-                    .fill(Color.blue)
+                    .fill(gradient)
                     .frame(width: 40,height: 40)
                     .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
                     .offset(y:-1)
@@ -60,10 +60,10 @@ struct FavoriteButton: View {
                         .foregroundColor(Color.yellow)
                     
                 } else {
-                    Image(systemName: "heart.fill")
+                    Image(systemName: "checkmark")
                         .resizable()
-                        .frame(width: 25, height: 20)
-                        .foregroundColor(Color.pink)
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(Color.white)
                 }
                 
                 

@@ -14,8 +14,10 @@ struct PlayerView: View {
 
     @State var youTubePlayer: YouTubePlayer = YouTubePlayer()
     @StateObject var settingsViewModel = SettingsViewModel()
-    let url = URL(string: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTA5Mjg3ZDRjYWQyMTIyZDYzMjFlM2IxNGI2ZTc5NWZiOGVlZjQyYyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/loFCCDeZR3S8qov02A/giphy.gif")!
+    let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
     @State var gradientFill = LinearGradient(colors: [.green,.yellow], startPoint: .topLeading, endPoint: .bottomTrailing)
+    
+    //https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDhhYmEwZWY1MzU4MzU1NDhmNGI1NGNkOGY2M2EwYzg0NjE1MGEyYiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/LP62GF82YvcuOuFJRD/giphy.gif
     
     var body: some View {
         
@@ -23,7 +25,8 @@ struct PlayerView: View {
                 
                 if let image = settingsViewModel.animatedImage {
                     FLAnimatedImageViewWrapper(image: image)
-                        .frame(width: 100.0, height: .infinity)
+                        .frame(width: .infinity, height: .infinity)
+                    
                     
                 } else {
                     Text("Loading...")
@@ -68,7 +71,7 @@ struct PlayerView: View {
 
 struct PlayerView_Previews: PreviewProvider {
     static var youTubePlayer = YouTubePlayer(
-        source: .url(""),
+        source: .url("https://www.youtube.com/watch?v=aYYSlCa3xfw"),
         configuration: .init(
             autoPlay: true
         )
