@@ -15,16 +15,19 @@ struct CardView: View {
     
     var body: some View {
         
-        VStack() {
-//            ImageView(video: video, viewModel: viewModel)
-           
-//            TitelView(video: video)
-            ImageView()
-            TitelView()
+        ZStack {
+            VStack() {
+                //            ImageView(video: video, viewModel: viewModel)
                 
-
+                //            TitelView(video: video)
+                ImageView()
+                TitelView()
+                    .offset(y: -29)
+                FavoriteButton()
+                    .offset(x:170,y: -84)
+                
+            }
         }
-        
     }
 }
 

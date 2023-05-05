@@ -31,9 +31,9 @@ struct ImageView: View {
 //        NavigationLink(destination: getPlayerViewByURL(videoID: video.identifier?.videoId ?? "Error")) {
         ZStack {
             Rectangle()
-                .fill(LinearGradient(colors: [.yellow,.purple], startPoint: .topLeading, endPoint: .bottomTrailing))
+                .fill(LinearGradient(colors: [.yellow,.green], startPoint: .topLeading, endPoint: .bottomTrailing))
                 .overlay(Rectangle().stroke(Color.black, lineWidth: 2))
-                .frame(width: 400, height: 300)
+                .frame(width: 400, height: 340)
                 .shadow(radius: 5, x: 2,y: 5)
             
             HStack {
@@ -57,8 +57,8 @@ struct ImageView: View {
     }
 }
 
-//struct ImageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ImageView()
-//    }
-//}
+struct ImageView_Previews: PreviewProvider {
+    static var previews: some View {
+        ImageView()
+    }
+}

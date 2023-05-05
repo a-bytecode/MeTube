@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B7259D912A01411C005539A9 /* HeadlineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7259D902A01411C005539A9 /* HeadlineTextView.swift */; };
+		B737D8ED2A04F04500780F56 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737D8EC2A04F04500780F56 /* FavoriteButton.swift */; };
 		B7A49FB029FEE30800114B70 /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = B7A49FAF29FEE30800114B70 /* FLAnimatedImage */; };
 		B7A49FB429FEE92700114B70 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */; };
 		B7A49FB629FEF5A800114B70 /* ParticleEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB529FEF5A800114B70 /* ParticleEffectView.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		B7259D902A01411C005539A9 /* HeadlineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineTextView.swift; sourceTree = "<group>"; };
+		B737D8EC2A04F04500780F56 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		B7A49FB529FEF5A800114B70 /* ParticleEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleEffectView.swift; sourceTree = "<group>"; };
 		B7A49FB729FEF9CC00114B70 /* ParticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				B7B13EFD29FBFE3400F79204 /* TitelView.swift */,
 				B7B13EFF29FBFE3400F79204 /* CardView.swift */,
 				B7B13F0029FBFE3400F79204 /* ListView.swift */,
+				B737D8EC2A04F04500780F56 /* FavoriteButton.swift */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				B7B13F0B29FBFE3400F79204 /* ImageView.swift in Sources */,
 				B7B13EF929FBFDF200F79204 /* SplashView.swift in Sources */,
 				B7A49FB429FEE92700114B70 /* SettingsViewModel.swift in Sources */,
+				B737D8ED2A04F04500780F56 /* FavoriteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
