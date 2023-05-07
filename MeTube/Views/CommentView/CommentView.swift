@@ -6,33 +6,32 @@
 //
 
 import SwiftUI
+import GoogleAPIClientForREST_YouTube
 
 struct CommentView: View {
     
-    let comment: Comment
+//    let comment: GTLRYouTube_CommentSnippet
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(comment.author)
-                .font(.headline)
-            Text(comment.message)
-                .font(.body)
-            Text(comment.timestamp, style: .date)
-                .font(.caption)
-        }
-    }
-}
+        
+        ZStack {
+            
+            VStack {
+                
+                Text("Hallo, hier ist meine Nachricht!")
+                    .padding()
+                    .background(LinearGradient(colors: [.yellow,.green], startPoint: .topLeading, endPoint: .bottomTrailing))
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .circular))
+                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.black, lineWidth: 2))
 
-struct ContentView: View {
-    let comments = [        Comment(author: "Alice", message: "Hi, how are you?", timestamp: Date()),        Comment(author: "Bob", message: "I'm doing well, thanks for asking!", timestamp: Date()),        Comment(author: "Charlie", message: "Hey guys, what's up?", timestamp: Date())    ]
-    
-    var body: some View {
-        CommentsListView(comments: comments)
+                
+            }
+        }
     }
 }
 
 struct CommentView_Previews: PreviewProvider {
     static var previews: some View {
-        CommentView(comment: Comment(author: "Alice", message: "Hi, how are you?", timestamp: Date()))
+        CommentView()
     }
 }
