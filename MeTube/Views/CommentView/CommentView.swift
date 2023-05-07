@@ -20,7 +20,7 @@ struct CommentView: View {
                 // Placeholer****
 //                Text(comment.textOriginal ?? "Error")
                 // Placeholer****
-                Text("Hallo, hier ist meine Nachricht!")
+                Text("Hallo, hier ist meine Nachricht, ein kleiner Test wenn die nachricht länger ist als normal, was passiert dann ?!")
                     .padding()
                     .background(LinearGradient(colors: [.yellow,.green], startPoint: .topLeading, endPoint: .bottomTrailing))
                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .circular))

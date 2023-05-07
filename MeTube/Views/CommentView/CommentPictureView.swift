@@ -14,6 +14,7 @@ struct CommentPictureView: View {
         Image(systemName: "person.crop.rectangle")
             .resizable()
             .frame(width: 70, height: 60)
+            .foregroundColor(Color.black)
     }
     
 }

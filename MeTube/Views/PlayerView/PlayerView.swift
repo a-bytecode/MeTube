@@ -56,7 +56,9 @@ struct PlayerView: View {
                         }
                     }.frame(width: 400,height: 300)
                         .padding()
+
                 }
+                
                 .onAppear {
                     settingsViewModel.loadAnimatedImage(from: url)
                 }
