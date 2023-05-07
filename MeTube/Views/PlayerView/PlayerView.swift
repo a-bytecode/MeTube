@@ -34,14 +34,14 @@ struct PlayerView: View {
 
                 Rectangle()
                     .fill(gradientFill)
-                    .frame(width: 400, height: 322)
+                    .frame(width: 400, height: 323)
                     .overlay(Rectangle().stroke(.black, lineWidth: 2))
                     .shadow(radius: 5, x: 2,y: 5)
-                    .offset(y: 75)
+                    .offset(y: 100)
                 
                 VStack(alignment: .trailing){
-                                    Spacer()
-                        .frame(height: 70)
+                        Spacer()
+                        .frame(height: 96)
                        
                     YouTubePlayerView(self.youTubePlayer) { state in
                         // Overlay ViewBuilder closure to place an overlay View
@@ -71,11 +71,12 @@ struct PlayerView: View {
 
 struct PlayerView_Previews: PreviewProvider {
     static var youTubePlayer = YouTubePlayer(
-        source: .url("https://www.youtube.com/watch?v=aYYSlCa3xfw"),
+        source: .url(""),
         configuration: .init(
             autoPlay: true
         )
     )
+    //https://www.youtube.com/watch?v=aYYSlCa3xfw
 
     static var previews: some View {
         PlayerView(youTubePlayer: youTubePlayer)
