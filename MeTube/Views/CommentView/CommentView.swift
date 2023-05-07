@@ -17,14 +17,14 @@ struct CommentView: View {
         ZStack {
             
             VStack {
-                
+                // Placeholer****
+//                Text(comment.textOriginal ?? "Error")
+                // Placeholer****
                 Text("Hallo, hier ist meine Nachricht!")
                     .padding()
                     .background(LinearGradient(colors: [.yellow,.green], startPoint: .topLeading, endPoint: .bottomTrailing))
                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .circular))
                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.black, lineWidth: 2))
-
-                
             }
         }
     }
