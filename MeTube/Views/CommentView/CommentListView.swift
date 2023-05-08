@@ -13,29 +13,23 @@ struct CommentListView: View {
     
     
     @ObservedObject var viewModel: MeTubeViewModel
-    let videoID: String
     
     var body: some View {
         
         VStack {
             ScrollView(showsIndicators: false) {
-                ForEach(viewModel.comments, id: \.id) { comment in
-                    CommentView(comment: comment)
-                }
-            }
-            .onAppear {
-                viewModel.fetchComments(videoId: videoID) {
-                    if let comments = comments {
-                        viewModel.comments = comments
+                ForEach(viewModel.comments, id: \.videoId) { comment in
+                    CommentCardView(comment: comment)
+                    
                     }
                 }
             }
         }
     }
-}
 
-//struct CommentListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CommentListView()
-//    }
-//}
+
+struct CommentListView_Previews: PreviewProvider {
+    static var previews: some View {
+        CommentListView(viewModel: MeTubeViewModel())
+    }
+}

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CommentPictureView: View {
     
+    
+    
     var body: some View {
         
         Image(systemName: "person.crop.rectangle")

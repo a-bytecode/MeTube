@@ -17,10 +17,10 @@ struct CommentView: View {
         ZStack {
             
             VStack {
-                // Placeholer****
-//                Text(comment.textOriginal ?? "Error")
-                // Placeholer****
-//                Text("Hallo, hier ist meine Nachricht, ein kleiner Test wenn die nachricht länger ist als normal, was passiert dann ?!")
+            // Placeholer****
+            // Text(comment.textOriginal ?? "Error")
+            // Placeholer****
+            // Text("Hallo, hier ist meine Nachricht, ein kleiner Test wenn die nachricht länger ist als normal, was passiert dann ?!")
                 Text(comment.textOriginal ?? "Error")
                     .padding()
                     .background(LinearGradient(colors: [.yellow,.green], startPoint: .topLeading, endPoint: .bottomTrailing))

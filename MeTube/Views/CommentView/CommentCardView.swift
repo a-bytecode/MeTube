@@ -9,11 +9,11 @@ import SwiftUI
 import GoogleAPIClientForREST_YouTube
 
 struct CommentCardView: View {
-    
+
     let comment : GTLRYouTube_CommentSnippet
-    
+
     var body: some View {
-        
+
         ZStack {
 
             HStack {
@@ -27,7 +27,7 @@ struct CommentCardView: View {
         }
         .background(Color.clear)
     }
-    
+
 }
 
 //struct CommentCardView_Previews: PreviewProvider {

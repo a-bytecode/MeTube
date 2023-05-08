@@ -22,12 +22,11 @@ struct PlayerView: View {
     
     var body: some View {
         //ZStack(alignment: .top)
-        ZStack {
+        ZStack(alignment: .top) {
             
             if let image = settingsViewModel.animatedImage {
                 FLAnimatedImageViewWrapper(image: image)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                
                 
             } else {
                 Text("Loading...")
@@ -71,7 +70,7 @@ struct PlayerView: View {
                     }
 
                 }
-//                CommentListView(comment: )
+//                CommentListView(viewModel: viewModel.comments)
 //                    .padding(.horizontal, 50)
 
             }
