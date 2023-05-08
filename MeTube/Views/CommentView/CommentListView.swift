@@ -11,21 +11,27 @@ import GoogleAPIClientForREST_YouTube
 
 struct CommentListView: View {
     
-    @State var comment : GTLRYouTube_CommentSnippet
+    
+    @ObservedObject var viewModel: MeTubeViewModel
+    let videoID: String
     
     var body: some View {
         
         VStack {
             ScrollView(showsIndicators: false) {
-                CommentCardView(comment: comment)
-                CommentCardView(comment: comment)
-                CommentCardView(comment: comment)
-                CommentCardView(comment: comment)
-                
+                ForEach(viewModel.comments, id: \.id) { comment in
+                    CommentView(comment: comment)
+                }
+            }
+            .onAppear {
+                viewModel.fetchComments(videoId: videoID) {
+                    if let comments = comments {
+                        viewModel.comments = comments
+                    }
+                }
             }
         }
     }
-    
 }
 
 //struct CommentListView_Previews: PreviewProvider {
