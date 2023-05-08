@@ -90,20 +90,9 @@ struct ParticleEffectView: View {
                 .resizable()
                 .font(.title2)
                 .frame(width: 50,height: 40)
-                .particleEffect(
-                    systemImage: systemImage,
-                    font: .title2,
-                    status: status,
-                    activeTint: activeTint,
-                    inActiveTint: inActiveTint)
                 .foregroundColor(status ? activeTint : inActiveTint)
                 .padding(.horizontal, 18)
-                .padding(.vertical, 8)
-                .background {
-                    Capsule()
-                        .fill(status ? activeTint.opacity(0.25) : Color("ButtonColor"))
-                }
-            
+                .padding(.vertical, 8)            
         }
     }
     
