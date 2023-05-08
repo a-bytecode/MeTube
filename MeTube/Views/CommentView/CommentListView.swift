@@ -6,29 +6,30 @@
 //
 
 import SwiftUI
+import GoogleAPIClientForREST_YouTube
+
 
 struct CommentListView: View {
     
     
+    @ObservedObject var viewModel: MeTubeViewModel
+    
     var body: some View {
         
         VStack {
-            ScrollView {
-                CommentCardView()
-                CommentCardView()
-                CommentCardView()
-                CommentCardView()
-                CommentCardView()
-                CommentCardView()
-                CommentCardView()
+            ScrollView(showsIndicators: false) {
+                ForEach(viewModel.comments, id: \.videoId) { comment in
+                    CommentCardView(comment: comment)
+                    
+                    }
+                }
             }
         }
     }
-    
-}
+
 
 struct CommentListView_Previews: PreviewProvider {
     static var previews: some View {
-        CommentListView()
+        CommentListView(viewModel: MeTubeViewModel())
     }
 }
