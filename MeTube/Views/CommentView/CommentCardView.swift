@@ -17,7 +17,7 @@ struct CommentCardView: View {
         ZStack {
 
             HStack {
-                CommentPictureView()
+                CommentPictureView(comment: comment)
                 CommentView(comment: comment)
             }
             .padding()

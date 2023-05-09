@@ -19,7 +19,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
             
             if !videos.isEmpty {
                 for video in videos {
-                    fetchComments(videoId: video.identifier?.videoId ?? "Error") // mit map(keyValuePaare) wäre eine möglichkeit durch die Liste durch iterrieren.
+                    fetchComments(videoId: video.identifier?.videoId ?? "Error") // mit map(Dictionarys) wäre eine möglichkeit durch die Liste durch iterrieren.
                     print("Fetched Comments -> \(video.identifier?.videoId ?? "Error")")
                 }
             }
@@ -50,7 +50,6 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                 self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
             //            print(self.videos[0])
         }
-        
     }
     
     func fetchComments(videoId: String) {
@@ -73,6 +72,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                 var comments: [GTLRYouTube_CommentSnippet] = []
                 for commentThread in commentThreads {
                     if let comment = commentThread.snippet?.topLevelComment?.snippet {
+                        print("Kommentar Ausgelesen: ----->>> \(comment.textOriginal)")
                         comments.append(comment)
                     }
                 }

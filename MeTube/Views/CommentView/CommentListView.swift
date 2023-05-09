@@ -13,14 +13,14 @@ struct CommentListView: View {
     
     
     @ObservedObject var viewModel: MeTubeViewModel
+//    let video: GTLRYouTube_Video
     
     var body: some View {
         
         VStack {
             ScrollView(showsIndicators: false) {
-                ForEach(viewModel.comments, id: \.videoId) { comment in
-                    CommentCardView(comment: comment)
-                    
+                ForEach(viewModel.comments, id: \.self) { comments in
+                    CommentCardView(comment: comments)
                     }
                 }
             }
@@ -28,8 +28,8 @@ struct CommentListView: View {
     }
 
 
-struct CommentListView_Previews: PreviewProvider {
-    static var previews: some View {
-        CommentListView(viewModel: MeTubeViewModel())
-    }
-}
+//struct CommentListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CommentListView(viewModel: MeTubeViewModel())
+//    }
+//}
