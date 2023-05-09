@@ -36,7 +36,6 @@ struct SearchView: View {
 
     var body: some View {
         
-       
             ZStack {
                 
                 if let image = settingsViewModel.animatedImage {

@@ -24,22 +24,25 @@ struct CommentListView: View {
     
     var body: some View {
         
-        VStack {
+        VStack(alignment: .leading) {
             
+            if comments.isEmpty {
+                NoCommentView()
+            } else {
                 ScrollView(showsIndicators: false) {
                     ForEach(comments, id: \.self) { comment in
                         CommentCardView(comment: comment)
                     }
                 }
-            
             }
             
         }
     }
+}
 
 
-//struct CommentListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CommentListView(viewModel: MeTubeViewModel())
-//    }
-//}
+struct CommentListView_Previews: PreviewProvider {
+    static var previews: some View {
+        CommentListView(viewModel: MeTubeViewModel())
+    }
+}
