@@ -13,18 +13,20 @@ struct CommentCardView: View {
     let comment : GTLRYouTube_CommentSnippet
 
     var body: some View {
+          
+        VStack {
+            HStack(alignment: .center) {
 
-        ZStack {
+                    CommentPictureView(comment: comment)
+                    CommentView(comment: comment)
+                    Spacer()
 
-            HStack {
-                CommentPictureView(comment: comment)
-                CommentView(comment: comment)
+                }
+                .padding()
+                .background(Color.clear)
+                .cornerRadius(10)
+                .shadow(radius: 2, y: 1)
             }
-            .padding()
-            .background(Color.clear)
-            .cornerRadius(10)
-            .shadow(radius: 2, y: 1)
-        }
         .background(Color.clear)
     }
 

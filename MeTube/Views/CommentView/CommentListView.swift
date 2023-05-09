@@ -27,6 +27,8 @@ struct CommentListView: View {
         VStack(alignment: .leading) {
             
             if comments.isEmpty {
+                Spacer()
+                    .frame(height: 80)
                 NoCommentView()
             } else {
                 ScrollView(showsIndicators: false) {

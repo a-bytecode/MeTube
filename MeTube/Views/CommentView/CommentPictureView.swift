@@ -21,6 +21,8 @@ struct CommentPictureView: View {
                     .resizable()
                     .frame(width: 70, height: 60)
                     .foregroundColor(Color.black)
+                    .clipShape(Rectangle())
+                    .overlay(Rectangle().stroke(LinearGradient(colors: [.yellow,.green], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2))
             })
     }
 }
