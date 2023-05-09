@@ -15,7 +15,7 @@ struct CommentView: View {
     var body: some View {
         
         ZStack {
-            
+
             VStack {
             // Placeholer****
             // Text(comment.textOriginal ?? "Error")

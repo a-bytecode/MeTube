@@ -13,14 +13,22 @@ struct CommentListView: View {
     
     
     @ObservedObject var viewModel: MeTubeViewModel
-//    let video: GTLRYouTube_Video
+    var videoID: String = ""
+    var i = MeTubeViewModel().comments.first?.first?.videoId
+    var p = MeTubeViewModel().videos.first?.identifier?.videoId
+//    let video: GTLRYouTube_SearchResult
+//    @State var comments = [GTLRYouTube_CommentSnippet]()
+    var comments: [GTLRYouTube_CommentSnippet] {
+        viewModel.comments.first(where: {$0.first?.videoId == videoID}) ?? []
+    }
+    
     
     var body: some View {
         
         VStack {
             ScrollView(showsIndicators: false) {
-                ForEach(viewModel.comments, id: \.self) { comments in
-                    CommentCardView(comment: comments)
+                ForEach(comments, id: \.self) { comment in
+                    CommentCardView(comment: comment)
                     }
                 }
             }

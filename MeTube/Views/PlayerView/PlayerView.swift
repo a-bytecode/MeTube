@@ -12,8 +12,10 @@ import FLAnimatedImage
 import GoogleAPIClientForREST_YouTube
 
 struct PlayerView: View {
-
+    
+//    var video: GTLRYouTube_SearchResult? = nil
     @State var youTubePlayer: YouTubePlayer = YouTubePlayer()
+    @State var videoID: String = ""
     @StateObject var settingsViewModel = SettingsViewModel()
     @ObservedObject var viewModel: MeTubeViewModel
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
@@ -71,11 +73,16 @@ struct PlayerView: View {
                     }
 
                 }
-                CommentListView(viewModel: viewModel)
-                    .padding(.horizontal, 50)
-
+                
+                CommentListView(viewModel: viewModel,videoID: videoID)
+                //Unwrapping VideoComments
+//                if let video = video {
+//                    CommentListView(video: video)
+//                        .padding(.horizontal, 50)
+//                } else {
+//                    Text("Error")
+//                }
             }
-
         }
         .edgesIgnoringSafeArea(.all)
 
@@ -94,7 +101,7 @@ struct PlayerView_Previews: PreviewProvider {
     //https://www.youtube.com/watch?v=aYYSlCa3xfw
 
     static var previews: some View {
-        PlayerView(youTubePlayer: youTubePlayer, viewModel: MeTubeViewModel())
+        PlayerView(youTubePlayer: youTubePlayer,viewModel: MeTubeViewModel())
     }
 }
 

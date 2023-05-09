@@ -24,7 +24,7 @@ struct ImageView: View {
             configuration: .init(
                 autoPlay: true
             )
-        ),viewModel: viewModel)
+        ),videoID: videoID,viewModel: viewModel)
     }
 
     var body: some View {

@@ -23,7 +23,6 @@ struct CommentPictureView: View {
                     .foregroundColor(Color.black)
             })
     }
-    
 }
 
 //struct CommentPictureView_Previews: PreviewProvider {

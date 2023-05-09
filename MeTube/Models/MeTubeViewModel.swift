@@ -14,9 +14,9 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
     let secretKey: String = apiKey
     
     @Published var videos: [GTLRYouTube_SearchResult] {
-        
+
         didSet { // nachdem die Variable verändert worden ist. wird das ereignis ausgeführt, observer!
-            
+
             if !videos.isEmpty {
                 for video in videos {
                     fetchComments(videoId: video.identifier?.videoId ?? "Error") // mit map(Dictionarys) wäre eine möglichkeit durch die Liste durch iterrieren.
@@ -31,7 +31,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
     
     @Published var youTubePlayer: YouTubePlayer = YouTubePlayer()
     
-    @Published var comments: [GTLRYouTube_CommentSnippet] = []
+    @Published var comments: [[GTLRYouTube_CommentSnippet]] = []
     
     func fetchVideos(term: String) {
         
@@ -76,8 +76,31 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                         comments.append(comment)
                     }
                 }
-                self.comments = comments
+                self.comments.append(comments)
             }
         }
     }
 }
+
+
+//extension GTLRYouTube_SearchResult {
+//
+//    var comments : [GTLRYouTube_CommentSnippet] {
+//        print("hallohallohallohallohallohallohallohallohallohallo")
+//        return MeTubeViewModel().fetchComments(videoId: (self.identifier?.videoId)!)
+//
+//    }
+//}
+
+//extension GTLRYouTube_SearchResult {
+//    func loadComments() -> [GTLRYouTube_CommentSnippet] {
+//        if let videoId = self.identifier?.videoId {
+//
+//            let comments = try MeTubeViewModel().fetchComments(videoId: videoId)
+//            print("------------>>>>> \(comments.first?.textOriginal)")
+//            return comments
+//        }
+//
+//        return []
+//    }
+//}
