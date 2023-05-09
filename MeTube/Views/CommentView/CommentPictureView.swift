@@ -6,23 +6,29 @@
 //
 
 import SwiftUI
+import GoogleAPIClientForREST_YouTube
 
 struct CommentPictureView: View {
     
-    
-    
+    let comment: GTLRYouTube_CommentSnippet
+
     var body: some View {
         
-        Image(systemName: "person.crop.rectangle")
-            .resizable()
-            .frame(width: 70, height: 60)
-            .foregroundColor(Color.black)
+        AsyncImage(
+            url: URL(string: comment.authorProfileImageUrl ?? "Error"),
+            content: { image in
+                image.image?
+                    .resizable()
+                    .frame(width: 70, height: 60)
+                    .foregroundColor(Color.black)
+                    .clipShape(Rectangle())
+                    .overlay(Rectangle().stroke(LinearGradient(colors: [.yellow,.green], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2))
+            })
     }
-    
 }
 
-struct CommentPictureView_Previews: PreviewProvider {
-    static var previews: some View {
-        CommentPictureView()
-    }
-}
+//struct CommentPictureView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CommentPictureView(comment: "")
+//    }
+//}

@@ -13,19 +13,34 @@ struct CommentListView: View {
     
     
     @ObservedObject var viewModel: MeTubeViewModel
+    var videoID: String = ""
+    var i = MeTubeViewModel().comments.first?.first?.videoId
+    var p = MeTubeViewModel().videos.first?.identifier?.videoId
+
+    var comments: [GTLRYouTube_CommentSnippet] {
+        viewModel.comments.first(where: {$0.first?.videoId == videoID}) ?? []
+    }
+    
     
     var body: some View {
         
-        VStack {
-            ScrollView(showsIndicators: false) {
-                ForEach(viewModel.comments, id: \.videoId) { comment in
-                    CommentCardView(comment: comment)
-                    
+        VStack(alignment: .leading) {
+            
+            if comments.isEmpty {
+                Spacer()
+                    .frame(height: 80)
+                NoCommentView()
+            } else {
+                ScrollView(showsIndicators: false) {
+                    ForEach(comments, id: \.self) { comment in
+                        CommentCardView(comment: comment)
                     }
                 }
             }
+            
         }
     }
+}
 
 
 struct CommentListView_Previews: PreviewProvider {

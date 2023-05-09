@@ -25,7 +25,7 @@ struct ParticleEffectView: View {
             HStack(spacing: 20) {
                 
                 // Navigation Book
-                NavigationLink(destination: PlayerView(), isActive: $navigate){
+                NavigationLink(destination: PlayerView(viewModel: viewModel), isActive: $navigate){
                     if isEnabled[0] {
                         CustomButton(systemImage: "video.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
                             navigate.toggle()
