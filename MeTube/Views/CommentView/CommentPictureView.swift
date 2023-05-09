@@ -14,10 +14,14 @@ struct CommentPictureView: View {
 
     var body: some View {
         
-        Image(comment.authorProfileImageUrl ?? "Error")
-            .resizable()
-            .frame(width: 70, height: 60)
-            .foregroundColor(Color.black)
+        AsyncImage(
+            url: URL(string: comment.authorProfileImageUrl ?? "Error"),
+            content: { image in
+                image.image?
+                    .resizable()
+                    .frame(width: 70, height: 60)
+                    .foregroundColor(Color.black)
+            })
     }
     
 }
