@@ -75,6 +75,7 @@ struct PlayerView: View {
                 }
                 
                 CommentListView(viewModel: viewModel,videoID: videoID)
+                        .padding(.horizontal, 50)
                 //Unwrapping VideoComments
 //                if let video = video {
 //                    CommentListView(video: video)

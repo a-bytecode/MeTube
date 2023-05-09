@@ -13,6 +13,7 @@
 		B7400C7E2A08559900CFA0DC /* CommentPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C7D2A08559900CFA0DC /* CommentPictureView.swift */; };
 		B7400C802A08573E00CFA0DC /* CommentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C7F2A08573E00CFA0DC /* CommentCardView.swift */; };
 		B7400C822A08595C00CFA0DC /* CommentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C812A08595C00CFA0DC /* CommentListView.swift */; };
+		B7A039CA2A0A6D710060ECC8 /* NoCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A039C92A0A6D710060ECC8 /* NoCommentView.swift */; };
 		B7A49FB029FEE30800114B70 /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = B7A49FAF29FEE30800114B70 /* FLAnimatedImage */; };
 		B7A49FB429FEE92700114B70 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */; };
 		B7A49FB629FEF5A800114B70 /* ParticleEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB529FEF5A800114B70 /* ParticleEffectView.swift */; };
@@ -51,6 +52,7 @@
 		B7400C7D2A08559900CFA0DC /* CommentPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPictureView.swift; sourceTree = "<group>"; };
 		B7400C7F2A08573E00CFA0DC /* CommentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCardView.swift; sourceTree = "<group>"; };
 		B7400C812A08595C00CFA0DC /* CommentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListView.swift; sourceTree = "<group>"; };
+		B7A039C92A0A6D710060ECC8 /* NoCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCommentView.swift; sourceTree = "<group>"; };
 		B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		B7A49FB529FEF5A800114B70 /* ParticleEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleEffectView.swift; sourceTree = "<group>"; };
 		B7A49FB729FEF9CC00114B70 /* ParticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				B7400C7D2A08559900CFA0DC /* CommentPictureView.swift */,
 				B7400C7F2A08573E00CFA0DC /* CommentCardView.swift */,
 				B7400C812A08595C00CFA0DC /* CommentListView.swift */,
+				B7A039C92A0A6D710060ECC8 /* NoCommentView.swift */,
 			);
 			path = CommentView;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				B7B749922A040AA6009E7C6B /* PlayerAndCommentsView.swift in Sources */,
 				B7A49FB629FEF5A800114B70 /* ParticleEffectView.swift in Sources */,
 				B7B13F0929FBFE3400F79204 /* ListView.swift in Sources */,
+				B7A039CA2A0A6D710060ECC8 /* NoCommentView.swift in Sources */,
 				B7B13F0F29FBFEFC00F79204 /* API_KEY.swift in Sources */,
 				B7259D912A01411C005539A9 /* HeadlineTextView.swift in Sources */,
 				B7B13F0C29FBFE3400F79204 /* FavoritenView.swift in Sources */,
