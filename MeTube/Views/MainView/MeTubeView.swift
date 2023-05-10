@@ -8,14 +8,16 @@
 import SwiftUI
 import Combine
 import FLAnimatedImage
+import GoogleAPIClientForREST_YouTube
+
 
 
 struct MeTubeView: View {
-    
+
     @StateObject var viewModel = MeTubeViewModel()
     @StateObject var settingsViewModel = SettingsViewModel()
     @State private var isEditing = false
-    @State private var isSheetOpen = false
+    @Binding var navigate : Bool
     @State private var searchTerm = ""
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
     
@@ -23,7 +25,6 @@ struct MeTubeView: View {
    
     var body: some View {
         
-        NavigationStack {
             
             ZStack {
                 
@@ -39,30 +40,38 @@ struct MeTubeView: View {
             VStack {
                 
                 Spacer()
-                    .frame(height: 80)
-                    ListView(viewModel: viewModel, inputText: $searchTerm)
-                        .frame(width: .infinity, height: 600)
-                
+                    .frame(height: 96)
+                LastSearchHeadlineView()
                 Spacer()
-                    .frame(height: 20)
-                    ParticleEffectView(navigate: $isSheetOpen)
+                    .frame(height: 15)
+                LastSearchResultsView(viewModel: viewModel)
+                .frame(width: .infinity, height: 600)
+
                 
-                    
+//                Spacer()
+//                    .frame(height: 20)
+
+                ParticleEffectView(isEnabled: [true, true, false], navigate: $navigate) //isEnabled: [true, true, false],
+                Spacer()
+                    .frame(height: 40)
+
             }
                 .onAppear {
                     viewModel.fetchVideos(term: searchTerm)
                     settingsViewModel.loadAnimatedImage(from: url)
                 }
+                .onDisappear {
+                    viewModel.saveLastSearchResults()
+                }
             }
             .edgesIgnoringSafeArea(.all)
-        }
     }
 }
                    
 
 struct MeTubeView_Previews: PreviewProvider {
     static var previews: some View {
-        MeTubeView()
+        MeTubeView(navigate: .constant(false))
     }
 }
 

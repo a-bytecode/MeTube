@@ -32,6 +32,8 @@
 		B7B13F0B29FBFE3400F79204 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13F0229FBFE3400F79204 /* ImageView.swift */; };
 		B7B13F0C29FBFE3400F79204 /* FavoritenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13F0329FBFE3400F79204 /* FavoritenView.swift */; };
 		B7B13F0F29FBFEFC00F79204 /* API_KEY.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13F0E29FBFEFC00F79204 /* API_KEY.swift */; };
+		B7B39D252A0B960900AC786F /* LastSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B39D242A0B960900AC786F /* LastSearchResultsView.swift */; };
+		B7B39D272A0B961600AC786F /* LastSearchHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B39D262A0B961600AC786F /* LastSearchHeadlineView.swift */; };
 		B7B749922A040AA6009E7C6B /* PlayerAndCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B749912A040AA6009E7C6B /* PlayerAndCommentsView.swift */; };
 		B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */; };
 		B7D5BBB629FBF979001BB3D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D5BBB529FBF979001BB3D6 /* Assets.xcassets */; };
@@ -70,6 +72,8 @@
 		B7B13F0229FBFE3400F79204 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		B7B13F0329FBFE3400F79204 /* FavoritenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritenView.swift; sourceTree = "<group>"; };
 		B7B13F0E29FBFEFC00F79204 /* API_KEY.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_KEY.swift; sourceTree = "<group>"; };
+		B7B39D242A0B960900AC786F /* LastSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSearchResultsView.swift; sourceTree = "<group>"; };
+		B7B39D262A0B961600AC786F /* LastSearchHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSearchHeadlineView.swift; sourceTree = "<group>"; };
 		B7B749912A040AA6009E7C6B /* PlayerAndCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAndCommentsView.swift; sourceTree = "<group>"; };
 		B7D5BBAE29FBF978001BB3D6 /* MeTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTubeApp.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				B7B13EFF29FBFE3400F79204 /* CardView.swift */,
 				B7B13F0029FBFE3400F79204 /* ListView.swift */,
 				B737D8EC2A04F04500780F56 /* FavoriteButton.swift */,
+				B7B39D242A0B960900AC786F /* LastSearchResultsView.swift */,
+				B7B39D262A0B961600AC786F /* LastSearchHeadlineView.swift */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -132,6 +138,7 @@
 		B7980A232A02505A00D37AD5 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				B7B13EFE29FBFE3400F79204 /* SearchView.swift */,
 				B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */,
 				B7D5BBBF29FBF9B9001BB3D6 /* MeTubeView.swift */,
 			);
@@ -142,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				B7FC94022A00459100C34973 /* SearchTextFieldView.swift */,
-				B7B13EFE29FBFE3400F79204 /* SearchView.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -343,6 +349,8 @@
 				B7FC94032A00459100C34973 /* SearchTextFieldView.swift in Sources */,
 				B7B13F0629FBFE3400F79204 /* TitelView.swift in Sources */,
 				B7400C822A08595C00CFA0DC /* CommentListView.swift in Sources */,
+				B7B39D252A0B960900AC786F /* LastSearchResultsView.swift in Sources */,
+				B7B39D272A0B961600AC786F /* LastSearchHeadlineView.swift in Sources */,
 				B7B13EF629FBFDE000F79204 /* Favoriten.xcdatamodeld in Sources */,
 				B7B13EF429FBFDE000F79204 /* MeTubeViewModel.swift in Sources */,
 				B7B13F0A29FBFE3400F79204 /* PlayerView.swift in Sources */,

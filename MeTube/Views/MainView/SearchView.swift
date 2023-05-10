@@ -13,10 +13,9 @@ struct SearchView: View {
     
     @ObservedObject var viewModel : MeTubeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
-    
-    @Binding var input : String
-    @Binding var isSheetOpen : Bool
-    @Binding var searchTerm : String
+    @State var input : String
+    @State var searchTerm : String
+    @State var navigate = false
     @State private var animationAmount = 1.0
     @State private var isRotating = 0.0
     @State var duration: Double = 3.0
@@ -36,6 +35,8 @@ struct SearchView: View {
 
     var body: some View {
         
+        NavigationStack {
+            
             ZStack {
                 
                 if let image = settingsViewModel.animatedImage {
@@ -47,12 +48,12 @@ struct SearchView: View {
                 }
                 
                 VStack {
-                        Spacer()
+                    Spacer()
                         .frame(height: 90)
-
-                SearchTextFieldView(input: $input)
+                    
+                    SearchTextFieldView(input: $input)
                         .padding([.leading,.trailing])
-                
+                    
                     if isClicked {
                         Button(action: {
                             viewModel.fetchVideos(term: input)
@@ -108,30 +109,31 @@ struct SearchView: View {
                     
                     Spacer()
                         .frame(height: 12)
-
-                // Listenansicht
-                ListView(viewModel: viewModel, inputText: $searchTerm)
-//                    .frame(width: .infinity, height: 300)
+                    
+                    // Listenansicht
+                    ListView(viewModel: viewModel, inputText: $searchTerm)
+                    //                    .frame(width: .infinity, height: 300)
                     Spacer()
                         .frame(height: 20)
-                
-                // Custom TabView
-                ParticleEffectView(isEnabled: [true, true, false], navigate: $isSheetOpen)
+                    
+                    // Custom TabView
+                    ParticleEffectView(navigate: $navigate)
                     Spacer()
                         .frame(height: 30)
-                            .onAppear {
-                                settingsViewModel.loadAnimatedImage(from: url)
-                            }
+                        .onAppear {
+                            settingsViewModel.loadAnimatedImage(from: url)
+                        }
+                }
+                
             }
-
-        }
             .edgesIgnoringSafeArea(.all)
+        }
     }
 }
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(viewModel: MeTubeViewModel(), input: .constant(""),isSheetOpen: .constant(false), searchTerm: .constant(""))
+        SearchView(viewModel: MeTubeViewModel(), input: "",searchTerm: "")
             .environmentObject(MeTubeViewModel())
     }
 }

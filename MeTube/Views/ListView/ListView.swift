@@ -27,7 +27,6 @@ struct ListView: View {
                     ForEach(viewModel.videos, id: \.self) { video in
 
                         CardView(video: video, viewModel: viewModel)
-
                     }
                     // -> Placeolder****
 //                    CardView()

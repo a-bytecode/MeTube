@@ -14,6 +14,7 @@ struct ParticleEffectView: View {
     var isEnabled: [Bool] = [true, true, true]
     @Binding var navigate: Bool
     @State private var isSheetOpen = false
+    @State private var shouldNavigateMeTubeView = false
     @State private var shouldNavigate = false
     @State private var navigateFav = false
     @State var input = ""
@@ -51,10 +52,10 @@ struct ParticleEffectView: View {
                 }
                 
                 // Navigation Search
-                NavigationLink(destination: SearchView(viewModel: viewModel, input: $input, isSheetOpen: $isSheetOpen, searchTerm: $input), isActive: $shouldNavigate){
+                NavigationLink(destination: MeTubeView(navigate: $isSheetOpen), isActive: $shouldNavigateMeTubeView){
                     if isEnabled[2] {
                         CustomButton(systemImage: "sparkle.magnifyingglass", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
-                            shouldNavigate.toggle()
+                            shouldNavigateMeTubeView.toggle()
                             isLiked[2].toggle()
                         }
                     } else {
@@ -79,7 +80,7 @@ struct ParticleEffectView: View {
         Button(action: {
             onTap()
             if systemImage == "sparkle.magnifyingglass" {
-                isSheetOpen.toggle()
+//                isSheetOpen.toggle()
             }
             if systemImage == "suit.heart.fill" {
                 navigateFav.toggle()
