@@ -15,7 +15,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
     
     @Published var videos: [GTLRYouTube_SearchResult] {
 
-        didSet { // nachdem die Variable verändert worden ist. wird das ereignis ausgeführt, observer!
+        didSet { // nachdem die Variable verändert worden ist. wird das Ereignis ausgeführt, vergleichbar mit Observer! 
 
             if !videos.isEmpty {
                 for video in videos {
@@ -33,6 +33,8 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
     
     @Published var comments: [[GTLRYouTube_CommentSnippet]] = []
     
+    @Published var lastSearchResults: [GTLRYouTube_SearchResult] = []
+    
     func fetchVideos(term: String) {
         
         let service = GTLRYouTubeService()
@@ -47,9 +49,14 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
         
         service.executeQuery(query) { (ticket, response, error) in
             if let error = error { print("Connection Error") } else {
-                self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
-            //            print(self.videos[0])
+                self.lastSearchResults = (response as! GTLRYouTube_SearchListResponse).items ?? []
+                self.videos = self.lastSearchResults
+            }
         }
+    }
+    
+    func saveLastSearchResults() {
+        self.lastSearchResults = self.videos
     }
     
     func fetchComments(videoId: String) {
@@ -62,7 +69,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
         
         query.videoId = videoId
         
-        query.maxResults = 5
+        query.maxResults = 10
         
         service.executeQuery(query) { (ticket, response, error) in
             if let error = error {
@@ -83,24 +90,11 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
 }
 
 
-//extension GTLRYouTube_SearchResult {
+//extension GTLRYouTube_SearchResult { Extension ist dazu da, vorhandene Structs oder Classen zu erweitern.
 //
 //    var comments : [GTLRYouTube_CommentSnippet] {
 //        print("hallohallohallohallohallohallohallohallohallohallo")
 //        return MeTubeViewModel().fetchComments(videoId: (self.identifier?.videoId)!)
 //
-//    }
-//}
-
-//extension GTLRYouTube_SearchResult {
-//    func loadComments() -> [GTLRYouTube_CommentSnippet] {
-//        if let videoId = self.identifier?.videoId {
-//
-//            let comments = try MeTubeViewModel().fetchComments(videoId: videoId)
-//            print("------------>>>>> \(comments.first?.textOriginal)")
-//            return comments
-//        }
-//
-//        return []
 //    }
 //}

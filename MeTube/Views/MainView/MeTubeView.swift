@@ -38,8 +38,9 @@ struct MeTubeView: View {
                 
             VStack {
                 
-                Spacer()
-                    .frame(height: 80)
+//                Spacer()
+//                    .frame(height: 80)
+                    LastSearchResultsView()
                     ListView(viewModel: viewModel, inputText: $searchTerm)
                         .frame(width: .infinity, height: 600)
                 
