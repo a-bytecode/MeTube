@@ -138,6 +138,7 @@
 		B7980A232A02505A00D37AD5 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				B7B13EFE29FBFE3400F79204 /* SearchView.swift */,
 				B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */,
 				B7D5BBBF29FBF9B9001BB3D6 /* MeTubeView.swift */,
 			);
@@ -148,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				B7FC94022A00459100C34973 /* SearchTextFieldView.swift */,
-				B7B13EFE29FBFE3400F79204 /* SearchView.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";

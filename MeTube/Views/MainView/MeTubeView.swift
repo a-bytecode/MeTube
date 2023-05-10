@@ -17,7 +17,7 @@ struct MeTubeView: View {
     @StateObject var viewModel = MeTubeViewModel()
     @StateObject var settingsViewModel = SettingsViewModel()
     @State private var isEditing = false
-    @State var navigate : Bool = false
+    @Binding var navigate : Bool
     @State private var searchTerm = ""
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
     
@@ -39,15 +39,21 @@ struct MeTubeView: View {
                 
             VStack {
                 
-//                Spacer()
-//                    .frame(height: 80)
+                Spacer()
+                    .frame(height: 96)
                 LastSearchHeadlineView()
+                Spacer()
+                    .frame(height: 15)
                 LastSearchResultsView(viewModel: viewModel)
                 .frame(width: .infinity, height: 600)
+
                 
 //                Spacer()
 //                    .frame(height: 20)
-                ParticleEffectView(navigate: $navigate) //isEnabled: [true, true, false],
+
+                ParticleEffectView(isEnabled: [true, true, false], navigate: $navigate) //isEnabled: [true, true, false],
+                Spacer()
+                    .frame(height: 40)
 
             }
                 .onAppear {
@@ -65,7 +71,7 @@ struct MeTubeView: View {
 
 struct MeTubeView_Previews: PreviewProvider {
     static var previews: some View {
-        MeTubeView(navigate: false)
+        MeTubeView(navigate: .constant(false))
     }
 }
 
