@@ -48,9 +48,18 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
         query.maxResults = 5
         
         service.executeQuery(query) { (ticket, response, error) in
-            if let error = error { print("Connection Error") } else {
-                self.lastSearchResults = (response as! GTLRYouTube_SearchListResponse).items ?? []
-                self.videos = self.lastSearchResults
+            if let error = error { print("Connection Error")
+                
+            } else {
+                //                self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
+                self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? []
+                print("CHECK DIE LISTE LAST SEARCH ---------->>> \(self.lastSearchResults.count)")
+                
+                if !self.videos.isEmpty {
+                    
+                }
+                self.lastSearchResults = Array(self.lastSearchResults)
+                print("CHECK DIE LISTE LAST SEARCH ---------->>> \(self.videos.count)")
             }
         }
     }

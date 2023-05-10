@@ -8,14 +8,16 @@
 import SwiftUI
 import Combine
 import FLAnimatedImage
+import GoogleAPIClientForREST_YouTube
+
 
 
 struct MeTubeView: View {
-    
+
     @StateObject var viewModel = MeTubeViewModel()
     @StateObject var settingsViewModel = SettingsViewModel()
     @State private var isEditing = false
-    @State private var isSheetOpen = false
+    @State var navigate : Bool = false
     @State private var searchTerm = ""
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
     
@@ -23,7 +25,6 @@ struct MeTubeView: View {
    
     var body: some View {
         
-        NavigationStack {
             
             ZStack {
                 
@@ -40,30 +41,31 @@ struct MeTubeView: View {
                 
 //                Spacer()
 //                    .frame(height: 80)
-                    LastSearchResultsView()
-                    ListView(viewModel: viewModel, inputText: $searchTerm)
-                        .frame(width: .infinity, height: 600)
+                LastSearchHeadlineView()
+                LastSearchResultsView(viewModel: viewModel)
+                .frame(width: .infinity, height: 600)
                 
-                Spacer()
-                    .frame(height: 20)
-                    ParticleEffectView(navigate: $isSheetOpen)
-                
-                    
+//                Spacer()
+//                    .frame(height: 20)
+                ParticleEffectView(navigate: $navigate) //isEnabled: [true, true, false],
+
             }
                 .onAppear {
                     viewModel.fetchVideos(term: searchTerm)
                     settingsViewModel.loadAnimatedImage(from: url)
                 }
+                .onDisappear {
+                    viewModel.saveLastSearchResults()
+                }
             }
             .edgesIgnoringSafeArea(.all)
-        }
     }
 }
                    
 
 struct MeTubeView_Previews: PreviewProvider {
     static var previews: some View {
-        MeTubeView()
+        MeTubeView(navigate: false)
     }
 }
 
