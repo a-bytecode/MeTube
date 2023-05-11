@@ -54,8 +54,6 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                 //                self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
                 self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? []
                 self.lastSearchResults = self.videos
-//                self.lastSearchResults = Array(self.lastSearchResults)
-                print("CHECK DIE LISTE LAST SEARCH videos ---------->>> \(self.videos.count)")
             }
         }
     }
@@ -72,11 +70,11 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                 print("Connection Error: \(error)")
             } else if let searchList = response as? GTLRYouTube_SearchListResponse {
                 for item in searchList.items ?? [] {
-                    print("CHECK DIE LISTE LAST SEARCH lastSearchResults ---------->>> \(item)")
-
-                    self.lastSearchResults.append(item)
+                    
+                    if !self.lastSearchResults.contains(item) {
+                        self.lastSearchResults.append(item)
+                    }
                 }
-                print("CHECK DIE LISTE LAST SEARCH lastSearchResults ---------->>> \(self.lastSearchResults.count)")
             }
         }
     }

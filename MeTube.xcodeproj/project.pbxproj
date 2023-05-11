@@ -21,7 +21,6 @@
 		B7A49FBA29FEFAB000114B70 /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB929FEFAB000114B70 /* Particle.swift */; };
 		B7B13EF429FBFDE000F79204 /* MeTubeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EF029FBFDE000F79204 /* MeTubeViewModel.swift */; };
 		B7B13EF529FBFDE000F79204 /* MeTubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EF129FBFDE000F79204 /* MeTubeModel.swift */; };
-		B7B13EF629FBFDE000F79204 /* Favoriten.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EF229FBFDE000F79204 /* Favoriten.xcdatamodeld */; };
 		B7B13EF929FBFDF200F79204 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EF829FBFDF200F79204 /* SplashView.swift */; };
 		B7B13F0529FBFE3400F79204 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EFC29FBFE3400F79204 /* SettingsView.swift */; };
 		B7B13F0629FBFE3400F79204 /* TitelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EFD29FBFE3400F79204 /* TitelView.swift */; };
@@ -36,6 +35,8 @@
 		B7B39D272A0B961600AC786F /* LastSearchHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B39D262A0B961600AC786F /* LastSearchHeadlineView.swift */; };
 		B7B39D292A0BD6C400AC786F /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B39D282A0BD6C400AC786F /* LogoView.swift */; };
 		B7B749922A040AA6009E7C6B /* PlayerAndCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B749912A040AA6009E7C6B /* PlayerAndCommentsView.swift */; };
+		B7C173392A0D1F7300926FA5 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7C173372A0D1F7300926FA5 /* CoreData.xcdatamodeld */; };
+		B7C1733B2A0D1FE400926FA5 /* FavoritenHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1733A2A0D1FE400926FA5 /* FavoritenHeadlineView.swift */; };
 		B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */; };
 		B7D5BBB629FBF979001BB3D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D5BBB529FBF979001BB3D6 /* Assets.xcassets */; };
 		B7D5BBB929FBF979001BB3D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D5BBB829FBF979001BB3D6 /* Preview Assets.xcassets */; };
@@ -62,7 +63,6 @@
 		B7A49FB929FEFAB000114B70 /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
 		B7B13EF029FBFDE000F79204 /* MeTubeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTubeViewModel.swift; sourceTree = "<group>"; };
 		B7B13EF129FBFDE000F79204 /* MeTubeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTubeModel.swift; sourceTree = "<group>"; };
-		B7B13EF329FBFDE000F79204 /* Favoriten.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favoriten.xcdatamodel; sourceTree = "<group>"; };
 		B7B13EF829FBFDF200F79204 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B7B13EFC29FBFE3400F79204 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B7B13EFD29FBFE3400F79204 /* TitelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitelView.swift; sourceTree = "<group>"; };
@@ -77,6 +77,8 @@
 		B7B39D262A0B961600AC786F /* LastSearchHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSearchHeadlineView.swift; sourceTree = "<group>"; };
 		B7B39D282A0BD6C400AC786F /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		B7B749912A040AA6009E7C6B /* PlayerAndCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAndCommentsView.swift; sourceTree = "<group>"; };
+		B7C173382A0D1F7300926FA5 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		B7C1733A2A0D1FE400926FA5 /* FavoritenHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritenHeadlineView.swift; sourceTree = "<group>"; };
 		B7D5BBAE29FBF978001BB3D6 /* MeTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTubeApp.swift; sourceTree = "<group>"; };
 		B7D5BBB529FBF979001BB3D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				B7B13F0329FBFE3400F79204 /* FavoritenView.swift */,
+				B7C1733A2A0D1FE400926FA5 /* FavoritenHeadlineView.swift */,
 			);
 			path = FavoritenView;
 			sourceTree = "<group>";
@@ -188,7 +191,7 @@
 				B7B13EF029FBFDE000F79204 /* MeTubeViewModel.swift */,
 				B7B13EF129FBFDE000F79204 /* MeTubeModel.swift */,
 				B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */,
-				B7B13EF229FBFDE000F79204 /* Favoriten.xcdatamodeld */,
+				B7C173372A0D1F7300926FA5 /* CoreData.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,7 +357,6 @@
 				B7400C822A08595C00CFA0DC /* CommentListView.swift in Sources */,
 				B7B39D252A0B960900AC786F /* LastSearchResultsView.swift in Sources */,
 				B7B39D272A0B961600AC786F /* LastSearchHeadlineView.swift in Sources */,
-				B7B13EF629FBFDE000F79204 /* Favoriten.xcdatamodeld in Sources */,
 				B7B13EF429FBFDE000F79204 /* MeTubeViewModel.swift in Sources */,
 				B7B13F0A29FBFE3400F79204 /* PlayerView.swift in Sources */,
 				B7A49FB829FEF9CC00114B70 /* ParticleView.swift in Sources */,
@@ -363,6 +365,7 @@
 				B7B749922A040AA6009E7C6B /* PlayerAndCommentsView.swift in Sources */,
 				B7A49FB629FEF5A800114B70 /* ParticleEffectView.swift in Sources */,
 				B7B13F0929FBFE3400F79204 /* ListView.swift in Sources */,
+				B7C173392A0D1F7300926FA5 /* CoreData.xcdatamodeld in Sources */,
 				B7A039CA2A0A6D710060ECC8 /* NoCommentView.swift in Sources */,
 				B7B13F0F29FBFEFC00F79204 /* API_KEY.swift in Sources */,
 				B7259D912A01411C005539A9 /* HeadlineTextView.swift in Sources */,
@@ -370,6 +373,7 @@
 				B7B13EF529FBFDE000F79204 /* MeTubeModel.swift in Sources */,
 				B7400C782A084E2F00CFA0DC /* CommentView.swift in Sources */,
 				B7B13F0829FBFE3400F79204 /* CardView.swift in Sources */,
+				B7C1733B2A0D1FE400926FA5 /* FavoritenHeadlineView.swift in Sources */,
 				B7B13F0B29FBFE3400F79204 /* ImageView.swift in Sources */,
 				B7B13EF929FBFDF200F79204 /* SplashView.swift in Sources */,
 				B7B39D292A0BD6C400AC786F /* LogoView.swift in Sources */,
@@ -638,13 +642,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		B7B13EF229FBFDE000F79204 /* Favoriten.xcdatamodeld */ = {
+		B7C173372A0D1F7300926FA5 /* CoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B7B13EF329FBFDE000F79204 /* Favoriten.xcdatamodel */,
+				B7C173382A0D1F7300926FA5 /* CoreData.xcdatamodel */,
 			);
-			currentVersion = B7B13EF329FBFDE000F79204 /* Favoriten.xcdatamodel */;
-			path = Favoriten.xcdatamodeld;
+			currentVersion = B7C173382A0D1F7300926FA5 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
