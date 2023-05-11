@@ -47,10 +47,6 @@ struct MeTubeView: View {
                 LastSearchResultsView(viewModel: viewModel)
                 .frame(width: .infinity, height: 600)
 
-                
-//                Spacer()
-//                    .frame(height: 20)
-
                 ParticleEffectView(isEnabled: [true, true, false], navigate: $navigate) //isEnabled: [true, true, false],
                 Spacer()
                     .frame(height: 40)
