@@ -53,7 +53,8 @@ struct MeTubeView: View {
 
             }
                 .onAppear {
-                    viewModel.fetchVideos(term: searchTerm)
+//                    viewModel.fetchVideos(term: searchTerm)
+//                    viewModel.fetchSearchResults(term: searchTerm)
                     settingsViewModel.loadAnimatedImage(from: url)
                 }
                 .onDisappear {

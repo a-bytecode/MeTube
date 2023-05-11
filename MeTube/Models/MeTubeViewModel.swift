@@ -53,13 +53,25 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
             } else {
                 //                self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
                 self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? []
-                print("CHECK DIE LISTE LAST SEARCH ---------->>> \(self.lastSearchResults.count)")
-                
-                if !self.videos.isEmpty {
-                    
-                }
-                self.lastSearchResults = Array(self.lastSearchResults)
-                print("CHECK DIE LISTE LAST SEARCH ---------->>> \(self.videos.count)")
+//                self.lastSearchResults = Array(self.lastSearchResults)
+                print("CHECK DIE LISTE LAST SEARCH videos ---------->>> \(self.videos.count)")
+            }
+        }
+    }
+    
+    func fetchSearchResults(term: String) {
+        let service = GTLRYouTubeService()
+        service.apiKey = secretKey
+        let query = GTLRYouTubeQuery_SearchList.query(withPart: ["id","snippet"])
+        query.q = term
+        query.maxResults = 5
+        
+        service.executeQuery(query) { (ticket, response, error) in
+            if let error = error {
+                print("Connection Error: \(error)")
+            } else if let searchList = response as? GTLRYouTube_SearchListResponse {
+                self.lastSearchResults = searchList.items ?? []
+                print("CHECK DIE LISTE LAST SEARCH lastSearchResults ---------->>> \(self.lastSearchResults.count)")
             }
         }
     }

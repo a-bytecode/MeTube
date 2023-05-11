@@ -58,6 +58,7 @@ struct SearchView: View {
                     if isClicked {
                         Button(action: {
                             viewModel.fetchVideos(term: input)
+                            viewModel.fetchSearchResults(term: input)
                             
                         }, label: {
                             
@@ -87,6 +88,7 @@ struct SearchView: View {
                     } else {
                         Button(action: {
                             viewModel.fetchVideos(term: input)
+                            viewModel.fetchSearchResults(term: input)
                             isClicked = true
                             isLoaded = false
                             withAnimation {
