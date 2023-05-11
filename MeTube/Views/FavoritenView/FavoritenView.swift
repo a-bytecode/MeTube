@@ -6,14 +6,41 @@
 //
 
 import SwiftUI
+import FLAnimatedImage
 
 struct FavoritenView: View {
     
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+    @StateObject var settingsViewModel : SettingsViewModel = SettingsViewModel()
+    let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
+
     
+    var body: some View {
+                
+        ZStack {
+            
+            if let image = settingsViewModel.animatedImage {
+                FLAnimatedImageViewWrapper(image: image)
+                    .frame(width: 100.0, height: .infinity)
+            } else {
+                Text("Loading...")
+            }
+            
+            VStack {
+                Spacer()
+                    .frame(height: 96)
+                FavoritenHeadlineView()
+                Spacer()
+                    .frame(height: 15)
+            }
+        }
+        .onAppear {
+            settingsViewModel.loadAnimatedImage(from: url)
+        }
+        
+        .edgesIgnoringSafeArea(.all)
+    }
 }
+
 
 struct FavoritenView_Previews: PreviewProvider {
     static var previews: some View {

@@ -54,12 +54,12 @@ struct ParticleEffectView: View {
                 // Navigation Search
                 NavigationLink(destination: MeTubeView(viewModel: viewModel, navigate: $isSheetOpen), isActive: $shouldNavigateMeTubeView){
                     if isEnabled[2] {
-                        CustomButton(systemImage: "sparkle.magnifyingglass", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
+                        CustomButton(systemImage: "arrowshape.turn.up.right.fill", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
                             shouldNavigateMeTubeView.toggle()
                             isLiked[2].toggle()
                         }
                     } else {
-                        CustomButton(systemImage: "sparkle.magnifyingglass", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
+                        CustomButton(systemImage: "arrowshape.turn.up.right.fill", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
                             // Action ->
                             // Empty
                         }
@@ -79,7 +79,7 @@ struct ParticleEffectView: View {
     func CustomButton(systemImage: String, status: Bool, activeTint: Color, inActiveTint: Color, onTap: @escaping () -> ()) -> some View {
         Button(action: {
             onTap()
-            if systemImage == "sparkle.magnifyingglass" {
+            if systemImage == "arrowshape.turn.up.right.fill" {
 //                isSheetOpen.toggle()
             }
             if systemImage == "suit.heart.fill" {
