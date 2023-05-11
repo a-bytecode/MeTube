@@ -10,7 +10,7 @@ import GoogleAPIClientForREST_YouTube
 
 struct LastSearchResultsView: View {
     
-    @ObservedObject var viewModel = MeTubeViewModel()
+    @ObservedObject var viewModel : MeTubeViewModel
     
     var body: some View {
         

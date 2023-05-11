@@ -95,6 +95,6 @@ fileprivate struct ParticleModifier: ViewModifier {
 
 struct ParticleView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticleEffectView(navigate: .constant(false))
+        ParticleEffectView(viewModel: MeTubeViewModel(), navigate: .constant(false))
     }
 }

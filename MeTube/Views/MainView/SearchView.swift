@@ -11,7 +11,7 @@ import FLAnimatedImage
 
 struct SearchView: View {
     
-    @ObservedObject var viewModel : MeTubeViewModel
+    @EnvironmentObject var viewModel : MeTubeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
     @State var input : String
     @State var searchTerm : String
@@ -122,7 +122,7 @@ struct SearchView: View {
                         .frame(height: 20)
                     
                     // Custom TabView
-                    ParticleEffectView(navigate: $navigate)
+                    ParticleEffectView(viewModel: viewModel, navigate: $navigate)
                     Spacer()
                         .frame(height: 30)
                         .onAppear {
@@ -138,7 +138,7 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(viewModel: MeTubeViewModel(), input: "",searchTerm: "")
+        SearchView(input: "",searchTerm: "")
             .environmentObject(MeTubeViewModel())
     }
 }

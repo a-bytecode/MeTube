@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ParticleEffectView: View {
     
-    @ObservedObject private var viewModel = MeTubeViewModel()
+    @ObservedObject var viewModel : MeTubeViewModel
     @State private var isLiked: [Bool] = [false, false, false]
     var isEnabled: [Bool] = [true, true, true]
     @Binding var navigate: Bool
@@ -52,7 +52,7 @@ struct ParticleEffectView: View {
                 }
                 
                 // Navigation Search
-                NavigationLink(destination: MeTubeView(navigate: $isSheetOpen), isActive: $shouldNavigateMeTubeView){
+                NavigationLink(destination: MeTubeView(viewModel: viewModel, navigate: $isSheetOpen), isActive: $shouldNavigateMeTubeView){
                     if isEnabled[2] {
                         CustomButton(systemImage: "sparkle.magnifyingglass", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
                             shouldNavigateMeTubeView.toggle()
@@ -100,6 +100,6 @@ struct ParticleEffectView: View {
 }
 struct ParticleEffectView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticleEffectView(isEnabled: [true,true,true], navigate: .constant(false))
+        ParticleEffectView(viewModel: MeTubeViewModel(), isEnabled: [true,true,true], navigate: .constant(false))
     }
 }

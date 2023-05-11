@@ -12,7 +12,7 @@ struct MeTubeApp: App {
     var body: some Scene { // TODO: EnviromentObject als übergeordneten Datentyp erstellen
         
         WindowGroup {
-            SearchView(viewModel: viewModel, input: input, searchTerm: searchTerm)
+            SearchView(input: input, searchTerm: searchTerm)
                 .environmentObject(viewModel)
         }
     }

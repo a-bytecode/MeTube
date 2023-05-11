@@ -14,7 +14,7 @@ import GoogleAPIClientForREST_YouTube
 
 struct MeTubeView: View {
 
-    @StateObject var viewModel = MeTubeViewModel()
+    @ObservedObject var viewModel : MeTubeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
     @State private var isEditing = false
     @Binding var navigate : Bool
@@ -47,7 +47,7 @@ struct MeTubeView: View {
                 LastSearchResultsView(viewModel: viewModel)
                 .frame(width: .infinity, height: 600)
 
-                ParticleEffectView(isEnabled: [true, true, false], navigate: $navigate) //isEnabled: [true, true, false],
+                ParticleEffectView(viewModel: viewModel, isEnabled: [true, true, false], navigate: $navigate) //isEnabled: [true, true, false],
                 Spacer()
                     .frame(height: 40)
 
@@ -55,6 +55,7 @@ struct MeTubeView: View {
                 .onAppear {
 //                    viewModel.fetchVideos(term: searchTerm)
 //                    viewModel.fetchSearchResults(term: searchTerm)
+                    print("CHECK ---> \(viewModel.lastSearchResults)")
                     settingsViewModel.loadAnimatedImage(from: url)
                 }
                 .onDisappear {
@@ -68,7 +69,7 @@ struct MeTubeView: View {
 
 struct MeTubeView_Previews: PreviewProvider {
     static var previews: some View {
-        MeTubeView(navigate: .constant(false))
+        MeTubeView(viewModel: MeTubeViewModel(), navigate: .constant(false))
     }
 }
 
