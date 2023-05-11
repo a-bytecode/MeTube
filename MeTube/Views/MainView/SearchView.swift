@@ -16,6 +16,7 @@ struct SearchView: View {
     @State var input : String
     @State var searchTerm : String
     @State var navigate = false
+    @State var isLoaded = false
     @State private var animationAmount = 1.0
     @State private var isRotating = 0.0
     @State var duration: Double = 3.0
@@ -76,15 +77,18 @@ struct SearchView: View {
                             .animation(.spring(), value: isClicked)
                             .onAppear{
                                 isClicked = false
+                                isLoaded = false
                                 withAnimation {
                                     scale = 1.0
                                 }
                             }
                         })
+                        
                     } else {
                         Button(action: {
                             viewModel.fetchVideos(term: input)
                             isClicked = true
+                            isLoaded = false
                             withAnimation {
                                 scale = 0.5
                             }
@@ -106,10 +110,9 @@ struct SearchView: View {
                             .animation(.spring(), value: isClicked)
                         })
                     }
-                    
+
                     Spacer()
                         .frame(height: 12)
-                    
                     // Listenansicht
                     ListView(viewModel: viewModel, inputText: $searchTerm)
                     //                    .frame(width: .infinity, height: 300)
