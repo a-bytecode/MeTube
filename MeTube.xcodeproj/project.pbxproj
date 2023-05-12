@@ -51,6 +51,8 @@
 		B7FDD12F2A0E3378001E7FDA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B7FDD12E2A0E3378001E7FDA /* FirebaseFirestore */; };
 		B7FDD1312A0E3378001E7FDA /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B7FDD1302A0E3378001E7FDA /* FirebaseFirestoreSwift */; };
 		B7FDD1332A0E344A001E7FDA /* FirebaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1322A0E344A001E7FDA /* FirebaseViewModel.swift */; };
+		B7FDD1362A0E3528001E7FDA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1352A0E3528001E7FDA /* SignInView.swift */; };
+		B7FDD1382A0E3538001E7FDA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1372A0E3538001E7FDA /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		B7FC94022A00459100C34973 /* SearchTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldView.swift; sourceTree = "<group>"; };
 		B7FDD1292A0E2A69001E7FDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "MeTube/Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B7FDD1322A0E344A001E7FDA /* FirebaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewModel.swift; sourceTree = "<group>"; };
+		B7FDD1352A0E3528001E7FDA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		B7FDD1372A0E3538001E7FDA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 		B7B13EFA29FBFE3400F79204 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B7FDD1342A0E3511001E7FDA /* LoginView */,
 				B7400C762A084E0F00CFA0DC /* CommentView */,
 				B7980A272A027FC200D37AD5 /* FavoritenView */,
 				B7980A262A027EF200D37AD5 /* SettingsView */,
@@ -272,6 +277,15 @@
 				B7D5BBB829FBF979001BB3D6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B7FDD1342A0E3511001E7FDA /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				B7FDD1352A0E3528001E7FDA /* SignInView.swift */,
+				B7FDD1372A0E3538001E7FDA /* LoginView.swift */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +385,8 @@
 				B7400C822A08595C00CFA0DC /* CommentListView.swift in Sources */,
 				B7B39D252A0B960900AC786F /* LastSearchResultsView.swift in Sources */,
 				B7B39D272A0B961600AC786F /* LastSearchHeadlineView.swift in Sources */,
+				B7FDD1362A0E3528001E7FDA /* SignInView.swift in Sources */,
+				B7FDD1382A0E3538001E7FDA /* LoginView.swift in Sources */,
 				B7B13EF429FBFDE000F79204 /* MeTubeViewModel.swift in Sources */,
 				B7B13F0A29FBFE3400F79204 /* PlayerView.swift in Sources */,
 				B7A49FB829FEF9CC00114B70 /* ParticleView.swift in Sources */,

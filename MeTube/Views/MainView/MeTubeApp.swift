@@ -13,6 +13,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct MeTubeApp: App {
+    //Registration für Firebase Setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @StateObject var viewModel : MeTubeViewModel = MeTubeViewModel()
