@@ -35,7 +35,6 @@
 		B7B39D272A0B961600AC786F /* LastSearchHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B39D262A0B961600AC786F /* LastSearchHeadlineView.swift */; };
 		B7B39D292A0BD6C400AC786F /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B39D282A0BD6C400AC786F /* LogoView.swift */; };
 		B7B749922A040AA6009E7C6B /* PlayerAndCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B749912A040AA6009E7C6B /* PlayerAndCommentsView.swift */; };
-		B7C173392A0D1F7300926FA5 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7C173372A0D1F7300926FA5 /* CoreData.xcdatamodeld */; };
 		B7C1733B2A0D1FE400926FA5 /* FavoritenHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1733A2A0D1FE400926FA5 /* FavoritenHeadlineView.swift */; };
 		B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */; };
 		B7D5BBB629FBF979001BB3D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D5BBB529FBF979001BB3D6 /* Assets.xcassets */; };
@@ -51,6 +50,7 @@
 		B7FDD12D2A0E3378001E7FDA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B7FDD12C2A0E3378001E7FDA /* FirebaseAuth */; };
 		B7FDD12F2A0E3378001E7FDA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B7FDD12E2A0E3378001E7FDA /* FirebaseFirestore */; };
 		B7FDD1312A0E3378001E7FDA /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B7FDD1302A0E3378001E7FDA /* FirebaseFirestoreSwift */; };
+		B7FDD1332A0E344A001E7FDA /* FirebaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1322A0E344A001E7FDA /* FirebaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +81,6 @@
 		B7B39D262A0B961600AC786F /* LastSearchHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSearchHeadlineView.swift; sourceTree = "<group>"; };
 		B7B39D282A0BD6C400AC786F /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		B7B749912A040AA6009E7C6B /* PlayerAndCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAndCommentsView.swift; sourceTree = "<group>"; };
-		B7C173382A0D1F7300926FA5 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		B7C1733A2A0D1FE400926FA5 /* FavoritenHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritenHeadlineView.swift; sourceTree = "<group>"; };
 		B7D5BBAE29FBF978001BB3D6 /* MeTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTubeApp.swift; sourceTree = "<group>"; };
@@ -90,6 +89,7 @@
 		B7D5BBBF29FBF9B9001BB3D6 /* MeTubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTubeView.swift; sourceTree = "<group>"; };
 		B7FC94022A00459100C34973 /* SearchTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldView.swift; sourceTree = "<group>"; };
 		B7FDD1292A0E2A69001E7FDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "MeTube/Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B7FDD1322A0E344A001E7FDA /* FirebaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +200,7 @@
 				B7B13EF029FBFDE000F79204 /* MeTubeViewModel.swift */,
 				B7B13EF129FBFDE000F79204 /* MeTubeModel.swift */,
 				B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */,
-				B7C173372A0D1F7300926FA5 /* CoreData.xcdatamodeld */,
+				B7FDD1322A0E344A001E7FDA /* FirebaseViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -379,7 +379,7 @@
 				B7B749922A040AA6009E7C6B /* PlayerAndCommentsView.swift in Sources */,
 				B7A49FB629FEF5A800114B70 /* ParticleEffectView.swift in Sources */,
 				B7B13F0929FBFE3400F79204 /* ListView.swift in Sources */,
-				B7C173392A0D1F7300926FA5 /* CoreData.xcdatamodeld in Sources */,
+				B7FDD1332A0E344A001E7FDA /* FirebaseViewModel.swift in Sources */,
 				B7A039CA2A0A6D710060ECC8 /* NoCommentView.swift in Sources */,
 				B7B13F0F29FBFEFC00F79204 /* API_KEY.swift in Sources */,
 				B7259D912A01411C005539A9 /* HeadlineTextView.swift in Sources */,
@@ -677,19 +677,6 @@
 			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		B7C173372A0D1F7300926FA5 /* CoreData.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B7C173382A0D1F7300926FA5 /* CoreData.xcdatamodel */,
-			);
-			currentVersion = B7C173382A0D1F7300926FA5 /* CoreData.xcdatamodel */;
-			path = CoreData.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B7D5BBA629FBF978001BB3D6 /* Project object */;
 }
