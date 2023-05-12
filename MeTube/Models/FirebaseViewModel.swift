@@ -21,7 +21,29 @@ class FirebaseViewModel: ObservableObject {
     @Published var password = ""
     @Published var isLoggedIn = false
     
-    func saveToFireStore() {
+    func signUp(){
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+            
+            guard let strongSelf = self else {return}
+            
+            if error == nil && authResult != nil {
+                
+                strongSelf.db.collection("Users").addDocument(data: ["email" : authResult?.user.email, "uid": authResult?.user.uid, "displayName": authResult?.user.displayName]){ error in
+                    
+                    if error != nil {
+                        print("Error: \(error?.localizedDescription)")
+                    }
+                    
+                }
+                 
+            }
+            else {
+                print ("Error...")
+            }
+        }
+    }
+    
+    func login() {
         print("Speichert...")
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             guard let self = self else { return }
@@ -44,6 +66,7 @@ class FirebaseViewModel: ObservableObject {
             print("Fehler beim ausloggen: %@", signOutError)
         }
     }
+    
 }
 
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PWSCView: View {
+struct LoginPWView: View {
     
     @Binding var input: String
     
@@ -33,6 +33,6 @@ struct PWSCView: View {
 
 struct PWSCView_Previews: PreviewProvider {
     static var previews: some View {
-        PWSCView(input: .constant(""))
+        LoginPWView(input: .constant(""))
     }
 }
