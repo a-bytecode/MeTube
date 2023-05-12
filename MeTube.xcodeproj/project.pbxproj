@@ -47,6 +47,10 @@
 		B7D5BBCA29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B7D5BBC929FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeAnalytics */; };
 		B7D5BBCC29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeReporting in Frameworks */ = {isa = PBXBuildFile; productRef = B7D5BBCB29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeReporting */; };
 		B7FC94032A00459100C34973 /* SearchTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FC94022A00459100C34973 /* SearchTextFieldView.swift */; };
+		B7FDD12A2A0E2A69001E7FDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD1292A0E2A69001E7FDA /* GoogleService-Info.plist */; };
+		B7FDD12D2A0E3378001E7FDA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B7FDD12C2A0E3378001E7FDA /* FirebaseAuth */; };
+		B7FDD12F2A0E3378001E7FDA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B7FDD12E2A0E3378001E7FDA /* FirebaseFirestore */; };
+		B7FDD1312A0E3378001E7FDA /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B7FDD1302A0E3378001E7FDA /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +89,7 @@
 		B7D5BBB829FBF979001BB3D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B7D5BBBF29FBF9B9001BB3D6 /* MeTubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTubeView.swift; sourceTree = "<group>"; };
 		B7FC94022A00459100C34973 /* SearchTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldView.swift; sourceTree = "<group>"; };
+		B7FDD1292A0E2A69001E7FDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "MeTube/Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +102,10 @@
 				B7D5BBCA29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeAnalytics in Frameworks */,
 				B7A49FB029FEE30800114B70 /* FLAnimatedImage in Frameworks */,
 				B7D5BBC829FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTube in Frameworks */,
+				B7FDD12F2A0E3378001E7FDA /* FirebaseFirestore in Frameworks */,
+				B7FDD12D2A0E3378001E7FDA /* FirebaseAuth in Frameworks */,
 				B7D5BBCC29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeReporting in Frameworks */,
+				B7FDD1312A0E3378001E7FDA /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +196,7 @@
 		B7B13EEF29FBFDE000F79204 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B7FDD1292A0E2A69001E7FDA /* GoogleService-Info.plist */,
 				B7B13EF029FBFDE000F79204 /* MeTubeViewModel.swift */,
 				B7B13EF129FBFDE000F79204 /* MeTubeModel.swift */,
 				B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */,
@@ -288,6 +297,9 @@
 				B7D5BBC929FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeAnalytics */,
 				B7D5BBCB29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeReporting */,
 				B7A49FAF29FEE30800114B70 /* FLAnimatedImage */,
+				B7FDD12C2A0E3378001E7FDA /* FirebaseAuth */,
+				B7FDD12E2A0E3378001E7FDA /* FirebaseFirestore */,
+				B7FDD1302A0E3378001E7FDA /* FirebaseFirestoreSwift */,
 			);
 			productName = MeTube;
 			productReference = B7D5BBAE29FBF978001BB3D6 /* MeTube.app */;
@@ -321,6 +333,7 @@
 				B7D5BBC129FBFA1F001BB3D6 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 				B7D5BBC429FBFA4A001BB3D6 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */,
 				B7A49FAE29FEE30800114B70 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */,
+				B7FDD12B2A0E3378001E7FDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = B7D5BBAF29FBF978001BB3D6 /* Products */;
 			projectDirPath = "";
@@ -338,6 +351,7 @@
 			files = (
 				B7D5BBB929FBF979001BB3D6 /* Preview Assets.xcassets in Resources */,
 				B7D5BBB629FBF979001BB3D6 /* Assets.xcassets in Resources */,
+				B7FDD12A2A0E2A69001E7FDA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +620,14 @@
 				kind = branch;
 			};
 		};
+		B7FDD12B2A0E3378001E7FDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -638,6 +660,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B7D5BBC429FBFA4A001BB3D6 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */;
 			productName = GoogleAPIClientForREST_YouTubeReporting;
+		};
+		B7FDD12C2A0E3378001E7FDA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7FDD12B2A0E3378001E7FDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		B7FDD12E2A0E3378001E7FDA /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7FDD12B2A0E3378001E7FDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		B7FDD1302A0E3378001E7FDA /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7FDD12B2A0E3378001E7FDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 
