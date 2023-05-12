@@ -8,13 +8,40 @@
 import SwiftUI
 
 struct SignInView: View {
+    
+    @StateObject var fbViewModel: FirebaseViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+            Spacer()
+            SignInTFView(input: $fbViewModel.email)
+            SignInPWView(input: $fbViewModel.password)
+            Spacer()
+            Button(action: {
+                fbViewModel.saveToFireStore()
+                
+            }, label: {
+                
+                ZStack {
+                    Text("Sign in...")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding([.leading,.trailing],20)
+                        .cornerRadius(20)
+                }
+                .frame(width: 325,height: 20)
+                .padding([.top,.bottom])
+                .background(Capsule().fill(Color.black).padding(-1))
+                .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
+            })
+        }
     }
 }
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView(fbViewModel: FirebaseViewModel())
     }
 }

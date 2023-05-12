@@ -55,6 +55,8 @@
 		B7FDD1382A0E3538001E7FDA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1372A0E3538001E7FDA /* LoginView.swift */; };
 		B7FDD13A2A0E3CF8001E7FDA /* LoginTFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1392A0E3CF8001E7FDA /* LoginTFView.swift */; };
 		B7FDD13C2A0E3E53001E7FDA /* PWSCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD13B2A0E3E53001E7FDA /* PWSCView.swift */; };
+		B7FDD13F2A0E4339001E7FDA /* SignInTFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD13E2A0E4339001E7FDA /* SignInTFView.swift */; };
+		B7FDD1412A0E434A001E7FDA /* SignInPWView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1402A0E434A001E7FDA /* SignInPWView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +100,8 @@
 		B7FDD1372A0E3538001E7FDA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B7FDD1392A0E3CF8001E7FDA /* LoginTFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTFView.swift; sourceTree = "<group>"; };
 		B7FDD13B2A0E3E53001E7FDA /* PWSCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWSCView.swift; sourceTree = "<group>"; };
+		B7FDD13E2A0E4339001E7FDA /* SignInTFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTFView.swift; sourceTree = "<group>"; };
+		B7FDD1402A0E434A001E7FDA /* SignInPWView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPWView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				B7FDD1352A0E3528001E7FDA /* SignInView.swift */,
+				B7FDD13E2A0E4339001E7FDA /* SignInTFView.swift */,
+				B7FDD1402A0E434A001E7FDA /* SignInPWView.swift */,
 			);
 			path = SignInView;
 			sourceTree = "<group>";
@@ -394,10 +400,12 @@
 				B7D5BBC029FBF9B9001BB3D6 /* MeTubeView.swift in Sources */,
 				B7B13F0529FBFE3400F79204 /* SettingsView.swift in Sources */,
 				B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */,
+				B7FDD13F2A0E4339001E7FDA /* SignInTFView.swift in Sources */,
 				B7FC94032A00459100C34973 /* SearchTextFieldView.swift in Sources */,
 				B7B13F0629FBFE3400F79204 /* TitelView.swift in Sources */,
 				B7400C822A08595C00CFA0DC /* CommentListView.swift in Sources */,
 				B7B39D252A0B960900AC786F /* LastSearchResultsView.swift in Sources */,
+				B7FDD1412A0E434A001E7FDA /* SignInPWView.swift in Sources */,
 				B7B39D272A0B961600AC786F /* LastSearchHeadlineView.swift in Sources */,
 				B7FDD1362A0E3528001E7FDA /* SignInView.swift in Sources */,
 				B7FDD1382A0E3538001E7FDA /* LoginView.swift in Sources */,
