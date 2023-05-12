@@ -200,11 +200,11 @@
 		B7B13EEF29FBFDE000F79204 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B7FDD1292A0E2A69001E7FDA /* GoogleService-Info.plist */,
 				B7B13EF029FBFDE000F79204 /* MeTubeViewModel.swift */,
 				B7B13EF129FBFDE000F79204 /* MeTubeModel.swift */,
 				B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */,
 				B7FDD1322A0E344A001E7FDA /* FirebaseViewModel.swift */,
+				B7FDD1292A0E2A69001E7FDA /* GoogleService-Info.plist */,
 			);
 			path = Models;
 			sourceTree = "<group>";

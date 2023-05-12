@@ -8,8 +8,38 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @StateObject var fbViewModel = FirebaseViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            Spacer()
+            TextField("Email", text: $fbViewModel.email)
+            Spacer()
+                .frame(height: 60)
+            SecureField("Password", text: $fbViewModel.password)
+            Spacer()
+            
+            Button(action: {
+                fbViewModel.isLoggedIn.toggle()
+                
+            }, label: {
+                
+                ZStack {
+                    Text("Login...")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding([.leading,.trailing],20)
+                        .cornerRadius(20)
+                }
+                .frame(width: 325,height: 20)
+                .padding([.top,.bottom])
+                .background(Capsule().fill(Color.black).padding(-1))
+                .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
+            })
+        }
     }
 }
 
