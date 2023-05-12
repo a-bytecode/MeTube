@@ -9,7 +9,9 @@ import SwiftUI
 
 struct SignInView: View {
     
-    @StateObject var fbViewModel: FirebaseViewModel
+    @EnvironmentObject var fbViewModel: FirebaseViewModel
+    @State var input : String
+    @State var searchTerm: String
     
     var body: some View {
         VStack {
@@ -19,10 +21,12 @@ struct SignInView: View {
             SignInPWView(input: $fbViewModel.password)
             Spacer()
             
-            NavigationLink(destination: LoginView(fbViewModel: fbViewModel)) {
+           
                 Button(action: {
                     fbViewModel.signUp()
-                    
+                    NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm)) {
+                        SearchView(input: input, searchTerm: searchTerm)
+                    }
                 }, label: {
                     
                     ZStack {
@@ -38,13 +42,13 @@ struct SignInView: View {
                     .background(Capsule().fill(Color.black).padding(-1))
                     .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
                 })
-            }
         }
     }
 }
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(fbViewModel: FirebaseViewModel())
+        SignInView(input: "", searchTerm: "")
+            .environmentObject(FirebaseViewModel())
     }
 }
