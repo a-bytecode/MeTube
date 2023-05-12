@@ -53,6 +53,8 @@
 		B7FDD1332A0E344A001E7FDA /* FirebaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1322A0E344A001E7FDA /* FirebaseViewModel.swift */; };
 		B7FDD1362A0E3528001E7FDA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1352A0E3528001E7FDA /* SignInView.swift */; };
 		B7FDD1382A0E3538001E7FDA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1372A0E3538001E7FDA /* LoginView.swift */; };
+		B7FDD13A2A0E3CF8001E7FDA /* LoginTFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1392A0E3CF8001E7FDA /* LoginTFView.swift */; };
+		B7FDD13C2A0E3E53001E7FDA /* PWSCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD13B2A0E3E53001E7FDA /* PWSCView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,8 @@
 		B7FDD1322A0E344A001E7FDA /* FirebaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewModel.swift; sourceTree = "<group>"; };
 		B7FDD1352A0E3528001E7FDA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		B7FDD1372A0E3538001E7FDA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B7FDD1392A0E3CF8001E7FDA /* LoginTFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTFView.swift; sourceTree = "<group>"; };
+		B7FDD13B2A0E3E53001E7FDA /* PWSCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWSCView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,7 @@
 		B7B13EFA29FBFE3400F79204 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B7FDD13D2A0E3F6E001E7FDA /* SignInView */,
 				B7FDD1342A0E3511001E7FDA /* LoginView */,
 				B7400C762A084E0F00CFA0DC /* CommentView */,
 				B7980A272A027FC200D37AD5 /* FavoritenView */,
@@ -282,10 +287,19 @@
 		B7FDD1342A0E3511001E7FDA /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
-				B7FDD1352A0E3528001E7FDA /* SignInView.swift */,
 				B7FDD1372A0E3538001E7FDA /* LoginView.swift */,
+				B7FDD1392A0E3CF8001E7FDA /* LoginTFView.swift */,
+				B7FDD13B2A0E3E53001E7FDA /* PWSCView.swift */,
 			);
 			path = LoginView;
+			sourceTree = "<group>";
+		};
+		B7FDD13D2A0E3F6E001E7FDA /* SignInView */ = {
+			isa = PBXGroup;
+			children = (
+				B7FDD1352A0E3528001E7FDA /* SignInView.swift */,
+			);
+			path = SignInView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +415,7 @@
 				B7259D912A01411C005539A9 /* HeadlineTextView.swift in Sources */,
 				B7B13F0C29FBFE3400F79204 /* FavoritenView.swift in Sources */,
 				B7B13EF529FBFDE000F79204 /* MeTubeModel.swift in Sources */,
+				B7FDD13C2A0E3E53001E7FDA /* PWSCView.swift in Sources */,
 				B7400C782A084E2F00CFA0DC /* CommentView.swift in Sources */,
 				B7B13F0829FBFE3400F79204 /* CardView.swift in Sources */,
 				B7C1733B2A0D1FE400926FA5 /* FavoritenHeadlineView.swift in Sources */,
@@ -408,6 +423,7 @@
 				B7B13EF929FBFDF200F79204 /* SplashView.swift in Sources */,
 				B7B39D292A0BD6C400AC786F /* LogoView.swift in Sources */,
 				B7400C7E2A08559900CFA0DC /* CommentPictureView.swift in Sources */,
+				B7FDD13A2A0E3CF8001E7FDA /* LoginTFView.swift in Sources */,
 				B7A49FB429FEE92700114B70 /* SettingsViewModel.swift in Sources */,
 				B737D8ED2A04F04500780F56 /* FavoriteButton.swift in Sources */,
 			);

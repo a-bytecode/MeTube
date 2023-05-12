@@ -15,14 +15,14 @@ struct LoginView: View {
         
         VStack {
             Spacer()
-            TextField("Email", text: $fbViewModel.email)
+            LoginTFView(input: $fbViewModel.email)
             Spacer()
-                .frame(height: 60)
-            SecureField("Password", text: $fbViewModel.password)
+                .frame(height: 1)
+            PWSCView(input: $fbViewModel.password)
             Spacer()
             
             Button(action: {
-                fbViewModel.isLoggedIn.toggle()
+                fbViewModel.saveToFireStore()
                 
             }, label: {
                 
