@@ -23,42 +23,15 @@ struct LoginView: View {
             LoginPWView(input: $fbViewModel.password)
             Spacer()
             HStack {
-                if fbViewModel.isLoggedIn {
-                    NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm)) {
-                        SearchView(input: input, searchTerm: searchTerm)
-                    }
-                } else {
-                    Button(action: {
-                        fbViewModel.login()
-                        NavigationLink(
-                            destination: SearchView(input: input, searchTerm: searchTerm),
-                            isActive: $fbViewModel.isLoggedIn,
-                            label: { EmptyView() }
-                        )
-                    }, label: {
-                        
-                        ZStack {
-                            Text("Login")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .padding([.leading,.trailing],20)
-                                .cornerRadius(20)
-                        }
-                        .frame(width: 150,height: 20)
-                        .padding([.top,.bottom])
-                        .background(Capsule().fill(Color.black).padding(-1))
-                        .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
-                    })
-                  
+
+                
+                NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm)){
                         Button(action: {
-                            NavigationLink(destination: SignInView(input: input, searchTerm: searchTerm)){
-                                SignInView(input: input, searchTerm: searchTerm)
-                            }
+                            fbViewModel.login()
                         }, label: {
                             
                             ZStack {
-                                Text("Sign up")
+                                Text("Login")
                                     .font(.title2)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
@@ -70,11 +43,35 @@ struct LoginView: View {
                             .background(Capsule().fill(Color.black).padding(-1))
                             .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
                         })
+                }
+                  
+                
+                NavigationLink(destination: SignInView(input: input, searchTerm: searchTerm)){
+                    
+                    Button(action: {
+                    print("Push it!!!")
+                    }, label: {
+                        
+                        ZStack {
+                            Text("Sign up")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding([.leading,.trailing],20)
+                                .cornerRadius(20)
+                        }
+                        .frame(width: 150,height: 20)
+                        .padding([.top,.bottom])
+                        .background(Capsule().fill(Color.black).padding(-1))
+                        .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
+                    })
+                    
+                }
+
                  }
             }
         }
     }
-}
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

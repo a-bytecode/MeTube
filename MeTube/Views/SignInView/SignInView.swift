@@ -21,12 +21,10 @@ struct SignInView: View {
             SignInPWView(input: $fbViewModel.password)
             Spacer()
             
-           
+            NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm)) {
+                
                 Button(action: {
                     fbViewModel.signUp()
-                    NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm)) {
-                        SearchView(input: input, searchTerm: searchTerm)
-                    }
                 }, label: {
                     
                     ZStack {
@@ -42,6 +40,7 @@ struct SignInView: View {
                     .background(Capsule().fill(Color.black).padding(-1))
                     .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
                 })
+            }
         }
     }
 }
