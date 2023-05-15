@@ -6,29 +6,50 @@
 //
 
 import SwiftUI
+import FLAnimatedImage
 
 struct LoginView: View {
 
     @EnvironmentObject var fbViewModel: FirebaseViewModel
     @EnvironmentObject var viewModel: MeTubeViewModel
+    @StateObject var settingsViewModel = SettingsViewModel()
     @State private var searchTerm = ""
     @State private var input = ""
+    let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
+
     
     var body: some View {
         
-        VStack {
-            Spacer()
-            LoginTFView(input: $fbViewModel.email)
-            Spacer()
-                .frame(height: 1)
-            LoginPWView(input: $fbViewModel.password)
-            Spacer()
-            HStack {
-            ButtonsLoginView()
+        ZStack {
+            
+            
+            if let image = settingsViewModel.animatedImage {
+                FLAnimatedImageViewWrapper(image: image)
+                    .frame(width: 100.0, height: .infinity)
                 
-                 }
-        }.environmentObject(fbViewModel)
-         .environmentObject(viewModel)
+            } else {
+                Text("Loading...")
+            }
+            
+            VStack {
+                
+
+                
+                Spacer()
+                    .frame(height: 100)
+                LogoView()
+                LoginTFView(input: $fbViewModel.email)
+                LoginPWView(input: $input)
+                ButtonsLoginView()
+                    .offset(y: -10)
+            }.environmentObject(fbViewModel)
+                .environmentObject(viewModel)
+                
+        }
+        .edgesIgnoringSafeArea(.all)
+        .onAppear {
+            settingsViewModel.loadAnimatedImage(from: url)
+        }
     }
     }
 
@@ -36,5 +57,6 @@ struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
             .environmentObject(FirebaseViewModel())
+            .environmentObject(MeTubeViewModel())
     }
 }

@@ -24,9 +24,12 @@ struct LoginTFView: View {
                     )
                 TextField("Email", text: $input)
                     .frame(width: .infinity, height: 40)
-                    .foregroundColor(Color.white)
-                    .padding(20)
+                    .foregroundColor(Color.red)
+                    .tint(Color.red)
+                    .accentColor(Color.red)
+                    
             }
+
         }.padding(.horizontal, 50)
     }
 }

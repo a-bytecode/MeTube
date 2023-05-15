@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B7259D912A01411C005539A9 /* HeadlineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7259D902A01411C005539A9 /* HeadlineTextView.swift */; };
 		B737D8ED2A04F04500780F56 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737D8EC2A04F04500780F56 /* FavoriteButton.swift */; };
 		B7400C782A084E2F00CFA0DC /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C772A084E2F00CFA0DC /* CommentView.swift */; };
 		B7400C7E2A08559900CFA0DC /* CommentPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C7D2A08559900CFA0DC /* CommentPictureView.swift */; };
@@ -61,7 +60,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B7259D902A01411C005539A9 /* HeadlineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineTextView.swift; sourceTree = "<group>"; };
 		B737D8EC2A04F04500780F56 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		B7400C772A084E2F00CFA0DC /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		B7400C7D2A08559900CFA0DC /* CommentPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPictureView.swift; sourceTree = "<group>"; };
@@ -240,7 +238,6 @@
 				B7259D962A015150005539A9 /* ListView */,
 				B7980A242A02550900D37AD5 /* SearchView */,
 				B7980A232A02505A00D37AD5 /* MainView */,
-				B7259D902A01411C005539A9 /* HeadlineTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -423,7 +420,6 @@
 				B7FDD1332A0E344A001E7FDA /* FirebaseViewModel.swift in Sources */,
 				B7A039CA2A0A6D710060ECC8 /* NoCommentView.swift in Sources */,
 				B7B13F0F29FBFEFC00F79204 /* API_KEY.swift in Sources */,
-				B7259D912A01411C005539A9 /* HeadlineTextView.swift in Sources */,
 				B7B13F0C29FBFE3400F79204 /* FavoritenView.swift in Sources */,
 				B7B13EF529FBFDE000F79204 /* MeTubeModel.swift in Sources */,
 				B7FDD13C2A0E3E53001E7FDA /* LoginPWView.swift in Sources */,
