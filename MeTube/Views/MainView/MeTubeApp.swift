@@ -27,9 +27,11 @@ struct MeTubeApp: App {
         
         WindowGroup {
 //            SearchView(input: input, searchTerm: searchTerm)
-            LoginView()
-                .environmentObject(fbViewModel)
-                .environmentObject(viewModel)
+            NavigationStack {
+                LoginView()
+                    .environmentObject(fbViewModel)
+                    .environmentObject(viewModel)
+            }
         }
     }
 }

@@ -11,8 +11,6 @@ import FirebaseFirestore
 import FirebaseAuth
 
 
-
-
 class FirebaseViewModel: ObservableObject {
     
     let db = Firestore.firestore()
@@ -51,7 +49,7 @@ class FirebaseViewModel: ObservableObject {
                 print("Login fehlgeschlagen: \(error.localizedDescription)")
                 
             } else {
-                print("Login in as: \(authResult?.user.email ?? "")")
+                print("Login successfully as: \(authResult?.user.email ?? "")")
                 self.isLoggedIn = true
             }
         }

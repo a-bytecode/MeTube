@@ -36,8 +36,6 @@ struct SearchView: View {
 
     var body: some View {
         
-        NavigationStack {
-            
             ZStack {
                 
                 if let image = settingsViewModel.animatedImage {
@@ -112,7 +110,7 @@ struct SearchView: View {
                             .animation(.spring(), value: isClicked)
                         })
                     }
-
+                    
                     Spacer()
                         .frame(height: 12)
                     // Listenansicht
@@ -128,12 +126,10 @@ struct SearchView: View {
                         .onAppear {
                             settingsViewModel.loadAnimatedImage(from: url)
                         }
-                }
-                
+                    }
             }
             .edgesIgnoringSafeArea(.all)
         }
-    }
 }
 
 struct SearchView_Previews: PreviewProvider {

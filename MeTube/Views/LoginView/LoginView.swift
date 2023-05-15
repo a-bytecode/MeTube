@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
 
     @EnvironmentObject var fbViewModel: FirebaseViewModel
+    @EnvironmentObject var viewModel: MeTubeViewModel
     @State private var searchTerm = ""
     @State private var input = ""
     
@@ -23,54 +24,12 @@ struct LoginView: View {
             LoginPWView(input: $fbViewModel.password)
             Spacer()
             HStack {
-
+            ButtonsLoginView()
                 
-                NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm)){
-                        Button(action: {
-                            fbViewModel.login()
-                        }, label: {
-                            
-                            ZStack {
-                                Text("Login")
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .padding([.leading,.trailing],20)
-                                    .cornerRadius(20)
-                            }
-                            .frame(width: 150,height: 20)
-                            .padding([.top,.bottom])
-                            .background(Capsule().fill(Color.black).padding(-1))
-                            .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
-                        })
-                }
-                  
-                
-                NavigationLink(destination: SignInView(input: input, searchTerm: searchTerm)){
-                    
-                    Button(action: {
-                    print("Push it!!!")
-                    }, label: {
-                        
-                        ZStack {
-                            Text("Sign up")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .padding([.leading,.trailing],20)
-                                .cornerRadius(20)
-                        }
-                        .frame(width: 150,height: 20)
-                        .padding([.top,.bottom])
-                        .background(Capsule().fill(Color.black).padding(-1))
-                        .overlay(Capsule().stroke(Color.white, lineWidth: 2).padding(-1))
-                    })
-                    
-                }
-
                  }
-            }
-        }
+        }.environmentObject(fbViewModel)
+         .environmentObject(viewModel)
+    }
     }
 
 struct LoginView_Previews: PreviewProvider {
