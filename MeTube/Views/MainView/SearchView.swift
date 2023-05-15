@@ -65,7 +65,6 @@ struct SearchView: View {
                                     .font(.title2)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
-                                    .padding([.leading,.trailing],20)
                                     .cornerRadius(20)
                             }
                             .frame(width: 325,height: 20)
@@ -95,12 +94,21 @@ struct SearchView: View {
                         }, label: {
                             
                             ZStack {
-                                Text("Search...")
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .padding([.leading,.trailing],20)
-                                    .cornerRadius(20)
+                                HStack {
+
+                                    Text("Search")
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(20)
+                                    Image(systemName: "doc.text.magnifyingglass")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
+                                        .foregroundColor(Color.white)
+                                        
+                                    
+                                }
+                                
                             }
                             .frame(width: 325,height: 20)
                             .padding([.top,.bottom])
@@ -110,7 +118,7 @@ struct SearchView: View {
                             .animation(.spring(), value: isClicked)
                         })
                     }
-                    
+
                     Spacer()
                         .frame(height: 12)
                     // Listenansicht
@@ -126,7 +134,8 @@ struct SearchView: View {
                         .onAppear {
                             settingsViewModel.loadAnimatedImage(from: url)
                         }
-                    }
+                }
+                
             }
             .edgesIgnoringSafeArea(.all)
         }
