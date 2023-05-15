@@ -21,6 +21,12 @@ struct LogoView: View {
                 .clipShape(Rectangle())
                 .overlay(Rectangle().stroke(.black, lineWidth: 3))
                 .shadow(radius: 5,x: 2,y: 3)
+            Text("Search youre Video´s everywhere!")
+                .fontDesign(.monospaced)
+                .foregroundColor(Color.white)
+                .shadow(radius: 4, x: 1, y: 1)
+                .offset(y: 3)
+
             Spacer()
 
         }

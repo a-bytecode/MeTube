@@ -33,8 +33,6 @@ struct LoginView: View {
             
             VStack {
                 
-
-                
                 Spacer()
                     .frame(height: 100)
                 LogoView()
@@ -43,7 +41,7 @@ struct LoginView: View {
                 ButtonsLoginView()
                     .offset(y: -15)
             }.environmentObject(fbViewModel)
-                .environmentObject(viewModel)
+             .environmentObject(viewModel)
                 
         }
         .edgesIgnoringSafeArea(.all)

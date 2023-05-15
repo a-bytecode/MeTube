@@ -13,7 +13,8 @@ struct LoginPWView: View {
     
     var body: some View {
         
-        VStack(alignment: .trailing) {
+        VStack {
+
             ZStack {
                 Rectangle()
                     .fill(Color.black)
