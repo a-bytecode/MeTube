@@ -15,23 +15,23 @@ struct LoginPWView: View {
         
         VStack(alignment: .trailing) {
             ZStack {
-                RoundedRectangle(cornerRadius: 20)
+                Rectangle()
                     .fill(Color.black)
                     .frame(height: 50)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 20)
+                        Rectangle()
                             .stroke(Color.white, lineWidth: 2)
                     )
                 SecureField("Password", text: $input)
                     .frame(width: .infinity, height: 40)
                     .foregroundColor(Color.white)
-                    .foregroundColor(Color.red)
                     .tint(Color.red)
                     .accentColor(Color.red)
                     .padding(20)
+                
             }
             Spacer()
-        }.padding(.horizontal, 50)
+        }.padding(.horizontal, 30)
     }
 }
 

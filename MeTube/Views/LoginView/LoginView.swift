@@ -41,7 +41,7 @@ struct LoginView: View {
                 LoginTFView(input: $fbViewModel.email)
                 LoginPWView(input: $input)
                 ButtonsLoginView()
-                    .offset(y: -10)
+                    .offset(y: -15)
             }.environmentObject(fbViewModel)
                 .environmentObject(viewModel)
                 
