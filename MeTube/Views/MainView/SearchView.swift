@@ -13,6 +13,7 @@ struct SearchView: View {
     
     @EnvironmentObject var viewModel : MeTubeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
+    @EnvironmentObject var fbViewModel : FirebaseViewModel
     @State var input : String
     @State var searchTerm : String
     @State var navigate = false
@@ -128,7 +129,7 @@ struct SearchView: View {
                         .frame(height: 20)
                     
                     // Custom TabView
-                    ParticleEffectView(viewModel: viewModel, navigate: $navigate)
+                    ParticleEffectView(viewModel: viewModel, navigate: $navigate).environmentObject(fbViewModel)
                     Spacer()
                         .frame(height: 30)
                         .onAppear {

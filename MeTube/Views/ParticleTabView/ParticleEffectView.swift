@@ -10,6 +10,7 @@ import SwiftUI
 struct ParticleEffectView: View {
     
     @ObservedObject var viewModel : MeTubeViewModel
+    @EnvironmentObject var fbViewModel : FirebaseViewModel
     @State private var isLiked: [Bool] = [false, false, false]
     var isEnabled: [Bool] = [true, true, true]
     @Binding var navigate: Bool
@@ -39,7 +40,7 @@ struct ParticleEffectView: View {
                 }
                 
                 // Navigation Favoriten
-                NavigationLink(destination: FavoritenView(), isActive: $navigateFav){
+                NavigationLink(destination: FavoritenView().environmentObject(fbViewModel), isActive: $navigateFav){
                     if isEnabled[1] {
                         CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {
                             isLiked[1].toggle()

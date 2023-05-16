@@ -30,9 +30,12 @@ struct MeTubeApp: App {
                 LoginView()
                     .environmentObject(fbViewModel)
                     .environmentObject(viewModel)
-                    
-            }.onAppear {
-                NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm), isActive: $fbViewModel.isLoggedIn) {
+                    .onAppear {
+                        fbViewModel.checkUser()
+                    }
+                NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm)
+                    .environmentObject(viewModel)
+                    .environmentObject(fbViewModel), isActive: $fbViewModel.isLoggedIn) {
                     EmptyView()
                 }
             }

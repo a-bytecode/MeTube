@@ -19,9 +19,10 @@ class FirebaseViewModel: ObservableObject {
     @Published var password = ""
     @Published var isLoggedIn = false
     
-    init() {
-        checkUser()
-    }
+//    init() {
+//        checkUser()
+//        print("CHECK LOGGED IN STATUS: \(isLoggedIn)")
+//    }
     
     func signUp(){
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
