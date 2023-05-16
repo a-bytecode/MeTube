@@ -28,7 +28,6 @@ struct LoginTFView: View {
                         .tint(Color.red)
                         .accentColor(Color.red)
                         .padding(20)
-
             }
 
         }.padding(.horizontal, 30)

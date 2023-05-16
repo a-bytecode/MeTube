@@ -13,21 +13,23 @@ struct SignInTFView: View {
     
     var body: some View {
      
-        VStack(alignment: .trailing) {
+        VStack {
+            
             ZStack {
-                RoundedRectangle(cornerRadius: 20)
+                Rectangle()
                     .fill(Color.black)
                     .frame(height: 50)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.white, lineWidth: 2)
-                    )
-                TextField("Email", text: $input)
-                    .frame(width: .infinity, height: 40)
-                    .foregroundColor(Color.white)
-                    .padding(20)
+                    .overlay(Rectangle().stroke(Color.white, lineWidth: 2))
+
+                    TextField("Email", text: $input)
+                        .frame(width: .infinity, height: 40)
+                        .foregroundColor(Color.white)
+                        .tint(Color.red)
+                        .accentColor(Color.red)
+                        .padding(20)
             }
-        }.padding(.horizontal, 50)
+
+        }.padding(.horizontal, 30)
         
     }
 }
