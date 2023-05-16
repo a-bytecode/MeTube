@@ -138,6 +138,7 @@ struct SearchView: View {
                 
             }
             .edgesIgnoringSafeArea(.all)
+            .navigationBarBackButtonHidden()
         }
 }
 

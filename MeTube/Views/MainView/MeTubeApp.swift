@@ -13,7 +13,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct MeTubeApp: App {
-    //Registration für Firebase Setup
+    //Registration für Firebase Setup!
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     
@@ -21,16 +21,20 @@ struct MeTubeApp: App {
     @StateObject var fbViewModel = FirebaseViewModel()
     @State private var searchTerm = ""
     @State private var input = ""
-//    @State private var isSheetOpen = false
 
     var body: some Scene { // TODO: EnviromentObject als übergeordneten Datentyp erstellen
         
         WindowGroup {
-//            SearchView(input: input, searchTerm: searchTerm)
+
             NavigationStack {
                 LoginView()
                     .environmentObject(fbViewModel)
                     .environmentObject(viewModel)
+                    
+            }.onAppear {
+                NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm), isActive: $fbViewModel.isLoggedIn) {
+                    EmptyView()
+                }
             }
         }
     }

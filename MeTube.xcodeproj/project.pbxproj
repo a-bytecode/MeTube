@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B737D8ED2A04F04500780F56 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737D8EC2A04F04500780F56 /* FavoriteButton.swift */; };
+		B73E94B12A13A70600654003 /* ExtentionPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73E94B02A13A70600654003 /* ExtentionPlaceholderView.swift */; };
 		B7400C782A084E2F00CFA0DC /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C772A084E2F00CFA0DC /* CommentView.swift */; };
 		B7400C7E2A08559900CFA0DC /* CommentPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C7D2A08559900CFA0DC /* CommentPictureView.swift */; };
 		B7400C802A08573E00CFA0DC /* CommentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C7F2A08573E00CFA0DC /* CommentCardView.swift */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		B737D8EC2A04F04500780F56 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		B73E94B02A13A70600654003 /* ExtentionPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionPlaceholderView.swift; sourceTree = "<group>"; };
 		B7400C772A084E2F00CFA0DC /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		B7400C7D2A08559900CFA0DC /* CommentPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPictureView.swift; sourceTree = "<group>"; };
 		B7400C7F2A08573E00CFA0DC /* CommentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCardView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,14 @@
 				B7B39D262A0B961600AC786F /* LastSearchHeadlineView.swift */,
 			);
 			path = ListView;
+			sourceTree = "<group>";
+		};
+		B73E94AF2A13A6D900654003 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B73E94B02A13A70600654003 /* ExtentionPlaceholderView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B7400C762A084E0F00CFA0DC /* CommentView */ = {
@@ -269,6 +279,7 @@
 		B7D5BBB029FBF978001BB3D6 /* MeTube */ = {
 			isa = PBXGroup;
 			children = (
+				B73E94AF2A13A6D900654003 /* Extensions */,
 				B7B13EF729FBFDF200F79204 /* SplashScreen */,
 				B7B13F0D29FBFEFC00F79204 /* Secret */,
 				B7B13EEF29FBFDE000F79204 /* Models */,
@@ -416,6 +427,7 @@
 				B7A49FBA29FEFAB000114B70 /* Particle.swift in Sources */,
 				B7B749922A040AA6009E7C6B /* PlayerAndCommentsView.swift in Sources */,
 				B7A49FB629FEF5A800114B70 /* ParticleEffectView.swift in Sources */,
+				B73E94B12A13A70600654003 /* ExtentionPlaceholderView.swift in Sources */,
 				B7B13F0929FBFE3400F79204 /* ListView.swift in Sources */,
 				B7FDD1332A0E344A001E7FDA /* FirebaseViewModel.swift in Sources */,
 				B7A039CA2A0A6D710060ECC8 /* NoCommentView.swift in Sources */,

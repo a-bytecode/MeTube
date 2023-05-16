@@ -19,6 +19,10 @@ class FirebaseViewModel: ObservableObject {
     @Published var password = ""
     @Published var isLoggedIn = false
     
+    init() {
+        checkUser()
+    }
+    
     func signUp(){
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
             
@@ -62,6 +66,14 @@ class FirebaseViewModel: ObservableObject {
             self.isLoggedIn = false
         } catch let signOutError as NSError {
             print("Fehler beim ausloggen: %@", signOutError)
+        }
+    }
+    
+    func checkUser() {
+        if Auth.auth().currentUser != nil {
+            isLoggedIn = true
+        } else {
+            isLoggedIn = false
         }
     }
     
