@@ -22,6 +22,10 @@ struct SignInTFView: View {
                     .overlay(Rectangle().stroke(Color.white, lineWidth: 2))
 
                     TextField("Email", text: $input)
+                    .placeholder(when: input.isEmpty) {
+                        Text("Email")
+                            .foregroundColor(Color.white)
+                    }
                         .frame(width: .infinity, height: 40)
                         .foregroundColor(Color.white)
                         .tint(Color.red)

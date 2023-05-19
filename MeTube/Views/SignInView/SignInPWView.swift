@@ -29,6 +29,11 @@ struct SignInPWView: View {
                     .tint(Color.red)
                     .accentColor(Color.red)
                     .padding(20)
+                    .placeholder(when: input.isEmpty) {
+                        Text("Password")
+                            .foregroundColor(Color.white)
+                            .offset(x:20)
+                    }
                 
             }
         }.padding(.horizontal, 30)

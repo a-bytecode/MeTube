@@ -30,12 +30,14 @@ struct SignInView: View {
             }
             
             VStack {
-                
                 Spacer()
+                    .frame(height: 100)
+                LogoView()
+                
                 SignInTFView(input: $fbViewModel.email)
                 SignInPWView(input: $fbViewModel.password)
                 Spacer()
-                
+                    .frame(height: 200)
                 NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm)) {
                     
                     Button(action: {
