@@ -33,7 +33,11 @@ struct SignInView: View {
                 Spacer()
                     .frame(height: 100)
                 LogoView()
-                
+                Text("Register your Account")
+                    .fontDesign(.monospaced)
+                    .foregroundColor(Color.white)
+                    .shadow(radius: 4, x: 1, y: 1)
+
                 SignInTFView(input: $fbViewModel.email)
                 SignInPWView(input: $fbViewModel.password)
                 Spacer()
