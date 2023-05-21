@@ -79,7 +79,6 @@ struct ButtonsLoginView: View {
                 Image(systemName: "c.circle")
                     .offset(x: -5)
                     .foregroundColor(Color.white)
-
             }
         }
     }
