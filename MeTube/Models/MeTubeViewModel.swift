@@ -87,35 +87,6 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
         self.lastSearchResults = self.videos
     }
     
-    func saveLastSearchResultsToFirebase() {
-        guard let userId = Auth.auth().currentUser?.uid else {
-            print("User is not logged in!")
-            return
-        }
-        
-        let searchResultsRef = db.collection("Users").document(userId).collection("lastSearchList")
-        
-        searchResultsRef.getDocuments { [weak self] (snapshot, error) in
-            guard let strongSelf = self, let documents = snapshot?.documents else {
-                print("Failed to fetsch search results: \(error?.localizedDescription ?? "")")
-                return
-            }
-            
-            for document in documents {
-                document.reference.delete()
-            }
-            //Speichern der aktuallen Suchergebnisse
-            for (index, result) in strongSelf.lastSearchResults.enumerated() {
-                let data: [String:Any] = [
-                    "videoId" : result.identifier?.videoId ?? "",
-                    "title": result.snippet?.title ?? ""
-                    // Hier werden noch weitere Relevante Daten gespeichert!!!
-                ]
-                searchResultsRef.document("result_\(index)").setData(data)
-            }
-        }
-    }
-    
     func fetchComments(videoId: String) {
         
         let service = GTLRYouTubeService()
@@ -144,10 +115,41 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
             }
         }
     }
+    
+    // Alle Methoden zu Firebase:
+    func saveLastSearchResultsToFirebase() {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            print("User is not logged in!")
+            return
+        }
+        
+        let searchResultsRef = db.collection("Users").document(userId).collection("lastSearchList")
+        
+        searchResultsRef.getDocuments { [weak self] (snapshot, error) in
+            guard let strongSelf = self, let documents = snapshot?.documents else {
+                print("Failed to fetsch search results: \(error?.localizedDescription ?? "")")
+                return
+            }
+            
+            for document in documents {
+                document.reference.delete()
+            }
+            //Speichern der aktuallen Suchergebnisse
+            for (index, result) in strongSelf.lastSearchResults.enumerated() {
+                let data: [String:Any] = [
+                    "videoId" : result.identifier?.videoId ?? "",
+                    "title": result.snippet?.title ?? "",
+                    "thumbnail": result.snippet?.thumbnails?.high ?? "" // Favoriten Attribut noch hinzufügen!!!
+                    // Hier werden noch weitere Relevante Daten gespeichert!!!
+                ]
+                searchResultsRef.document("result_\(index)").setData(data)
+            }
+        }
+    }
 }
 
 
-//extension GTLRYouTube_SearchResult { Extension ist dazu da, vorhandene Structs oder Classen zu erweitern.
+//extension GTLRYouTube_SearchResult { Extension ist dazu da, vorhandene Structs oder Klassen zu erweitern.
 //
 //    var comments : [GTLRYouTube_CommentSnippet] {
 //        print("hallohallohallohallohallohallohallohallohallohallo")

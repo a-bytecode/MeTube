@@ -40,7 +40,7 @@ struct ParticleEffectView: View {
                 }
                 
                 // Navigation Favoriten
-                NavigationLink(destination: FavoritenView().environmentObject(viewModel).environmentObject(fbViewModel), isActive: $navigateFav){
+                NavigationLink(destination: FavoritenView().environmentObject(viewModel), isActive: $navigateFav){
                     if isEnabled[1] {
                         CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {
                             isLiked[1].toggle()

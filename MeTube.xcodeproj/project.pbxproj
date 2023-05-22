@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7160A8D2A1B9BDB0020B219 /* VideoHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7160A8C2A1B9BDB0020B219 /* VideoHistoryModel.swift */; };
 		B737D8ED2A04F04500780F56 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737D8EC2A04F04500780F56 /* FavoriteButton.swift */; };
 		B73E94B12A13A70600654003 /* ExtentionPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73E94B02A13A70600654003 /* ExtentionPlaceholderView.swift */; };
 		B7400C782A084E2F00CFA0DC /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C772A084E2F00CFA0DC /* CommentView.swift */; };
@@ -21,7 +22,6 @@
 		B7A49FB829FEF9CC00114B70 /* ParticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB729FEF9CC00114B70 /* ParticleView.swift */; };
 		B7A49FBA29FEFAB000114B70 /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB929FEFAB000114B70 /* Particle.swift */; };
 		B7B13EF429FBFDE000F79204 /* MeTubeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EF029FBFDE000F79204 /* MeTubeViewModel.swift */; };
-		B7B13EF529FBFDE000F79204 /* MeTubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EF129FBFDE000F79204 /* MeTubeModel.swift */; };
 		B7B13EF929FBFDF200F79204 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EF829FBFDF200F79204 /* SplashView.swift */; };
 		B7B13F0529FBFE3400F79204 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EFC29FBFE3400F79204 /* SettingsView.swift */; };
 		B7B13F0629FBFE3400F79204 /* TitelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B13EFD29FBFE3400F79204 /* TitelView.swift */; };
@@ -62,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B7160A8C2A1B9BDB0020B219 /* VideoHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHistoryModel.swift; sourceTree = "<group>"; };
 		B737D8EC2A04F04500780F56 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		B73E94B02A13A70600654003 /* ExtentionPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionPlaceholderView.swift; sourceTree = "<group>"; };
 		B7400C772A084E2F00CFA0DC /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		B7A49FB729FEF9CC00114B70 /* ParticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleView.swift; sourceTree = "<group>"; };
 		B7A49FB929FEFAB000114B70 /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
 		B7B13EF029FBFDE000F79204 /* MeTubeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTubeViewModel.swift; sourceTree = "<group>"; };
-		B7B13EF129FBFDE000F79204 /* MeTubeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTubeModel.swift; sourceTree = "<group>"; };
 		B7B13EF829FBFDF200F79204 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B7B13EFC29FBFE3400F79204 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B7B13EFD29FBFE3400F79204 /* TitelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitelView.swift; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				B7B13EF029FBFDE000F79204 /* MeTubeViewModel.swift */,
-				B7B13EF129FBFDE000F79204 /* MeTubeModel.swift */,
+				B7160A8C2A1B9BDB0020B219 /* VideoHistoryModel.swift */,
 				B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */,
 				B7FDD1322A0E344A001E7FDA /* FirebaseViewModel.swift */,
 				B7FDD1292A0E2A69001E7FDA /* GoogleService-Info.plist */,
@@ -412,6 +412,7 @@
 			files = (
 				B7B13F0729FBFE3400F79204 /* SearchView.swift in Sources */,
 				B7D5BBC029FBF9B9001BB3D6 /* MeTubeView.swift in Sources */,
+				B7160A8D2A1B9BDB0020B219 /* VideoHistoryModel.swift in Sources */,
 				B7B13F0529FBFE3400F79204 /* SettingsView.swift in Sources */,
 				B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */,
 				B7FDD13F2A0E4339001E7FDA /* SignInTFView.swift in Sources */,
@@ -436,7 +437,6 @@
 				B7A039CA2A0A6D710060ECC8 /* NoCommentView.swift in Sources */,
 				B7B13F0F29FBFEFC00F79204 /* API_KEY.swift in Sources */,
 				B7B13F0C29FBFE3400F79204 /* FavoritenView.swift in Sources */,
-				B7B13EF529FBFDE000F79204 /* MeTubeModel.swift in Sources */,
 				B7FDD13C2A0E3E53001E7FDA /* LoginPWView.swift in Sources */,
 				B7400C782A084E2F00CFA0DC /* CommentView.swift in Sources */,
 				B7B13F0829FBFE3400F79204 /* CardView.swift in Sources */,

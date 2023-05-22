@@ -24,6 +24,26 @@ class FirebaseViewModel: ObservableObject {
 //        print("CHECK LOGGED IN STATUS: \(isLoggedIn)")
 //    }
     
+    
+    func fetchHistory() {
+        
+        let ref = db.collection("watchHistory")
+        let listener = ref.addSnapshotListener { [self] querySnapshot, error in
+            
+            if let error = error {
+                print("Snapshot error: \(error)")
+                return
+            }
+            
+            for document in querySnapshot!.documents {
+                let data = document.data()
+                let video = [Any]
+            }
+       }
+}
+    
+    
+    
     func signUp(){
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
             
@@ -35,10 +55,10 @@ class FirebaseViewModel: ObservableObject {
                 
                 let docRef = strongSelf.db.collection("Users").document(authResult?.user.uid ?? "No ID")
     
-                var datas = ["email" : authResult?.user.email, "uid": authResult?.user.uid, "displayName": authResult?.user.displayName]
+                let datas = ["email" : authResult?.user.email, "uid": authResult?.user.uid, "displayName": authResult?.user.displayName]
                 
                 docRef.setData(datas)
-                 
+                
             }
             else {
                 print ("Error...")
