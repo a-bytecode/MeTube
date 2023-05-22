@@ -129,7 +129,7 @@ struct SearchView: View {
                         .frame(height: 20)
                     
                     // Custom TabView
-                    ParticleEffectView(viewModel: viewModel, navigate: $navigate).environmentObject(fbViewModel)
+                    ParticleEffectView(viewModel: viewModel, navigate: $navigate).environmentObject(fbViewModel).environmentObject(fbViewModel)
                     Spacer()
                         .frame(height: 30)
                         .onAppear {
@@ -147,5 +147,6 @@ struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView(input: "",searchTerm: "")
             .environmentObject(MeTubeViewModel())
+            .environmentObject(FirebaseViewModel())
     }
 }

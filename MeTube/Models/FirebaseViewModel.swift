@@ -31,13 +31,13 @@ class FirebaseViewModel: ObservableObject {
             
             if error == nil && authResult != nil {
                 
-                strongSelf.db.collection("Users").addDocument(data: ["email" : authResult?.user.email, "uid": authResult?.user.uid, "displayName": authResult?.user.displayName]){ error in
-                    
-                    if error != nil {
-                        print("Error: \(error?.localizedDescription)")
-                    }
-                    
-                }
+                strongSelf.db.collection("lastSearchResults").document() // Wir möchten ein weiteres Document erstellen wo die letzten Suchergebnisse beinhaltet. In dem Document müssen alle Attribute sein die ein Video Suchergebnis hat: "VideoID","Thumbnail","Titel","Favorit"
+                
+                let docRef = strongSelf.db.collection("Users").document(authResult?.user.uid ?? "No ID")
+    
+                var datas = ["email" : authResult?.user.email, "uid": authResult?.user.uid, "displayName": authResult?.user.displayName]
+                
+                docRef.setData(datas)
                  
             }
             else {

@@ -9,6 +9,7 @@ import Foundation
 import GoogleAPIClientForREST_YouTube // Import durch Cocoapods
 import YouTubePlayerKit
 import Firebase
+import FirebaseFirestore
 
 class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycodesofficial.medium.com/creating-a-youtube-interface-with-swiftui-using-youtube-api-df616e099726
     //
@@ -92,7 +93,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
             return
         }
         
-        let searchResultsRef = db.collection("users").document(userId).collection("SearchResults")
+        let searchResultsRef = db.collection("Users").document(userId).collection("lastSearchList")
         
         searchResultsRef.getDocuments { [weak self] (snapshot, error) in
             guard let strongSelf = self, let documents = snapshot?.documents else {
@@ -110,7 +111,6 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                     "title": result.snippet?.title ?? ""
                     // Hier werden noch weitere Relevante Daten gespeichert!!!
                 ]
-                
                 searchResultsRef.document("result_\(index)").setData(data)
             }
         }
