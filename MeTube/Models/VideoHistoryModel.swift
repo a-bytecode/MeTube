@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct videoHistory : Identifiable {
+struct VideoHistory : Identifiable {
     
     var id : String
     let videoList : [Any] // "AnyObject" ist weniger Fehleranfällig als "Any"! AnyObject bezieht sich auf Objekte also auf Klassen!

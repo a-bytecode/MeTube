@@ -58,6 +58,7 @@ struct SearchView: View {
                         Button(action: {
                             viewModel.fetchVideos(term: input)
                             viewModel.fetchSearchResults(term: input)
+                            fbViewModel.fetchHistory()
                             
                         }, label: {
                             
@@ -87,6 +88,8 @@ struct SearchView: View {
                         Button(action: {
                             viewModel.fetchVideos(term: input)
                             viewModel.fetchSearchResults(term: input)
+                            fbViewModel.fetchHistory()
+                            fbViewModel.saveVideoFirebase(video: VideoHistory(id: "4", list: ["Popeye","Background","123234yxdf", false]))
                             isClicked = true
                             isLoaded = false
                             withAnimation {

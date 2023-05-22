@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B7160A8D2A1B9BDB0020B219 /* VideoHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7160A8C2A1B9BDB0020B219 /* VideoHistoryModel.swift */; };
+		B7160A902A1BA1550020B219 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B7160A8F2A1BA1550020B219 /* FirebaseStorage */; };
+		B7160A922A1BA1550020B219 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = B7160A912A1BA1550020B219 /* FirebaseStorageCombine-Community */; };
 		B737D8ED2A04F04500780F56 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737D8EC2A04F04500780F56 /* FavoriteButton.swift */; };
 		B73E94B12A13A70600654003 /* ExtentionPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73E94B02A13A70600654003 /* ExtentionPlaceholderView.swift */; };
 		B7400C782A084E2F00CFA0DC /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C772A084E2F00CFA0DC /* CommentView.swift */; };
@@ -113,9 +115,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7160A922A1BA1550020B219 /* FirebaseStorageCombine-Community in Frameworks */,
 				B7D5BBC629FBFA4A001BB3D6 /* GoogleAPIClientForRESTCore in Frameworks */,
 				B7D5BBC329FBFA1F001BB3D6 /* YouTubePlayerKit in Frameworks */,
 				B7D5BBCA29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeAnalytics in Frameworks */,
+				B7160A902A1BA1550020B219 /* FirebaseStorage in Frameworks */,
 				B7A49FB029FEE30800114B70 /* FLAnimatedImage in Frameworks */,
 				B7D5BBC829FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTube in Frameworks */,
 				B7FDD12F2A0E3378001E7FDA /* FirebaseFirestore in Frameworks */,
@@ -128,6 +132,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7160A8E2A1BA1550020B219 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B7259D962A015150005539A9 /* ListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +278,7 @@
 			children = (
 				B7D5BBB029FBF978001BB3D6 /* MeTube */,
 				B7D5BBAF29FBF978001BB3D6 /* Products */,
+				B7160A8E2A1BA1550020B219 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -348,6 +360,8 @@
 				B7FDD12C2A0E3378001E7FDA /* FirebaseAuth */,
 				B7FDD12E2A0E3378001E7FDA /* FirebaseFirestore */,
 				B7FDD1302A0E3378001E7FDA /* FirebaseFirestoreSwift */,
+				B7160A8F2A1BA1550020B219 /* FirebaseStorage */,
+				B7160A912A1BA1550020B219 /* FirebaseStorageCombine-Community */,
 			);
 			productName = MeTube;
 			productReference = B7D5BBAE29FBF978001BB3D6 /* MeTube.app */;
@@ -687,6 +701,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B7160A8F2A1BA1550020B219 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7FDD12B2A0E3378001E7FDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		B7160A912A1BA1550020B219 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7FDD12B2A0E3378001E7FDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
 		B7A49FAF29FEE30800114B70 /* FLAnimatedImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B7A49FAE29FEE30800114B70 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */;

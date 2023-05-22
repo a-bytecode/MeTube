@@ -9,7 +9,8 @@ import Foundation
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
-
+import FirebaseStorage
+import SwiftUI
 
 class FirebaseViewModel: ObservableObject {
     
@@ -18,18 +19,20 @@ class FirebaseViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var isLoggedIn = false
-    
-//    init() {
-//        checkUser()
-//        print("CHECK LOGGED IN STATUS: \(isLoggedIn)")
-//    }
+    @Published var videos = [VideoHistory]()
+    let userId = Auth.auth().currentUser!.uid
     
     
+    //    init() {
+    //        checkUser()
+    //        print("CHECK LOGGED IN STATUS: \(isLoggedIn)")
+    //    }
     func fetchHistory() {
         
-        let ref = db.collection("watchHistory")
+        let ref = db.collection("Users").document(userId).collection("watchHistory")
+        print("Referenz!!",ref)
         let listener = ref.addSnapshotListener { [self] querySnapshot, error in
-            
+            print("Start fetching History!!!!")
             if let error = error {
                 print("Snapshot error: \(error)")
                 return
@@ -37,11 +40,33 @@ class FirebaseViewModel: ObservableObject {
             
             for document in querySnapshot!.documents {
                 let data = document.data()
-                let video = [Any]
+                let video = VideoHistory(data: data)
+                print("DATA ------->>>",data)
+                if !videos.contains(where: { $0.id == video.id }) {
+                    videos.append(video)
+                    print("FetchHistory ------> \(video)")
+                }
             }
-       }
-}
+        }
+    }
     
+    func saveVideoFirebase(video: VideoHistory) { // TODO: Funktion muss noch gemacht werden um das Video zu erstellen, es müssen die Sachen aus der API herausgenommen werden und es muss nach der richtigen Rheinfolge erstellt werden.
+        
+        let storage = Storage.storage()
+        
+        let storageRef = storage.reference()
+        print("userId -> \(userId)")
+        db.collection("Users").document(userId).collection("watchHistory").document(video.id).setData([
+            "id": video.id,
+            "videoList": video.videoList]) { error in
+            if let error = error {
+                print("error writing \(error)")
+                return
+            } else {
+                print("written")
+            }
+        }
+    }
     
     
     func signUp(){
@@ -54,7 +79,7 @@ class FirebaseViewModel: ObservableObject {
                 strongSelf.db.collection("lastSearchResults").document() // Wir möchten ein weiteres Document erstellen wo die letzten Suchergebnisse beinhaltet. In dem Document müssen alle Attribute sein die ein Video Suchergebnis hat: "VideoID","Thumbnail","Titel","Favorit"
                 
                 let docRef = strongSelf.db.collection("Users").document(authResult?.user.uid ?? "No ID")
-    
+                
                 let datas = ["email" : authResult?.user.email, "uid": authResult?.user.uid, "displayName": authResult?.user.displayName]
                 
                 docRef.setData(datas)
