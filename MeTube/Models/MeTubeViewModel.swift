@@ -103,6 +103,16 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
             for document in documents {
                 document.reference.delete()
             }
+            //Speichern der aktuallen Suchergebnisse
+            for (index, result) in strongSelf.lastSearchResults.enumerated() {
+                let data: [String:Any] = [
+                    "videoId" : result.identifier?.videoId ?? "",
+                    "title": result.snippet?.title ?? ""
+                    // Hier werden noch weitere Relevante Daten gespeichert!!!
+                ]
+                
+                searchResultsRef.document("result_\(index)").setData(data)
+            }
         }
     }
     
