@@ -8,10 +8,13 @@
 import Foundation
 import GoogleAPIClientForREST_YouTube // Import durch Cocoapods
 import YouTubePlayerKit
+import Firebase
 
 class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycodesofficial.medium.com/creating-a-youtube-interface-with-swiftui-using-youtube-api-df616e099726
     //
     let secretKey: String = apiKey
+    
+    let db = Firestore.firestore()
     
     @Published var videos: [GTLRYouTube_SearchResult] {
 
@@ -81,6 +84,26 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
     
     func saveLastSearchResults() {
         self.lastSearchResults = self.videos
+    }
+    
+    func saveLastSearchResultsToFirebase() {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            print("User is not logged in!")
+            return
+        }
+        
+        let searchResultsRef = db.collection("users").document(userId).collection("SearchResults")
+        
+        searchResultsRef.getDocuments { [weak self] (snapshot, error) in
+            guard let strongSelf = self, let documents = snapshot?.documents else {
+                print("Failed to fetsch search results: \(error?.localizedDescription ?? "")")
+                return
+            }
+            
+            for document in documents {
+                document.reference.delete()
+            }
+        }
     }
     
     func fetchComments(videoId: String) {
