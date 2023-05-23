@@ -8,13 +8,36 @@
 import SwiftUI
 
 struct FBListView: View {
+    
+    @ObservedObject var fbViewModel : FirebaseViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            
+            ZStack {
+                
+                ScrollView {
+                    ForEach(fbViewModel.videos, id: \.self) { video in
+
+                        FBCardView()
+                    }
+                    // -> Placeolder****
+//                    CardView()
+//                    CardView()
+//                    CardView()
+//                    CardView()
+                    // -> Placeolder****
+                }
+            }
+            .edgesIgnoringSafeArea(.all)
+        }
     }
+    
 }
 
 struct FBListView_Previews: PreviewProvider {
     static var previews: some View {
-        FBListView()
+        FBListView(fbViewModel: FirebaseViewModel())
     }
 }

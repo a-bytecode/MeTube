@@ -20,7 +20,7 @@ struct FBCardView: View {
 //                TitelView()
 //                    .offset(y: -29)
                 // -> Placeholder ****
-                FBImageView()
+                FBImageView(fbViewModel: <#FirebaseViewModel#>)
                 FBTitelView()
                     .offset(y: -29)
                 FavoriteButton()

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FBImageView: View {
+    
+    @ObservedObject var fbViewModel: FirebaseViewModel
         
     var body: some View {
        
@@ -22,9 +24,9 @@ struct FBImageView: View {
                 
                 // AsyncImage wird benutzt um aus dem Internet von der URL das Bild zu ziehen.
                     AsyncImage(
-//                        url: URL(string: video.snippet!.thumbnails!.high!.url!),
+//                      url: URL(string: video.snippet!.thumbnails!.high!.url!),
                         //-> Placeholder***
-                         url: URL(string: "https://i.ytimg.com/vi/dMoFcvfd5t4/hqdefault.jpg"),
+                        url: URL(string: fbViewModel.videos.first as! String),
                         //-> Placeholder***
                         content: { image in
                             image.image?
@@ -43,6 +45,6 @@ struct FBImageView: View {
 
 struct FBImageView_Previews: PreviewProvider {
     static var previews: some View {
-        FBImageView()
+        FBImageView(fbViewModel: FirebaseViewModel())
     }
 }
