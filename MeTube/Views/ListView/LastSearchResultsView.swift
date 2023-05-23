@@ -12,7 +12,7 @@ import FirebaseFirestore
 struct LastSearchResultsView: View {
     
     @ObservedObject var viewModel : MeTubeViewModel
-    @ObservedObject var fbViewModel : FirebaseViewModel
+//    @ObservedObject var fbViewModel : FirebaseViewModel
     
     var body: some View {
         
@@ -20,15 +20,15 @@ struct LastSearchResultsView: View {
             
             ScrollView {
                 
-                ForEach(fbViewModel.videos ,id: \.self) { lastVideo in
-                    CardView(video: lastVideo.id, viewModel: fbViewModel)
-                }
+//                ForEach(fbViewModel.videos ,id: \.self) { lastVideo in
+//                    CardView(video: lastVideo.id, viewModel: fbViewModel)
+//                }
             }
             .edgesIgnoringSafeArea(.all)
         }
-        .onAppear {
-            fbViewModel.fetchHistory()
-        }
+//        .onAppear {
+//            fbViewModel.fetchHistory()
+//        }
     }
 }
 

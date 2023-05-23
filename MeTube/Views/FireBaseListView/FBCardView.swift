@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct FBCardView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ZStack {
+            
+            VStack() {
+                
+                // -> Placeholder ****
+//                ImageView()
+//                TitelView()
+//                    .offset(y: -29)
+                // -> Placeholder ****
+                FBImageView()
+                FBTitelView()
+                    .offset(y: -29)
+                FavoriteButton()
+                    .offset(x:160,y: -83)
+                
+            }
+        }
     }
 }
 
