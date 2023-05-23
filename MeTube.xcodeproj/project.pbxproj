@@ -48,6 +48,11 @@
 		B7D5BBC829FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTube in Frameworks */ = {isa = PBXBuildFile; productRef = B7D5BBC729FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTube */; };
 		B7D5BBCA29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B7D5BBC929FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeAnalytics */; };
 		B7D5BBCC29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeReporting in Frameworks */ = {isa = PBXBuildFile; productRef = B7D5BBCB29FBFA4A001BB3D6 /* GoogleAPIClientForREST_YouTubeReporting */; };
+		B7E839112A1CE1BD001D356B /* FBImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E839102A1CE1BD001D356B /* FBImageView.swift */; };
+		B7E839132A1CE1CF001D356B /* FBTitelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E839122A1CE1CF001D356B /* FBTitelView.swift */; };
+		B7E839152A1CE1E2001D356B /* FBCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E839142A1CE1E2001D356B /* FBCardView.swift */; };
+		B7E839172A1CE1F2001D356B /* FBListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E839162A1CE1F2001D356B /* FBListView.swift */; };
+		B7E839192A1CE213001D356B /* FBwatchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E839182A1CE213001D356B /* FBwatchHistoryView.swift */; };
 		B7FC94032A00459100C34973 /* SearchTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FC94022A00459100C34973 /* SearchTextFieldView.swift */; };
 		B7FDD12A2A0E2A69001E7FDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD1292A0E2A69001E7FDA /* GoogleService-Info.plist */; };
 		B7FDD12D2A0E3378001E7FDA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B7FDD12C2A0E3378001E7FDA /* FirebaseAuth */; };
@@ -98,6 +103,11 @@
 		B7D5BBB529FBF979001BB3D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7D5BBB829FBF979001BB3D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B7D5BBBF29FBF9B9001BB3D6 /* MeTubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTubeView.swift; sourceTree = "<group>"; };
+		B7E839102A1CE1BD001D356B /* FBImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBImageView.swift; sourceTree = "<group>"; };
+		B7E839122A1CE1CF001D356B /* FBTitelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBTitelView.swift; sourceTree = "<group>"; };
+		B7E839142A1CE1E2001D356B /* FBCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBCardView.swift; sourceTree = "<group>"; };
+		B7E839162A1CE1F2001D356B /* FBListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBListView.swift; sourceTree = "<group>"; };
+		B7E839182A1CE213001D356B /* FBwatchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBwatchHistoryView.swift; sourceTree = "<group>"; };
 		B7FC94022A00459100C34973 /* SearchTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldView.swift; sourceTree = "<group>"; };
 		B7FDD1292A0E2A69001E7FDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "MeTube/Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B7FDD1322A0E344A001E7FDA /* FirebaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewModel.swift; sourceTree = "<group>"; };
@@ -258,6 +268,7 @@
 				B7980A262A027EF200D37AD5 /* SettingsView */,
 				B7980A252A027E8D00D37AD5 /* ParticleTabView */,
 				B7980A222A02504900D37AD5 /* PlayerView */,
+				B7E8390D2A1CDAC3001D356B /* FireBaseListView */,
 				B7259D962A015150005539A9 /* ListView */,
 				B7980A242A02550900D37AD5 /* SearchView */,
 				B7980A232A02505A00D37AD5 /* MainView */,
@@ -310,6 +321,18 @@
 				B7D5BBB829FBF979001BB3D6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B7E8390D2A1CDAC3001D356B /* FireBaseListView */ = {
+			isa = PBXGroup;
+			children = (
+				B7E839102A1CE1BD001D356B /* FBImageView.swift */,
+				B7E839122A1CE1CF001D356B /* FBTitelView.swift */,
+				B7E839142A1CE1E2001D356B /* FBCardView.swift */,
+				B7E839162A1CE1F2001D356B /* FBListView.swift */,
+				B7E839182A1CE213001D356B /* FBwatchHistoryView.swift */,
+			);
+			path = FireBaseListView;
 			sourceTree = "<group>";
 		};
 		B7FDD1342A0E3511001E7FDA /* LoginView */ = {
@@ -426,15 +449,19 @@
 			files = (
 				B7B13F0729FBFE3400F79204 /* SearchView.swift in Sources */,
 				B7D5BBC029FBF9B9001BB3D6 /* MeTubeView.swift in Sources */,
+				B7E839152A1CE1E2001D356B /* FBCardView.swift in Sources */,
 				B7160A8D2A1B9BDB0020B219 /* VideoHistoryModel.swift in Sources */,
+				B7E839132A1CE1CF001D356B /* FBTitelView.swift in Sources */,
 				B7B13F0529FBFE3400F79204 /* SettingsView.swift in Sources */,
 				B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */,
 				B7FDD13F2A0E4339001E7FDA /* SignInTFView.swift in Sources */,
+				B7E839112A1CE1BD001D356B /* FBImageView.swift in Sources */,
 				B7FC94032A00459100C34973 /* SearchTextFieldView.swift in Sources */,
 				B7B13F0629FBFE3400F79204 /* TitelView.swift in Sources */,
 				B7400C822A08595C00CFA0DC /* CommentListView.swift in Sources */,
 				B7B39D252A0B960900AC786F /* LastSearchResultsView.swift in Sources */,
 				B7FDD1412A0E434A001E7FDA /* SignInPWView.swift in Sources */,
+				B7E839192A1CE213001D356B /* FBwatchHistoryView.swift in Sources */,
 				B7B39D272A0B961600AC786F /* LastSearchHeadlineView.swift in Sources */,
 				B7FDD1362A0E3528001E7FDA /* SignInView.swift in Sources */,
 				B7FDD1382A0E3538001E7FDA /* LoginView.swift in Sources */,
@@ -455,6 +482,7 @@
 				B7400C782A084E2F00CFA0DC /* CommentView.swift in Sources */,
 				B7B13F0829FBFE3400F79204 /* CardView.swift in Sources */,
 				B7C1733B2A0D1FE400926FA5 /* FavoritenHeadlineView.swift in Sources */,
+				B7E839172A1CE1F2001D356B /* FBListView.swift in Sources */,
 				B7B13F0B29FBFE3400F79204 /* ImageView.swift in Sources */,
 				B789ECD72A1AB3B400C95264 /* ButtonSignInView.swift in Sources */,
 				B7B13EF929FBFDF200F79204 /* SplashView.swift in Sources */,

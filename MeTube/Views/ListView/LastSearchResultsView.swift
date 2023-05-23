@@ -7,10 +7,12 @@
 
 import SwiftUI
 import GoogleAPIClientForREST_YouTube
+import FirebaseFirestore
 
 struct LastSearchResultsView: View {
     
     @ObservedObject var viewModel : MeTubeViewModel
+    @ObservedObject var fbViewModel : FirebaseViewModel
     
     var body: some View {
         
@@ -18,11 +20,14 @@ struct LastSearchResultsView: View {
             
             ScrollView {
                 
-                ForEach(viewModel.lastSearchResults,id: \.self) { lastVideo in
-                    CardView(video: lastVideo, viewModel: viewModel)
+                ForEach(fbViewModel.videos ,id: \.self) { lastVideo in
+                    CardView(video: lastVideo.id, viewModel: fbViewModel)
                 }
             }
             .edgesIgnoringSafeArea(.all)
+        }
+        .onAppear {
+            fbViewModel.fetchHistory()
         }
     }
 }
