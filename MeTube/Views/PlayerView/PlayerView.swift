@@ -18,6 +18,8 @@ struct PlayerView: View {
     @State var videoID: String = ""
     @StateObject var settingsViewModel = SettingsViewModel()
     @ObservedObject var viewModel: MeTubeViewModel
+    @ObservedObject var fbViewModel: FirebaseViewModel
+    var videoDetailsFB : [Any] = []
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
     @State var gradientFill = LinearGradient(colors: [.green,.yellow], startPoint: .topLeading, endPoint: .bottomTrailing)
     
@@ -69,20 +71,15 @@ struct PlayerView: View {
                     }
 
                     .onAppear {
+                        
+                        var videoHistory = VideoHistory(id: videoID, list: videoDetailsFB)
                         settingsViewModel.loadAnimatedImage(from: url)
+                        fbViewModel.saveVideoFirebase(video: videoHistory)
                     }
-
                 }
                 
                 CommentListView(viewModel: viewModel,videoID: videoID)
                         .padding(.horizontal, 50)
-                //Unwrapping VideoComments
-//                if let video = video {
-//                    CommentListView(video: video)
-//                        .padding(.horizontal, 50)
-//                } else {
-//                    Text("Error")
-//                }
             }
         }
         .edgesIgnoringSafeArea(.all)
@@ -102,7 +99,7 @@ struct PlayerView_Previews: PreviewProvider {
     //https://www.youtube.com/watch?v=aYYSlCa3xfw
 
     static var previews: some View {
-        PlayerView(youTubePlayer: youTubePlayer,viewModel: MeTubeViewModel())
+        PlayerView(youTubePlayer: youTubePlayer,viewModel: MeTubeViewModel(), fbViewModel: FirebaseViewModel())
     }
 }
 

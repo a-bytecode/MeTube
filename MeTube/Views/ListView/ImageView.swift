@@ -13,6 +13,7 @@ struct ImageView: View {
     
     let video : GTLRYouTube_SearchResult
     @ObservedObject var viewModel : MeTubeViewModel
+    
     @State private var player: YouTubePlayer = YouTubePlayer()
     
 //    let urlSource: YouTubePlayer.Source? = .url("https://youtube.com/watch?v=psL_5RIBqnY")
@@ -24,7 +25,7 @@ struct ImageView: View {
             configuration: .init(
                 autoPlay: true
             )
-        ),videoID: videoID,viewModel: viewModel)
+        ),videoID: videoID,viewModel: viewModel,fbViewModel: FirebaseViewModel(), videoDetailsFB: [video.identifier?.videoId,video.snippet?.title,video.snippet?.thumbnails?.high?.url,false])
     }
 
     var body: some View {

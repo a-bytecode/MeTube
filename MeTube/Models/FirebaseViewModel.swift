@@ -27,6 +27,7 @@ class FirebaseViewModel: ObservableObject {
     //        checkUser()
     //        print("CHECK LOGGED IN STATUS: \(isLoggedIn)")
     //    }
+    
     func fetchHistory() {
         
         let ref = db.collection("Users").document(userId).collection("watchHistory")
@@ -52,10 +53,6 @@ class FirebaseViewModel: ObservableObject {
     
     func saveVideoFirebase(video: VideoHistory) { // TODO: Funktion muss noch gemacht werden um das Video zu erstellen, es müssen die Sachen aus der API herausgenommen werden und es muss nach der richtigen Rheinfolge erstellt werden.
         
-        let storage = Storage.storage()
-        
-        let storageRef = storage.reference()
-        print("userId -> \(userId)")
         db.collection("Users").document(userId).collection("watchHistory").document(video.id).setData([
             "id": video.id,
             "videoList": video.videoList]) { error in
