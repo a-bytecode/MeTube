@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FBTitelView: View {
     
+    var fbVideoTitle: String
+    
     var body: some View {
         
         ZStack{
@@ -21,7 +23,7 @@ struct FBTitelView: View {
             HStack() {
                 
                 // -> Placeholder***
-                Text("Peanut Butter Cookie Fudge Bars - Dished #Shorts")
+                Text(fbVideoTitle)
                 //-> Placeholder***
                 
 //                Text(video.snippet!.title ?? "Error")
@@ -37,6 +39,6 @@ struct FBTitelView: View {
 
 struct FBTitelView_Previews: PreviewProvider {
     static var previews: some View {
-        FBTitelView()
+        FBTitelView(fbVideoTitle: "")
     }
 }

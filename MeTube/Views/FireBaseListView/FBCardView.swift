@@ -9,9 +9,8 @@ import SwiftUI
 
 struct FBCardView: View {
     
-    var fbVideoId: String
-    
-    
+    var fbVideo: VideoHistory
+
     var body: some View {
         
         ZStack {
@@ -23,8 +22,9 @@ struct FBCardView: View {
 //                TitelView()
 //                    .offset(y: -29)
                 // -> Placeholder ****
-                FBImageView(fbVideoId: fbVideoId)
-                FBTitelView()
+                // TODO: Try catch um den ganzen Block herumbauen um Crash zu vermeiden!!
+                FBImageView(fbVideoImage: fbVideo.videoList[2] as! String)
+                FBTitelView(fbVideoTitle: fbVideo.videoList[1] as! String)
                     .offset(y: -29)
                 FavoriteButton()
                     .offset(x:160,y: -83)
@@ -32,13 +32,13 @@ struct FBCardView: View {
             }
         }
         .onAppear {
-            print("Video ID Check -> ", fbVideoId)
+            print("Video ID Check -> ", fbVideo)
         }
     }
 }
 
 struct FBCardView_Previews: PreviewProvider {
     static var previews: some View {
-        FBCardView(fbVideoId: "")
+        FBCardView(fbVideo: VideoHistory(id: "", list: []) )
     }
 }

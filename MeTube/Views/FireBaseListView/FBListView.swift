@@ -19,7 +19,7 @@ struct FBListView: View {
                 
                 ScrollView {
                     ForEach(fbViewModel.videos, id: \.self) { video in
-                        FBCardView(fbVideoId: video.id)
+                        FBCardView(fbVideo: video)
                     }
                     // -> Placeolder****
 //                    CardView()
