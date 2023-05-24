@@ -27,7 +27,7 @@ struct ParticleEffectView: View {
             HStack(spacing: 20) {
                 
                 // Navigation Book
-                NavigationLink(destination: PlayerView(viewModel: viewModel, fbViewModel: FirebaseViewModel()), isActive: $navigate){
+                NavigationLink(destination: FBListView(fbViewModel: fbViewModel), isActive: $navigate){
                     if isEnabled[0] {
                         CustomButton(systemImage: "video.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
                             navigate.toggle()

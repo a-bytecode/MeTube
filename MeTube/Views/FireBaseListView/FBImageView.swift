@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FBImageView: View {
     
-    @ObservedObject var fbViewModel: FirebaseViewModel
+    var fbVideoId: String
         
     var body: some View {
        
@@ -26,7 +26,7 @@ struct FBImageView: View {
                     AsyncImage(
 //                      url: URL(string: video.snippet!.thumbnails!.high!.url!),
                         //-> Placeholder***
-                        url: URL(string: fbViewModel.videos.first as! String),
+                        url: URL(string: fbVideoId),
                         //-> Placeholder***
                         content: { image in
                             image.image?
@@ -45,6 +45,6 @@ struct FBImageView: View {
 
 struct FBImageView_Previews: PreviewProvider {
     static var previews: some View {
-        FBImageView(fbViewModel: FirebaseViewModel())
+        FBImageView(fbVideoId: "")
     }
 }

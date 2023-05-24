@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct VideoHistory : Identifiable {
+struct VideoHistory : Hashable, Identifiable {
+    static func == (lhs: VideoHistory, rhs: VideoHistory) -> Bool {
+      return lhs.id == rhs.id
+    }
+    
+    
     var id : String
     let videoList : [Any] // "AnyObject" ist weniger Fehleranfällig als "Any"! AnyObject bezieht sich auf Objekte also auf Klassen!
     
@@ -20,4 +25,8 @@ struct VideoHistory : Identifiable {
         self.id = data["id"] as? String ?? "Not found!"
         self.videoList = data["videoList"] as? [Any] ?? [""]
     }
+    
+    func hash(into hasher: inout Hasher) {
+            hasher.combine(id)
+        }
 }

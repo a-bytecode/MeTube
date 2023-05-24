@@ -20,26 +20,33 @@ class FirebaseViewModel: ObservableObject {
     @Published var password = ""
     @Published var isLoggedIn = false
     @Published var videos = [VideoHistory]()
-    let userId = Auth.auth().currentUser!.uid
+    var userId : String?
     
     
-    //    init() {
-    //        checkUser()
-    //        print("CHECK LOGGED IN STATUS: \(isLoggedIn)")
-    //    }
+        init() {
+            guard let userId = Auth.auth().currentUser?.uid else {
+                return
+            }
+            self.userId = userId
+            print("USER ID -> ", userId)
+            fetchHistory()
+        }
     
     func fetchHistory() {
         
-        let ref = db.collection("Users").document(userId).collection("watchHistory")
+        let ref = db.collection("Users").document(userId ?? "Error UserId").collection("watchHistory")
         print("Referenz!!",ref)
+        print("USER ID!!",userId)
         let listener = ref.addSnapshotListener { [self] querySnapshot, error in
             print("Start fetching History!!!!")
             if let error = error {
                 print("Snapshot error: \(error)")
                 return
             }
-            
+            print("Vor der For Schleife!")
+            print("Snapshot",querySnapshot!.documents)
             for document in querySnapshot!.documents {
+                print("In der For Schleife!")
                 let data = document.data()
                 let video = VideoHistory(data: data)
                 print("DATA ------->>>",data)
@@ -53,7 +60,7 @@ class FirebaseViewModel: ObservableObject {
     
     func saveVideoFirebase(video: VideoHistory) { // TODO: Funktion muss noch gemacht werden um das Video zu erstellen, es müssen die Sachen aus der API herausgenommen werden und es muss nach der richtigen Rheinfolge erstellt werden.
         
-        db.collection("Users").document(userId).collection("watchHistory").document(video.id).setData([
+        db.collection("Users").document(userId ?? "Error UserId").collection("watchHistory").document(video.id).setData([
             "id": video.id,
             "videoList": video.videoList]) { error in
             if let error = error {

@@ -19,8 +19,7 @@ struct FBListView: View {
                 
                 ScrollView {
                     ForEach(fbViewModel.videos, id: \.self) { video in
-
-                        FBCardView()
+                        FBCardView(fbVideoId: video.id)
                     }
                     // -> Placeolder****
 //                    CardView()
@@ -31,6 +30,9 @@ struct FBListView: View {
                 }
             }
             .edgesIgnoringSafeArea(.all)
+        }
+        .onAppear {
+            print("FBVIEWMODEL is EMPTY?",fbViewModel.videos)
         }
     }
     

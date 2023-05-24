@@ -132,7 +132,7 @@ struct SearchView: View {
                         .frame(height: 20)
                     
                     // Custom TabView
-                    ParticleEffectView(viewModel: viewModel, navigate: $navigate).environmentObject(fbViewModel).environmentObject(fbViewModel)
+                    ParticleEffectView(viewModel: viewModel, navigate: $navigate).environmentObject(fbViewModel)
                     Spacer()
                         .frame(height: 30)
                         .onAppear {
