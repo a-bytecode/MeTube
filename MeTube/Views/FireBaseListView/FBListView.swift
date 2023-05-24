@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YouTubePlayerKit
 
 struct FBListView: View {
     
@@ -13,30 +14,32 @@ struct FBListView: View {
     
     var body: some View {
         
-        VStack {
-            
-            ZStack {
+            VStack {
                 
-                ScrollView {
-                    ForEach(fbViewModel.videos, id: \.self) { video in
-                        FBCardView(fbVideo: video)
+                ZStack {
+                    
+                    ScrollView {
+                       
+                        ForEach(fbViewModel.videos, id: \.self) { video in
+                            
+                            FBCardView(fbVideo: video)
+                        }
+                        // -> Placeolder****
+                        //                    CardView()
+                        //                    CardView()
+                        //                    CardView()
+                        //                    CardView()
+                        // -> Placeolder****
                     }
-                    // -> Placeolder****
-//                    CardView()
-//                    CardView()
-//                    CardView()
-//                    CardView()
-                    // -> Placeolder****
                 }
+                .edgesIgnoringSafeArea(.all)
             }
-            .edgesIgnoringSafeArea(.all)
+            .onAppear {
+                print("FBVIEWMODEL is EMPTY?",fbViewModel.videos)
+            }
         }
-        .onAppear {
-            print("FBVIEWMODEL is EMPTY?",fbViewModel.videos)
-        }
+        
     }
-    
-}
 
 struct FBListView_Previews: PreviewProvider {
     static var previews: some View {

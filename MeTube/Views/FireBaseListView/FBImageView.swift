@@ -21,7 +21,6 @@ struct FBImageView: View {
                 .shadow(radius: 5, x: 2,y: 5)
             
             HStack {
-                
                 // AsyncImage wird benutzt um aus dem Internet von der URL das Bild zu ziehen.
                     AsyncImage(
 //                      url: URL(string: video.snippet!.thumbnails!.high!.url!),
@@ -36,7 +35,6 @@ struct FBImageView: View {
                                 .frame(width: 350, height: 300)
                                 .padding()
                         })
-                
                 }
             }
         

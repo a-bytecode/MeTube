@@ -8,15 +8,12 @@
 import Foundation
 import GoogleAPIClientForREST_YouTube // Import durch Cocoapods
 import YouTubePlayerKit
-import Firebase
-import FirebaseFirestore
+
 
 class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycodesofficial.medium.com/creating-a-youtube-interface-with-swiftui-using-youtube-api-df616e099726
     //
     let secretKey: String = apiKey
-    
-    let db = Firestore.firestore()
-    
+        
     @Published var videos: [GTLRYouTube_SearchResult] {
 
         didSet { // nachdem die Variable verändert worden ist. wird das Ereignis ausgeführt, vergleichbar mit Observer! 
@@ -112,37 +109,6 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                     }
                 }
                 self.comments.append(comments)
-            }
-        }
-    }
-    
-    // Alle Methoden zu Firebase:
-    func saveLastSearchResultsToFirebase() {
-        guard let userId = Auth.auth().currentUser?.uid else {
-            print("User is not logged in!")
-            return
-        }
-        
-        let searchResultsRef = db.collection("Users").document(userId).collection("lastSearchList")
-        
-        searchResultsRef.getDocuments { [weak self] (snapshot, error) in
-            guard let strongSelf = self, let documents = snapshot?.documents else {
-                print("Failed to fetsch search results: \(error?.localizedDescription ?? "")")
-                return
-            }
-            
-            for document in documents {
-                document.reference.delete()
-            }
-            //Speichern der aktuallen Suchergebnisse
-            for (index, result) in strongSelf.lastSearchResults.enumerated() {
-                let data: [String:Any] = [
-                    "videoId" : result.identifier?.videoId ?? "",
-                    "title": result.snippet?.title ?? "",
-                    "thumbnail": result.snippet?.thumbnails?.high ?? "" // Favoriten Attribut noch hinzufügen!!!
-                    // Hier werden noch weitere Relevante Daten gespeichert!!!
-                ]
-                searchResultsRef.document("result_\(index)").setData(data)
             }
         }
     }

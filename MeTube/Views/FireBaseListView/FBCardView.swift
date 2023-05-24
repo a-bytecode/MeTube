@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YouTubePlayerKit
 
 struct FBCardView: View {
     
@@ -23,10 +24,10 @@ struct FBCardView: View {
 //                    .offset(y: -29)
                 // -> Placeholder ****
                 // TODO: Try catch um den ganzen Block herumbauen um Crash zu vermeiden!!
-                FBImageView(fbVideoImage: fbVideo.videoList[2] as! String)
-                FBTitelView(fbVideoTitle: fbVideo.videoList[1] as! String)
-                    .offset(y: -29)
-                FavoriteButton()
+                    FBImageView(fbVideoImage: fbVideo.videoList[2] as! String)
+                    FBTitelView(fbVideoTitle: fbVideo.videoList[1] as! String)
+                        .offset(y: -29)
+                    FavoriteButton()
                     .offset(x:160,y: -83)
                 
             }
@@ -37,8 +38,8 @@ struct FBCardView: View {
     }
 }
 
-struct FBCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        FBCardView(fbVideo: VideoHistory(id: "", list: []) )
-    }
-}
+//struct FBCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FBCardView(fbVideo: VideoHistory(id: "", list: []) )
+//    }
+//}
