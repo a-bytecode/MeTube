@@ -21,7 +21,7 @@ struct FBListView: View {
                     
                     ScrollView {
                        
-                        ForEach(fbViewModel.videos, id: \.self) { video in
+                        ForEach(fbViewModel.videoHistory, id: \.self) { video in
                             
                             FBCardView(fbVideo: video, viewModel: viewModel)
 //                            Text("\(video.videoList.count)")
@@ -29,9 +29,6 @@ struct FBListView: View {
                     }
                 }
                 .edgesIgnoringSafeArea(.all)
-            }
-            .onAppear {
-                print("FBVIEWMODEL is EMPTY?",fbViewModel.videos)
             }
         }
         

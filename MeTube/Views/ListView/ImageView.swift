@@ -18,15 +18,17 @@ struct ImageView: View {
     
 //    let urlSource: YouTubePlayer.Source? = .url("https://youtube.com/watch?v=psL_5RIBqnY")
 
-    func getPlayerViewByURL(videoID: String) -> PlayerView {
-        
-        return PlayerView(youTubePlayer: YouTubePlayer(
-            source: .url("https://youtube.com/watch?v=\(videoID)"),
-            configuration: .init(
-                autoPlay: true
-            )
-        ),videoID: videoID,viewModel: viewModel,fbViewModel: FirebaseViewModel(), videoDetailsFB: [video.identifier?.videoId,video.snippet?.title,video.snippet?.thumbnails?.high?.url,false])
-    }
+//    func getPlayerViewByURL(videoID: String) -> PlayerView {
+//
+//        return PlayerView(youTubePlayer: YouTubePlayer(
+//            source: .url("https://youtube.com/watch?v=\(videoID)"),
+//            configuration: .init(
+//                autoPlay: true
+//            )
+//        ), firebaseVideo: <#FirebaseVideo#>,videoID: videoID,viewModel: viewModel,fbViewModel: FirebaseViewModel(), videoDetailsFB: [video.identifier?.videoId,video.snippet?.title,video.snippet?.thumbnails?.high?.url,false])
+//    }
+    
+    
     
     var body: some View {
         NavigationLink(destination: getPlayerViewByURL(videoID: video.identifier?.videoId ?? "Error")) {

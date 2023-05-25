@@ -10,27 +10,27 @@ import YouTubePlayerKit
 
 struct FBCardView: View {
     
-    var fbVideo: VideoHistory
+    var fbVideo: FirebaseVideo
     @ObservedObject var viewModel: MeTubeViewModel
     
-    func getPlayerViewByURL(videoID: String) -> PlayerView {
+    func getPlayerViewByURL(firebaseVideo: FirebaseVideo) -> PlayerView {
         
         return PlayerView(youTubePlayer: YouTubePlayer(
-            source: .url("https://youtube.com/watch?v=\(videoID)"),
+            source: .url("https://youtube.com/watch?v=\(firebaseVideo.id)"),
             configuration: .init(
                 autoPlay: true
             )
-        ),videoID: videoID,viewModel: viewModel,fbViewModel: FirebaseViewModel())
+        ), firebaseVideo: fbVideo,viewModel: viewModel,fbViewModel: FirebaseViewModel())
     }
 
     var body: some View {
-        NavigationLink(destination: getPlayerViewByURL(videoID: fbVideo.videoList.first as! String ?? "Error")) {
+        NavigationLink(destination: getPlayerViewByURL(firebaseVideo: fbVideo)) {
             
             ZStack {
                 
                 VStack() {
-                    FBImageView(fbVideoImage: fbVideo.videoList[2] as! String)
-                    FBTitelView(fbVideoTitle: fbVideo.videoList[1] as! String)
+                    FBImageView(fbVideoImage: fbVideo.img)
+                    FBTitelView(fbVideoTitle: fbVideo.title)
                         .offset(y: -29)
                     FavoriteButton()
                         .offset(x:160,y: -83)

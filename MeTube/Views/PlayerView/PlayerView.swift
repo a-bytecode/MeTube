@@ -15,11 +15,10 @@ struct PlayerView: View {
     
 //    var video: GTLRYouTube_SearchResult? = nil
     @State var youTubePlayer: YouTubePlayer = YouTubePlayer()
-    @State var videoID: String = ""
+    @State var firebaseVideo: FirebaseVideo
     @StateObject var settingsViewModel = SettingsViewModel()
     @ObservedObject var viewModel: MeTubeViewModel
     @ObservedObject var fbViewModel: FirebaseViewModel
-    var videoDetailsFB : [Any] = []
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
     @State var gradientFill = LinearGradient(colors: [.green,.yellow], startPoint: .topLeading, endPoint: .bottomTrailing)
     
@@ -72,13 +71,13 @@ struct PlayerView: View {
 
                     .onAppear {
                         
-                        var videoHistory = VideoHistory(id: videoID, list: videoDetailsFB)
+                       
                         settingsViewModel.loadAnimatedImage(from: url)
-                        fbViewModel.saveVideoFirebase(video: videoHistory)
+                        fbViewModel.saveVideoFirebase(video: firebaseVideo)
                     }
                 }
                 
-                CommentListView(viewModel: viewModel,videoID: videoID)
+                CommentListView(viewModel: viewModel,videoID: firebaseVideo.id)
                         .padding(.horizontal, 50)
             }
         }
@@ -99,7 +98,8 @@ struct PlayerView_Previews: PreviewProvider {
     //https://www.youtube.com/watch?v=aYYSlCa3xfw
 
     static var previews: some View {
-        PlayerView(youTubePlayer: youTubePlayer,viewModel: MeTubeViewModel(), fbViewModel: FirebaseViewModel())
+        PlayerView(youTubePlayer: youTubePlayer, firebaseVideo: FirebaseVideo(data: [
+            "id": "jsadld","img": "asdasd", "title":"asddas","lastWatched":"sdasd","isFavorite":false]),viewModel: MeTubeViewModel(), fbViewModel: FirebaseViewModel())
     }
 }
 
