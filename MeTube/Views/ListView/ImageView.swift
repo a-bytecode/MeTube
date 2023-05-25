@@ -27,7 +27,7 @@ struct ImageView: View {
             )
         ),videoID: videoID,viewModel: viewModel,fbViewModel: FirebaseViewModel(), videoDetailsFB: [video.identifier?.videoId,video.snippet?.title,video.snippet?.thumbnails?.high?.url,false])
     }
-
+    
     var body: some View {
         NavigationLink(destination: getPlayerViewByURL(videoID: video.identifier?.videoId ?? "Error")) {
         ZStack {

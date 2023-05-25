@@ -11,29 +11,34 @@ import YouTubePlayerKit
 struct FBCardView: View {
     
     var fbVideo: VideoHistory
+    @ObservedObject var viewModel: MeTubeViewModel
+    
+    func getPlayerViewByURL(videoID: String) -> PlayerView {
+        
+        return PlayerView(youTubePlayer: YouTubePlayer(
+            source: .url("https://youtube.com/watch?v=\(videoID)"),
+            configuration: .init(
+                autoPlay: true
+            )
+        ),videoID: videoID,viewModel: viewModel,fbViewModel: FirebaseViewModel())
+    }
 
     var body: some View {
-        
-        ZStack {
+        NavigationLink(destination: getPlayerViewByURL(videoID: fbVideo.videoList.first as! String ?? "Error")) {
             
-            VStack() {
-                // TODO: mit Prints anschauen was für Daten wo drinnen sind! Mehr mit Prints arbeiten.
-                // -> Placeholder ****
-//                ImageView()
-//                TitelView()
-//                    .offset(y: -29)
-                // -> Placeholder ****
-                // TODO: Try catch um den ganzen Block herumbauen um Crash zu vermeiden!!
+            ZStack {
+                
+                VStack() {
                     FBImageView(fbVideoImage: fbVideo.videoList[2] as! String)
                     FBTitelView(fbVideoTitle: fbVideo.videoList[1] as! String)
                         .offset(y: -29)
                     FavoriteButton()
-                    .offset(x:160,y: -83)
-                
+                        .offset(x:160,y: -83)
+                }
             }
-        }
-        .onAppear {
-            print("Video ID Check -> ", fbVideo)
+            .onAppear {
+                print("Video ID Check -> ", fbVideo)
+            }
         }
     }
 }

@@ -27,7 +27,7 @@ struct ParticleEffectView: View {
             HStack(spacing: 20) {
                 
                 // Navigation Book
-                NavigationLink(destination: FBListView(fbViewModel: fbViewModel), isActive: $navigate){
+                NavigationLink(destination: AccountView(), isActive: $navigate){
                     if isEnabled[0] {
                         CustomButton(systemImage: "person.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
                             navigate.toggle()

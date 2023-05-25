@@ -39,6 +39,8 @@
 		B7B39D292A0BD6C400AC786F /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B39D282A0BD6C400AC786F /* LogoView.swift */; };
 		B7B749922A040AA6009E7C6B /* PlayerAndCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B749912A040AA6009E7C6B /* PlayerAndCommentsView.swift */; };
 		B7BA6EED2A1F67FA002C6387 /* AccountHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BA6EEC2A1F67FA002C6387 /* AccountHeadlineView.swift */; };
+		B7BA6EEF2A1F6876002C6387 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BA6EEE2A1F6876002C6387 /* AccountView.swift */; };
+		B7BA6EF12A1F6B26002C6387 /* AccountImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BA6EF02A1F6B26002C6387 /* AccountImageView.swift */; };
 		B7C1733B2A0D1FE400926FA5 /* FavoritenHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1733A2A0D1FE400926FA5 /* FavoritenHeadlineView.swift */; };
 		B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */; };
 		B7D5BBB629FBF979001BB3D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D5BBB529FBF979001BB3D6 /* Assets.xcassets */; };
@@ -99,6 +101,8 @@
 		B7B39D282A0BD6C400AC786F /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		B7B749912A040AA6009E7C6B /* PlayerAndCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAndCommentsView.swift; sourceTree = "<group>"; };
 		B7BA6EEC2A1F67FA002C6387 /* AccountHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeadlineView.swift; sourceTree = "<group>"; };
+		B7BA6EEE2A1F6876002C6387 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		B7BA6EF02A1F6B26002C6387 /* AccountImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImageView.swift; sourceTree = "<group>"; };
 		B7C1733A2A0D1FE400926FA5 /* FavoritenHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritenHeadlineView.swift; sourceTree = "<group>"; };
 		B7D5BBAE29FBF978001BB3D6 /* MeTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTubeApp.swift; sourceTree = "<group>"; };
@@ -291,6 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				B7BA6EEC2A1F67FA002C6387 /* AccountHeadlineView.swift */,
+				B7BA6EEE2A1F6876002C6387 /* AccountView.swift */,
+				B7BA6EF02A1F6B26002C6387 /* AccountImageView.swift */,
 			);
 			path = AccountView;
 			sourceTree = "<group>";
@@ -479,12 +485,14 @@
 				B7FDD1382A0E3538001E7FDA /* LoginView.swift in Sources */,
 				B7B13EF429FBFDE000F79204 /* MeTubeViewModel.swift in Sources */,
 				B7B13F0A29FBFE3400F79204 /* PlayerView.swift in Sources */,
+				B7BA6EEF2A1F6876002C6387 /* AccountView.swift in Sources */,
 				B7A49FB829FEF9CC00114B70 /* ParticleView.swift in Sources */,
 				B7400C802A08573E00CFA0DC /* CommentCardView.swift in Sources */,
 				B7A49FBA29FEFAB000114B70 /* Particle.swift in Sources */,
 				B7B749922A040AA6009E7C6B /* PlayerAndCommentsView.swift in Sources */,
 				B7A49FB629FEF5A800114B70 /* ParticleEffectView.swift in Sources */,
 				B73E94B12A13A70600654003 /* ExtentionPlaceholderView.swift in Sources */,
+				B7BA6EF12A1F6B26002C6387 /* AccountImageView.swift in Sources */,
 				B7B13F0929FBFE3400F79204 /* ListView.swift in Sources */,
 				B7FDD1332A0E344A001E7FDA /* FirebaseViewModel.swift in Sources */,
 				B7A039CA2A0A6D710060ECC8 /* NoCommentView.swift in Sources */,

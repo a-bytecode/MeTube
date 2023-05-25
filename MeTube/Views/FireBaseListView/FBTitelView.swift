@@ -22,15 +22,12 @@ struct FBTitelView: View {
             
             HStack() {
                 
-                // -> Placeholder***
                 Text(fbVideoTitle)
-                //-> Placeholder***
-                
-//                Text(video.snippet!.title ?? "Error")
                     .font(.system(size: 22))
                     .bold()
                     .lineLimit(4)
                     .padding([.trailing,.leading])
+                    .foregroundColor(Color.black)
             
             }
         }
