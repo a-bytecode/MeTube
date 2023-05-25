@@ -48,14 +48,13 @@ struct MeTubeView: View {
                 FBListView(fbViewModel: fbViewModel)
                 .frame(width: .infinity, height: 600)
 
-                ParticleEffectView(viewModel: viewModel, isEnabled: [true, true, false], navigate: $navigate) //isEnabled: [true, true, false],
+                ParticleEffectView(viewModel: viewModel, isEnabled: [true, true, false], navigate: $navigate)
+                
                 Spacer()
                     .frame(height: 40)
 
             }
                 .onAppear {
-//                    viewModel.fetchVideos(term: searchTerm)
-//                    viewModel.fetchSearchResults(term: searchTerm)
                     print("CHECK ---> \(viewModel.lastSearchResults)")
                     settingsViewModel.loadAnimatedImage(from: url)
                 }

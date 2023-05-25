@@ -29,12 +29,12 @@ struct ParticleEffectView: View {
                 // Navigation Book
                 NavigationLink(destination: FBListView(fbViewModel: fbViewModel), isActive: $navigate){
                     if isEnabled[0] {
-                        CustomButton(systemImage: "video.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
+                        CustomButton(systemImage: "person.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
                             navigate.toggle()
                             isLiked[0].toggle()
                         }
                     } else {
-                        CustomButton(systemImage: "book.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {                            
+                        CustomButton(systemImage: "person.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
                         }
                     }
                 }

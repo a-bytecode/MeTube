@@ -38,6 +38,7 @@
 		B7B39D272A0B961600AC786F /* LastSearchHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B39D262A0B961600AC786F /* LastSearchHeadlineView.swift */; };
 		B7B39D292A0BD6C400AC786F /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B39D282A0BD6C400AC786F /* LogoView.swift */; };
 		B7B749922A040AA6009E7C6B /* PlayerAndCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B749912A040AA6009E7C6B /* PlayerAndCommentsView.swift */; };
+		B7BA6EED2A1F67FA002C6387 /* AccountHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BA6EEC2A1F67FA002C6387 /* AccountHeadlineView.swift */; };
 		B7C1733B2A0D1FE400926FA5 /* FavoritenHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1733A2A0D1FE400926FA5 /* FavoritenHeadlineView.swift */; };
 		B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */; };
 		B7D5BBB629FBF979001BB3D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D5BBB529FBF979001BB3D6 /* Assets.xcassets */; };
@@ -97,6 +98,7 @@
 		B7B39D262A0B961600AC786F /* LastSearchHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSearchHeadlineView.swift; sourceTree = "<group>"; };
 		B7B39D282A0BD6C400AC786F /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		B7B749912A040AA6009E7C6B /* PlayerAndCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAndCommentsView.swift; sourceTree = "<group>"; };
+		B7BA6EEC2A1F67FA002C6387 /* AccountHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeadlineView.swift; sourceTree = "<group>"; };
 		B7C1733A2A0D1FE400926FA5 /* FavoritenHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritenHeadlineView.swift; sourceTree = "<group>"; };
 		B7D5BBAE29FBF978001BB3D6 /* MeTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTubeApp.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		B7B13EFA29FBFE3400F79204 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B7BA6EEB2A1F67DC002C6387 /* AccountView */,
 				B7FDD13D2A0E3F6E001E7FDA /* SignInView */,
 				B7FDD1342A0E3511001E7FDA /* LoginView */,
 				B7400C762A084E0F00CFA0DC /* CommentView */,
@@ -282,6 +285,14 @@
 				B7B13F0E29FBFEFC00F79204 /* API_KEY.swift */,
 			);
 			path = Secret;
+			sourceTree = "<group>";
+		};
+		B7BA6EEB2A1F67DC002C6387 /* AccountView */ = {
+			isa = PBXGroup;
+			children = (
+				B7BA6EEC2A1F67FA002C6387 /* AccountHeadlineView.swift */,
+			);
+			path = AccountView;
 			sourceTree = "<group>";
 		};
 		B7D5BBA529FBF978001BB3D6 = {
@@ -459,6 +470,7 @@
 				B7FC94032A00459100C34973 /* SearchTextFieldView.swift in Sources */,
 				B7B13F0629FBFE3400F79204 /* TitelView.swift in Sources */,
 				B7400C822A08595C00CFA0DC /* CommentListView.swift in Sources */,
+				B7BA6EED2A1F67FA002C6387 /* AccountHeadlineView.swift in Sources */,
 				B7B39D252A0B960900AC786F /* LastSearchResultsView.swift in Sources */,
 				B7FDD1412A0E434A001E7FDA /* SignInPWView.swift in Sources */,
 				B7E839192A1CE213001D356B /* FBwatchHistoryView.swift in Sources */,

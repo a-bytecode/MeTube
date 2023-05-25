@@ -28,8 +28,6 @@ struct MeTubeApp: App {
 
             NavigationStack {
                 LoginView()
-//                    .environmentObject(fbViewModel)
-//                    .environmentObject(viewModel)
                     .onAppear {
                         fbViewModel.checkUser()
                     }
