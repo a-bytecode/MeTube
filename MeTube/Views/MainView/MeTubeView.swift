@@ -16,6 +16,7 @@ struct MeTubeView: View {
 
     @ObservedObject var viewModel : MeTubeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
+    @ObservedObject var fbViewModel  : FirebaseViewModel
     @State private var isEditing = false
     @Binding var navigate : Bool
     @State private var searchTerm = ""
@@ -44,7 +45,7 @@ struct MeTubeView: View {
                 LastSearchHeadlineView()
                 Spacer()
                     .frame(height: 15)
-                LastSearchResultsView(viewModel: viewModel)
+                FBListView(fbViewModel: fbViewModel)
                 .frame(width: .infinity, height: 600)
 
                 ParticleEffectView(viewModel: viewModel, isEnabled: [true, true, false], navigate: $navigate) //isEnabled: [true, true, false],
@@ -69,7 +70,7 @@ struct MeTubeView: View {
 
 struct MeTubeView_Previews: PreviewProvider {
     static var previews: some View {
-        MeTubeView(viewModel: MeTubeViewModel(), navigate: .constant(false))
+        MeTubeView(viewModel: MeTubeViewModel(), fbViewModel: FirebaseViewModel(), navigate: .constant(false))
     }
 }
 

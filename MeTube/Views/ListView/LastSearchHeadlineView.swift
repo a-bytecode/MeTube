@@ -11,7 +11,7 @@ struct LastSearchHeadlineView: View {
     
     var body: some View {
         
-        Text("Previous results")
+        Text("Watch History")
             .padding(.horizontal, 50)
             .padding(.vertical, 10)
             .foregroundColor(Color.white)

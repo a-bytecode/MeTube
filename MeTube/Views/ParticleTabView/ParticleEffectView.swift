@@ -53,7 +53,7 @@ struct ParticleEffectView: View {
                 }
                 
                 // Navigation Search
-                NavigationLink(destination: MeTubeView(viewModel: viewModel, navigate: $isSheetOpen), isActive: $shouldNavigateMeTubeView){
+                NavigationLink(destination: MeTubeView(viewModel: viewModel, fbViewModel: fbViewModel, navigate: $isSheetOpen), isActive: $shouldNavigateMeTubeView){
                     if isEnabled[2] {
                         CustomButton(systemImage: "arrowshape.turn.up.right.fill", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
                             shouldNavigateMeTubeView.toggle()

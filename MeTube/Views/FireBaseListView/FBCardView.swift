@@ -17,7 +17,7 @@ struct FBCardView: View {
         ZStack {
             
             VStack() {
-                
+                // TODO: mit Prints anschauen was für Daten wo drinnen sind! Mehr mit Prints arbeiten.
                 // -> Placeholder ****
 //                ImageView()
 //                TitelView()
