@@ -126,7 +126,7 @@ struct SearchView: View {
                         .frame(height: 12)
                     // Listenansicht
                     ListView(viewModel: viewModel, inputText: $searchTerm)
-                    //                    .frame(width: .infinity, height: 300)
+
                     Spacer()
                         .frame(height: 20)
                     

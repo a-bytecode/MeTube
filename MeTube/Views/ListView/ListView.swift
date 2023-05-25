@@ -28,18 +28,10 @@ struct ListView: View {
 
                         CardView(video: video, viewModel: viewModel)
                     }
-                    // -> Placeolder****
-//                    CardView()
-//                    CardView()
-//                    CardView()
-//                    CardView()
-                    // -> Placeolder****
                 }
             }
             .edgesIgnoringSafeArea(.all)
         }
-        
-        
     }
 }
 

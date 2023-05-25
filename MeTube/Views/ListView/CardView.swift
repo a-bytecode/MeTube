@@ -18,11 +18,6 @@ struct CardView: View {
         ZStack {
             VStack() {
                 
-                // -> Placeholder ****
-//                ImageView()
-//                TitelView()
-//                    .offset(y: -29)
-                // -> Placeholder ****
                 ImageView(video: video, viewModel: viewModel)
                 TitelView(video: video)
                     .offset(y: -29)

@@ -19,7 +19,7 @@ class FirebaseViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var isLoggedIn = false
-    @Published var videos = [VideoHistory]()
+    @Published var videoHistory = [FirebaseVideo]()
     var userId : String?
     
     
@@ -35,8 +35,7 @@ class FirebaseViewModel: ObservableObject {
     func fetchHistory() {
         
         let ref = db.collection("Users").document(userId ?? "Error UserId").collection("watchHistory")
-        print("Referenz!!",ref)
-        print("USER ID!!",userId)
+
         let listener = ref.addSnapshotListener { [self] querySnapshot, error in
             print("Start fetching History!!!!")
             if let error = error {
@@ -48,21 +47,24 @@ class FirebaseViewModel: ObservableObject {
             for document in querySnapshot!.documents {
                 print("In der For Schleife!")
                 let data = document.data()
-                let video = VideoHistory(data: data)
+                let video = FirebaseVideo(data: data)
                 print("DATA ------->>>",data)
-                if !videos.contains(where: { $0.id == video.id }) {
-                    videos.append(video)
+                if !videoHistory.contains(where: { $0.id == video.id }) {
+                    videoHistory.append(video)
                     print("FetchHistory ------> \(video)")
                 }
             }
         }
     }
     
-    func saveVideoFirebase(video: VideoHistory) { // TODO: Funktion muss noch gemacht werden um das Video zu erstellen, es müssen die Sachen aus der API herausgenommen werden und es muss nach der richtigen Rheinfolge erstellt werden.
+    func saveVideoFirebase(video: FirebaseVideo) { // TODO: Funktion muss noch gemacht werden um das Video zu erstellen, es müssen die Sachen aus der API herausgenommen werden und es muss nach der richtigen Rheinfolge erstellt werden.
         
         db.collection("Users").document(userId ?? "Error UserId").collection("watchHistory").document(video.id).setData([
             "id": video.id,
-            "videoList": video.videoList]) { error in
+            "img": video.img,
+            "title": video.title,
+            "isFavorite": video.isFavorite,
+            "lastWatched": video.lastWatched]) { error in
             if let error = error {
                 print("error writing \(error)")
                 return

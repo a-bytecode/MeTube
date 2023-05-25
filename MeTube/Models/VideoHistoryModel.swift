@@ -7,24 +7,26 @@
 
 import Foundation
 
-struct VideoHistory : Hashable, Identifiable {
-    static func == (lhs: VideoHistory, rhs: VideoHistory) -> Bool {
+struct FirebaseVideo : Hashable, Identifiable {
+    static func == (lhs: FirebaseVideo, rhs: FirebaseVideo) -> Bool {
       return lhs.id == rhs.id
     }
     
     
     var id : String
-    let videoList : [Any] // "AnyObject" ist weniger Fehleranfällig als "Any"! AnyObject bezieht sich auf Objekte also auf Klassen!
-    
-    init(id: String, list: [Any]) {
-        self.id = id
-        self.videoList = list
-    }
+    var img: String
+    var title: String
+    var isFavorite: Bool
+    var lastWatched: String // = "2023-05-25"
     
     init(data: [String : Any]) {
-        self.id = data["id"] as? String ?? "Not found!"
-        self.videoList = data["videoList"] as? [Any] ?? [""]
-    }
+        id = data["id"] as! String
+        img = data["img"] as! String
+        title = data["title"] as! String
+        isFavorite = (data["isFavorite"] != nil)
+        lastWatched = data["lastWatched"] as! String
+        
+}
     
     func hash(into hasher: inout Hasher) {
             hasher.combine(id)
