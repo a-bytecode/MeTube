@@ -12,19 +12,9 @@ struct FBCardView: View {
     
     var fbVideo: FirebaseVideo
     @ObservedObject var viewModel: MeTubeViewModel
-    
-    func getPlayerViewByURL(firebaseVideo: FirebaseVideo) -> PlayerView {
-        
-        return PlayerView(youTubePlayer: YouTubePlayer(
-            source: .url("https://youtube.com/watch?v=\(firebaseVideo.id)"),
-            configuration: .init(
-                autoPlay: true
-            )
-        ), firebaseVideo: fbVideo,viewModel: viewModel,fbViewModel: FirebaseViewModel())
-    }
 
     var body: some View {
-        NavigationLink(destination: getPlayerViewByURL(firebaseVideo: fbVideo)) {
+        NavigationLink(destination: getPlayerViewByFirebaseVideo(firebaseVideo: fbVideo, viewModel: viewModel)) {
             
             ZStack {
                 

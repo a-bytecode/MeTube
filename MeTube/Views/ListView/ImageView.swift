@@ -16,22 +16,15 @@ struct ImageView: View {
     
     @State private var player: YouTubePlayer = YouTubePlayer()
     
-//    let urlSource: YouTubePlayer.Source? = .url("https://youtube.com/watch?v=psL_5RIBqnY")
-
-//    func getPlayerViewByURL(videoID: String) -> PlayerView {
-//
-//        return PlayerView(youTubePlayer: YouTubePlayer(
-//            source: .url("https://youtube.com/watch?v=\(videoID)"),
-//            configuration: .init(
-//                autoPlay: true
-//            )
-//        ), firebaseVideo: <#FirebaseVideo#>,videoID: videoID,viewModel: viewModel,fbViewModel: FirebaseViewModel(), videoDetailsFB: [video.identifier?.videoId,video.snippet?.title,video.snippet?.thumbnails?.high?.url,false])
-//    }
-    
-    
     
     var body: some View {
-        NavigationLink(destination: getPlayerViewByURL(videoID: video.identifier?.videoId ?? "Error")) {
+        NavigationLink(destination: getPlayerViewByFirebaseVideo(firebaseVideo: FirebaseVideo(data: [
+            "id":video.identifier?.videoId,
+            "img":video.snippet?.thumbnails?.high?.url!,
+            "title":video.snippet?.title,
+            "isFavorite":false,
+            "lastWatched":"2023.25.05"
+        ]), viewModel: viewModel)) {
         ZStack {
             Rectangle()
                 .fill(LinearGradient(colors: [.yellow,.green], startPoint: .topLeading, endPoint: .bottomTrailing))

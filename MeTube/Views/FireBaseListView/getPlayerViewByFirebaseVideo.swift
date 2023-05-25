@@ -6,12 +6,9 @@
 //
 
 import Foundation
+import YouTubePlayerKit
 
-
-
-func getPlayerViewByURL(firebaseVideo: FirebaseVideo) -> PlayerView {
-    
-
+func getPlayerViewByFirebaseVideo(firebaseVideo: FirebaseVideo, viewModel: MeTubeViewModel) -> PlayerView {
     
     return PlayerView(youTubePlayer: YouTubePlayer(
         source: .url("https://youtube.com/watch?v=\(firebaseVideo.id)"),
