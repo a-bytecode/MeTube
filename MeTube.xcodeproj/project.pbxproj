@@ -56,6 +56,7 @@
 		B7E839132A1CE1CF001D356B /* FBTitelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E839122A1CE1CF001D356B /* FBTitelView.swift */; };
 		B7E839152A1CE1E2001D356B /* FBCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E839142A1CE1E2001D356B /* FBCardView.swift */; };
 		B7E839172A1CE1F2001D356B /* FBListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E839162A1CE1F2001D356B /* FBListView.swift */; };
+		B7F7516E2A2101B10044B63F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F7516D2A2101B10044B63F /* MainView.swift */; };
 		B7FC94032A00459100C34973 /* SearchTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FC94022A00459100C34973 /* SearchTextFieldView.swift */; };
 		B7FDD12A2A0E2A69001E7FDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD1292A0E2A69001E7FDA /* GoogleService-Info.plist */; };
 		B7FDD12D2A0E3378001E7FDA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B7FDD12C2A0E3378001E7FDA /* FirebaseAuth */; };
@@ -114,6 +115,7 @@
 		B7E839122A1CE1CF001D356B /* FBTitelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBTitelView.swift; sourceTree = "<group>"; };
 		B7E839142A1CE1E2001D356B /* FBCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBCardView.swift; sourceTree = "<group>"; };
 		B7E839162A1CE1F2001D356B /* FBListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBListView.swift; sourceTree = "<group>"; };
+		B7F7516D2A2101B10044B63F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B7FC94022A00459100C34973 /* SearchTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldView.swift; sourceTree = "<group>"; };
 		B7FDD1292A0E2A69001E7FDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "MeTube/Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B7FDD1322A0E344A001E7FDA /* FirebaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewModel.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				B7B13EFE29FBFE3400F79204 /* SearchView.swift */,
 				B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */,
 				B7D5BBBF29FBF9B9001BB3D6 /* MeTubeView.swift */,
+				B7F7516D2A2101B10044B63F /* MainView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				B7FDD13C2A0E3E53001E7FDA /* LoginPWView.swift in Sources */,
 				B7400C782A084E2F00CFA0DC /* CommentView.swift in Sources */,
 				B7B13F0829FBFE3400F79204 /* CardView.swift in Sources */,
+				B7F7516E2A2101B10044B63F /* MainView.swift in Sources */,
 				B7C1733B2A0D1FE400926FA5 /* FavoritenHeadlineView.swift in Sources */,
 				B7E839172A1CE1F2001D356B /* FBListView.swift in Sources */,
 				B7B13F0B29FBFE3400F79204 /* ImageView.swift in Sources */,
