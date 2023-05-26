@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseStorage
 import SwiftUI
 
-class FirebaseViewModel: ObservableObject {
+class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstellen als zentralen Speicherort, APICall auf den Firesotore umleiten!!!
     
     let db = Firestore.firestore()
     

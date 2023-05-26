@@ -52,7 +52,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
             if let error = error { print("Connection Error")
                 
             } else {
-                //                self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
+                //self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
                 self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? []
                 self.lastSearchResults = self.videos
             }
