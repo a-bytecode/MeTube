@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import GoogleAPIClientForREST_YouTube
 
 struct FirebaseVideo : Hashable, Identifiable {
     static func == (lhs: FirebaseVideo, rhs: FirebaseVideo) -> Bool {
@@ -25,9 +26,29 @@ struct FirebaseVideo : Hashable, Identifiable {
         isFavorite = (data["isFavorite"] != nil)
         lastWatched = data["lastWatched"] as! String
         
-}
+    }
     
     func hash(into hasher: inout Hasher) {
-            hasher.combine(id)
-        }
+        hasher.combine(id)
+    }
+    
+    static func fromGTLRVideo(video: GTLRYouTube_SearchResult) -> FirebaseVideo {
+        return FirebaseVideo(data: [
+            "id":video.identifier?.videoId,
+            "img":video.snippet?.thumbnails?.high?.url!,
+            "title":video.snippet?.title,
+            "isFavorite":false,
+            "lastWatched":"2023.25.05"]
+        
+        )
+        
+        
+    }
 }
+
+let firebaseVideoExample = FirebaseVideo(data: [
+    "id":"ToyStory",
+    "img":"BuzzLightyear",
+    "title":"Woody",
+    "isFavorite":false,
+    "lastWatched":"2023.25.05"])

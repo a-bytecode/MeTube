@@ -12,6 +12,7 @@ struct FavoritenView: View {
     
     @StateObject var settingsViewModel : SettingsViewModel = SettingsViewModel()
     @EnvironmentObject var fbViewModel : FirebaseViewModel
+    @EnvironmentObject var viewModel: MeTubeViewModel
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
 
     
@@ -32,6 +33,7 @@ struct FavoritenView: View {
                 FavoritenHeadlineView()
                 Spacer()
                     .frame(height: 15)
+                FBListView(videos: fbViewModel.favorites)
                 
                 Button(action: {
                     fbViewModel.logout()
@@ -53,6 +55,7 @@ struct FavoritenView: View {
             }
         }
         .onAppear {
+            fbViewModel.fetchHistory()
             settingsViewModel.loadAnimatedImage(from: url)
         }
         

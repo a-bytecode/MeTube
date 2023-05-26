@@ -18,7 +18,7 @@ struct MeTubeApp: App {
     
     
     @StateObject var viewModel : MeTubeViewModel = MeTubeViewModel()
-    @StateObject var fbViewModel = FirebaseViewModel()
+    @State var fbViewModel = FirebaseViewModel()
     @State private var searchTerm = ""
     @State private var input = ""
 
@@ -33,7 +33,7 @@ struct MeTubeApp: App {
                     }
                 NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm)
                    
-                    ,isActive: $fbViewModel.isLoggedIn
+                               ,isActive: $fbViewModel.isLoggedIn
                 ) {
                     EmptyView()
                 }

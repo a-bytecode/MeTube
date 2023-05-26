@@ -10,14 +10,17 @@ import FLAnimatedImage
 
 struct FavoriteButton: View {
     
-    @StateObject var settingsViewModel = SettingsViewModel()
-    @State var isFav = false
-    @State var gradient = LinearGradient(colors: [.white,.black,.black], startPoint: .topLeading, endPoint: .bottomTrailing)
+    @StateObject private var settingsViewModel = SettingsViewModel()
+    @EnvironmentObject var fbViewModel : FirebaseViewModel
+    @EnvironmentObject var viewModel: MeTubeViewModel
+    @State private var isFav = false
+    @State private var gradient = LinearGradient(colors: [.white,.black,.black], startPoint: .topLeading, endPoint: .bottomTrailing)
     @State private var animationAmount = 1.0
     @State private var isRotating = 0.0
-    @State var duration: Double = 3.0
+    @State private var duration: Double = 3.0
     @State private var pulseAmount = 1.0
-    @State var autoreverses = false
+    @State private var autoreverses = false
+    @State var firebaseVideo : FirebaseVideo
 
     
     @State var url = URL(string: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTA5Mjg3ZDRjYWQyMTIyZDYzMjFlM2IxNGI2ZTc5NWZiOGVlZjQyYyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/loFCCDeZR3S8qov02A/giphy.gif")
@@ -51,6 +54,9 @@ struct FavoriteButton: View {
             Button(action: {
                 // Action für das Favorisieren
                 isFav.toggle()
+                fbViewModel.fetchFavorites()
+                fbViewModel.toggleFavoriteStatus(for: firebaseVideo)
+                
             }) {
                 if isFav == true {
                     
@@ -65,8 +71,6 @@ struct FavoriteButton: View {
                         .frame(width: 20, height: 20)
                         .foregroundColor(Color.white)
                 }
-                
-                
             }
         }
     }
@@ -74,6 +78,6 @@ struct FavoriteButton: View {
 
 struct FavoriteButton_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteButton()
+        FavoriteButton(firebaseVideo: firebaseVideoExample)
     }
 }

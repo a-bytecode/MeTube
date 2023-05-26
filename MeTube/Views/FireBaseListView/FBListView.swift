@@ -9,9 +9,9 @@ import SwiftUI
 import YouTubePlayerKit
 
 struct FBListView: View {
-    
-    @ObservedObject var fbViewModel : FirebaseViewModel
-    @ObservedObject var viewModel : MeTubeViewModel
+    @State var videos: [FirebaseVideo]
+    @EnvironmentObject var fbViewModel : FirebaseViewModel
+    @EnvironmentObject var viewModel : MeTubeViewModel
     
     var body: some View {
         
@@ -21,9 +21,9 @@ struct FBListView: View {
                     
                     ScrollView {
                        
-                        ForEach(fbViewModel.videoHistory, id: \.self) { video in
+                        ForEach(videos, id: \.self) { video in
                             
-                            FBCardView(fbVideo: video, viewModel: viewModel)
+                            FBCardView(fbVideo: video)
 //                            Text("\(video.videoList.count)")
                         }
                     }
@@ -36,6 +36,6 @@ struct FBListView: View {
 
 struct FBListView_Previews: PreviewProvider {
     static var previews: some View {
-        FBListView(fbViewModel: FirebaseViewModel(), viewModel: MeTubeViewModel())
+        FBListView(videos: [firebaseVideoExample])
     }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FBImageView: View {
     
+    // TODO: FirebaseListView als HauptView verwenden entkompliziert den weiteren Verlauf des Projektes!! Firbase als Hauptview laden...
+    
     var fbVideoImage: String
         
     var body: some View {
@@ -34,10 +36,9 @@ struct FBImageView: View {
                                 .foregroundColor(Color.white)
                                 .frame(width: 350, height: 300)
                                 .padding()
-                        })
-                }
+                })
             }
-        
+        }
     }
 }
 

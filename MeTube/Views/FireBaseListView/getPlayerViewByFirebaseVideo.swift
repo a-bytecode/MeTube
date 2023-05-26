@@ -8,12 +8,12 @@
 import Foundation
 import YouTubePlayerKit
 
-func getPlayerViewByFirebaseVideo(firebaseVideo: FirebaseVideo, viewModel: MeTubeViewModel) -> PlayerView {
+func getPlayerViewByFirebaseVideo(firebaseVideo: FirebaseVideo, viewModel: MeTubeViewModel, fbViewModel: FirebaseViewModel) -> PlayerView {
     
     return PlayerView(youTubePlayer: YouTubePlayer(
         source: .url("https://youtube.com/watch?v=\(firebaseVideo.id)"),
         configuration: .init(
             autoPlay: true
         )
-    ), firebaseVideo: firebaseVideo,viewModel: viewModel,fbViewModel: FirebaseViewModel())
+    ), firebaseVideo: firebaseVideo,viewModel: viewModel,fbViewModel: fbViewModel)
 }

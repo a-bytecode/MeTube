@@ -14,9 +14,9 @@ import GoogleAPIClientForREST_YouTube
 
 struct MeTubeView: View {
 
-    @ObservedObject var viewModel : MeTubeViewModel
+    @EnvironmentObject var viewModel : MeTubeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
-    @ObservedObject var fbViewModel  : FirebaseViewModel
+    @EnvironmentObject var fbViewModel  : FirebaseViewModel
     @State private var isEditing = false
     @Binding var navigate : Bool
     @State private var searchTerm = ""
@@ -45,10 +45,10 @@ struct MeTubeView: View {
                 LastSearchHeadlineView()
                 Spacer()
                     .frame(height: 15)
-                FBListView(fbViewModel: fbViewModel, viewModel: viewModel)
+                FBListView(videos: fbViewModel.videoHistory)
                 .frame(width: .infinity, height: 600)
 
-                ParticleEffectView(viewModel: viewModel, isEnabled: [true, true, false], navigate: $navigate)
+                ParticleEffectView(isEnabled: [true, true, false], navigate: $navigate)
                 
                 Spacer()
                     .frame(height: 40)
@@ -69,7 +69,7 @@ struct MeTubeView: View {
 
 struct MeTubeView_Previews: PreviewProvider {
     static var previews: some View {
-        MeTubeView(viewModel: MeTubeViewModel(), fbViewModel: FirebaseViewModel(), navigate: .constant(false))
+        MeTubeView(navigate: .constant(false))
     }
 }
 

@@ -56,9 +56,7 @@ struct SearchView: View {
                     
                     if isClicked {
                         Button(action: {
-                            viewModel.fetchVideos(term: input)
-                            viewModel.fetchSearchResults(term: input)
-                            fbViewModel.fetchHistory()
+                            onSearchButtonClick()
                             
                         }, label: {
                             
@@ -86,14 +84,7 @@ struct SearchView: View {
                         
                     } else {
                         Button(action: {
-                            viewModel.fetchVideos(term: input)
-                            viewModel.fetchSearchResults(term: input)
-                            fbViewModel.fetchHistory()
-                            isClicked = true
-                            isLoaded = false
-                            withAnimation {
-                                scale = 0.5
-                            }
+                            onSearchButtonClick()
                         }, label: {
                             
                             ZStack {
@@ -125,13 +116,13 @@ struct SearchView: View {
                     Spacer()
                         .frame(height: 12)
                     // Listenansicht
-                    ListView(viewModel: viewModel, inputText: $searchTerm)
+                    FBListView(videos: fbViewModel.searchResults)
 
                     Spacer()
                         .frame(height: 20)
                     
                     // Custom TabView
-                    ParticleEffectView(viewModel: viewModel, navigate: $navigate).environmentObject(fbViewModel)
+                    ParticleEffectView(navigate: $navigate)
                     Spacer()
                         .frame(height: 30)
                         .onAppear {
@@ -143,6 +134,17 @@ struct SearchView: View {
             .edgesIgnoringSafeArea(.all)
             .navigationBarBackButtonHidden()
         }
+    
+    func onSearchButtonClick() {
+        viewModel.fetchVideos(term: input)
+        viewModel.fetchSearchResults(term: input)
+        fbViewModel.fetchHistory()
+        isClicked = !isClicked
+        isLoaded = !isLoaded
+        withAnimation {
+            scale = 0.5
+        }
+    }
 }
 
 struct SearchView_Previews: PreviewProvider {

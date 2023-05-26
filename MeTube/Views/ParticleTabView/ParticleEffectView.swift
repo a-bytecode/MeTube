@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ParticleEffectView: View {
     
-    @ObservedObject var viewModel : MeTubeViewModel
+    @EnvironmentObject var viewModel : MeTubeViewModel
     @EnvironmentObject var fbViewModel : FirebaseViewModel
     @State private var isLiked: [Bool] = [false, false, false]
     var isEnabled: [Bool] = [true, true, true]
@@ -40,7 +40,7 @@ struct ParticleEffectView: View {
                 }
                 
                 // Navigation Favoriten
-                NavigationLink(destination: FavoritenView().environmentObject(viewModel), isActive: $navigateFav){
+                NavigationLink(destination: FavoritenView(), isActive: $navigateFav){
                     if isEnabled[1] {
                         CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {
                             isLiked[1].toggle()
@@ -53,7 +53,7 @@ struct ParticleEffectView: View {
                 }
                 
                 // Navigation Search
-                NavigationLink(destination: MeTubeView(viewModel: viewModel, fbViewModel: fbViewModel, navigate: $isSheetOpen), isActive: $shouldNavigateMeTubeView){
+                NavigationLink(destination: MeTubeView(navigate: $isSheetOpen), isActive: $shouldNavigateMeTubeView){
                     if isEnabled[2] {
                         CustomButton(systemImage: "arrowshape.turn.up.right.fill", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
                             shouldNavigateMeTubeView.toggle()
@@ -101,6 +101,6 @@ struct ParticleEffectView: View {
 }
 struct ParticleEffectView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticleEffectView(viewModel: MeTubeViewModel(), isEnabled: [true,true,true], navigate: .constant(false))
+        ParticleEffectView(isEnabled: [true,true,true], navigate: .constant(false))
     }
 }

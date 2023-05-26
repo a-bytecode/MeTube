@@ -11,10 +11,11 @@ import YouTubePlayerKit
 struct FBCardView: View {
     
     var fbVideo: FirebaseVideo
-    @ObservedObject var viewModel: MeTubeViewModel
+    @EnvironmentObject var viewModel: MeTubeViewModel
+    @EnvironmentObject var fbViewModel : FirebaseViewModel
 
     var body: some View {
-        NavigationLink(destination: getPlayerViewByFirebaseVideo(firebaseVideo: fbVideo, viewModel: viewModel)) {
+        NavigationLink(destination: getPlayerViewByFirebaseVideo(firebaseVideo: fbVideo, viewModel: viewModel, fbViewModel: fbViewModel)) {
             
             ZStack {
                 
@@ -22,7 +23,7 @@ struct FBCardView: View {
                     FBImageView(fbVideoImage: fbVideo.img)
                     FBTitelView(fbVideoTitle: fbVideo.title)
                         .offset(y: -29)
-                    FavoriteButton()
+                    FavoriteButton(firebaseVideo: fbVideo)
                         .offset(x:160,y: -83)
                 }
             }

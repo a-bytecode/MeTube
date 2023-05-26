@@ -20,21 +20,23 @@ class FirebaseViewModel: ObservableObject {
     @Published var password = ""
     @Published var isLoggedIn = false
     @Published var videoHistory = [FirebaseVideo]()
+    @Published var favorites = [FirebaseVideo]()
+    @Published var searchResults = [FirebaseVideo]()
     var userId : String?
     
     
-        init() {
-            guard let userId = Auth.auth().currentUser?.uid else {
-                return
-            }
-            self.userId = userId
-            print("USER ID -> ", userId)
-            fetchHistory()
+    init() {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            return
         }
+        self.userId = userId
+        print("USER ID -> ", userId)
+        fetchHistory()
+    }
     
     func fetchHistory() {
         
-        let ref = db.collection("Users").document(userId ?? "Error UserId").collection("watchHistory")
+        let ref = db.collection("Users").document(userId!).collection("watchHistory")
 
         let listener = ref.addSnapshotListener { [self] querySnapshot, error in
             print("Start fetching History!!!!")
@@ -53,6 +55,28 @@ class FirebaseViewModel: ObservableObject {
                     videoHistory.append(video)
                     print("FetchHistory ------> \(video)")
                 }
+            }
+        }
+    }
+    
+    func fetchFavorites() {
+        let ref = db.collection("Users").document(userId ?? "Error UserId").collection("Favorites")
+
+        let listener = ref.addSnapshotListener { [self] querySnapshot, error in
+            print("Start fetching Favorites!!!!")
+            if let error = error {
+                print("Snapshot error: \(error)")
+                return
+            }
+            print("Vor der For Schleife!")
+            print("Snapshot",querySnapshot!.documents)
+            favorites = []
+            for document in querySnapshot!.documents {
+                print("In der For Schleife!")
+                let data = document.data()
+                let video = FirebaseVideo(data: data)
+                print("DATA ------->>>",data)
+                favorites.append(video)
             }
         }
     }
@@ -105,8 +129,9 @@ class FirebaseViewModel: ObservableObject {
                 print("Login fehlgeschlagen: \(error.localizedDescription)")
                 
             } else {
-                print("Login successfully as: \(authResult?.user.email ?? "")")
+                print("Login successfully as: \(authResult!.user.email!)")
                 self.isLoggedIn = true
+                self.userId = authResult!.user.uid
             }
         }
     }
@@ -129,12 +154,12 @@ class FirebaseViewModel: ObservableObject {
         }
     }
     
-    func toggleFavoriteStatus(for video: FirebaseVideo) {
+    func toggleFavoriteStatus(for firebaseVideo: FirebaseVideo) {
         guard let userId = userId else {
             return
         }
         
-        let docRef = db.collection("Users").document(userId).collection("watchHistory").document(video.id)
+        let docRef = db.collection("Users").document(userId).collection("watchHistory").document(firebaseVideo.id)
         
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {

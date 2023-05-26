@@ -46,8 +46,8 @@
             filePath = "MeTube/Models/FirebaseViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "fetchHistory()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,9 +62,89 @@
             filePath = "MeTube/Models/FirebaseViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "fetchHistory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "88279D4F-E307-434B-A78E-FAD4FA21B733"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeTube/Views/FavoritenView/FavoritenView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "08A7E72A-E011-4DB6-88B8-E202571B4362"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeTube/Views/FireBaseListView/FBListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "FBListView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "08A7E72A-E011-4DB6-88B8-E202571B4362 - a9fefd9e37116bc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MeTube.FBListView.init(videos: Swift.Array&lt;MeTube.FirebaseVideo&gt;, fbViewModel: MeTube.FirebaseViewModel, viewModel: MeTube.MeTubeViewModel) -&gt; MeTube.FBListView"
+                  moduleName = "MeTube"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/az2k4/Desktop/Kursinhalt%20PDF%20Grundlagen%20der%20Programierung/Swift%20IOS/Abschlussprojekt1/MeTube/MeTube/Views/FireBaseListView/FBListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "08A7E72A-E011-4DB6-88B8-E202571B4362 - 72218b6ff34b9c01"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MeTube.FBListView.init(videos: Swift.Array&lt;MeTube.FirebaseVideo&gt;, fbViewModel: SwiftUI.EnvironmentObject&lt;MeTube.FirebaseViewModel&gt;, viewModel: SwiftUI.EnvironmentObject&lt;MeTube.MeTubeViewModel&gt;) -&gt; MeTube.FBListView"
+                  moduleName = "MeTube"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/az2k4/Desktop/Kursinhalt%20PDF%20Grundlagen%20der%20Programierung/Swift%20IOS/Abschlussprojekt1/MeTube/MeTube/Views/FireBaseListView/FBListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2CA3FE44-A22A-427B-B209-C7DBD0090289"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeTube/Views/MainView/MeTubeApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
