@@ -12,7 +12,6 @@ struct FirebaseVideo : Hashable, Identifiable {
       return lhs.id == rhs.id
     }
     
-    
     var id : String
     var img: String
     var title: String
