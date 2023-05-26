@@ -26,13 +26,10 @@ struct AccountView: View {
             }
             
             VStack {
-                Spacer()
                 AccountHeadlineView()
-                Spacer()
-                    .frame(height: 40)
                 AccountImageView()
                 Spacer()
-                    .frame(height: 450)
+                    .frame(height: 40)
                 
             }
         }

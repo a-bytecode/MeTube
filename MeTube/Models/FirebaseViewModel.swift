@@ -128,6 +128,23 @@ class FirebaseViewModel: ObservableObject {
             isLoggedIn = false
         }
     }
+    
+    func toggleFavoriteStatus(for video: FirebaseVideo) {
+        guard let userId = userId else {
+            return
+        }
+        
+        let docRef = db.collection("Users").document(userId).collection("watchHistory").document(video.id)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let isFavorite = document.data()?["isFavorite"] as? Bool ?? false
+                docRef.updateData(["isFavorite": !isFavorite])
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
 }
 
 
