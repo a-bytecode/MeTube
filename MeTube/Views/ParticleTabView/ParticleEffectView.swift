@@ -70,9 +70,6 @@ struct ParticleEffectView: View {
             }
             .background(Rectangle().fill(Color.black).padding(-10))
             .overlay(Rectangle().stroke(Color.white, lineWidth: 2).padding(-10))
-//                .sheet(isPresented: $isSheetOpen, content: {
-//                    SearchView(viewModel: viewModel, isSheetOpen: $isSheetOpen, searchTerm: $input)
-//                })
         }
     }
     
