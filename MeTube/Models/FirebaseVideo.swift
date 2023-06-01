@@ -18,6 +18,7 @@ struct FirebaseVideo : Hashable, Identifiable {
     var title: String
     var isFavorite: Bool
     var lastWatched: String // = "2023-05-25"
+
     
     init(data: [String : Any]) {
         id = data["id"] as! String
@@ -34,12 +35,11 @@ struct FirebaseVideo : Hashable, Identifiable {
     
     static func fromGTLRVideo(video: GTLRYouTube_SearchResult) -> FirebaseVideo {
         return FirebaseVideo(data: [
-            "id":video.identifier?.videoId as! String,
+            "id":video.identifier?.videoId!,
             "img":video.snippet?.thumbnails?.high?.url!,
             "title":video.snippet?.title,
             "isFavorite":false,
             "lastWatched":"2023.25.05"]
-        
         )
     }
 }

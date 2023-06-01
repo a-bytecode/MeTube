@@ -55,9 +55,10 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                 
             } else {
                 //self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
-                self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? []
+                self.videos = (response as! GTLRYouTube_SearchListResponse).items!
                 self.lastSearchResults = self.videos
-                self.fbVideos = self.videos.map( FirebaseVideo.fromGTLRVideo )
+//              self.fbVideos = self.videos.map( FirebaseVideo.fromGTLRVideo )
+                print("VIDEOS -> \(self.videos.first!.identifier!.videoId!)")
             }
         }
     }
@@ -121,7 +122,6 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
 //extension GTLRYouTube_SearchResult { Extension ist dazu da, vorhandene Structs oder Klassen zu erweitern.
 //
 //    var comments : [GTLRYouTube_CommentSnippet] {
-//        print("hallohallohallohallohallohallohallohallohallohallo")
 //        return MeTubeViewModel().fetchComments(videoId: (self.identifier?.videoId)!)
 //
 //    }
