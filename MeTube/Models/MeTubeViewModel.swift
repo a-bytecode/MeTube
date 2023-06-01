@@ -57,8 +57,9 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                 //self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
                 self.videos = (response as! GTLRYouTube_SearchListResponse).items!
                 self.lastSearchResults = self.videos
-//              self.fbVideos = self.videos.map( FirebaseVideo.fromGTLRVideo )
+                self.fbVideos = self.videos.map( FirebaseVideo.fromGTLRVideo )
                 print("VIDEOS -> \(self.videos.first!.identifier!.videoId!)")
+                print("FBVIDEOS -> \(self.fbVideos.count)")
             }
         }
     }
