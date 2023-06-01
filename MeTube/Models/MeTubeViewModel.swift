@@ -30,6 +30,8 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
         self.videos = []
     }
     
+    @Published var fbVideos : [FirebaseVideo] = []
+    
     @Published var youTubePlayer: YouTubePlayer = YouTubePlayer()
     
     @Published var comments: [[GTLRYouTube_CommentSnippet]] = []
@@ -55,6 +57,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                 //self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
                 self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? []
                 self.lastSearchResults = self.videos
+                self.fbVideos = self.videos.map( FirebaseVideo.fromGTLRVideo )
             }
         }
     }

@@ -20,5 +20,85 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "11700451-FECA-42F2-B834-2ED6D817E9BD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeTube/Models/FirebaseVideo.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "init(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB865D9B-2D6F-4A20-8A24-59057408F17A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeTube/Models/FirebaseVideo.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "fromGTLRVideo(video:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BB865D9B-2D6F-4A20-8A24-59057408F17A - e92a4176ddc92436"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MeTube.FirebaseVideo.fromGTLRVideo(video: __C.GTLRYouTube_SearchResult) -&gt; MeTube.FirebaseVideo"
+                  moduleName = "MeTube"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/az2k4/Desktop/Kursinhalt%20PDF%20Grundlagen%20der%20Programierung/Swift%20IOS/Abschlussprojekt1/MeTube/MeTube/Models/FirebaseVideo.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "BB865D9B-2D6F-4A20-8A24-59057408F17A - e92a4176ddc92436"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MeTube.FirebaseVideo.fromGTLRVideo(video: __C.GTLRYouTube_SearchResult) -&gt; MeTube.FirebaseVideo"
+                  moduleName = "MeTube"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/az2k4/Desktop/Kursinhalt%20PDF%20Grundlagen%20der%20Programierung/Swift%20IOS/Abschlussprojekt1/MeTube/MeTube/Models/FirebaseVideo.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC6CFB72-A090-4691-AED5-6EEB8DEABF8C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeTube/Models/FirebaseVideo.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "fromGTLRVideo(video:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

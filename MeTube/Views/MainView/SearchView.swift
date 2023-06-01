@@ -116,7 +116,7 @@ struct SearchView: View {
                     Spacer()
                         .frame(height: 12)
                     // Listenansicht
-                    FBListView(videos: fbViewModel.searchResults)
+                    FBListView(videos: viewModel.fbVideos)
 
                     Spacer()
                         .frame(height: 20)
@@ -137,8 +137,8 @@ struct SearchView: View {
     
     func onSearchButtonClick() {
         viewModel.fetchVideos(term: input)
-        viewModel.fetchSearchResults(term: input)
-        fbViewModel.fetchHistory()
+//        viewModel.fetchSearchResults(term: input)
+//        fbViewModel.fetchHistory()
         isClicked = !isClicked
         isLoaded = !isLoaded
         withAnimation {
