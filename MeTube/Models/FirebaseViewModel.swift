@@ -48,16 +48,22 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
             }
             print("Vor der For Schleife!")
             print("Snapshot",querySnapshot!.documents)
+            videoHistory = []
+
             for document in querySnapshot!.documents {
-                print("In der For Schleife!")
-                let data = document.data()
-                let video = FirebaseVideo(data: data)
-                print("DATA ------->>>",data)
+                let video = FirebaseVideo(data: document.data())
+
                 if !videoHistory.contains(where: { $0.id == video.id }) {
                     videoHistory.append(video)
-                    print("FetchHistory ------> \(video)")
+                } else {
+                    // TODO:
+                    // Vergleiche Datum von Bestehendem Video mit dem von video
+                    // Wenn das Datum geringer ist (älter), dann mach nichts
+                    // Ansonsten, überschreibe das Datum in dem bestehenden Video
                 }
             }
+
+            videoHistory.sort(by: { $0.lastWatched < $1.lastWatched } )
         }
     }
     

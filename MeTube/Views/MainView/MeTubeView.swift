@@ -45,7 +45,7 @@ struct MeTubeView: View {
                 LastSearchHeadlineView()
                 Spacer()
                     .frame(height: 15)
-                FBListView(videos: fbViewModel.videoHistory)
+                FBListView(videos: $fbViewModel.videoHistory)
                 .frame(width: .infinity, height: 600)
 
                 ParticleEffectView(isEnabled: [true, true, false], navigate: $navigate)

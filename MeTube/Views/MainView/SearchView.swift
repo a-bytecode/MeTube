@@ -116,7 +116,7 @@ struct SearchView: View {
                     Spacer()
                         .frame(height: 12)
                     // Listenansicht
-                    FBListView(videos: viewModel.fbVideos)
+                    FBListView(videos: $viewModel.fbVideos)
 
                     Spacer()
                         .frame(height: 20)

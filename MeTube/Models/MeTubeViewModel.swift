@@ -58,6 +58,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                 self.videos = (response as! GTLRYouTube_SearchListResponse).items!
                 self.lastSearchResults = self.videos
                 self.fbVideos = self.videos.map( FirebaseVideo.fromGTLRVideo )
+                
                 for video in self.videos {
                     if video.identifier?.videoId != nil {
                         self.fbVideos.append(FirebaseVideo.fromGTLRVideo(video: video))

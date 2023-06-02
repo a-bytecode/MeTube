@@ -33,7 +33,7 @@ struct FavoritenView: View {
                 FavoritenHeadlineView()
                 Spacer()
                     .frame(height: 15)
-                FBListView(videos: fbViewModel.favorites)
+                FBListView(videos: $fbViewModel.favorites)
             }
         }
         .onAppear {

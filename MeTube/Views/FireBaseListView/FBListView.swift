@@ -9,7 +9,7 @@ import SwiftUI
 import YouTubePlayerKit
 
 struct FBListView: View {
-    @State var videos: [FirebaseVideo]
+    @Binding var videos: [FirebaseVideo]
     @EnvironmentObject var fbViewModel : FirebaseViewModel
     @EnvironmentObject var viewModel : MeTubeViewModel
     
@@ -36,6 +36,6 @@ struct FBListView: View {
 
 struct FBListView_Previews: PreviewProvider {
     static var previews: some View {
-        FBListView(videos: [firebaseVideoExample])
+        FBListView(videos: .constant([firebaseVideoExample]))
     }
 }

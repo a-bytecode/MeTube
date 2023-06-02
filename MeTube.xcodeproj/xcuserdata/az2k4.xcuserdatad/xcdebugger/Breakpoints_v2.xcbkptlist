@@ -110,8 +110,8 @@
             filePath = "MeTube/Models/FirebaseViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "login()"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "MeTube/Models/FirebaseViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "login()"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "MeTube/Models/FirebaseViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "login()"
             landmarkType = "7">
             <Locations>
@@ -176,6 +176,54 @@
                   startingLineNumber = "128"
                   endingLineNumber = "128"
                   offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77D7847B-9233-4F9D-A723-D0D3D17FF0C0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeTube/Models/MeTubeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "fetchVideos(term:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "77D7847B-9233-4F9D-A723-D0D3D17FF0C0 - 13baa9be8f5017fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.GTLRServiceTicket, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MeTube.MeTubeViewModel.fetchVideos(term: Swift.String) -&gt; ()"
+                  moduleName = "MeTube"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/az2k4/Desktop/Kursinhalt%20PDF%20Grundlagen%20der%20Programierung/Swift%20IOS/Abschlussprojekt1/MeTube/MeTube/Models/MeTubeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1536">
+               </Location>
+               <Location
+                  uuid = "77D7847B-9233-4F9D-A723-D0D3D17FF0C0 - 13baa9be8f5017fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.GTLRServiceTicket, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MeTube.MeTubeViewModel.fetchVideos(term: Swift.String) -&gt; ()"
+                  moduleName = "MeTube"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/az2k4/Desktop/Kursinhalt%20PDF%20Grundlagen%20der%20Programierung/Swift%20IOS/Abschlussprojekt1/MeTube/MeTube/Models/MeTubeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1172">
                </Location>
             </Locations>
          </BreakpointContent>
