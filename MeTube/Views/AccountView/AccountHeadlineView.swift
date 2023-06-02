@@ -11,7 +11,7 @@ struct AccountHeadlineView: View {
     
     var body: some View {
         
-        Text("Account")
+        Text("Account-Informations")
             .padding(.horizontal, 50)
             .padding(.vertical, 10)
             .foregroundColor(Color.white)
