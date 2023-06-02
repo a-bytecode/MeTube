@@ -45,6 +45,7 @@ struct LoginView: View {
                 
         }
         .edgesIgnoringSafeArea(.all)
+        .navigationBarBackButtonHidden()
         .onAppear {
             settingsViewModel.loadAnimatedImage(from: url)
         }
