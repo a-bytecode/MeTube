@@ -13,6 +13,7 @@ struct AccountView: View {
     @EnvironmentObject var fbViewModel : FirebaseViewModel
     @State private var isLoggedIn = false
     @State private var userEmail = ""
+    @State private var items = 1
     
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
     
@@ -35,7 +36,7 @@ struct AccountView: View {
             VStack {
                 AccountHeadlineView()
                 Spacer()
-                    .frame(height: 500)
+                    .frame(height: 450)
                 HStack {
                     Text("Email:")
                         .font(.largeTitle)
@@ -44,8 +45,24 @@ struct AccountView: View {
                         .frame(width: 20)
                     Text(userEmail)
                         .font(.largeTitle)
+                        .foregroundColor(Color.blue)
+                }.offset(y: -390)
+                
+                HStack {
+                    Text("WatchItems:")
+                        .font(.largeTitle)
                         .foregroundColor(Color.white)
-                }.offset(y: -400)
+                    Spacer()
+                        .frame(width: 20)
+                    Text("\(items)")
+                        .font(.largeTitle)
+                        .foregroundColor(Color.blue)
+                }.offset(y: -360)
+                Button(action: {
+                    fbViewModel.resetHistory()
+                }) {
+                    Text("Reset")
+                }.offset(y: -360)
                
                 
                 
@@ -74,6 +91,7 @@ struct AccountView: View {
         .onAppear {
             settingsViewModel.loadAnimatedImage(from: url)
             userEmail = fbViewModel.getUserEmail()
+            items = fbViewModel.videoHistory.count
         }
     
         

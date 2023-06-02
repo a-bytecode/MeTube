@@ -67,6 +67,30 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         }
     }
     
+    func resetHistory() {
+        guard let userId = userId else { return }
+        let ref = db.collection("Users").document(userId).collection("watchHistory")
+
+        ref.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+                return
+            }
+
+            guard let snapshot = snapshot else {
+                print("Snapshot is nil")
+                return
+            }
+
+            for document in snapshot.documents {
+                document.reference.delete()
+            }
+
+            self.videoHistory.removeAll()
+            print("Array Items:", self.videoHistory)
+        }
+    }
+    
     func fetchFavorites() {
         let ref = db.collection("Users").document(userId ?? "Error UserId").collection("Favorites")
 
