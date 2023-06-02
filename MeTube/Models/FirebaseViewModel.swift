@@ -35,8 +35,9 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
     }
     
     func fetchHistory() {
-        
-        let ref = db.collection("Users").document(userId!).collection("watchHistory")
+        print("User ID : \(userId)")
+        guard let userId = userId else { return }
+        let ref = db.collection("Users").document(userId).collection("watchHistory")
 
         let listener = ref.addSnapshotListener { [self] querySnapshot, error in
             print("Start fetching History!!!!")
@@ -170,6 +171,10 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
             }
         }
     }
+    
+    func getUserEmail() -> String {
+        return Auth.auth().currentUser?.email ?? ""
+       }
 }
 
 

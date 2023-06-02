@@ -63,7 +63,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                         self.fbVideos.append(FirebaseVideo.fromGTLRVideo(video: video))
                     }
                 }
-                print("VIDEOS -> \(self.videos.first!.identifier!.videoId!)")
+//                print("VIDEOS -> \(self.videos.first!.identifier!.videoId!)")
                 print("FBVIDEOS -> \(self.fbVideos.count)")
             }
         }

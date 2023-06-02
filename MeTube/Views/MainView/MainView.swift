@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     
-    @State var fbViewModel: FirebaseViewModel = FirebaseViewModel()
-    @State var viewModel: MeTubeViewModel = MeTubeViewModel()
+    @StateObject var fbViewModel: FirebaseViewModel = FirebaseViewModel()
+    @StateObject var viewModel: MeTubeViewModel = MeTubeViewModel()
     @State private var searchTerm = ""
     @State private var input = ""
     @State private var isLoggedIn = false

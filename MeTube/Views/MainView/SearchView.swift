@@ -34,7 +34,7 @@ struct SearchView: View {
     
     //https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif
     //"https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTA5Mjg3ZDRjYWQyMTIyZDYzMjFlM2IxNGI2ZTc5NWZiOGVlZjQyYyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/loFCCDeZR3S8qov02A/giphy.gif"
-
+    
     var body: some View {
         
             ZStack {
@@ -133,6 +133,10 @@ struct SearchView: View {
             }
             .edgesIgnoringSafeArea(.all)
             .navigationBarBackButtonHidden()
+            .onAppear {
+                print("We are in the SearchView")
+                fbViewModel.fetchHistory()
+            }
         }
     
     func onSearchButtonClick() {

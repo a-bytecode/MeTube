@@ -16,7 +16,7 @@ struct MeTubeView: View {
 
     @EnvironmentObject var viewModel : MeTubeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
-    @EnvironmentObject var fbViewModel  : FirebaseViewModel
+    @EnvironmentObject var fbViewModel : FirebaseViewModel
     @State private var isEditing = false
     @Binding var navigate : Bool
     @State private var searchTerm = ""

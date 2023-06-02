@@ -23,7 +23,7 @@ struct ButtonsLoginView: View {
             HStack {
                 
                 Button(action: {
-                    fbViewModel.login()
+//                    fbViewModel.login()
                 }, label: {
                     NavigationLink(
                         destination: SearchView(input: input, searchTerm: searchTerm)

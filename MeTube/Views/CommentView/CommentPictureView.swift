@@ -13,17 +13,23 @@ struct CommentPictureView: View {
     let comment: GTLRYouTube_CommentSnippet
 
     var body: some View {
-        
-        AsyncImage(
-            url: URL(string: comment.authorProfileImageUrl ?? "Error"),
-            content: { image in
-                image.image?
-                    .resizable()
-                    .frame(width: 70, height: 60)
-                    .foregroundColor(Color.black)
-                    .clipShape(Rectangle())
-                    .overlay(Rectangle().stroke(LinearGradient(colors: [.yellow,.green], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2))
-            })
+        VStack {
+            AsyncImage(
+                url: URL(string: comment.authorProfileImageUrl ?? "Error"),
+                content: { image in
+                    image.image?
+                        .resizable()
+                        .frame(width: 70, height: 60)
+                        .foregroundColor(Color.black)
+                        .clipShape(Rectangle())
+                        .overlay(Rectangle().stroke(LinearGradient(colors: [.yellow,.green], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2))
+                })
+            Text(comment.authorDisplayName ?? "Error")
+                .font(.footnote)
+                .foregroundColor(Color.white)
+                .lineLimit(12)
+                
+        }
     }
 }
 

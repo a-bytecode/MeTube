@@ -12,6 +12,7 @@ struct AccountView: View {
     @StateObject var settingsViewModel = SettingsViewModel()
     @EnvironmentObject var fbViewModel : FirebaseViewModel
     @State private var isLoggedIn = false
+    @State private var userEmail = ""
     
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
     
@@ -41,7 +42,7 @@ struct AccountView: View {
                         .foregroundColor(Color.white)
                     Spacer()
                         .frame(width: 20)
-                    Text("a@gmail.com")
+                    Text(userEmail)
                         .font(.largeTitle)
                         .foregroundColor(Color.white)
                 }.offset(y: -400)
@@ -72,11 +73,15 @@ struct AccountView: View {
         .edgesIgnoringSafeArea(.all)
         .onAppear {
             settingsViewModel.loadAnimatedImage(from: url)
+            userEmail = fbViewModel.getUserEmail()
         }
     
         
     }
+
 }
+
+
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
