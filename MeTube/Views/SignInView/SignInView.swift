@@ -12,8 +12,7 @@ struct SignInView: View {
     
     @EnvironmentObject var fbViewModel: FirebaseViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
-    @State var input : String
-    @State var searchTerm: String
+    
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
     
     var body: some View {
@@ -41,7 +40,7 @@ struct SignInView: View {
                 SignInPWView(input: $fbViewModel.password)
                 Spacer()
                     .frame(height: 140)
-                ButtonSignInView(input: input, searchTerm: searchTerm)
+                ButtonSignInView()
                 
                 }
             .onAppear {
@@ -58,7 +57,7 @@ struct SignInView: View {
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(input: "", searchTerm: "")
+        SignInView()
             .environmentObject(FirebaseViewModel())
     }
 }

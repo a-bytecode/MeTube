@@ -12,8 +12,6 @@ struct ButtonsLoginView: View {
     @EnvironmentObject var fbViewModel: FirebaseViewModel
     @EnvironmentObject var viewModel: MeTubeViewModel
     @State private var navigate2SignUp = false
-    @State private var searchTerm = ""
-    @State private var input = ""
     
     var body: some View {
         
@@ -23,7 +21,7 @@ struct ButtonsLoginView: View {
             HStack {
                 
                 NavigationLink(
-                    destination: SearchView(input: input, searchTerm: searchTerm)
+                    destination: SearchView()
                     .environmentObject(fbViewModel).environmentObject(viewModel),
                     isActive: $fbViewModel.isLoggedIn,
                     label: { ZStack {
@@ -52,7 +50,7 @@ struct ButtonsLoginView: View {
                     print("Check 12")
                     navigate2SignUp.toggle()
                 }, label: {
-                    NavigationLink(destination: SignInView(input: input, searchTerm: searchTerm).environmentObject(fbViewModel), isActive: $navigate2SignUp){
+                    NavigationLink(destination: SignInView().environmentObject(fbViewModel), isActive: $navigate2SignUp){
                         ZStack {
                             Text("Sign up")
                                 .font(.title2)

@@ -134,6 +134,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
                 print("Login successfully as: \(authResult!.user.email!)")
                 self.isLoggedIn = true
                 self.userId = authResult!.user.uid
+                fetchHistory()
             }
         }
     }
@@ -143,6 +144,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         do {
             try Auth.auth().signOut()
             self.isLoggedIn = false
+            videoHistory = []
         } catch let signOutError as NSError {
             print("Fehler beim ausloggen: %@", signOutError)
         }

@@ -11,8 +11,6 @@ struct MainView: View {
     
     @StateObject var fbViewModel: FirebaseViewModel = FirebaseViewModel()
     @StateObject var viewModel: MeTubeViewModel = MeTubeViewModel()
-    @State private var searchTerm = ""
-    @State private var input = ""
     @State private var isLoggedIn = false
     
     var body: some View {
@@ -22,7 +20,7 @@ struct MainView: View {
                 .onAppear {
                     fbViewModel.checkUser()
                 }
-            NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm)
+            NavigationLink(destination: SearchView()
                 ,isActive: $isLoggedIn
             ) {
                 EmptyView()

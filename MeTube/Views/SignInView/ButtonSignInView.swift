@@ -12,13 +12,13 @@ struct ButtonSignInView: View {
     @EnvironmentObject var fbViewModel: FirebaseViewModel
     @EnvironmentObject var viewModel: MeTubeViewModel
     @State private var navigate2SignIn = false
-    @State var input : String
-    @State var searchTerm: String
+//    @State var input : String
+//    @State var searchTerm: String
 
     
     var body: some View {
         
-        NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm)) {
+        NavigationLink(destination: SearchView()) {
             
             VStack {
                 Button(action: {
@@ -62,6 +62,6 @@ struct ButtonSignInView: View {
 
 struct ButtonSignInView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonSignInView(input: "", searchTerm: "")
+        ButtonSignInView()
     }
 }

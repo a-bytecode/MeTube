@@ -14,8 +14,8 @@ struct SearchView: View {
     @EnvironmentObject var viewModel : MeTubeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
     @EnvironmentObject var fbViewModel : FirebaseViewModel
-    @State var input : String
-    @State var searchTerm : String
+    @State private var input : String = ""
+    @State private var searchTerm : String = ""
     @State var navigate = false
     @State var isLoaded = false
     @State private var animationAmount = 1.0
@@ -153,7 +153,7 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(input: "",searchTerm: "")
+        SearchView()
             .environmentObject(MeTubeViewModel())
             .environmentObject(FirebaseViewModel())
     }

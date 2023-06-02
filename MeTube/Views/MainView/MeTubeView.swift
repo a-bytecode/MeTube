@@ -57,6 +57,7 @@ struct MeTubeView: View {
                 .onAppear {
                     print("CHECK ---> \(viewModel.lastSearchResults)")
                     settingsViewModel.loadAnimatedImage(from: url)
+                    fbViewModel.fetchHistory()
                 }
                 .onDisappear {
                     viewModel.saveLastSearchResults()
