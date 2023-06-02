@@ -70,31 +70,6 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
         }
     }
     
-    func fetchSearchResults(term: String) {
-        let service = GTLRYouTubeService()
-        service.apiKey = secretKey
-        let query = GTLRYouTubeQuery_SearchList.query(withPart: ["id","snippet"])
-        query.q = term
-        query.maxResults = 5
-        
-        service.executeQuery(query) { (ticket, response, error) in
-            if let error = error {
-                print("Connection Error: \(error)")
-            } else if let searchList = response as? GTLRYouTube_SearchListResponse {
-                for item in searchList.items ?? [] {
-                    
-                    if !self.lastSearchResults.contains(item) {
-                        self.lastSearchResults.append(item)
-                    }
-                }
-            }
-        }
-    }
-    
-    func saveLastSearchResults() {
-        self.lastSearchResults = self.videos
-    }
-    
     func fetchComments(videoId: String) {
         
         let service = GTLRYouTubeService()

@@ -17,6 +17,7 @@
 		B7400C802A08573E00CFA0DC /* CommentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C7F2A08573E00CFA0DC /* CommentCardView.swift */; };
 		B7400C822A08595C00CFA0DC /* CommentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C812A08595C00CFA0DC /* CommentListView.swift */; };
 		B789ECD72A1AB3B400C95264 /* ButtonSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B789ECD62A1AB3B400C95264 /* ButtonSignInView.swift */; };
+		B792A2A12A2A1A25009A7A3C /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = B792A2A02A2A1A25009A7A3C /* TODO.md */; };
 		B7A039CA2A0A6D710060ECC8 /* NoCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A039C92A0A6D710060ECC8 /* NoCommentView.swift */; };
 		B7A49FB029FEE30800114B70 /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = B7A49FAF29FEE30800114B70 /* FLAnimatedImage */; };
 		B7A49FB429FEE92700114B70 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */; };
@@ -80,6 +81,7 @@
 		B7400C7F2A08573E00CFA0DC /* CommentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCardView.swift; sourceTree = "<group>"; };
 		B7400C812A08595C00CFA0DC /* CommentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListView.swift; sourceTree = "<group>"; };
 		B789ECD62A1AB3B400C95264 /* ButtonSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSignInView.swift; sourceTree = "<group>"; };
+		B792A2A02A2A1A25009A7A3C /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = TODO.md; path = MeTube/TODO.md; sourceTree = "<group>"; };
 		B7A039C92A0A6D710060ECC8 /* NoCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCommentView.swift; sourceTree = "<group>"; };
 		B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		B7A49FB529FEF5A800114B70 /* ParticleEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleEffectView.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 		B7D5BBA529FBF978001BB3D6 = {
 			isa = PBXGroup;
 			children = (
+				B792A2A02A2A1A25009A7A3C /* TODO.md */,
 				B7D5BBB029FBF978001BB3D6 /* MeTube */,
 				B7D5BBAF29FBF978001BB3D6 /* Products */,
 				B7160A8E2A1BA1550020B219 /* Frameworks */,
@@ -451,6 +454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B792A2A12A2A1A25009A7A3C /* TODO.md in Resources */,
 				B7D5BBB929FBF979001BB3D6 /* Preview Assets.xcassets in Resources */,
 				B7D5BBB629FBF979001BB3D6 /* Assets.xcassets in Resources */,
 				B7FDD12A2A0E2A69001E7FDA /* GoogleService-Info.plist in Resources */,
