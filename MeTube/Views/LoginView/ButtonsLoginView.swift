@@ -22,14 +22,16 @@ struct ButtonsLoginView: View {
 
             HStack {
                 
-                Button(action: {
-//                    fbViewModel.login()
-                }, label: {
-                    NavigationLink(
-                        destination: SearchView(input: input, searchTerm: searchTerm)
-                        .environmentObject(fbViewModel).environmentObject(viewModel),
-                        isActive: $fbViewModel.isLoggedIn,
-                        label: { ZStack {
+                NavigationLink(
+                    destination: SearchView(input: input, searchTerm: searchTerm)
+                    .environmentObject(fbViewModel).environmentObject(viewModel),
+                    isActive: $fbViewModel.isLoggedIn,
+                    label: { ZStack {
+                        Button(action: {
+                            
+                            fbViewModel.login()
+                            
+                        }){
                             Text("Login")
                                 .font(.title2)
                                 .fontWeight(.bold)
@@ -37,13 +39,14 @@ struct ButtonsLoginView: View {
                                 .padding([.leading,.trailing],20)
                                 .cornerRadius(20)
                         }
-                        .frame(width: 150,height: 20)
-                        .padding([.top,.bottom])
-                        .background(Rectangle().fill(Color.black).padding(-1))
-                            .overlay(Rectangle().stroke(Color.white, lineWidth: 2).padding(-1)) }
-                    )
+                     
+                    }
+                    .frame(width: 150,height: 20)
+                    .padding([.top,.bottom])
+                    .background(Rectangle().fill(Color.black).padding(-1))
+                        .overlay(Rectangle().stroke(Color.white, lineWidth: 2).padding(-1)) }
+                )
                     
-                })
                 
                 Button(action: {
                     print("Check 12")

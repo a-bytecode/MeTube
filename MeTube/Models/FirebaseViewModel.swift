@@ -26,6 +26,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
     
     
     init() {
+        print(Auth.auth().currentUser?.uid)
         guard let userId = Auth.auth().currentUser?.uid else {
             return
         }
@@ -153,6 +154,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         } else {
             isLoggedIn = false
         }
+            print("UserID ??", userId)
     }
     
     func toggleFavoriteStatus(for firebaseVideo: FirebaseVideo) {

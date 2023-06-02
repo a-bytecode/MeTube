@@ -27,8 +27,8 @@ struct CommentPictureView: View {
             Text(comment.authorDisplayName ?? "Error")
                 .font(.footnote)
                 .foregroundColor(Color.white)
-                .lineLimit(12)
-                
+                .lineLimit(1)
+                .truncationMode(.tail)
         }
     }
 }

@@ -21,7 +21,7 @@ struct FBListView: View {
                     
                     ScrollView {
                        
-                        ForEach(viewModel.fbVideos, id: \.self) { video in
+                        ForEach(videos, id: \.self) { video in
                             
                             FBCardView(fbVideo: video)
 //                            Text("\(video.videoList.count)")

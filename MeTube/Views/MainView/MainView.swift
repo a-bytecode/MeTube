@@ -23,8 +23,7 @@ struct MainView: View {
                     fbViewModel.checkUser()
                 }
             NavigationLink(destination: SearchView(input: input, searchTerm: searchTerm)
-                           
-                           ,isActive: $isLoggedIn
+                ,isActive: $isLoggedIn
             ) {
                 EmptyView()
             }
