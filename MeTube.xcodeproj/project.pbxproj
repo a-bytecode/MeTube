@@ -18,6 +18,7 @@
 		B7400C822A08595C00CFA0DC /* CommentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C812A08595C00CFA0DC /* CommentListView.swift */; };
 		B789ECD72A1AB3B400C95264 /* ButtonSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B789ECD62A1AB3B400C95264 /* ButtonSignInView.swift */; };
 		B792A2A12A2A1A25009A7A3C /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = B792A2A02A2A1A25009A7A3C /* TODO.md */; };
+		B792A2A32A2A2493009A7A3C /* MaxCharacterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B792A2A22A2A2493009A7A3C /* MaxCharacterText.swift */; };
 		B7A039CA2A0A6D710060ECC8 /* NoCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A039C92A0A6D710060ECC8 /* NoCommentView.swift */; };
 		B7A49FB029FEE30800114B70 /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = B7A49FAF29FEE30800114B70 /* FLAnimatedImage */; };
 		B7A49FB429FEE92700114B70 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */; };
@@ -82,6 +83,7 @@
 		B7400C812A08595C00CFA0DC /* CommentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListView.swift; sourceTree = "<group>"; };
 		B789ECD62A1AB3B400C95264 /* ButtonSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSignInView.swift; sourceTree = "<group>"; };
 		B792A2A02A2A1A25009A7A3C /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = TODO.md; path = MeTube/TODO.md; sourceTree = "<group>"; };
+		B792A2A22A2A2493009A7A3C /* MaxCharacterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxCharacterText.swift; sourceTree = "<group>"; };
 		B7A039C92A0A6D710060ECC8 /* NoCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCommentView.swift; sourceTree = "<group>"; };
 		B7A49FB329FEE92700114B70 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		B7A49FB529FEF5A800114B70 /* ParticleEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleEffectView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				B73E94B02A13A70600654003 /* ExtentionPlaceholderView.swift */,
+				B792A2A22A2A2493009A7A3C /* MaxCharacterText.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				B7FDD13F2A0E4339001E7FDA /* SignInTFView.swift in Sources */,
 				B7E839112A1CE1BD001D356B /* FBImageView.swift in Sources */,
 				B7FC94032A00459100C34973 /* SearchTextFieldView.swift in Sources */,
+				B792A2A32A2A2493009A7A3C /* MaxCharacterText.swift in Sources */,
 				B7B13F0629FBFE3400F79204 /* TitelView.swift in Sources */,
 				B7400C822A08595C00CFA0DC /* CommentListView.swift in Sources */,
 				B7BA6EED2A1F67FA002C6387 /* AccountHeadlineView.swift in Sources */,

@@ -24,11 +24,9 @@ struct CommentPictureView: View {
                         .clipShape(Rectangle())
                         .overlay(Rectangle().stroke(LinearGradient(colors: [.yellow,.green], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2))
                 })
-            Text(comment.authorDisplayName ?? "Error")
-                .font(.footnote)
-                .foregroundColor(Color.white)
-                .lineLimit(1)
-                .truncationMode(.tail)
+            
+            MaxCharacterText(text: comment.authorDisplayName ?? "Error", maxCharacters: 9)
+            
         }
     }
 }

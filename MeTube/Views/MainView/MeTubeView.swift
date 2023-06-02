@@ -59,9 +59,7 @@ struct MeTubeView: View {
                     settingsViewModel.loadAnimatedImage(from: url)
                     fbViewModel.fetchHistory()
                 }
-                .onDisappear {
-                    viewModel.saveLastSearchResults()
-                }
+
             }
             .edgesIgnoringSafeArea(.all)
     }
