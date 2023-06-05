@@ -38,35 +38,54 @@ struct AccountView: View {
             VStack {
                 AccountHeadlineView()
                 Spacer()
-                    .frame(height: 450)
-                HStack {
-                    Text("Email:")
-                        .font(.largeTitle)
-                        .foregroundColor(Color.white)
-                    Spacer()
-                        .frame(width: 20)
-                    Text(userEmail)
-                        .font(.largeTitle)
-                        .foregroundColor(Color.blue)
-                }.offset(y: -390)
-                
-                HStack {
-                    Text("WatchItems:")
-                        .font(.largeTitle)
-                        .foregroundColor(Color.white)
-                    Spacer()
-                        .frame(width: 20)
-                    Text("\(items)")
-                        .font(.largeTitle)
-                        .foregroundColor(Color.blue)
-                }.offset(y: -360)
+                    .frame(height: 300)
+                VStack {
+                    HStack {
+
+                        
+                        Text("Welcome back!\nYou are logged in as: \(userEmail)")
+                            .font(.system(size: 30))
+                            .foregroundColor(Color.white)
+                            .multilineTextAlignment(.center)
+                        Spacer()
+                            .frame(width: 20)
+                        
+                    }
+                    HStack {
+                        Text("\nItems: \(items)")
+                            .font(.system(size: 30))
+                            .foregroundColor(Color.white)
+
+                        Spacer()
+                            .frame(width: 20)
+                        
+                    }
+                }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                    .foregroundColor(Color.white)
+                    .background(LinearGradient(colors: [.black,.black], startPoint: .topTrailing, endPoint: .bottomTrailing))
+                    .clipShape(Rectangle())
+                    .overlay(Rectangle().stroke(Color.white, lineWidth: 2))
+                    .font(.title2)
+                    .bold()
+                    .shadow(radius: 2, y: 1)
+                    .offset(y: -250)
+
                 Button(action: {
                     fbViewModel.resetHistory()
                 }) {
-                    Text("Reset")
-                }.offset(y: -360)
-                
-                
+                    Text("Reset Items")
+                        .padding(.horizontal, 30)
+                        .padding(.vertical, 5)
+                        .foregroundColor(Color.white)
+                        .background(LinearGradient(colors: [.red,.black], startPoint: .topTrailing, endPoint: .bottomTrailing))
+                        .clipShape(Rectangle())
+                        .overlay(Rectangle().stroke(Color.white, lineWidth: 2))
+                        .font(.title2)
+                        .bold()
+                        .shadow(radius: 2, y: 1)
+                }.offset(y: -230)
                 
                 Button(action: {
                     fbViewModel.logout()
@@ -93,6 +112,18 @@ struct AccountView: View {
                             isLoggedIn = true
                         }), secondaryButton: .cancel(Text("Nein")))
                     }
+                HStack {
+                    Text("MeTube Inc. All rights reserved")
+                        .font(.footnote)
+                        .font(.title2)
+                        .bold()
+                        .shadow(radius: 2, y: 1)
+                        .foregroundColor(Color.white)
+
+                    Image(systemName: "c.circle")
+                        .offset(x: -5)
+                        .foregroundColor(Color.white)
+                }.offset(y: 93)
             }
         }
         .edgesIgnoringSafeArea(.all)
