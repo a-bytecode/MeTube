@@ -14,7 +14,7 @@ import GoogleAPIClientForREST_YouTube
 struct PlayerView: View {
     
 //    var video: GTLRYouTube_SearchResult? = nil
-    @State var youTubePlayer: YouTubePlayer = YouTubePlayer()
+    @State var youTubePlayer: YouTubePlayer
     @State var firebaseVideo: FirebaseVideo
     @StateObject var settingsViewModel = SettingsViewModel()
     @ObservedObject var viewModel: MeTubeViewModel
@@ -25,7 +25,7 @@ struct PlayerView: View {
     //https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDhhYmEwZWY1MzU4MzU1NDhmNGI1NGNkOGY2M2EwYzg0NjE1MGEyYiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/LP62GF82YvcuOuFJRD/giphy.gif
     
     var body: some View {
-        //ZStack(alignment: .top)
+        
         ZStack(alignment: .top) {
             
             if let image = settingsViewModel.animatedImage {
@@ -46,7 +46,7 @@ struct PlayerView: View {
                         .overlay(Rectangle().stroke(.black, lineWidth: 2))
                         .shadow(radius: 5, x: 2,y: 5)
                         .offset(y: 100)
-                    //VStack(alignment: .trailing)
+
                     VStack(alignment: .trailing) {
                         Spacer()
                             .frame(height: 96)
@@ -64,14 +64,12 @@ struct PlayerView: View {
                             }
                             
                         }
-                        //                    .padding()
+                        // .padding()
                         .frame(width: 400,height: 300)
                         .padding()
                     }
 
                     .onAppear {
-                        
-                       
                         settingsViewModel.loadAnimatedImage(from: url)
                         fbViewModel.saveVideoFirebase(video: firebaseVideo)
                     }
@@ -82,6 +80,9 @@ struct PlayerView: View {
             }
         }
         .edgesIgnoringSafeArea(.all)
+        .onAppear {
+            print("Card is Loaded!", firebaseVideo.id)
+        }
 
         }
         

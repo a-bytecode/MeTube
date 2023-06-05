@@ -31,15 +31,11 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
     }
     
     @Published var fbVideos : [FirebaseVideo] = []
-    
-    @Published var youTubePlayer: YouTubePlayer = YouTubePlayer()
-    
-    @Published var comments: [[GTLRYouTube_CommentSnippet]] = []
-    
-    @Published var lastSearchResults: [GTLRYouTube_SearchResult] = []
-    
-    func fetchVideos(term: String) {
         
+    @Published var comments: [[GTLRYouTube_CommentSnippet]] = []
+        
+    func fetchVideos(term: String) {
+        print("FBVIDEOS -> \(self.fbVideos.count)")
         let service = GTLRYouTubeService()
         
         service.apiKey = secretKey
@@ -50,21 +46,15 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
         
         query.maxResults = 5
         
+        query.type = ["video"] // Hiermit Filtern wir die Video´s (VideoID) heraus, damit wir keine Ergebnisse der Channel-ID in den Suchergebnissen mit eingbekommen.
+        
         service.executeQuery(query) { (ticket, response, error) in
             if let error = error { print("Connection Error")
                 
             } else {
-                //self.videos = (response as! GTLRYouTube_SearchListResponse).items ?? [] }
                 self.videos = (response as! GTLRYouTube_SearchListResponse).items!
-                self.lastSearchResults = self.videos
                 self.fbVideos = self.videos.map( FirebaseVideo.fromGTLRVideo )
                 
-                for video in self.videos {
-                    if video.identifier?.videoId != nil {
-                        self.fbVideos.append(FirebaseVideo.fromGTLRVideo(video: video))
-                    }
-                }
-//                print("VIDEOS -> \(self.videos.first!.identifier!.videoId!)")
                 print("FBVIDEOS -> \(self.fbVideos.count)")
             }
         }

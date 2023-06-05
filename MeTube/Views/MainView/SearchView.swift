@@ -125,9 +125,6 @@ struct SearchView: View {
                     ParticleEffectView(navigate: $navigate)
                     Spacer()
                         .frame(height: 30)
-                        .onAppear {
-                            settingsViewModel.loadAnimatedImage(from: url)
-                        }
                 }
                 
             }
@@ -135,6 +132,7 @@ struct SearchView: View {
             .navigationBarBackButtonHidden()
             .onAppear {
                 print("We are in the SearchView")
+                settingsViewModel.loadAnimatedImage(from: url)
                 fbViewModel.fetchHistory()
             }
         }
