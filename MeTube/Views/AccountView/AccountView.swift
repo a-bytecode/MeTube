@@ -37,28 +37,20 @@ struct AccountView: View {
             
             VStack {
                 AccountHeadlineView()
-                Spacer()
-                    .frame(height: 280)
+                    Spacer()
+                    .frame(height: 200)
                 VStack {
                     HStack {
 
-                        
-                        Text("Welcome back!\nYou are logged in as: \(userEmail)")
+                        Text("Welcome back!\n\nYou are logged in as: \(userEmail)")
                             .font(.system(size: 30))
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.center)
-                        Spacer()
-                            .frame(width: 20)
-                        
                     }
                     HStack {
                         Text("\nItems: \(fbViewModel.videoHistory.count)")
                             .font(.system(size: 30))
                             .foregroundColor(Color.white)
-
-                        Spacer()
-                            .frame(width: 20)
-                        
                     }
                 }
                     .padding(.horizontal, 20)
@@ -70,7 +62,7 @@ struct AccountView: View {
                     .font(.title2)
                     .bold()
                     .shadow(radius: 2, y: 1)
-                    .offset(y: -250)
+                    .offset(y: -160)
 
                 Button(action: {
                     fbViewModel.resetHistory()
@@ -86,7 +78,8 @@ struct AccountView: View {
                         .font(.title2)
                         .bold()
                         .shadow(radius: 2, y: 1)
-                }.offset(y: -230)
+                }
+                .offset(y: -145)
                 
                 Button(action: {
                     showingAlert = true
@@ -104,7 +97,8 @@ struct AccountView: View {
                     .padding([.top,.bottom])
                     .background(Rectangle().fill(Color.black).padding(-1))
                     .overlay(Rectangle().stroke(Color.white, lineWidth: 2).padding(-1))
-                }).offset(y: 40)
+                })
+                .offset(y: 40)
                     .alert(isPresented: $showingAlert) {
                         Alert(title: Text("Logout"),
                               message: Text("Möchtest du dich wirklich ausloggen?"),
@@ -112,7 +106,8 @@ struct AccountView: View {
                             fbViewModel.logout()
                             isLoggedOut = true
                         }), secondaryButton: .cancel(Text("Nein")))
-                    }.offset(y: 23)
+                    }
+                    .offset(y: 43)
                 HStack {
                     Text("MeTube Inc. All rights reserved")
                         .font(.footnote)
@@ -124,7 +119,8 @@ struct AccountView: View {
                     Image(systemName: "c.circle")
                         .offset(x: -5)
                         .foregroundColor(Color.white)
-                }.offset(y: 75)
+                }
+                .offset(y: 100)
             }
         }
         .edgesIgnoringSafeArea(.all)

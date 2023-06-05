@@ -10,6 +10,7 @@
 		B7160A8D2A1B9BDB0020B219 /* FirebaseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7160A8C2A1B9BDB0020B219 /* FirebaseVideo.swift */; };
 		B7160A902A1BA1550020B219 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B7160A8F2A1BA1550020B219 /* FirebaseStorage */; };
 		B7160A922A1BA1550020B219 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = B7160A912A1BA1550020B219 /* FirebaseStorageCombine-Community */; };
+		B73642422A2E17BC002BBD14 /* LogoView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73642412A2E17BC002BBD14 /* LogoView2.swift */; };
 		B737D8ED2A04F04500780F56 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737D8EC2A04F04500780F56 /* FavoriteButton.swift */; };
 		B73E94B12A13A70600654003 /* ExtentionPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73E94B02A13A70600654003 /* ExtentionPlaceholderView.swift */; };
 		B7400C782A084E2F00CFA0DC /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C772A084E2F00CFA0DC /* CommentView.swift */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		B7160A8C2A1B9BDB0020B219 /* FirebaseVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseVideo.swift; sourceTree = "<group>"; };
+		B73642412A2E17BC002BBD14 /* LogoView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView2.swift; sourceTree = "<group>"; };
 		B737D8EC2A04F04500780F56 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		B73E94B02A13A70600654003 /* ExtentionPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionPlaceholderView.swift; sourceTree = "<group>"; };
 		B7400C772A084E2F00CFA0DC /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				B7FC94022A00459100C34973 /* SearchTextFieldView.swift */,
 				B7B39D282A0BD6C400AC786F /* LogoView.swift */,
+				B73642412A2E17BC002BBD14 /* LogoView2.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				B7FDD1432A0E5933001E7FDA /* ButtonsLoginView.swift in Sources */,
 				B7B39D292A0BD6C400AC786F /* LogoView.swift in Sources */,
 				B7400C7E2A08559900CFA0DC /* CommentPictureView.swift in Sources */,
+				B73642422A2E17BC002BBD14 /* LogoView2.swift in Sources */,
 				B7FDD13A2A0E3CF8001E7FDA /* LoginTFView.swift in Sources */,
 				B7A49FB429FEE92700114B70 /* SettingsViewModel.swift in Sources */,
 				B737D8ED2A04F04500780F56 /* FavoriteButton.swift in Sources */,

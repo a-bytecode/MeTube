@@ -113,6 +113,44 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         }
     }
     
+    func getFavorites() {
+        
+        favorites = []
+        
+        let favoritesCollectionRef = db.collection("Users").document(userId ?? "Error UserId").collection("Favorites")
+        
+        favoritesCollectionRef.getDocuments { snapShot, error in
+            
+            if snapShot?.documents.count == 0 {
+                print("No Favorites detected")
+            } else {
+                for document in snapShot!.documents {
+                    
+                    self.favorites.append(FirebaseVideo(data: document.data()))
+                }
+            }
+        }
+    }
+    
+    
+    func saveVideoToFavorites(video: FirebaseVideo) {
+        
+        db.collection("Users").document(userId ?? "Error UserId").collection("Favorites").document(video.id).setData([
+            "id": video.id,
+            "img": video.img,
+            "title": video.title,
+            "isFavorite": video.isFavorite,
+            "lastWatched": video.lastWatched]) { error in
+            if let error = error {
+                print("error writing \(error)")
+                return
+            } else {
+                print("written")
+            }
+        }
+    }
+    
+    
     func saveVideoFirebase(video: FirebaseVideo) { // TODO: Funktion muss noch gemacht werden um das Video zu erstellen, es müssen die Sachen aus der API herausgenommen werden und es muss nach der richtigen Rheinfolge erstellt werden.
         
         db.collection("Users").document(userId ?? "Error UserId").collection("watchHistory").document(video.id).setData([

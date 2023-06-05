@@ -37,7 +37,7 @@ struct FavoritenView: View {
             }
         }
         .onAppear {
-            fbViewModel.fetchHistory()
+            fbViewModel.getFavorites()
             settingsViewModel.loadAnimatedImage(from: url)
         }
         

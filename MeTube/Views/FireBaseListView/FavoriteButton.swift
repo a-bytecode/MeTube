@@ -54,8 +54,8 @@ struct FavoriteButton: View {
             Button(action: {
                 // Action für das Favorisieren
                 isFav.toggle()
-                fbViewModel.fetchFavorites()
-                fbViewModel.toggleFavoriteStatus(for: firebaseVideo)
+                fbViewModel.getFavorites()
+                fbViewModel.saveVideoToFavorites(video: firebaseVideo)
                 
             }) {
                 if isFav == true {
