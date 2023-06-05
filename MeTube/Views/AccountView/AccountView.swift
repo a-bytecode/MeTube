@@ -11,9 +11,9 @@ struct AccountView: View {
     
     @StateObject var settingsViewModel = SettingsViewModel()
     @EnvironmentObject var fbViewModel : FirebaseViewModel
-    @State private var isLoggedIn = false
+    @State private var isLoggedOut = false
     @State private var userEmail = ""
-    @State private var items = 1
+    @State private var items = 0
     @State private var showingAlert = false
 
     
@@ -22,7 +22,7 @@ struct AccountView: View {
     var body: some View {
         
         ZStack {
-            NavigationLink(destination: LoginView(), isActive: $isLoggedIn) {
+            NavigationLink(destination: LoginView(), isActive: $isLoggedOut) {
                                EmptyView()
                            }
             
@@ -52,7 +52,7 @@ struct AccountView: View {
                         
                     }
                     HStack {
-                        Text("\nItems: \(items)")
+                        Text("\nItems: \(fbViewModel.videoHistory.count)")
                             .font(.system(size: 30))
                             .foregroundColor(Color.white)
 
@@ -74,6 +74,7 @@ struct AccountView: View {
 
                 Button(action: {
                     fbViewModel.resetHistory()
+                    
                 }) {
                     Text("Reset Items")
                         .padding(.horizontal, 30)
@@ -88,7 +89,6 @@ struct AccountView: View {
                 }.offset(y: -230)
                 
                 Button(action: {
-                    fbViewModel.logout()
                     showingAlert = true
                 }, label: {
                     
@@ -109,7 +109,8 @@ struct AccountView: View {
                         Alert(title: Text("Logout"),
                               message: Text("Möchtest du dich wirklich ausloggen?"),
                               primaryButton: .default(Text("Ja"), action: {
-                            isLoggedIn = true
+                            fbViewModel.logout()
+                            isLoggedOut = true
                         }), secondaryButton: .cancel(Text("Nein")))
                     }.offset(y: 23)
                 HStack {
@@ -130,7 +131,6 @@ struct AccountView: View {
         .onAppear {
             settingsViewModel.loadAnimatedImage(from: url)
             userEmail = fbViewModel.getUserEmail()
-            items = fbViewModel.videoHistory.count
         }
     
         
