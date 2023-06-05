@@ -38,7 +38,7 @@ struct AccountView: View {
             VStack {
                 AccountHeadlineView()
                 Spacer()
-                    .frame(height: 300)
+                    .frame(height: 280)
                 VStack {
                     HStack {
 
@@ -111,7 +111,7 @@ struct AccountView: View {
                               primaryButton: .default(Text("Ja"), action: {
                             isLoggedIn = true
                         }), secondaryButton: .cancel(Text("Nein")))
-                    }
+                    }.offset(y: 23)
                 HStack {
                     Text("MeTube Inc. All rights reserved")
                         .font(.footnote)
@@ -123,7 +123,7 @@ struct AccountView: View {
                     Image(systemName: "c.circle")
                         .offset(x: -5)
                         .foregroundColor(Color.white)
-                }.offset(y: 93)
+                }.offset(y: 75)
             }
         }
         .edgesIgnoringSafeArea(.all)
