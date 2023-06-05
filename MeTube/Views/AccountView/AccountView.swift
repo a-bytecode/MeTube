@@ -14,6 +14,8 @@ struct AccountView: View {
     @State private var isLoggedIn = false
     @State private var userEmail = ""
     @State private var items = 1
+    @State private var showingAlert = false
+
     
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
     
@@ -63,12 +65,12 @@ struct AccountView: View {
                 }) {
                     Text("Reset")
                 }.offset(y: -360)
-               
+                
                 
                 
                 Button(action: {
                     fbViewModel.logout()
-                    isLoggedIn = true
+                    showingAlert = true
                 }, label: {
                     
                     ZStack {
@@ -84,7 +86,13 @@ struct AccountView: View {
                     .background(Rectangle().fill(Color.black).padding(-1))
                     .overlay(Rectangle().stroke(Color.white, lineWidth: 2).padding(-1))
                 }).offset(y: 40)
-                
+                    .alert(isPresented: $showingAlert) {
+                        Alert(title: Text("Logout"),
+                              message: Text("Möchtest du dich wirklich ausloggen?"),
+                              primaryButton: .default(Text("Ja"), action: {
+                            isLoggedIn = true
+                        }), secondaryButton: .cancel(Text("Nein")))
+                    }
             }
         }
         .edgesIgnoringSafeArea(.all)
