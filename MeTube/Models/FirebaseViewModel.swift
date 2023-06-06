@@ -165,7 +165,12 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         favoritesCollectionRef.getDocuments { snapShot, error in
             if let documents = snapShot?.documents {
                 let documentsToRemove = documents.filter { document in
-                    self.favorites.contains( where: { $0.id == document.documentID } )
+                    if let index = self.favorites.firstIndex(where: { $0.id == document.documentID } ) {
+                        print("FavIndex -> ", index)
+                        self.favorites.remove(at: index)
+                        return true
+                    }
+                    return false
                 }
                 
                 for document in documentsToRemove {
@@ -173,8 +178,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
                         if let error = error {
                             print("Error deleting document: \(error)")
                         } else {
-                            if let index = self.favorites.firstIndex(where: {$0.id == document.documentID }) {
-                                self.favorites.remove(at: index)
+                            print("Favorite successfully deleted!")
                             }
                         }
                     }
