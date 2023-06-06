@@ -158,6 +158,26 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         }
     }
     
+    func removeFavorites() {
+        
+        favorites = []
+        
+        let favoritesCollectionRef = db.collection("Users").document(userId ?? "Error UserId").collection("Favorites")
+        
+        favoritesCollectionRef.getDocuments { snapShot, error in
+            
+            if snapShot?.documents.count == 0 {
+                print("No Favorites detected")
+            } else {
+                for document in snapShot!.documents {
+                    if let index = self.favorites.firstIndex(where: { $0.id == document.documentID } ) {
+                        self.favorites.remove(at: index)
+                    }
+                }
+            }
+        }
+    }
+    
     
     func saveVideoToFavorites(video: FirebaseVideo) {
         

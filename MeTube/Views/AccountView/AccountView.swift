@@ -91,7 +91,7 @@ struct AccountView: View {
                 .offset(y: -105)
                 .alert(isPresented: $resetHistoryAlert) {
                     Alert(title: Text("Delete History"),
-                          message: Text("Are you sure you want to delete your history??"),
+                          message: Text("Are you sure you want to delete your history?"),
                           primaryButton: .default(Text("Yes"), action: {
                           fbViewModel.resetHistory()
                     }), secondaryButton: .cancel(Text("No")))
