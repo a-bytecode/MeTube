@@ -159,19 +159,24 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
     }
     
     func removeFavorites() {
-        
-        favorites = []
-        
+                
         let favoritesCollectionRef = db.collection("Users").document(userId ?? "Error UserId").collection("Favorites")
         
         favoritesCollectionRef.getDocuments { snapShot, error in
-            
-            if snapShot?.documents.count == 0 {
-                print("No Favorites detected")
-            } else {
-                for document in snapShot!.documents {
-                    if let index = self.favorites.firstIndex(where: { $0.id == document.documentID } ) {
-                        self.favorites.remove(at: index)
+            if let documents = snapShot?.documents {
+                let documentsToRemove = documents.filter { document in
+                    self.favorites.contains( where: { $0.id == document.documentID } )
+                }
+                
+                for document in documentsToRemove {
+                    favoritesCollectionRef.document(document.documentID).delete { error in
+                        if let error = error {
+                            print("Error deleting document: \(error)")
+                        } else {
+                            if let index = self.favorites.firstIndex(where: {$0.id == document.documentID }) {
+                                self.favorites.remove(at: index)
+                            }
+                        }
                     }
                 }
             }

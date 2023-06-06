@@ -51,11 +51,18 @@ struct FavoriteButton: View {
                     .offset(y:-1)
                     .shadow(radius: 4,x: 3,y: 3)
             }
+            
             Button(action: {
                 // Action für das Favorisieren
                 isFav.toggle()
-                fbViewModel.getFavorites()
-                fbViewModel.saveVideoToFavorites(video: firebaseVideo)
+                if isFav == true {
+                    print("isFav?? ->", isFav)
+                    fbViewModel.getFavorites()
+                    fbViewModel.saveVideoToFavorites(video: firebaseVideo)
+                } else {
+                    print("isFav?? ->", isFav)
+                    fbViewModel.removeFavorites()
+                }
                 
             }) {
                 if isFav == true {
