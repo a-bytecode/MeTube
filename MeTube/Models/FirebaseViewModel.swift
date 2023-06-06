@@ -91,6 +91,32 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         }
     }
     
+    func deleteFavorites() {
+        
+        guard let userId = userId else { return }
+        let ref = db.collection("Users").document(userId).collection("Favorites")
+
+        ref.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+                return
+            }
+
+            guard let snapshot = snapshot else {
+                print("Snapshot is nil")
+                return
+            }
+
+            for document in snapshot.documents {
+                document.reference.delete()
+            }
+
+            self.favorites.removeAll()
+            print("Array Items:", self.favorites)
+        }
+        
+    }
+    
     func fetchFavorites() {
         let ref = db.collection("Users").document(userId ?? "Error UserId").collection("Favorites")
 

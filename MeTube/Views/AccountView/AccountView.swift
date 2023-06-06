@@ -15,7 +15,8 @@ struct AccountView: View {
     @State private var userEmail = ""
     @State private var items = 0
     @State private var showingAlert = false
-    @State private var resetAlert = false
+    @State private var resetHistoryAlert = false
+    @State private var deleteFavsAlert = false
 
     
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
@@ -39,7 +40,7 @@ struct AccountView: View {
             VStack {
                 AccountHeadlineView()
                     Spacer()
-                    .frame(height: 200)
+                    .frame(height: 130)
                 VStack {
                     HStack {
 
@@ -52,6 +53,7 @@ struct AccountView: View {
                         Text("\nHistory: \(fbViewModel.videoHistory.count)")
                             .font(.system(size: 30))
                             .foregroundColor(Color.white)
+                            .multilineTextAlignment(.center)
                     }
                     HStack {
                         Text("\nFavorites: \(fbViewModel.favorites.count)")
@@ -68,14 +70,14 @@ struct AccountView: View {
                     .font(.title2)
                     .bold()
                     .shadow(radius: 2, y: 1)
-                    .offset(y: -160)
+                    .offset(y: -110)
 
                 Button(action: {
                     
-                    resetAlert = true
+                    resetHistoryAlert = true
                     
                 }) {
-                    Text("Reset History")
+                    Text("Delete History")
                         .padding(.horizontal, 30)
                         .padding(.vertical, 5)
                         .foregroundColor(Color.white)
@@ -86,12 +88,37 @@ struct AccountView: View {
                         .bold()
                         .shadow(radius: 2, y: 1)
                 }
-                .offset(y: -145)
-                .alert(isPresented: $resetAlert) {
-                    Alert(title: Text("Reset History"),
-                          message: Text("Are you sure you want to reset your history??"),
+                .offset(y: -105)
+                .alert(isPresented: $resetHistoryAlert) {
+                    Alert(title: Text("Delete History"),
+                          message: Text("Are you sure you want to delete your history??"),
                           primaryButton: .default(Text("Yes"), action: {
                           fbViewModel.resetHistory()
+                    }), secondaryButton: .cancel(Text("No")))
+                }
+                
+                Button(action: {
+                    
+                    deleteFavsAlert = true
+                    
+                }) {
+                    Text("Delete Favs")
+                        .padding(.horizontal, 45)
+                        .padding(.vertical, 5)
+                        .foregroundColor(Color.white)
+                        .background(LinearGradient(colors: [.red,.black], startPoint: .topTrailing, endPoint: .bottomTrailing))
+                        .clipShape(Rectangle())
+                        .overlay(Rectangle().stroke(Color.white, lineWidth: 2))
+                        .font(.title2)
+                        .bold()
+                        .shadow(radius: 2, y: 1)
+                }
+                .offset(y: -100)
+                .alert(isPresented: $deleteFavsAlert) {
+                    Alert(title: Text("Delete Favorites"),
+                          message: Text("Are you sure you want to delete your favorites?"),
+                          primaryButton: .default(Text("Yes"), action: {
+                          fbViewModel.deleteFavorites()
                     }), secondaryButton: .cancel(Text("No")))
                 }
                 
@@ -121,7 +148,7 @@ struct AccountView: View {
                             isLoggedOut = true
                         }), secondaryButton: .cancel(Text("Nein")))
                     }
-                    .offset(y: 43)
+                    .offset(y: 13)
                 HStack {
                     Text("MeTube Inc. All rights reserved")
                         .font(.footnote)
@@ -134,7 +161,7 @@ struct AccountView: View {
                         .offset(x: -5)
                         .foregroundColor(Color.white)
                 }
-                .offset(y: 100)
+                .offset(y: 70)
             }
         }
         .edgesIgnoringSafeArea(.all)
