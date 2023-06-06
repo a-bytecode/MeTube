@@ -3,6 +3,7 @@
 
 - FavoritenButton Animation if true beibehalten sobald im Favoriten Screen! 
 - FavoritenButton aus Firebase entfernen if false + in Arbeit +
+- FavoriteButton braucht Binding um sich in Realtime synchronisieren kann
 
 - Optische Darstellung der Items in der AccountView von allen Favoriten // Erledigt !!
 - Alert beim löschen der Listeneinträge in der Watch-History // Erledigt !!
