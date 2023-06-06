@@ -15,6 +15,7 @@ struct AccountView: View {
     @State private var userEmail = ""
     @State private var items = 0
     @State private var showingAlert = false
+    @State private var resetAlert = false
 
     
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
@@ -48,7 +49,12 @@ struct AccountView: View {
                             .multilineTextAlignment(.center)
                     }
                     HStack {
-                        Text("\nItems: \(fbViewModel.videoHistory.count)")
+                        Text("\nHistory: \(fbViewModel.videoHistory.count)")
+                            .font(.system(size: 30))
+                            .foregroundColor(Color.white)
+                    }
+                    HStack {
+                        Text("\nFavorites: \(fbViewModel.favorites.count)")
                             .font(.system(size: 30))
                             .foregroundColor(Color.white)
                     }
@@ -65,10 +71,11 @@ struct AccountView: View {
                     .offset(y: -160)
 
                 Button(action: {
-                    fbViewModel.resetHistory()
+                    
+                    resetAlert = true
                     
                 }) {
-                    Text("Reset Items")
+                    Text("Reset History")
                         .padding(.horizontal, 30)
                         .padding(.vertical, 5)
                         .foregroundColor(Color.white)
@@ -80,6 +87,13 @@ struct AccountView: View {
                         .shadow(radius: 2, y: 1)
                 }
                 .offset(y: -145)
+                .alert(isPresented: $resetAlert) {
+                    Alert(title: Text("Reset History"),
+                          message: Text("Are you sure you want to reset your history??"),
+                          primaryButton: .default(Text("Yes"), action: {
+                          fbViewModel.resetHistory()
+                    }), secondaryButton: .cancel(Text("No")))
+                }
                 
                 Button(action: {
                     showingAlert = true
