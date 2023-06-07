@@ -22,6 +22,7 @@ struct FBCardView: View {
                 VStack() {
                     FBImageView(fbVideoImage: fbVideo.img)
                     FBTitelView(fbVideoTitle: fbVideo.title)
+                    
                         .offset(y: -29)
                     FavoriteButton(firebaseVideo: fbVideo, isFav: fbViewModel.favorites.contains(fbVideo))
                         .offset(x:160,y: -83)

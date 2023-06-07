@@ -88,7 +88,7 @@ struct AccountView: View {
                         .bold()
                         .shadow(radius: 2, y: 1)
                 }
-                .offset(y: -105)
+                .offset(y: -95)
                 .alert(isPresented: $resetHistoryAlert) {
                     Alert(title: Text("Delete History"),
                           message: Text("Are you sure you want to delete your history?"),
@@ -113,7 +113,7 @@ struct AccountView: View {
                         .bold()
                         .shadow(radius: 2, y: 1)
                 }
-                .offset(y: -100)
+                .offset(y: -80)
                 .alert(isPresented: $deleteFavsAlert) {
                     Alert(title: Text("Delete Favorites"),
                           message: Text("Are you sure you want to delete all favorites?"),

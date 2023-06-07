@@ -78,9 +78,13 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
     }
     
     func current_datetime() -> String {
-        
-        return ""
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM.dd HH:mm:ss"
+        formatter.locale = Locale(identifier: "de_DE")
+        return formatter.string(from: now)
     }
+    
     
     func resetHistory() {
         guard let userId = userId else { return }

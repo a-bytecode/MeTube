@@ -72,6 +72,8 @@ struct PlayerView: View {
                     .onAppear {
                         settingsViewModel.loadAnimatedImage(from: url)
                         fbViewModel.saveVideoFirebase(video: firebaseVideo)
+                        onWatchVideo(fbVideo: firebaseVideo)
+                        print("CurrentDateTime ->", firebaseVideo.lastWatched)
                     }
                 }
                 
@@ -86,7 +88,14 @@ struct PlayerView: View {
 
         }
         
+    func onWatchVideo(fbVideo: FirebaseVideo) {
+      fbViewModel.saveVideoFirebase(video: fbVideo)
+      firebaseVideo.lastWatched = fbViewModel.current_datetime()
+      // sonstiges
     }
+}
+
+
 
 
 struct PlayerView_Previews: PreviewProvider {
