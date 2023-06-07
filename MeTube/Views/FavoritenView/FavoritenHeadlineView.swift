@@ -19,7 +19,7 @@ struct FavoritenHeadlineView: View {
                 
                 Text("Favorites")
             }
-}            .padding(.horizontal, 50)
+}           .padding(.horizontal, 50)
             .padding(.vertical, 10)
             .foregroundColor(Color.white)
             .background(LinearGradient(colors: [.black,.black], startPoint: .topLeading, endPoint: .bottomTrailing))

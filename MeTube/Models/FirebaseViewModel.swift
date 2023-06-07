@@ -118,28 +118,6 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         
     }
     
-//    func fetchFavorites() {
-//        let ref = db.collection("Users").document(userId ?? "Error UserId").collection("Favorites")
-//
-//        let listener = ref.addSnapshotListener { [self] querySnapshot, error in
-//            print("Start fetching Favorites!!!!")
-//            if let error = error {
-//                print("Snapshot error: \(error)")
-//                return
-//            }
-//            print("Vor der For Schleife!")
-//            print("Snapshot",querySnapshot!.documents)
-//            favorites = []
-//            for document in querySnapshot!.documents {
-//                print("In der For Schleife!")
-//                let data = document.data()
-//                let video = FirebaseVideo(data: data)
-//                print("DATA ------->>>",data)
-//                favorites.append(video)
-//            }
-//        }
-//    }
-    
     func getFavorites() {
         
         favorites = []

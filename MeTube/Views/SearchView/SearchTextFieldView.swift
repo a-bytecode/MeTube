@@ -28,6 +28,11 @@ struct SearchTextFieldView: View {
                     .foregroundColor(Color.white)
                     .tint(Color.red)
                     .accentColor(Color.red)
+                    .placeholder(when: input.isEmpty) {
+                        Text("Type anything...")
+                            .foregroundColor(Color.white)
+                            
+                    }
                     .padding(20)               
             }            
         }
