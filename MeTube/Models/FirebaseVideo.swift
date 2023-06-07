@@ -39,7 +39,7 @@ struct FirebaseVideo : Hashable, Identifiable {
             "img":video.snippet?.thumbnails?.high?.url!,
             "title":video.snippet?.title,
             "isFavorite":false,
-            "lastWatched":"2023.25.05"]
+            "lastWatched":"xxxx.xx.xx"]
         )
     }
 }

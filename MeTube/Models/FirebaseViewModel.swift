@@ -56,25 +56,10 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
 
                 if !videoHistory.contains(where: { $0.id == video.id }) {
                     videoHistory.append(video)
-                } else {
-                    // TODO:
-                    // Vergleiche Datum von Bestehendem Video mit dem von video
-                    // Wenn das Datum geringer ist (älter), dann mach nichts
-                    // Ansonsten, überschreibe das Datum in dem bestehenden Video
-                    if var existingVideo = videoHistory.first(where: { $0.id == video.id } ) {
-                        if existingVideo.lastWatched < video.lastWatched {
-                            existingVideo.lastWatched = video.lastWatched
-                        }
-                    }
                 }
             }
-
-            videoHistory.sort(by: { $0.lastWatched < $1.lastWatched } )
+            videoHistory.sort(by: { $0.lastWatched >= $1.lastWatched } )
         }
-    }
-    
-    func sortiere_videos_anhand_lastWatched(videos: [FirebaseVideo]) -> [FirebaseVideo] {
-        videos.sorted( by: { $0.lastWatched < $1.lastWatched } )
     }
     
     func current_datetime() -> String {
@@ -84,6 +69,16 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         formatter.locale = Locale(identifier: "de_DE")
         return formatter.string(from: now)
     }
+    
+    func onWatchVideo(fbVideo: FirebaseVideo) { // -> onFavoriteButtonClick für Favoriten neues Feld DateAdded hinzufügen.
+        var fbVideoNew = fbVideo
+        fbVideoNew.lastWatched = current_datetime()
+        saveVideoFirebase(video: fbVideoNew)
+        
+        fetchHistory()
+        getFavorites()
+    }
+    
     
     
     func resetHistory() {

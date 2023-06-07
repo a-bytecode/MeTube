@@ -1,3 +1,4 @@
-- Ältere Versionen aus der History löschen (Delete Dublicates)
-- Sortierung der Videos nach LastWatched (Fav und HistotyView)
-- Update der UI in der FavoritenView, nach löschung des Favoriten.
+
+- Sortierung der Videos nach LastWatched (Fav und HistotyView) + bis auf die Favorites in Arbeit+
+- Nach Date Added FirbaseVideo Sortierungsmöglichkeit für Favoriten hinzufügen
+- Sign Up Info das Account erstellt wurde hinufügen.
