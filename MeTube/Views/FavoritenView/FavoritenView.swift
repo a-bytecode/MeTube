@@ -49,6 +49,7 @@ struct FavoritenView: View {
 struct FavoritenView_Previews: PreviewProvider {
     static var previews: some View {
         FavoritenView()
-            
+            .environmentObject(FirebaseViewModel())
+            .environmentObject(MeTubeViewModel())
     }
 }

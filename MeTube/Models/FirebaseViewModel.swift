@@ -61,6 +61,11 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
                     // Vergleiche Datum von Bestehendem Video mit dem von video
                     // Wenn das Datum geringer ist (älter), dann mach nichts
                     // Ansonsten, überschreibe das Datum in dem bestehenden Video
+                    if var existingVideo = videoHistory.first(where: { $0.id == video.id } ) {
+                        if existingVideo.lastWatched < video.lastWatched {
+                            existingVideo.lastWatched = video.lastWatched
+                        }
+                    }
                 }
             }
 
