@@ -22,6 +22,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
     @Published var videoHistory = [FirebaseVideo]()
     @Published var favorites = [FirebaseVideo]()
     @Published var searchResults = [FirebaseVideo]()
+    @Published var showError: Bool = false
     var userId : String?
     
     
@@ -242,6 +243,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             guard let self = self else { return }
             if let error = error {
+                self.showError = true
                 print("Login fehlgeschlagen: \(error.localizedDescription)")
                 
             } else {

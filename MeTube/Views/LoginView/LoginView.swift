@@ -15,6 +15,7 @@ struct LoginView: View {
     @StateObject var settingsViewModel = SettingsViewModel()
     @State private var searchTerm = ""
     @State private var input = ""
+    @State private var showError = false
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
 
     
@@ -37,7 +38,7 @@ struct LoginView: View {
                     .frame(height: 100)
                 LogoView()
                 LoginTFView(input: $fbViewModel.email)
-                LoginPWView(input: $fbViewModel.password)
+                LoginPWView(input: $fbViewModel.password, showError: $fbViewModel.showError)
                 ButtonsLoginView()
                     .offset(y: -15)
             }.environmentObject(fbViewModel)
