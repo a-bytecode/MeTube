@@ -73,6 +73,15 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         }
     }
     
+    func sortiere_videos_anhand_lastWatched(videos: [FirebaseVideo]) -> [FirebaseVideo] {
+        videos.sorted( by: { $0.lastWatched < $1.lastWatched } )
+    }
+    
+    func current_datetime() -> String {
+        
+        return ""
+    }
+    
     func resetHistory() {
         guard let userId = userId else { return }
         let ref = db.collection("Users").document(userId).collection("watchHistory")
@@ -124,23 +133,23 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
     }
     
     func getFavorites() {
-        
-        favorites = []
-        
-        let favoritesCollectionRef = db.collection("Users").document(userId ?? "Error UserId").collection("Favorites")
-        
-        favoritesCollectionRef.getDocuments { snapShot, error in
             
-            if snapShot?.documents.count == 0 {
-                print("No Favorites detected")
-            } else {
-                for document in snapShot!.documents {
-                    
-                    self.favorites.append(FirebaseVideo(data: document.data()))
+            favorites = []
+            
+            let favoritesCollectionRef = db.collection("Users").document(userId ?? "Error UserId").collection("Favorites")
+            
+            favoritesCollectionRef.getDocuments { snapShot, error in
+                
+                if snapShot?.documents.count == 0 {
+                    print("No Favorites detected")
+                } else {
+                    for document in snapShot!.documents {
+                        
+                        self.favorites.append(FirebaseVideo(data: document.data()))
+                    }
                 }
             }
         }
-    }
     
     func removeFavorite(videoID: String) {
         let favoritesCollectionRef = db.collection("Users").document(userId ?? "Error UserId").collection("Favorites")
@@ -154,13 +163,13 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
                                 print("Error deleting document: \(error)")
                             } else {
                                 print("Favorite \(favorite.documentID) successfully deleted!")
+                                self.favorites.removeAll(where: { $0.id == videoID } ) // In der Lokalen Variable wird dadurch das jeweilige Element gelöscht.
                             }
                         }
                     }
                 }
             }
         }
-        getFavorites()
     }
     
     func saveVideoToFavorites(video: FirebaseVideo) {

@@ -59,7 +59,6 @@ struct FavoriteButton: View {
                     fbViewModel.removeFavorite(videoID: firebaseVideo.id)
                 } else {
                     fbViewModel.saveVideoToFavorites(video: firebaseVideo)
-                    fbViewModel.getFavorites()
 
                 }
                 isFav.toggle()

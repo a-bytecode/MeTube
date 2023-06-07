@@ -1,1 +1,3 @@
 - Ältere Versionen aus der History löschen (Delete Dublicates)
+- Sortierung der Videos nach LastWatched (Fav und HistotyView)
+- Update der UI in der FavoritenView, nach löschung des Favoriten.
