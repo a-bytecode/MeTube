@@ -116,7 +116,7 @@ struct AccountView: View {
                 .offset(y: -100)
                 .alert(isPresented: $deleteFavsAlert) {
                     Alert(title: Text("Delete Favorites"),
-                          message: Text("Are you sure you want to delete your favorites?"),
+                          message: Text("Are you sure you want to delete all favorites?"),
                           primaryButton: .default(Text("Yes"), action: {
                           fbViewModel.deleteFavorites()
                     }), secondaryButton: .cancel(Text("No")))

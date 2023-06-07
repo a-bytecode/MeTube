@@ -24,7 +24,6 @@ struct FBListView: View {
                         ForEach(videos, id: \.self) { video in
                             
                             FBCardView(fbVideo: video)
-//                          Text("\(video.videoList.count)")
                         }
                     }
                 }
