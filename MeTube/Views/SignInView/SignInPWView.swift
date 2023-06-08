@@ -48,6 +48,6 @@ struct SignInPWView: View {
 
 struct SignInPWView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInPWView(input: .constant(""),accExist: .constant(false))
+        SignInPWView(input: .constant(""),accExist: .constant(false), accAccepted: .constant(false))
     }
 }

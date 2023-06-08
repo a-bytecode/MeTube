@@ -42,7 +42,7 @@ struct LoginView: View {
                     .foregroundColor(Color.white)
                     .shadow(radius: 4, x: 1, y: 1)
                     .offset(y: -120)
-                LoginTFView(input: $fbViewModel.email)
+                LoginTFView(input: $fbViewModel.email, showError: $fbViewModel.showError)
                     .offset(y: -120)
                 LoginPWView(input: $fbViewModel.password, showError: $fbViewModel.showError)
                     .offset(y: -120)

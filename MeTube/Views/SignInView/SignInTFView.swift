@@ -10,6 +10,8 @@ import SwiftUI
 struct SignInTFView: View {
     
     @Binding var input: String
+    @Binding var accExist : Bool
+    @Binding var accAccepted : Bool
     
     var body: some View {
      
@@ -44,6 +46,6 @@ struct SignInTFView: View {
 
 struct SignInTFView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInTFView(input: .constant(""))
+        SignInTFView(input: .constant(""), accExist: .constant(false),accAccepted: .constant(false))
     }
 }
