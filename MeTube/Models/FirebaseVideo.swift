@@ -18,6 +18,7 @@ struct FirebaseVideo : Hashable, Identifiable {
     var title: String
     var isFavorite: Bool
     var lastWatched: String // = "2023-05-25"
+    var lastAdded: String
 
     
     init(data: [String : Any]) {
@@ -26,7 +27,7 @@ struct FirebaseVideo : Hashable, Identifiable {
         title = data["title"] as! String
         isFavorite = (data["isFavorite"] != nil)
         lastWatched = data["lastWatched"] as! String
-        
+        lastAdded = data["lastAdded"] as! String
     }
     
     func hash(into hasher: inout Hasher) {
@@ -39,7 +40,8 @@ struct FirebaseVideo : Hashable, Identifiable {
             "img":video.snippet?.thumbnails?.high?.url!,
             "title":video.snippet?.title,
             "isFavorite":false,
-            "lastWatched":"xxxx.xx.xx"]
+            "lastWatched":"xxxx.xx.xx",
+            "lastAdded":"xxxx.xx.xx"]
         )
     }
 }
@@ -49,4 +51,5 @@ let firebaseVideoExample = FirebaseVideo(data: [
     "img":"BuzzLightyear",
     "title":"Woody",
     "isFavorite":false,
-    "lastWatched":"2023.25.05"])
+    "lastWatched":"2023.25.05",
+    "lastAdded":"xxxx.xx.xx"])

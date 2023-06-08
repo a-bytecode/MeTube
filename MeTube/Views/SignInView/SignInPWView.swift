@@ -11,6 +11,7 @@ struct SignInPWView: View {
     
     @Binding var input: String
     @Binding var accExist : Bool
+    @Binding var accAccepted : Bool
     
     var body: some View {
         
@@ -39,7 +40,7 @@ struct SignInPWView: View {
             
         }.padding(.horizontal, 30)
             .onChange(of: input) { value in
-//                accAccepted = false
+                accAccepted = false
                 accExist = false
             }
     }

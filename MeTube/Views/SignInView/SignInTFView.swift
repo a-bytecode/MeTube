@@ -34,6 +34,10 @@ struct SignInTFView: View {
             }
 
         }.padding(.horizontal, 30)
+            .onChange(of: input) { value in
+                accAccepted = false
+                accExist = false
+            }
         
     }
 }

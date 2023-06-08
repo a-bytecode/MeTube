@@ -167,6 +167,7 @@ struct AccountView: View {
         .edgesIgnoringSafeArea(.all)
         .onAppear {
             settingsViewModel.loadAnimatedImage(from: url)
+            fbViewModel.getFavorites()
             userEmail = fbViewModel.getUserEmail()
         }
     

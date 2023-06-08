@@ -81,6 +81,15 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         getFavorites()
     }
     
+    func onFavoriteButtonClick(fbVideo: FirebaseVideo) { // -> onFavoriteButtonClick
+        var fbVideoNew = fbVideo
+        fbVideoNew.lastAdded = current_datetime()
+        saveVideoToFavorites(video: fbVideoNew)
+        
+        fetchHistory()
+        getFavorites()
+    }
+    
     
     
     func resetHistory() {
@@ -149,6 +158,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
                         self.favorites.append(FirebaseVideo(data: document.data()))
                     }
                 }
+                self.favorites.sort(by: { $0.lastAdded >= $1.lastAdded } )
             }
         }
     
@@ -180,7 +190,8 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
             "img": video.img,
             "title": video.title,
             "isFavorite": video.isFavorite,
-            "lastWatched": video.lastWatched]) { error in
+            "lastWatched": video.lastWatched,
+            "lastAdded":video.lastAdded]) { error in
             if let error = error {
                 print("error writing \(error)")
                 return
@@ -198,7 +209,8 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
             "img": video.img,
             "title": video.title,
             "isFavorite": video.isFavorite,
-            "lastWatched": video.lastWatched]) { error in
+            "lastWatched": video.lastWatched,
+            "lastAdded":video.lastAdded]) { error in
             if let error = error {
                 print("error writing \(error)")
                 return
