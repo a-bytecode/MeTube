@@ -12,6 +12,7 @@ struct SignInView: View {
     
     @EnvironmentObject var fbViewModel: FirebaseViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
+    @State var accAccepted = false
     
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
     
@@ -37,7 +38,7 @@ struct SignInView: View {
                     .shadow(radius: 4, x: 1, y: 1)
 
                 SignInTFView(input: $fbViewModel.email)
-                SignInPWView(input: $fbViewModel.password)
+                SignInPWView(input: $fbViewModel.password, accAccepted: $accAccepted)
                 Spacer()
                     .frame(height: 140)
                 ButtonSignInView()

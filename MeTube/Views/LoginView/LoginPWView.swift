@@ -38,7 +38,7 @@ struct LoginPWView: View {
                 
             }
             if showError {
-                Text("Incorrect login")
+                Text("Invalid login")
                     .padding(.horizontal, 50)
                     .padding(.vertical, 10)
                     .foregroundColor(Color.red)
