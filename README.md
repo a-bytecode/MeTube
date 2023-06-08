@@ -14,7 +14,7 @@ Elevate Your Streaming Game: MeTube - Explore, Engage, and Enjoy!
 ## Features :rocket:
 
 - YouTubePlayerKit: *https://github.com/SvenTiigi/YouTubePlayerKit*
-* GooglePackagesForYouTube: *https://github.com/google/google-api-objectivec-client-for-rest/blob/main/Package.swift*
+* GoogleAPIClientForREST: *https://github.com/google/google-api-objectivec-client-for-rest/blob/main/Package.swift*
 + FLAnimatedImage: *https://github.com/Flipboard/FLAnimatedImage*
 
 ## Source :star:
