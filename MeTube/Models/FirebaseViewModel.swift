@@ -23,6 +23,8 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
     @Published var favorites = [FirebaseVideo]()
     @Published var searchResults = [FirebaseVideo]()
     @Published var showError: Bool = false
+    @Published var accAccepted : Bool = false
+    @Published var accExist : Bool = false
     var userId : String?
     
     
@@ -221,10 +223,20 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
                 let datas = ["email" : authResult?.user.email, "uid": authResult?.user.uid, "displayName": authResult?.user.displayName]
                 
                 docRef.setData(datas)
+                self!.accAccepted = true
+                self!.accExist = false
                 
             }
             else {
-                print ("Error...")
+                if let errorCode = (error as NSError?)?.code {
+                    if errorCode == AuthErrorCode.emailAlreadyInUse.rawValue {
+                        // Account bereits vorhanden
+                        self!.accExist = true
+                    }
+                } else{
+                    print ("Error...")
+                }
+                
             }
         }
     }

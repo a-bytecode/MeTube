@@ -36,11 +36,13 @@ struct SignInView: View {
                     .fontDesign(.monospaced)
                     .foregroundColor(Color.white)
                     .shadow(radius: 4, x: 1, y: 1)
+                    .offset(y:-150)
 
                 SignInTFView(input: $fbViewModel.email)
-                SignInPWView(input: $fbViewModel.password, accAccepted: $accAccepted)
-                Spacer()
-                    .frame(height: 140)
+                    .offset(y:-150)
+                SignInPWView(input: $fbViewModel.password, accAccepted: $fbViewModel.accAccepted, accExist: $fbViewModel.accExist)
+                    .offset(y:-150)
+
                 ButtonSignInView()
                 
                 }
