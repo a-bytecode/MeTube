@@ -18,6 +18,8 @@
 		B7400C802A08573E00CFA0DC /* CommentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C7F2A08573E00CFA0DC /* CommentCardView.swift */; };
 		B7400C822A08595C00CFA0DC /* CommentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7400C812A08595C00CFA0DC /* CommentListView.swift */; };
 		B742725A2A31DFB6005DF58E /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74272592A31DFB6005DF58E /* ShowError.swift */; };
+		B742725C2A31F503005DF58E /* ShowAccAccepted.swift in Sources */ = {isa = PBXBuildFile; fileRef = B742725B2A31F503005DF58E /* ShowAccAccepted.swift */; };
+		B742725E2A31F514005DF58E /* ShowAccExist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B742725D2A31F514005DF58E /* ShowAccExist.swift */; };
 		B789ECD72A1AB3B400C95264 /* ButtonSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B789ECD62A1AB3B400C95264 /* ButtonSignInView.swift */; };
 		B792A2A12A2A1A25009A7A3C /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = B792A2A02A2A1A25009A7A3C /* TODO.md */; };
 		B792A2A32A2A2493009A7A3C /* MaxCharacterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B792A2A22A2A2493009A7A3C /* MaxCharacterText.swift */; };
@@ -85,6 +87,8 @@
 		B7400C7F2A08573E00CFA0DC /* CommentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCardView.swift; sourceTree = "<group>"; };
 		B7400C812A08595C00CFA0DC /* CommentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListView.swift; sourceTree = "<group>"; };
 		B74272592A31DFB6005DF58E /* ShowError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowError.swift; sourceTree = "<group>"; };
+		B742725B2A31F503005DF58E /* ShowAccAccepted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAccAccepted.swift; sourceTree = "<group>"; };
+		B742725D2A31F514005DF58E /* ShowAccExist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAccExist.swift; sourceTree = "<group>"; };
 		B789ECD62A1AB3B400C95264 /* ButtonSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSignInView.swift; sourceTree = "<group>"; };
 		B792A2A02A2A1A25009A7A3C /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = TODO.md; path = MeTube/TODO.md; sourceTree = "<group>"; };
 		B792A2A22A2A2493009A7A3C /* MaxCharacterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxCharacterText.swift; sourceTree = "<group>"; };
@@ -382,6 +386,8 @@
 				B7FDD13E2A0E4339001E7FDA /* SignInTFView.swift */,
 				B7FDD1402A0E434A001E7FDA /* SignInPWView.swift */,
 				B789ECD62A1AB3B400C95264 /* ButtonSignInView.swift */,
+				B742725B2A31F503005DF58E /* ShowAccAccepted.swift */,
+				B742725D2A31F514005DF58E /* ShowAccExist.swift */,
 			);
 			path = SignInView;
 			sourceTree = "<group>";
@@ -482,6 +488,7 @@
 				B7E839152A1CE1E2001D356B /* FBCardView.swift in Sources */,
 				B7160A8D2A1B9BDB0020B219 /* FirebaseVideo.swift in Sources */,
 				B7E839132A1CE1CF001D356B /* FBTitelView.swift in Sources */,
+				B742725C2A31F503005DF58E /* ShowAccAccepted.swift in Sources */,
 				B7B13F0529FBFE3400F79204 /* SettingsView.swift in Sources */,
 				B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */,
 				B7FDD13F2A0E4339001E7FDA /* SignInTFView.swift in Sources */,
@@ -502,6 +509,7 @@
 				B7A49FB829FEF9CC00114B70 /* ParticleView.swift in Sources */,
 				B7400C802A08573E00CFA0DC /* CommentCardView.swift in Sources */,
 				B7A49FBA29FEFAB000114B70 /* Particle.swift in Sources */,
+				B742725E2A31F514005DF58E /* ShowAccExist.swift in Sources */,
 				B7A49FB629FEF5A800114B70 /* ParticleEffectView.swift in Sources */,
 				B73E94B12A13A70600654003 /* ExtentionPlaceholderView.swift in Sources */,
 				B7BA6EF12A1F6B26002C6387 /* AccountImageView.swift in Sources */,
