@@ -47,7 +47,7 @@ struct ButtonSignInView: View {
                         .bold()
                         .shadow(radius: 2, y: 1)
                         .foregroundColor(Color.white)
-                        .offset(y: -12)
+                        .offset(y: -15)
                     
                     Image(systemName: "c.circle")
                         .offset(x: -5, y: -12)

@@ -12,7 +12,6 @@ struct SignInView: View {
     
     @EnvironmentObject var fbViewModel: FirebaseViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
-    @State var accAccepted = false
     
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
     
@@ -36,16 +35,12 @@ struct SignInView: View {
                     .fontDesign(.monospaced)
                     .foregroundColor(Color.white)
                     .shadow(radius: 4, x: 1, y: 1)
-                    .offset(y:-150)
-
                 SignInTFView(input: $fbViewModel.email)
-                    .offset(y:-150)
                 SignInPWView(input: $fbViewModel.password, accAccepted: $fbViewModel.accAccepted, accExist: $fbViewModel.accExist)
-                    .offset(y:-150)
 
                 ButtonSignInView()
-                
-                }
+
+            }
             .onAppear {
                 settingsViewModel.loadAnimatedImage(from: url)
             }

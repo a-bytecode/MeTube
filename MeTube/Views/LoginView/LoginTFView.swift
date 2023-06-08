@@ -39,7 +39,6 @@ struct LoginTFView: View {
                     
                 }
         }
-
         }.padding(.horizontal, 30)
     }
 }

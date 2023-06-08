@@ -35,19 +35,7 @@ struct LoginPWView: View {
                             .foregroundColor(Color.white)
                             .offset(x: 20)
                     }
-                
             }
-            if showError {
-                Text("Invalid login")
-                    .padding(.horizontal, 50)
-                    .padding(.vertical, 10)
-                    .foregroundColor(Color.red)
-                    .background(LinearGradient(colors: [.black,.black], startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .clipShape(Rectangle())
-                    .overlay(Rectangle().stroke(Color.white, lineWidth: 2))
-                    .shadow(radius: 5, x: 5,y: 5)
-            }
-            Spacer()
         }.padding(.horizontal, 30)
             .onChange(of: input) { value in
                 showError = false // Zurücksetzen des Fehlerstatus bei jeder Änderung der Eingabe
