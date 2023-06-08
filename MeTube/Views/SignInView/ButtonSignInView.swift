@@ -40,19 +40,6 @@ struct ButtonSignInView: View {
                 })
                 Spacer()
                     .frame(height: 50)
-                HStack {
-                    Text("MeTube Inc. All rights reserved")
-                        .font(.footnote)
-                        .font(.title2)
-                        .bold()
-                        .shadow(radius: 2, y: 1)
-                        .foregroundColor(Color.white)
-                        .offset(y: -15)
-                    
-                    Image(systemName: "c.circle")
-                        .offset(x: -5, y: -12)
-                        .foregroundColor(Color.white)
-                }
             }
             
         }
