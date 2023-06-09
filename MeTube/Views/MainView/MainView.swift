@@ -15,8 +15,10 @@ struct MainView: View {
     
     var body: some View {
         
-        NavigationStack {
+       
             LoginView()
+                .environmentObject(viewModel)
+                 .environmentObject(fbViewModel)
                 .onAppear {
                     fbViewModel.checkUser()
                 }
@@ -25,8 +27,6 @@ struct MainView: View {
             ) {
                 EmptyView()
             }
-        }.environmentObject(viewModel)
-         .environmentObject(fbViewModel)
     }
 }
 

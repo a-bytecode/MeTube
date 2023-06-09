@@ -20,7 +20,7 @@ struct SplashView: View {
     @State private var autoreverses = false
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 
                 if isAnimating {
@@ -48,7 +48,6 @@ struct SplashView: View {
                     EmptyView()
                 }
             }
-
         }.onAppear {
             isAnimating = true
         }
