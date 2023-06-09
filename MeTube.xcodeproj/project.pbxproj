@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B706FE842A3365E800C5BD56 /* MeTubeSplashTxt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B706FE832A3365E800C5BD56 /* MeTubeSplashTxt.swift */; };
 		B7160A8D2A1B9BDB0020B219 /* FirebaseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7160A8C2A1B9BDB0020B219 /* FirebaseVideo.swift */; };
 		B7160A902A1BA1550020B219 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B7160A8F2A1BA1550020B219 /* FirebaseStorage */; };
 		B7160A922A1BA1550020B219 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = B7160A912A1BA1550020B219 /* FirebaseStorageCombine-Community */; };
@@ -78,6 +79,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B706FE832A3365E800C5BD56 /* MeTubeSplashTxt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTubeSplashTxt.swift; sourceTree = "<group>"; };
 		B7160A8C2A1B9BDB0020B219 /* FirebaseVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseVideo.swift; sourceTree = "<group>"; };
 		B73642412A2E17BC002BBD14 /* LogoView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView2.swift; sourceTree = "<group>"; };
 		B737D8EC2A04F04500780F56 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				B7B13EF829FBFDF200F79204 /* SplashView.swift */,
+				B706FE832A3365E800C5BD56 /* MeTubeSplashTxt.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				B789ECD72A1AB3B400C95264 /* ButtonSignInView.swift in Sources */,
 				B7BA6EF32A1FA0D8002C6387 /* getPlayerViewByFirebaseVideo.swift in Sources */,
 				B7B13EF929FBFDF200F79204 /* SplashView.swift in Sources */,
+				B706FE842A3365E800C5BD56 /* MeTubeSplashTxt.swift in Sources */,
 				B7FDD1432A0E5933001E7FDA /* ButtonsLoginView.swift in Sources */,
 				B7B39D292A0BD6C400AC786F /* LogoView.swift in Sources */,
 				B7400C7E2A08559900CFA0DC /* CommentPictureView.swift in Sources */,
