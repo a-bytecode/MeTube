@@ -18,37 +18,40 @@ struct SplashView: View {
     @State private var autoreverses = false
 
     var body: some View {
-        
-        VStack {
-            if isAnimating {
-                Image("Logo2")
-                    .padding()
-                    .foregroundColor(Color.white)
-                    .font(.title3)
-                    .multilineTextAlignment(.center)
-                    .bold()
-                    .background(LinearGradient(colors: [.green,.yellow], startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .clipShape(Rectangle())
-                    .overlay(Rectangle().stroke(.black, lineWidth: 3))
-                    .shadow(radius: 5,x: 2,y: 3)
-                    .rotationEffect(.degrees(isRotating))
-                    .animation(.easeInOut(duration: duration), value: isRotating)
-                    .onAppear {
-                        isRotating += 360
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 7.0) {
-                            isAnimating = false
-                            isDone = true
+        NavigationView {
+            VStack {
+                
+                if isAnimating {
+                    Image("Logo2")
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .font(.title3)
+                        .multilineTextAlignment(.center)
+                        .bold()
+                        .background(LinearGradient(colors: [.green,.yellow], startPoint: .topLeading, endPoint: .bottomTrailing))
+                        .clipShape(Rectangle())
+                        .overlay(Rectangle().stroke(.black, lineWidth: 3))
+                        .shadow(radius: 5,x: 2,y: 3)
+                        .rotationEffect(.degrees(isRotating))
+                        .animation(.easeInOut(duration: duration), value: isRotating)
+                        .onAppear {
+                            isRotating += 360
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                                isAnimating = false
+                                isDone = true
+                            }
                         }
-                    }
+                }
                 NavigationLink(destination: MainView(), isActive: $isDone) {
                     EmptyView()
                 }
             }
+
         }.onAppear {
             isAnimating = true
         }
-                }
-            }
+    }
+}
 
 
 struct SplashView_Previews: PreviewProvider {
