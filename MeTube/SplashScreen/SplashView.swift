@@ -19,7 +19,7 @@ struct SplashView: View {
     @State private var pulseAmount = 1.0
     @State private var autoreverses = false
     @StateObject var settingsViewModel: SettingsViewModel = SettingsViewModel()
-    private var url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
+    private var url = URL(string: "https://media.giphy.com/media/XnKIErV7AL3GS7xs8N/giphy.gif")!
 
 
     var body: some View {
@@ -40,7 +40,8 @@ struct SplashView: View {
                     
                     if isAnimating {
                         Image("Logo2")
-                            .padding()
+                            .padding(.horizontal, 40)
+                            .padding(.vertical, 40)
                             .foregroundColor(Color.white)
                             .font(.title3)
                             .multilineTextAlignment(.center)
@@ -63,11 +64,13 @@ struct SplashView: View {
                         EmptyView()
                     }
                 }
-            }.edgesIgnoringSafeArea(.all)
+        }
+         .edgesIgnoringSafeArea(.all)
         }.onAppear {
             isAnimating = true
             settingsViewModel.loadAnimatedImage(from: url)
         }
+        
         
 
     }
