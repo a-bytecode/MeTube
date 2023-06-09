@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SplashView: View {
     
+    //TODO: Splashsscreen mit Navigation sicherstellen.
+    
     @State private var isAnimating = false
     @State private var isDone = false
     @State private var animationAmount = 1.0
