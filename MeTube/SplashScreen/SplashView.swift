@@ -10,6 +10,7 @@ import SwiftUI
 struct SplashView: View {
     
     @State private var isAnimating = false
+    @State private var isDone = false
     @State private var animationAmount = 1.0
     @State private var isRotating = 0.0
     @State private var duration: Double = 4.0
@@ -33,13 +34,15 @@ struct SplashView: View {
                     .rotationEffect(.degrees(isRotating))
                     .animation(.easeInOut(duration: duration), value: isRotating)
                     .onAppear {
-                        
                         isRotating += 360
                         DispatchQueue.main.asyncAfter(deadline: .now() + 7.0) {
                             isAnimating = false
-                            NavigationLink(destination: )
+                            isDone = true
                         }
                     }
+                NavigationLink(destination: MainView(), isActive: $isDone) {
+                    EmptyView()
+                }
             }
         }.onAppear {
             isAnimating = true
