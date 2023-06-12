@@ -49,6 +49,7 @@
 		B7BA6EF12A1F6B26002C6387 /* AccountImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BA6EF02A1F6B26002C6387 /* AccountImageView.swift */; };
 		B7BA6EF32A1FA0D8002C6387 /* getPlayerViewByFirebaseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BA6EF22A1FA0D8002C6387 /* getPlayerViewByFirebaseVideo.swift */; };
 		B7C1733B2A0D1FE400926FA5 /* FavoritenHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1733A2A0D1FE400926FA5 /* FavoritenHeadlineView.swift */; };
+		B7CE05922A37571400EFD1F1 /* AudioPlayerAVF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE05912A37571400EFD1F1 /* AudioPlayerAVF.swift */; };
 		B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */; };
 		B7D5BBB629FBF979001BB3D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D5BBB529FBF979001BB3D6 /* Assets.xcassets */; };
 		B7D5BBB929FBF979001BB3D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D5BBB829FBF979001BB3D6 /* Preview Assets.xcassets */; };
@@ -118,6 +119,7 @@
 		B7BA6EF02A1F6B26002C6387 /* AccountImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImageView.swift; sourceTree = "<group>"; };
 		B7BA6EF22A1FA0D8002C6387 /* getPlayerViewByFirebaseVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getPlayerViewByFirebaseVideo.swift; sourceTree = "<group>"; };
 		B7C1733A2A0D1FE400926FA5 /* FavoritenHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritenHeadlineView.swift; sourceTree = "<group>"; };
+		B7CE05912A37571400EFD1F1 /* AudioPlayerAVF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerAVF.swift; sourceTree = "<group>"; };
 		B7D5BBAE29FBF978001BB3D6 /* MeTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTubeApp.swift; sourceTree = "<group>"; };
 		B7D5BBB529FBF979001BB3D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -317,6 +319,14 @@
 			path = AccountView;
 			sourceTree = "<group>";
 		};
+		B7CE05902A3756FC00EFD1F1 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				B7CE05912A37571400EFD1F1 /* AudioPlayerAVF.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		B7D5BBA529FBF978001BB3D6 = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +348,7 @@
 		B7D5BBB029FBF978001BB3D6 /* MeTube */ = {
 			isa = PBXGroup;
 			children = (
+				B7CE05902A3756FC00EFD1F1 /* Audio */,
 				B73E94AF2A13A6D900654003 /* Extensions */,
 				B7B13EF729FBFDF200F79204 /* SplashScreen */,
 				B7B13F0D29FBFEFC00F79204 /* Secret */,
@@ -530,6 +541,7 @@
 				B7B13F0B29FBFE3400F79204 /* ImageView.swift in Sources */,
 				B789ECD72A1AB3B400C95264 /* ButtonSignInView.swift in Sources */,
 				B7BA6EF32A1FA0D8002C6387 /* getPlayerViewByFirebaseVideo.swift in Sources */,
+				B7CE05922A37571400EFD1F1 /* AudioPlayerAVF.swift in Sources */,
 				B7B13EF929FBFDF200F79204 /* SplashView.swift in Sources */,
 				B706FE842A3365E800C5BD56 /* MeTubeSplashTxt.swift in Sources */,
 				B7FDD1432A0E5933001E7FDA /* ButtonsLoginView.swift in Sources */,

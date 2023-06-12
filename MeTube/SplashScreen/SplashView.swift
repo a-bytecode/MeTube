@@ -26,7 +26,6 @@ struct SplashView: View {
 
 
     var body: some View {
-        NavigationStack {
             
             VStack {
                 if isDone {
@@ -79,8 +78,6 @@ struct SplashView: View {
                     }
                 }
             }
-        }
-
     }
 }
 
