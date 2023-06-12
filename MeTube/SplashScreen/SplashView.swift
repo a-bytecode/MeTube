@@ -10,7 +10,8 @@ import SwiftUI
 struct SplashView: View {
     
     //TODO: Splashsscreen mit Navigation sicherstellen.
-    
+    @EnvironmentObject var fbViewModel: FirebaseViewModel
+    @EnvironmentObject var viewModel: MeTubeViewModel
     @State private var isAnimating = false
     @State private var isDone = false
     @State private var animationAmount = 1.0
@@ -57,13 +58,17 @@ struct SplashView: View {
                                 }
                             }
                     }
-                    NavigationLink(destination: MainView(), isActive: $isDone) {
+                    NavigationLink(destination: MainView().environmentObject(viewModel)
+                        .environmentObject(fbViewModel), isActive: $isDone) {
                         EmptyView()
                     }
                 }
         }
          .edgesIgnoringSafeArea(.all)
-        }.onAppear {
+        }
+        .environmentObject(fbViewModel)
+        .environmentObject(viewModel)
+        .onAppear {
             isAnimating = true
             settingsViewModel.loadAnimatedImage(from: url)
         }

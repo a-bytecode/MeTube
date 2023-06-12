@@ -284,8 +284,11 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
     func checkUser() {
         if Auth.auth().currentUser != nil {
             isLoggedIn = true
+            self.userId = Auth.auth().currentUser?.uid
+            fetchHistory()
         } else {
             isLoggedIn = false
+            self.userId = nil
         }
             print("UserID ??", userId)
     }

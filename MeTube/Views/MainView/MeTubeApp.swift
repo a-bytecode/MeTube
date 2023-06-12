@@ -22,11 +22,14 @@ struct MeTubeApp: App {
 
     var body: some Scene { // TODO: EnviromentObject als übergeordneten Datentyp erstellen
         
+
         WindowGroup {
-            SplashView()
-                .environmentObject(fbViewModel)
-                .environmentObject(viewModel)
-//            MainView()
-        }
+
+                SplashView()
+                    .environmentObject(fbViewModel)
+                    .environmentObject(viewModel)
+                //            MainView()
+            }
+            
     }
 }

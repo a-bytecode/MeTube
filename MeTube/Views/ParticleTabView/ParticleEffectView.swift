@@ -27,7 +27,8 @@ struct ParticleEffectView: View {
             HStack(spacing: 20) {
                 
                 // Navigation Book
-                NavigationLink(destination: AccountView(), isActive: $navigate){
+                NavigationLink(destination: AccountView().environmentObject(viewModel)
+                    .environmentObject(fbViewModel), isActive: $navigate){
                     if isEnabled[0] {
                         CustomButton(systemImage: "person.fill", status: isLiked[0], activeTint: .green, inActiveTint: .green) {
                             navigate.toggle()
@@ -40,7 +41,8 @@ struct ParticleEffectView: View {
                 }
                 
                 // Navigation Favoriten
-                NavigationLink(destination: FavoritenView(), isActive: $navigateFav){
+                NavigationLink(destination: FavoritenView().environmentObject(viewModel)
+                    .environmentObject(fbViewModel), isActive: $navigateFav){
                     if isEnabled[1] {
                         CustomButton(systemImage: "suit.heart.fill", status: isLiked[1], activeTint: .red, inActiveTint: .red) {
                             isLiked[1].toggle()
@@ -53,7 +55,8 @@ struct ParticleEffectView: View {
                 }
                 
                 // Navigation Search
-                NavigationLink(destination: MeTubeView(navigate: $isSheetOpen), isActive: $shouldNavigateMeTubeView){
+                NavigationLink(destination: MeTubeView(navigate: $isSheetOpen).environmentObject(viewModel)
+                    .environmentObject(fbViewModel), isActive: $shouldNavigateMeTubeView){
                     if isEnabled[2] {
                         CustomButton(systemImage: "arrowshape.turn.up.right.fill", status: isLiked[2], activeTint: .blue, inActiveTint: .blue) {
                             shouldNavigateMeTubeView.toggle()
@@ -68,6 +71,7 @@ struct ParticleEffectView: View {
                 }
                 
             }
+           
             .background(Rectangle().fill(Color.black).padding(-10))
             .overlay(Rectangle().stroke(Color.white, lineWidth: 2).padding(-10))
         }

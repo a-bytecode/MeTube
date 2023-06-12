@@ -64,7 +64,6 @@ struct ButtonsLoginView: View {
                         .background(Rectangle().fill(Color.black).padding(-1))
                         .overlay(Rectangle().stroke(Color.white, lineWidth: 2).padding(-1))
                     }
-                    
                 })
             }
             Spacer()
@@ -81,6 +80,8 @@ struct ButtonsLoginView: View {
                     .offset(x: -5)
                     .foregroundColor(Color.white)
             }
+        }.onAppear {
+            print("Buttons LoginView ->", fbViewModel.isLoggedIn)
         }
     }
     
