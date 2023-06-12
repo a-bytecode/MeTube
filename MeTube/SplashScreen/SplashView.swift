@@ -20,6 +20,8 @@ struct SplashView: View {
     @State private var pulseAmount = 1.0
     @State private var autoreverses = false
     @StateObject var settingsViewModel: SettingsViewModel = SettingsViewModel()
+    @State private var logoPositionY: CGFloat = -500
+    @State private var logoPositionX: CGFloat = -50
     private var url = URL(string: "https://media.giphy.com/media/XnKIErV7AL3GS7xs8N/giphy.gif")!
 
 
@@ -51,9 +53,14 @@ struct SplashView: View {
                                     .overlay(Rectangle().stroke(.black, lineWidth: 3))
                                     .shadow(radius: 5,x: 2,y: 3)
                                     .rotationEffect(.degrees(isRotating))
+                                    .offset(x: logoPositionX, y: logoPositionY)
                                     .animation(.easeInOut(duration: duration), value: isRotating)
                                     .onAppear {
                                         isRotating += 360
+                                        withAnimation(.easeInOut(duration: duration)) {
+                                                    logoPositionY = UIScreen.main.bounds.height / 36
+                                                    logoPositionX = 0
+                                        }
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                                             isAnimating = false
                                             isDone = true
