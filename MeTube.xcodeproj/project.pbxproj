@@ -50,6 +50,9 @@
 		B7BA6EF32A1FA0D8002C6387 /* getPlayerViewByFirebaseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BA6EF22A1FA0D8002C6387 /* getPlayerViewByFirebaseVideo.swift */; };
 		B7C1733B2A0D1FE400926FA5 /* FavoritenHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1733A2A0D1FE400926FA5 /* FavoritenHeadlineView.swift */; };
 		B7CE05922A37571400EFD1F1 /* AudioPlayerAVF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE05912A37571400EFD1F1 /* AudioPlayerAVF.swift */; };
+		B7CE05962A375B5200EFD1F1 /* discord-notification.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7CE05932A375B5200EFD1F1 /* discord-notification.mp3 */; };
+		B7CE05972A375B5200EFD1F1 /* mikejebait-3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7CE05942A375B5200EFD1F1 /* mikejebait-3.mp3 */; };
+		B7CE05982A375B5200EFD1F1 /* streets1_000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7CE05952A375B5200EFD1F1 /* streets1_000.mp3 */; };
 		B7D5BBB229FBF978001BB3D6 /* MeTubeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */; };
 		B7D5BBB629FBF979001BB3D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D5BBB529FBF979001BB3D6 /* Assets.xcassets */; };
 		B7D5BBB929FBF979001BB3D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D5BBB829FBF979001BB3D6 /* Preview Assets.xcassets */; };
@@ -120,6 +123,9 @@
 		B7BA6EF22A1FA0D8002C6387 /* getPlayerViewByFirebaseVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getPlayerViewByFirebaseVideo.swift; sourceTree = "<group>"; };
 		B7C1733A2A0D1FE400926FA5 /* FavoritenHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritenHeadlineView.swift; sourceTree = "<group>"; };
 		B7CE05912A37571400EFD1F1 /* AudioPlayerAVF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerAVF.swift; sourceTree = "<group>"; };
+		B7CE05932A375B5200EFD1F1 /* discord-notification.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "discord-notification.mp3"; sourceTree = "<group>"; };
+		B7CE05942A375B5200EFD1F1 /* mikejebait-3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "mikejebait-3.mp3"; sourceTree = "<group>"; };
+		B7CE05952A375B5200EFD1F1 /* streets1_000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = streets1_000.mp3; sourceTree = "<group>"; };
 		B7D5BBAE29FBF978001BB3D6 /* MeTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5BBB129FBF978001BB3D6 /* MeTubeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTubeApp.swift; sourceTree = "<group>"; };
 		B7D5BBB529FBF979001BB3D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -323,6 +329,9 @@
 			isa = PBXGroup;
 			children = (
 				B7CE05912A37571400EFD1F1 /* AudioPlayerAVF.swift */,
+				B7CE05932A375B5200EFD1F1 /* discord-notification.mp3 */,
+				B7CE05942A375B5200EFD1F1 /* mikejebait-3.mp3 */,
+				B7CE05952A375B5200EFD1F1 /* streets1_000.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -484,9 +493,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B792A2A12A2A1A25009A7A3C /* TODO.md in Resources */,
+				B7CE05972A375B5200EFD1F1 /* mikejebait-3.mp3 in Resources */,
 				B7D5BBB929FBF979001BB3D6 /* Preview Assets.xcassets in Resources */,
 				B7D5BBB629FBF979001BB3D6 /* Assets.xcassets in Resources */,
+				B7CE05962A375B5200EFD1F1 /* discord-notification.mp3 in Resources */,
 				B7FDD12A2A0E2A69001E7FDA /* GoogleService-Info.plist in Resources */,
+				B7CE05982A375B5200EFD1F1 /* streets1_000.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

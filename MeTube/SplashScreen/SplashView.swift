@@ -22,6 +22,7 @@ struct SplashView: View {
     @StateObject var settingsViewModel: SettingsViewModel = SettingsViewModel()
     @State private var logoPositionY: CGFloat = -500
     @State private var logoPositionX: CGFloat = -50
+    @State private var audioPLayer = AudioPlayer()
     private var url = URL(string: "https://media.giphy.com/media/XnKIErV7AL3GS7xs8N/giphy.gif")!
 
 
@@ -55,6 +56,8 @@ struct SplashView: View {
                                     .offset(x: logoPositionX, y: logoPositionY)
                                     .animation(.easeInOut(duration: duration), value: isRotating)
                                     .onAppear {
+                                        let sound1 = "streets1_000"
+                                        audioPLayer.playSound(soundFileName: sound1, soundFileType: "mp3")
                                         isRotating += 360
                                         withAnimation(.easeInOut(duration: duration)) {
                                                     logoPositionY = UIScreen.main.bounds.height / 36
