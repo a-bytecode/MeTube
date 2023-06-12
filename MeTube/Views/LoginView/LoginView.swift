@@ -37,7 +37,7 @@ struct LoginView: View {
                 Spacer()
                     .frame(height: 100)
                 LogoView()
-                Text("Login into your account")
+                Text("Login to your account")
                     .fontDesign(.monospaced)
                     .foregroundColor(Color.white)
                     .shadow(radius: 4, x: 1, y: 1)

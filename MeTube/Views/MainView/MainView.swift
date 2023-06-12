@@ -13,20 +13,14 @@ struct MainView: View {
     @State private var isLoggedIn = false
     
     var body: some View {
-            LoginView()
-                 .environmentObject(viewModel)
-                 .environmentObject(fbViewModel)
-                .onAppear {
-                    fbViewModel.checkUser()
-                    print("CHeck User ->",fbViewModel.isLoggedIn)
-                }
-            NavigationLink(destination: SearchView()
-                .environmentObject(viewModel)
-                .environmentObject(fbViewModel)
-                           ,isActive: $fbViewModel.isLoggedIn
-            ) {
-                EmptyView()
+        
+        VStack {
+            if fbViewModel.isLoggedIn {
+                SearchView()
+            } else {
+                LoginView()
             }
+        }
     }
 }
 

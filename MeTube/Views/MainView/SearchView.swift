@@ -37,6 +37,7 @@ struct SearchView: View {
     
     var body: some View {
         
+        NavigationStack {
             ZStack {
                 
                 if let image = settingsViewModel.animatedImage {
@@ -136,6 +137,8 @@ struct SearchView: View {
                 fbViewModel.fetchHistory()
             }
         }
+        
+    }
     
     func onSearchButtonClick() {
         viewModel.fetchVideos(term: input)
