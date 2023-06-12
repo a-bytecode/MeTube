@@ -28,20 +28,17 @@ struct SplashView: View {
                 
                 if let image = settingsViewModel.animatedImage {
                     FLAnimatedImageViewWrapper(image: image)
-                        .frame(width: 100.0, height: .infinity)
+                        .frame(width: 100, height: .infinity)
+                        
                     
                 } else {
                     Text("Loading...")
                 }
                 VStack {
-                    
-                    
-                    
-                    
+
                     if isAnimating {
                         Image("Logo2")
-                            .padding(.horizontal, 40)
-                            .padding(.vertical, 40)
+                            .padding()
                             .foregroundColor(Color.white)
                             .font(.title3)
                             .multilineTextAlignment(.center)

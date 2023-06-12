@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct MainView: View {
-    
-    @StateObject var fbViewModel: FirebaseViewModel = FirebaseViewModel()
-    @StateObject var viewModel: MeTubeViewModel = MeTubeViewModel()
+    @EnvironmentObject var fbViewModel: FirebaseViewModel
+    @EnvironmentObject var viewModel: MeTubeViewModel
     @State private var isLoggedIn = false
     
     var body: some View {
         
        
             LoginView()
-                .environmentObject(viewModel)
+                 .environmentObject(viewModel)
                  .environmentObject(fbViewModel)
                 .onAppear {
                     fbViewModel.checkUser()

@@ -13,6 +13,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct MeTubeApp: App {
+    
+    @StateObject var fbViewModel: FirebaseViewModel = FirebaseViewModel()
+    @StateObject var viewModel: MeTubeViewModel = MeTubeViewModel()
+
     //Registration für Firebase Setup!
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
@@ -20,6 +24,8 @@ struct MeTubeApp: App {
         
         WindowGroup {
             SplashView()
+                .environmentObject(fbViewModel)
+                .environmentObject(viewModel)
 //            MainView()
         }
     }

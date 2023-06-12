@@ -54,6 +54,7 @@ struct AccountView: View {
                             .font(.system(size: 30))
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.center)
+                            
                     }
                     HStack {
                         Text("\nFavorites: \(fbViewModel.favorites.count)")
