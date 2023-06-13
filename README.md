@@ -18,11 +18,11 @@
 - Firebase database
 * Favorites
 + Watched videos tracker
-* YouTubePlayerKit: *https://github.com/SvenTiigi/YouTubePlayerKit*
-- GoogleAPIClientForREST: *https://github.com/google/google-api-objectivec-client-for-rest/blob/main/Package.swift*
+* Video Player: YouTubePlayerKit: *https://github.com/SvenTiigi/YouTubePlayerKit*
 + Animated wallpapers / FLAnimatedImage: *https://github.com/Flipboard/FLAnimatedImage*
+- GoogleAPIClientForREST: *https://github.com/google/google-api-objectivec-client-for-rest/blob/main/Package.swift*
 
-## Backend Services :mortar_board:
+## Backend services :mortar_board:
 * Google Service (GoogleAPIClientForREST)
 - Api Call
 + FirebaseVideo (Class)
