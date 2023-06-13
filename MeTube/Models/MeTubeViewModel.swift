@@ -44,7 +44,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
         
         query.q = term
         
-        query.maxResults = 5
+        query.maxResults = 20
         
         query.type = ["video"] // Hiermit Filtern wir die Video´s (VideoID) heraus, damit wir keine Ergebnisse der Channel-ID in den Suchergebnissen mit eingbekommen.
         
@@ -70,7 +70,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
         
         query.videoId = videoId
         
-        query.maxResults = 10
+        query.maxResults = 50
         
         service.executeQuery(query) { (ticket, response, error) in
             if let error = error {

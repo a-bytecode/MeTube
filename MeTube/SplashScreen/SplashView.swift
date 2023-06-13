@@ -60,7 +60,7 @@ struct SplashView: View {
                                         audioPLayer.playSound(soundFileName: sound1, soundFileType: "mp3")
                                         isRotating += 360
                                         withAnimation(.easeInOut(duration: duration)) {
-                                                    logoPositionY = UIScreen.main.bounds.height / 36
+                                                    logoPositionY = UIScreen.main.bounds.height / 40
                                                     logoPositionX = 0
                                         }
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {

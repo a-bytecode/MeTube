@@ -237,7 +237,8 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
                 docRef.setData(datas)
                 self!.accAccepted = true
                 self!.accExist = false
-                
+//                self!.isLoggedIn = true
+//                self!.userId = authResult!.user.uid                
             }
             else {
                 if let errorCode = (error as NSError?)?.code {

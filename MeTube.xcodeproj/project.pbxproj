@@ -44,6 +44,8 @@
 		B7B39D252A0B960900AC786F /* LastSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B39D242A0B960900AC786F /* LastSearchResultsView.swift */; };
 		B7B39D272A0B961600AC786F /* LastSearchHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B39D262A0B961600AC786F /* LastSearchHeadlineView.swift */; };
 		B7B39D292A0BD6C400AC786F /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B39D282A0BD6C400AC786F /* LogoView.swift */; };
+		B7B98A9D2A37691A003B3A32 /* qquw.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7B98A9C2A37691A003B3A32 /* qquw.mp3 */; };
+		B7B98A9F2A376996003B3A32 /* anime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7B98A9E2A376996003B3A32 /* anime.mp3 */; };
 		B7BA6EED2A1F67FA002C6387 /* AccountHeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BA6EEC2A1F67FA002C6387 /* AccountHeadlineView.swift */; };
 		B7BA6EEF2A1F6876002C6387 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BA6EEE2A1F6876002C6387 /* AccountView.swift */; };
 		B7BA6EF12A1F6B26002C6387 /* AccountImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BA6EF02A1F6B26002C6387 /* AccountImageView.swift */; };
@@ -117,6 +119,8 @@
 		B7B39D242A0B960900AC786F /* LastSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSearchResultsView.swift; sourceTree = "<group>"; };
 		B7B39D262A0B961600AC786F /* LastSearchHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSearchHeadlineView.swift; sourceTree = "<group>"; };
 		B7B39D282A0BD6C400AC786F /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		B7B98A9C2A37691A003B3A32 /* qquw.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = qquw.mp3; sourceTree = "<group>"; };
+		B7B98A9E2A376996003B3A32 /* anime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = anime.mp3; sourceTree = "<group>"; };
 		B7BA6EEC2A1F67FA002C6387 /* AccountHeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeadlineView.swift; sourceTree = "<group>"; };
 		B7BA6EEE2A1F6876002C6387 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		B7BA6EF02A1F6B26002C6387 /* AccountImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImageView.swift; sourceTree = "<group>"; };
@@ -331,6 +335,8 @@
 				B7CE05912A37571400EFD1F1 /* AudioPlayerAVF.swift */,
 				B7CE05932A375B5200EFD1F1 /* discord-notification.mp3 */,
 				B7CE05942A375B5200EFD1F1 /* mikejebait-3.mp3 */,
+				B7B98A9C2A37691A003B3A32 /* qquw.mp3 */,
+				B7B98A9E2A376996003B3A32 /* anime.mp3 */,
 				B7CE05952A375B5200EFD1F1 /* streets1_000.mp3 */,
 			);
 			path = Audio;
@@ -494,8 +500,10 @@
 			files = (
 				B792A2A12A2A1A25009A7A3C /* TODO.md in Resources */,
 				B7CE05972A375B5200EFD1F1 /* mikejebait-3.mp3 in Resources */,
+				B7B98A9F2A376996003B3A32 /* anime.mp3 in Resources */,
 				B7D5BBB929FBF979001BB3D6 /* Preview Assets.xcassets in Resources */,
 				B7D5BBB629FBF979001BB3D6 /* Assets.xcassets in Resources */,
+				B7B98A9D2A37691A003B3A32 /* qquw.mp3 in Resources */,
 				B7CE05962A375B5200EFD1F1 /* discord-notification.mp3 in Resources */,
 				B7FDD12A2A0E2A69001E7FDA /* GoogleService-Info.plist in Resources */,
 				B7CE05982A375B5200EFD1F1 /* streets1_000.mp3 in Resources */,
