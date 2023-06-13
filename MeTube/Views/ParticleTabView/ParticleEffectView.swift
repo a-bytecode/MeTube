@@ -102,6 +102,6 @@ struct ParticleEffectView: View {
 }
 struct ParticleEffectView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticleEffectView(isEnabled: [true,true,true], navigate: .constant(false))
+        ParticleEffectView(isEnabled: [true,true,true], navigate: .constant(false)).environmentObject(FirebaseViewModel()).environmentObject(MeTubeViewModel())
     }
 }
