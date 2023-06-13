@@ -12,7 +12,7 @@
 + Navigation / NavigationStack
 - Api Call
 + FirebaseVideo (Class)
-* Google Service
+* Google Service (GoogleAPIClientForREST)
 
 
 ## Features :rocket:
