@@ -11,7 +11,9 @@
 - FirebaseViewModel
 + Navigation / NavigationStack
 - Api Call
-* Google Service
++ FirebaseVideo (Class)
+* Google Service (GoogleAPIClientForREST)
+
 
 ## Features :rocket:
 - YouTube comment section
