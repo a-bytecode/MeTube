@@ -1,5 +1,7 @@
 
-<a href="https://freeimage.host/de"><img src="https://iili.io/H4Npwnp.jpg" alt="Bildbeschreibung" width="400" height="200">
+<p align="center">
+<a href="https://freeimage.host/de"><img src="https://iili.io/H4Npwnp.jpg" alt="Bildbeschreibung" width="400" height="200"></p>
+
 # MeTube :tm:
 
 *"Stream by yourself, be conceited, MeTube!"*
@@ -9,6 +11,7 @@
 - MVVM / Model-View-ViewModel
 * MeTubeViewModel
 - FirebaseViewModel
++ Static Factory Method (FirebaseVideo)
 
 ## Features :rocket:
 - YouTube comment section
