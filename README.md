@@ -10,11 +10,6 @@
 * MeTubeViewModel
 - FirebaseViewModel
 
-## Backend Services :mortar_board:
-* Google Service (GoogleAPIClientForREST)
-- Api Call
-+ FirebaseVideo (Class)
-
 ## Features :rocket:
 - YouTube comment section
 * Account overview
@@ -27,6 +22,10 @@
 - GoogleAPIClientForREST: *https://github.com/google/google-api-objectivec-client-for-rest/blob/main/Package.swift*
 + Animated wallpapers / FLAnimatedImage: *https://github.com/Flipboard/FLAnimatedImage*
 
+## Backend Services :mortar_board:
+* Google Service (GoogleAPIClientForREST)
+- Api Call
++ FirebaseVideo (Class)
 
 ## Source :star:
 *https://developers.google.com/youtube/v3/live/getting-started?hl=de*
