@@ -11,7 +11,6 @@ import GoogleAPIClientForREST_YouTube
 
 struct CommentListView: View {
     
-    
     @ObservedObject var viewModel: MeTubeViewModel
     var videoID: String = ""
     var i = MeTubeViewModel().comments.first?.first?.videoId

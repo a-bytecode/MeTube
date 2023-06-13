@@ -31,8 +31,3 @@ struct CommentPictureView: View {
     }
 }
 
-//struct CommentPictureView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CommentPictureView(comment: "")
-//    }
-//}

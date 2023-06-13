@@ -32,8 +32,3 @@ struct CommentCardView: View {
 
 }
 
-//struct CommentCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CommentCardView()
-//    }
-//}

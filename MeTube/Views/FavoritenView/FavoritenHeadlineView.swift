@@ -12,12 +12,12 @@ struct FavoritenHeadlineView: View {
     
     var body: some View {
         
-       
             HStack {
                 
                 ZStack {
                 
                 Text("Favorites")
+
             }
 }           .padding(.horizontal, 50)
             .padding(.vertical, 10)

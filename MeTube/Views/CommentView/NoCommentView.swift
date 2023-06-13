@@ -29,18 +29,8 @@ struct NoCommentView: View {
                         .background(LinearGradient(colors: [.green,.yellow], startPoint: .topLeading, endPoint: .bottomTrailing))
                         .clipShape(RoundedRectangle(cornerRadius: 20, style: .circular))
                         .overlay(RoundedRectangle(cornerRadius: 20).stroke(.black, lineWidth: 3))
-                       
-
+    
                 }
-//            
-//            if let image = settingsViewModel.animatedImage {
-//                FLAnimatedImageViewWrapper(image: image)
-//                    .frame(width: .zero, height: 100)
-//                
-//            } else {
-//                Text("Loading...")
-//            }
-            
         }
         
         .onAppear {

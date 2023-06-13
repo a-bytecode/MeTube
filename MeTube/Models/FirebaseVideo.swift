@@ -33,6 +33,7 @@ struct FirebaseVideo : Hashable, Identifiable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
+    // Static Func: Statische Funktionen können direkt über den Typ aufgerufen werden, ohne dass eine Instanz erstellt werden muss. Dies kann den Aufruf von Funktionen vereinfachen und den Code kompakter machen. (Wiederverwendbarkeit, Performance)
     
     static func fromGTLRVideo(video: GTLRYouTube_SearchResult) -> FirebaseVideo {
         return FirebaseVideo(data: [

@@ -15,7 +15,6 @@ struct FavoritenView: View {
     @EnvironmentObject var viewModel: MeTubeViewModel
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
 
-    
     var body: some View {
                 
         ZStack {
