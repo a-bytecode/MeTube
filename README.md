@@ -9,16 +9,17 @@
 - MVVM / Model-View-ViewModel
 * MeTubeViewModel
 - FirebaseViewModel
-+ Navigation / NavigationStack
+
+## Backend Services :mortar_board:
+* Google Service (GoogleAPIClientForREST)
 - Api Call
 + FirebaseVideo (Class)
-* Google Service (GoogleAPIClientForREST)
-
 
 ## Features :rocket:
 - YouTube comment section
 * Account overview
 + Animated splashscreen
+* Navigation / NavigationStack
 - Firebase database
 * Favorites
 + Watched videos tracker
