@@ -22,11 +22,9 @@
 + Watched videos tracker
 * Video Player: YouTubePlayerKit: *https://github.com/SvenTiigi/YouTubePlayerKit*
 + Animated wallpapers / FLAnimatedImage: *https://github.com/Flipboard/FLAnimatedImage*
-- GoogleAPIClientForREST: *https://github.com/google/google-api-objectivec-client-for-rest/blob/main/Package.swift*
 
 ## Backend services :mortar_board:
-* Google Service (GoogleAPIClientForREST)
-- Api Call
+* Google Service (GoogleAPIClientForREST) *https://github.com/google/google-api-objectivec-client-for-rest/blob/main/Package.swift*
 + FirebaseVideo (Class)
 
 ## Source :star:
