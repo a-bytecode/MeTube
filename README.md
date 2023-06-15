@@ -3,7 +3,7 @@
 
 # MeTube :tm:
 
-*"Stream by yourself, be conceited, MeTube!"*
+*"Search youre Video´s everywhere!"*
 
 ## Architecture patterns :white_check_mark:
 
