@@ -24,7 +24,7 @@
 + Animated wallpapers / FLAnimatedImage: *https://github.com/Flipboard/FLAnimatedImage*
 
 ## Backend services :mortar_board:
-* Google Service (GoogleAPIClientForREST) *https://github.com/google/google-api-objectivec-client-for-rest/blob/main/Package.swift*
+* Google Service (GoogleAPIClientForREST) / *https://github.com/google/google-api-objectivec-client-for-rest/blob/main/Package.swift*
 + FirebaseVideo (Class)
 
 ## Source :star:
