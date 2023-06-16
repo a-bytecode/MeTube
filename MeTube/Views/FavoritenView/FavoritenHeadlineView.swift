@@ -29,8 +29,6 @@ struct FavoritenHeadlineView: View {
             .bold()
             .shadow(radius: 2, y: 1)
     }
-    
-    
 }
 
 struct FavoritenHeadlineView_Previews: PreviewProvider {

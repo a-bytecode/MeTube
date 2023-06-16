@@ -35,8 +35,3 @@ struct FBCardView: View {
     }
 }
 
-//struct FBCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FBCardView(fbVideo: VideoHistory(id: "", list: []) )
-//    }
-//}

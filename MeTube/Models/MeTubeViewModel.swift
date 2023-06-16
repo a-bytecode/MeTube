@@ -20,7 +20,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
 
             if !videos.isEmpty {
                 for video in videos {
-                    fetchComments(videoId: video.identifier?.videoId ?? "Error") // mit map(Dictionarys) wäre eine möglichkeit durch die Liste durch iterrieren.
+                    fetchComments(videoId: video.identifier?.videoId ?? "Error") // mit map(Dictionaries) wäre eine Möglichkeit durch die Liste durch iterrieren.
                     print("Fetched Comments -> \(video.identifier?.videoId ?? "Error")")
                 }
             }
@@ -89,12 +89,3 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
         }
     }
 }
-
-
-//extension GTLRYouTube_SearchResult { Extension ist dazu da, vorhandene Structs oder Klassen zu erweitern.
-//
-//    var comments : [GTLRYouTube_CommentSnippet] {
-//        return MeTubeViewModel().fetchComments(videoId: (self.identifier?.videoId)!)
-//
-//    }
-//}

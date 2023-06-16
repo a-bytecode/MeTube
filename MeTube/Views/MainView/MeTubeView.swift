@@ -22,11 +22,8 @@ struct MeTubeView: View {
     @State private var searchTerm = ""
     let url = URL(string: "https://media.giphy.com/media/26hitlJ1tvqhlUWnm/giphy.gif")!
     
-    //"https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdkMGZkMGYwMWMyOWUyMjUzYjJiODViZjYxZjgyODE5ZjcyNjI1MSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/fx1XmI9CAxwQ8XWSuB/giphy.gif"
-   
     var body: some View {
         
-            
             ZStack {
                 
                 if let image = settingsViewModel.animatedImage {

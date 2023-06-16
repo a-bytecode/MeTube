@@ -61,6 +61,7 @@ struct LoginView: View {
                 settingsViewModel.loadAnimatedImage(from: url)
             }
         }
+        
     }
 }
 

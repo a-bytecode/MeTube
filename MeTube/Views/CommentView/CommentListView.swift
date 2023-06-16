@@ -8,7 +8,6 @@
 import SwiftUI
 import GoogleAPIClientForREST_YouTube
 
-
 struct CommentListView: View {
     
     @ObservedObject var viewModel: MeTubeViewModel

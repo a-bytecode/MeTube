@@ -20,7 +20,6 @@ struct FirebaseVideo : Hashable, Identifiable {
     var lastWatched: String // = "2023-05-25"
     var lastAdded: String
 
-    
     init(data: [String : Any]) {
         id = data["id"] as! String
         img = data["img"] as! String
@@ -33,8 +32,7 @@ struct FirebaseVideo : Hashable, Identifiable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
-    // Static Func: Statische Funktionen können direkt über den Typ aufgerufen werden, ohne dass eine Instanz erstellt werden muss. Dies kann den Aufruf von Funktionen vereinfachen und den Code kompakter machen. (Wiederverwendbarkeit, Performance)
-    
+
     static func fromGTLRVideo(video: GTLRYouTube_SearchResult) -> FirebaseVideo {
         return FirebaseVideo(data: [
             "id":video.identifier?.videoId ?? "",
@@ -45,6 +43,11 @@ struct FirebaseVideo : Hashable, Identifiable {
             "lastAdded":"xxxx.xx.xx"]
         )
     }
+    
+    // Static: Es nimmt die Funktion und macht Sie erreichbar unter FirbaseVideo. (durch Punktnotation) -> Es ist ein ableger vom Klassennamen.
+    // Static: Macht nur Sinn innerhalb einer Klasse. Mann könnte Sie einfach außerhalb der Klasse erstellen und es würde auch gehen.
+    // Aus Organisatorischen Gründen habe ich Static benutzt damit alles was mit FirebaseVideo zu tun hat in FirebaseVideo ist. Deswegen Static!
+
 }
 
 let firebaseVideoExample = FirebaseVideo(data: [
