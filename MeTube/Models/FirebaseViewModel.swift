@@ -38,28 +38,33 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         fetchHistory()
     }
     
+    /*
+     
+    */
     func fetchHistory() {
-        print("User ID : \(userId)")
+        // Prüfe nach ob ein User eingelogged ist. (guard let)
         guard let userId = userId else { return }
+        // Es referenziert die Collection welche wir brauchen.
         let ref = db.collection("Users").document(userId).collection("watchHistory")
-
+        // Der Listener holt sich die informationen die wie in der Referenzt angegegeben haben.
         let listener = ref.addSnapshotListener { [self] querySnapshot, error in
-            print("Start fetching History!!!!")
+        // Wenn es einen Error gibt bei der Abfrage der Daten wird hier gestoppt und ein Print ausgegeben
             if let error = error {
                 print("Snapshot error: \(error)")
                 return
             }
-            print("Vor der For Schleife!")
-            print("Snapshot",querySnapshot!.documents)
+            // Ich leere die Liste der videoHistory weil ich im nächsten Schritt was zur Liste hinzufüge, und damit keine alten Einträge entstehen wird die Liste geleert.
             videoHistory = []
-
+            // Jetzt schauen wir uns jedes Element in den Dokomenten an.
             for document in querySnapshot!.documents {
+                // Jetzt erstellen wir ein FirebaseVideo Model welches das Element aus dem Document enthält.
                 let video = FirebaseVideo(data: document.data())
-
+                // Wenn das Element nicht das gleiche ist, welches in der Liste schon vorhanden ist, dann fügen wir durch das append das Element hinzu.
                 if !videoHistory.contains(where: { $0.id == video.id }) {
                     videoHistory.append(video)
                 }
             }
+            // Am Ende Sortieren wir die Liste der videoHistory durch das last Watched attribut. (Das Datum was am Aktuellsten ist, kommt nach ganz vorne!)
             videoHistory.sort(by: { $0.lastWatched >= $1.lastWatched } )
         }
     }
