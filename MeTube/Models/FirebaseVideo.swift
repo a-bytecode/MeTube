@@ -36,8 +36,8 @@ struct FirebaseVideo : Hashable, Identifiable {
     static func fromGTLRVideo(video: GTLRYouTube_SearchResult) -> FirebaseVideo {
         return FirebaseVideo(data: [
             "id":video.identifier?.videoId ?? "",
-            "img":video.snippet?.thumbnails?.high?.url!,
-            "title":video.snippet?.title,
+            "img":video.snippet?.thumbnails?.high?.url ?? "Empty URL",
+            "title":video.snippet?.title ?? "Empty Title",
             "isFavorite":false,
             "lastWatched":"xxxx.xx.xx",
             "lastAdded":"xxxx.xx.xx"]

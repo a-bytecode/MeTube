@@ -15,8 +15,8 @@ import GoogleAPIClientForREST_YouTube
 struct MeTubeView: View {
 
     @EnvironmentObject var viewModel : MeTubeViewModel
-    @StateObject var settingsViewModel = SettingsViewModel()
     @EnvironmentObject var fbViewModel : FirebaseViewModel
+    @StateObject var settingsViewModel = SettingsViewModel()
     @State private var isEditing = false
     @Binding var navigate : Bool
     @State private var searchTerm = ""
@@ -65,6 +65,8 @@ struct MeTubeView: View {
 struct MeTubeView_Previews: PreviewProvider {
     static var previews: some View {
         MeTubeView(navigate: .constant(false))
+            .environmentObject(MeTubeViewModel())
+            .environmentObject(FirebaseViewModel())
     }
 }
 

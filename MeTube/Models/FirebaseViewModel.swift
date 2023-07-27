@@ -39,16 +39,16 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
     }
     
     /*
-     
-    */
+     Die Funktion "fetchHistory()" wird verwendet, um die Watch-History eines Benutzers zu aktualisieren und zu sortieren.
+     */
     func fetchHistory() {
         // Prüfe nach ob ein User eingelogged ist. (guard let)
         guard let userId = userId else { return }
         // Es referenziert die Collection welche wir brauchen.
         let ref = db.collection("Users").document(userId).collection("watchHistory")
-        // Der Listener holt sich die informationen die wie in der Referenzt angegegeben haben.
+        // Der Listener holt sich die informationen die wie in der Referenzt angegegeben haben, und der snapshotListener wird auf die Referenz angewendet er prüft nach ob es die daten im Dokument schon gibt.
         let listener = ref.addSnapshotListener { [self] querySnapshot, error in
-        // Wenn es einen Error gibt bei der Abfrage der Daten wird hier gestoppt und ein Print ausgegeben
+        // Wenn es einen Error gibt bei der Abfrage der Daten wird die Funktion hier gestoppt und ein Print ausgegeben.
             if let error = error {
                 print("Snapshot error: \(error)")
                 return
