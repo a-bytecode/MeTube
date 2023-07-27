@@ -56,7 +56,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
             // Ich leere die Liste der videoHistory weil ich im nächsten Schritt was zur Liste hinzufüge, und damit keine alten Einträge entstehen wird die Liste geleert.
             videoHistory = []
             // Jetzt schauen wir uns jedes Element in den Dokomenten an.
-            for document in querySnapshot!.documents {
+            for document in querySnapshot!.documents { //QuerySnapshot ist eine Klasse in Firebase die eine Liste an Firestore-Dokumenten darstellt.
                 // Jetzt erstellen wir ein FirebaseVideo Model welches das Element aus dem Document enthält.
                 let video = FirebaseVideo(data: document.data())
                 // Wenn das Element nicht das gleiche ist, welches in der Liste schon vorhanden ist, dann fügen wir durch das append das Element hinzu.
@@ -101,7 +101,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         guard let userId = userId else { return }
         let ref = db.collection("Users").document(userId).collection("watchHistory")
 
-        ref.getDocuments { (snapshot, error) in
+        ref.getDocuments { (snapshot, error) in // Snapshot entält das Ergebnis für die Datenanbfrage. Es ist eine Instanz des QuerySnapshots die man verwendet um auf die Daten der Firestore-Dokumente zuzugreifen. QuerySnapshot ist eine Klasse in Firebase die eine Liste an Firestore-Dokumenten darstellt.
             if let error = error {
                 print("Error getting documents: \(error)")
                 return
@@ -113,11 +113,11 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
             }
 
             for document in snapshot.documents {
-                document.reference.delete()
+                document.reference.delete() // die referenz ist die Eigenschaft eines Firestore Dokuments, mit der Funktion delete() auf die Referenz bezogen wird das entsprechende Firestore-Dokument gelöscht.
             }
-
-            self.videoHistory.removeAll()
-            print("Array Items:", self.videoHistory)
+            
+            self.videoHistory.removeAll() // Hier werden die Daten Lokal gelöscht, damit die UI sofort akualisiert wird.
+            print("Array Items:", self.favorites)
         }
     }
     
@@ -138,13 +138,12 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
             }
 
             for document in snapshot.documents {
-                document.reference.delete()
+                document.reference.delete() // die referenz ist die Eigenschaft eines Firestore Dokuments, mit der Funktion delete() auf die Referenz bezogen wird das entsprechende Firestore-Dokument gelöscht.
             }
-
-            self.favorites.removeAll()
+            
+            self.favorites.removeAll() // Hier werden die Daten Lokal gelöscht, damit die UI sofort akualisiert wird.
             print("Array Items:", self.favorites)
         }
-        
     }
     
     func getFavorites() {
