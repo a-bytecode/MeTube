@@ -44,18 +44,22 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
     func fetchHistory() {
         // Prüfe nach ob ein User eingelogged ist. (guard let)
         guard let userId = userId else { return }
+        
         // Es referenziert die Collection welche wir brauchen.
         let ref = db.collection("Users").document(userId).collection("watchHistory")
+        
         // Der Listener holt sich die informationen die wie in der Referenzt angegegeben haben, und der snapshotListener wird auf die Referenz angewendet er prüft nach ob es die daten im Dokument schon gibt.
         let listener = ref.addSnapshotListener { [self] querySnapshot, error in
+            
         // Wenn es einen Error gibt bei der Abfrage der Daten wird die Funktion hier gestoppt und ein Print ausgegeben.
             if let error = error {
                 print("Snapshot error: \(error)")
                 return
             }
+            
             // Ich leere die Liste der videoHistory weil ich im nächsten Schritt was zur Liste hinzufüge, und damit keine alten Einträge entstehen wird die Liste geleert.
             videoHistory = []
-            // Jetzt schauen wir uns jedes Element in den Dokomenten an.
+            // Jetzt schauen wir uns jedes Element in den Dokumenten an.
             for document in querySnapshot!.documents { //QuerySnapshot ist eine Klasse in Firebase die eine Liste an Firestore-Dokumenten darstellt.
                 // Jetzt erstellen wir ein FirebaseVideo Model welches das Element aus dem Document enthält.
                 let video = FirebaseVideo(data: document.data())
@@ -69,7 +73,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         }
     }
     
-    func current_datetime() -> String {
+    func current_datetime() -> String { // -> Timestamp für die Sortierung der Elemente in der WatchHistory
         let now = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd HH:mm:ss"
@@ -77,16 +81,16 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         return formatter.string(from: now)
     }
     
-    func onWatchVideo(fbVideo: FirebaseVideo) { // -> onFavoriteButtonClick für Favoriten neues Feld DateAdded hinzufügen.
+    func onWatchVideo(fbVideo: FirebaseVideo) { // -> Durch onWatchVideo wird beim Laden des Videos der Timestamp gesetzt
         var fbVideoNew = fbVideo
         fbVideoNew.lastWatched = current_datetime()
-        saveVideoFirebase(video: fbVideoNew)
+        saveVideoFirebase(video: fbVideoNew) // -> Es wird bei Firebase gespeichert.
         
         fetchHistory()
         getFavorites()
     }
     
-    func onFavoriteButtonClick(fbVideo: FirebaseVideo) { // -> onFavoriteButtonClick
+    func onFavoriteButtonClick(fbVideo: FirebaseVideo) { // -> Durch drücken auf den Fav button wird Timestamp gesetzt.
         var fbVideoNew = fbVideo
         fbVideoNew.lastAdded = current_datetime()
         saveVideoToFavorites(video: fbVideoNew)
@@ -98,7 +102,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
     
     
     func resetHistory() {
-        guard let userId = userId else { return }
+        guard let userId = userId else { return } // Return beendet die Funktion wenn die User id einen Null Wert enthält.
         let ref = db.collection("Users").document(userId).collection("watchHistory")
 
         ref.getDocuments { (snapshot, error) in // Snapshot entält das Ergebnis für die Datenanbfrage. Es ist eine Instanz des QuerySnapshots die man verwendet um auf die Daten der Firestore-Dokumente zuzugreifen. QuerySnapshot ist eine Klasse in Firebase die eine Liste an Firestore-Dokumenten darstellt.
@@ -148,13 +152,13 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
     
     func getFavorites() {
             
-            favorites = []
+            favorites = [] // -> Dient dazu keine alten Daten oder Dublikate zu bekommen. Es hält die Liste immer aktuell.
             
             let favoritesCollectionRef = db.collection("Users").document(userId ?? "Error UserId").collection("Favorites")
             
             favoritesCollectionRef.getDocuments { snapShot, error in
                 
-                if snapShot?.documents.count == 0 {
+                if snapShot?.documents.count == 0 { // -> Hie prüft er nach ob elemente in den documenten gleich 0 sind.
                     print("No Favorites detected")
                 } else {
                     for document in snapShot!.documents {
@@ -170,7 +174,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         let favoritesCollectionRef = db.collection("Users").document(userId ?? "Error UserId").collection("Favorites")
         
         favoritesCollectionRef.getDocuments { snapshot, error in
-            if let favorites = snapshot?.documents {
+            if let favorites = snapshot?.documents { // Hier vergleichen wir durch die for-Schleife die document ID mit der Video ID
                 for favorite in favorites {
                     if favorite.documentID == videoID {
                         favoritesCollectionRef.document(favorite.documentID).delete { error in
@@ -226,9 +230,9 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
     
     
     func signUp(){
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in // weak self wird eklariert um mögliche speicherlecks zu vermeiden. Es ist also ein schwcher referenztyp wo den Speicher wärend er nicht benutz wird freigibt.
             
-            guard let strongSelf = self else {return}
+            guard let strongSelf = self else {return} // durch das self wird es sichergestellt, dass strongSelf während der restlichen Ausführung der Closure eine gültige Referenz auf das ursprüngliche Objekt beibehält.
             
             if error == nil && authResult != nil {
                 

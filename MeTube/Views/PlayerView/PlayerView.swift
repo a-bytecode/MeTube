@@ -92,7 +92,7 @@ struct PlayerView: View {
 
 struct PlayerView_Previews: PreviewProvider {
     static var youTubePlayer = YouTubePlayer(
-        source: .url(""),
+        source: .url("https://www.youtube.com/watch?v=aYYSlCa3xfw"),
         configuration: .init(
             autoPlay: true
         )
