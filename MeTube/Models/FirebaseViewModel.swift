@@ -284,13 +284,13 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
         do {
             try Auth.auth().signOut()
             self.isLoggedIn = false
-            videoHistory = []
+//            videoHistory = []
         } catch let signOutError as NSError {
             print("Fehler beim ausloggen: %@", signOutError)
         }
     }
     
-    func checkUser() {
+    func checkUser() { // In dieser Funktion prüfen wir nach ob der User bereits eingeloggt ist oder nicht.
         if Auth.auth().currentUser != nil {
             isLoggedIn = true
             self.userId = Auth.auth().currentUser?.uid
@@ -302,24 +302,7 @@ class FirebaseViewModel: ObservableObject { // TODO: Alles auf Firebase umstelle
             print("UserID ??", userId)
     }
     
-    func toggleFavoriteStatus(for firebaseVideo: FirebaseVideo) {
-        guard let userId = userId else {
-            return
-        }
-        
-        let docRef = db.collection("Users").document(userId).collection("watchHistory").document(firebaseVideo.id)
-        
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let isFavorite = document.data()?["isFavorite"] as? Bool ?? false
-                docRef.updateData(["isFavorite": !isFavorite])
-            } else {
-                print("Document does not exist")
-            }
-        }
-    }
-    
-    func getUserEmail() -> String {
+    func getUserEmail() -> String { // Hier holen wir uns die Email Adresse des Users für die AccountVew
         return Auth.auth().currentUser?.email ?? ""
        }
 }

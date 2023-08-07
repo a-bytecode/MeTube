@@ -10,7 +10,31 @@ import Combine
 import FLAnimatedImage
 import GoogleAPIClientForREST_YouTube
 
+/*
+ Anmerk auf Designprinzipien und –guidelines:
+  Ich habe versucht die App nach Human Interaction Guidelines Design Prinzipien zu gestalten,
+  sodass Benutzer ohne große Anstrengungen mit der App interagieren können.
+  Benutzefreundlichkeit, Fingerfreundlichkeit, Erwartungskonformität waren das Hauptaugenmerk der App.
+ 
+ 
+ Anmerk auf User Orientierung:
+ Einfache Benutzeroberfläche, Kontinuierliche Verbesserungen (Updates), wichtig ist es auch Feedback einzuholen nach der Entwicklung, um verbesserungsvorschläge zu bekommen und diese Umzusetzten.
+ 
+ Anmerk auf Problemlösungen wie löst man ein Problem?:
+  Debugging, durch Log.d Log.e, Printstatements, durch Kommunikation und Dokumentation. Postings, Code reviews
+ 
+ bei Projektbearbeitung hat geholfen:
+ Versionsverwaltung GitHub, Dokumentation des Codes. MVVM Pattern zur Unterteilung des Codes.
 
+ Bei Software Architektur wurde verwendet:
+ 
+ Firebase
+ MVVM
+ GoogleAPIClientForREST_YouTube (API Service)
+ SplashScreen
+ YouTube_Player_kit
+ 
+ */
 
 struct MeTubeView: View {
 

@@ -42,16 +42,16 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
         
         let query = GTLRYouTubeQuery_SearchList.query(withPart: ["id","snippet"])
         
-        query.q = term
+        query.q = term // q ist der SearchTerm, in youtube das Suchabrage Objekt
         
         query.maxResults = 20
         
-        query.type = ["video"] // Hiermit Filtern wir die Video´s (VideoID) heraus, damit wir keine Ergebnisse der Channel-ID in den Suchergebnissen mit eingbekommen.
+        query.type = ["video"] // Hiermit Filtern wir die Video´s (VideoID) heraus, damit wir keine Ergebnisse der Channel-ID in den Suchergebnissen mit einbekommen.
         
         service.executeQuery(query) { (ticket, response, error) in
             if let error = error { print("Connection Error")
                 
-            } else {
+            } else { // Wenn es keine Error Meldung gibt wird die Variable Videos mit den Items aus der API befüllt.
                 self.videos = (response as! GTLRYouTube_SearchListResponse).items!
                 self.fbVideos = self.videos.map( FirebaseVideo.fromGTLRVideo )
                 
@@ -84,7 +84,7 @@ class MeTubeViewModel : ObservableObject { // Vorlage durch: https://anthonycode
                         comments.append(comment)
                     }
                 }
-                self.comments.append(comments)
+                self.comments.append(comments) // mit self. wird auf die Eigenschaft der Instanz auf die Struktur zugegriffen
             }
         }
     }
